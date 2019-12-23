@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		74462B3E2167A2E6A4D4AA42 /* Pods_Fluff_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */; };
+		9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79377B23B0C0AF00A0CD3E /* APIConstants.swift */; };
+		9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79377D23B0C0D400A0CD3E /* NetworkResult.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -21,6 +23,8 @@
 		10DBC2AAADF3EADBBB9EF552 /* Pods-Fluff_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff_iOS.release.xcconfig"; path = "Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5EE6AEDF89FB3A9A89FFCD46 /* Pods-Fluff_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D79377B23B0C0AF00A0CD3E /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		9D79377D23B0C0D400A0CD3E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,8 +62,16 @@
 				5EE6AEDF89FB3A9A89FFCD46 /* Pods-Fluff_iOS.debug.xcconfig */,
 				10DBC2AAADF3EADBBB9EF552 /* Pods-Fluff_iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D79377A23B0C09300A0CD3E /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				9D79377B23B0C0AF00A0CD3E /* APIConstants.swift */,
+				9D79377D23B0C0D400A0CD3E /* NetworkResult.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		A63C505623B08BF40069BAFB = {
@@ -85,7 +97,6 @@
 			children = (
 				A63C507623B08BFC0069BAFB /* Resources */,
 				A63C506B23B08BF60069BAFB /* Assets.xcassets */,
-				A63C507923B08CAA0069BAFB /* Storyboards */,
 				A63C507723B08C070069BAFB /* Sources */,
 				A63C507023B08BF60069BAFB /* Info.plist */,
 			);
@@ -95,6 +106,8 @@
 		A63C507623B08BFC0069BAFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D79377A23B0C09300A0CD3E /* APIService */,
+				A63C507923B08CAA0069BAFB /* Storyboards */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -243,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
+				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,
+				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
 				A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */,
 			);
