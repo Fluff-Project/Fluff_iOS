@@ -10,14 +10,17 @@
 		74462B3E2167A2E6A4D4AA42 /* Pods_Fluff_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */; };
 		9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79377B23B0C0AF00A0CD3E /* APIConstants.swift */; };
 		9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79377D23B0C0D400A0CD3E /* NetworkResult.swift */; };
-		9D79378923B0C15300A0CD3E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378123B0C15200A0CD3E /* UIColor+Extensions.swift */; };
-		9D79378A23B0C15300A0CD3E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378223B0C15200A0CD3E /* UIImageView+Extensions.swift */; };
-		9D79378B23B0C15300A0CD3E /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378323B0C15200A0CD3E /* UITabBar+Extensions.swift */; };
-		9D79378C23B0C15300A0CD3E /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378423B0C15200A0CD3E /* UINavigationBar+Extensions.swift */; };
-		9D79378D23B0C15300A0CD3E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378523B0C15300A0CD3E /* UIViewController+Extensions.swift */; };
-		9D79378E23B0C15300A0CD3E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378623B0C15300A0CD3E /* UIButton+Extensions.swift */; };
-		9D79378F23B0C15300A0CD3E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378723B0C15300A0CD3E /* UIView+Extensions.swift */; };
-		9D79379023B0C15300A0CD3E /* NSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D79378823B0C15300A0CD3E /* NSNotificationName+Extensions.swift */; };
+		9D7937D323B11EB500A0CD3E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937CB23B11EB400A0CD3E /* UIViewController+Extensions.swift */; };
+		9D7937D423B11EB500A0CD3E /* NSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937CC23B11EB500A0CD3E /* NSNotificationName+Extensions.swift */; };
+		9D7937D523B11EB500A0CD3E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937CD23B11EB500A0CD3E /* UIView+Extensions.swift */; };
+		9D7937D623B11EB500A0CD3E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937CE23B11EB500A0CD3E /* UIColor+Extensions.swift */; };
+		9D7937D723B11EB500A0CD3E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937CF23B11EB500A0CD3E /* UIButton+Extensions.swift */; };
+		9D7937D823B11EB500A0CD3E /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937D023B11EB500A0CD3E /* UITabBar+Extensions.swift */; };
+		9D7937D923B11EB500A0CD3E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937D123B11EB500A0CD3E /* UIImageView+Extensions.swift */; };
+		9D7937DA23B11EB500A0CD3E /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937D223B11EB500A0CD3E /* UINavigationBar+Extensions.swift */; };
+		9D7937DC23B11ED500A0CD3E /* Taste.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7937DB23B11ED500A0CD3E /* Taste.storyboard */; };
+		9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */; };
+		9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -48,14 +51,17 @@
 		9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79377B23B0C0AF00A0CD3E /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		9D79377D23B0C0D400A0CD3E /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
-		9D79378123B0C15200A0CD3E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378223B0C15200A0CD3E /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIImageView+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378323B0C15200A0CD3E /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITabBar+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UITabBar+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378423B0C15200A0CD3E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378523B0C15300A0CD3E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378623B0C15300A0CD3E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378723B0C15300A0CD3E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
-		9D79378823B0C15300A0CD3E /* NSNotificationName+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSNotificationName+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/NSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937CB23B11EB400A0CD3E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937CC23B11EB500A0CD3E /* NSNotificationName+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937CD23B11EB500A0CD3E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937CE23B11EB500A0CD3E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937CF23B11EB500A0CD3E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937D023B11EB500A0CD3E /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBar+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937D123B11EB500A0CD3E /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937D223B11EB500A0CD3E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		9D7937DB23B11ED500A0CD3E /* Taste.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Taste.storyboard; sourceTree = "<group>"; };
+		9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasteAnalysisVC.swift; sourceTree = "<group>"; };
+		9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasteCollectionViewCell.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,14 +136,14 @@
 		9D79378023B0C14300A0CD3E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9D79378123B0C15200A0CD3E /* UIColor+Extensions.swift */,
-				9D79378723B0C15300A0CD3E /* UIView+Extensions.swift */,
-				9D79378523B0C15300A0CD3E /* UIViewController+Extensions.swift */,
-				9D79378223B0C15200A0CD3E /* UIImageView+Extensions.swift */,
-				9D79378423B0C15200A0CD3E /* UINavigationBar+Extensions.swift */,
-				9D79378323B0C15200A0CD3E /* UITabBar+Extensions.swift */,
-				9D79378623B0C15300A0CD3E /* UIButton+Extensions.swift */,
-				9D79378823B0C15300A0CD3E /* NSNotificationName+Extensions.swift */,
+				9D7937CC23B11EB500A0CD3E /* NSNotificationName+Extensions.swift */,
+				9D7937CF23B11EB500A0CD3E /* UIButton+Extensions.swift */,
+				9D7937CE23B11EB500A0CD3E /* UIColor+Extensions.swift */,
+				9D7937D123B11EB500A0CD3E /* UIImageView+Extensions.swift */,
+				9D7937D223B11EB500A0CD3E /* UINavigationBar+Extensions.swift */,
+				9D7937D023B11EB500A0CD3E /* UITabBar+Extensions.swift */,
+				9D7937CD23B11EB500A0CD3E /* UIView+Extensions.swift */,
+				9D7937CB23B11EB400A0CD3E /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 		9D79379423B0C1AF00A0CD3E /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -222,6 +229,7 @@
 			children = (
 				A63C507C23B0A34D0069BAFB /* LoginVC.swift */,
 				A63C506623B08BF40069BAFB /* LaunchVC.swift */,
+				9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			children = (
 				A63C506823B08BF40069BAFB /* Main.storyboard */,
 				A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */,
+				9D7937DB23B11ED500A0CD3E /* Taste.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -332,6 +341,7 @@
 				A6D2863A23B0D2CD00E7379B /* SCDream8.otf in Resources */,
 				A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */,
 				A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */,
+				9D7937DC23B11ED500A0CD3E /* Taste.storyboard in Resources */,
 				A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */,
 				A63C506A23B08BF40069BAFB /* Main.storyboard in Resources */,
 				A6D2863923B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf in Resources */,
@@ -387,19 +397,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */,
+				9D7937DA23B11EB500A0CD3E /* UINavigationBar+Extensions.swift in Sources */,
+				9D7937D923B11EB500A0CD3E /* UIImageView+Extensions.swift in Sources */,
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
-				9D79378E23B0C15300A0CD3E /* UIButton+Extensions.swift in Sources */,
-				9D79379023B0C15300A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
+				9D7937D623B11EB500A0CD3E /* UIColor+Extensions.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
+				9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */,
+				9D7937D423B11EB500A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
+				9D7937D523B11EB500A0CD3E /* UIView+Extensions.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,
-				9D79378B23B0C15300A0CD3E /* UITabBar+Extensions.swift in Sources */,
-				9D79378F23B0C15300A0CD3E /* UIView+Extensions.swift in Sources */,
+				9D7937D323B11EB500A0CD3E /* UIViewController+Extensions.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
-				9D79378923B0C15300A0CD3E /* UIColor+Extensions.swift in Sources */,
-				9D79378D23B0C15300A0CD3E /* UIViewController+Extensions.swift in Sources */,
-				9D79378C23B0C15300A0CD3E /* UINavigationBar+Extensions.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
-				9D79378A23B0C15300A0CD3E /* UIImageView+Extensions.swift in Sources */,
+				9D7937D823B11EB500A0CD3E /* UITabBar+Extensions.swift in Sources */,
+				9D7937D723B11EB500A0CD3E /* UIButton+Extensions.swift in Sources */,
 				A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
