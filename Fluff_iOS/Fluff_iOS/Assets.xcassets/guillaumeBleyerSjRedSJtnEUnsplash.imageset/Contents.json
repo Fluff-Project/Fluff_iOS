@@ -6,14 +6,14 @@
       "filename" : "guillaumeBleyerSjRedSJtnEUnsplash.png"
     },
     {
-      "idiom" : "universal",
       "filename" : "guillaumeBleyerSjRedSJtnEUnsplash@2x.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "guillaumeBleyerSjRedSJtnEUnsplash@3x.png"
+      "filename" : "guillaumeBleyerSjRedSJtnEUnsplash@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {
