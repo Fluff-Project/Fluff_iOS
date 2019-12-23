@@ -24,6 +24,7 @@
 		9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F223B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift */; };
 		9D7937F523B1350C00A0CD3E /* AnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F423B1350C00A0CD3E /* AnalysisTableViewCell.swift */; };
 		9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */; };
+		9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -68,6 +69,7 @@
 		9D7937F223B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9D7937F423B1350C00A0CD3E /* AnalysisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTableViewCell.swift; sourceTree = "<group>"; };
 		9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTasteAnalysisVC.swift; sourceTree = "<group>"; };
+		9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluvCollectionViewCell.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,13 +152,15 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			name = Views;
+			path = Models/Views;
 			sourceTree = "<group>";
 		};
 		9D79379423B0C1AF00A0CD3E /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */,
+				9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -425,6 +429,7 @@
 				9D7937EC23B1333400A0CD3E /* UIViewController+Extensions.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,
+				9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
 				9D7937E923B1333400A0CD3E /* UIColor+Extensions.swift in Sources */,

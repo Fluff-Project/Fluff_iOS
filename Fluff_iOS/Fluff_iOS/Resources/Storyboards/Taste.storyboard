@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVt-nY-rLT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360.86956521739131" y="-206.25"/>
+            <point key="canvasLocation" x="320" y="-206"/>
         </scene>
         <!--Next Taste AnalysisVC-->
         <scene sceneID="dBE-JU-3nf">
@@ -201,49 +201,53 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="213"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pzz-N5-GWK">
-                                                    <rect key="frame" x="0.0" y="20" width="414" height="173"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sFx-h1-RkK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="213"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="14" id="08a-eF-kA1">
-                                                        <size key="itemSize" width="110" height="158"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="14" id="yTk-U6-ck5">
+                                                        <size key="itemSize" width="148" height="211"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="28" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XWy-oX-lGe">
-                                                            <rect key="frame" x="28" y="0.0" width="110" height="158"/>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fluvCell" id="ews-hR-3lB" customClass="FluvCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                                            <rect key="frame" x="28" y="1" width="148" height="211"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="np1-54-oXt">
-                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="158"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SHr-tz-bdj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="211"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qP4-no-FQt">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="158"/>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2019122022808" translatesAutoresizingMaskIntoConstraints="NO" id="TVc-UK-Qzd">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="148" height="211"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="qP4-no-FQt" firstAttribute="leading" secondItem="np1-54-oXt" secondAttribute="leading" id="DpA-9W-efF"/>
-                                                                    <constraint firstItem="qP4-no-FQt" firstAttribute="top" secondItem="np1-54-oXt" secondAttribute="top" id="bEz-GO-mTf"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="qP4-no-FQt" secondAttribute="trailing" id="oY4-zQ-qnI"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="qP4-no-FQt" secondAttribute="bottom" id="tuW-lC-mJw"/>
+                                                                    <constraint firstItem="TVc-UK-Qzd" firstAttribute="top" secondItem="SHr-tz-bdj" secondAttribute="top" id="4n9-1G-PEk"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="TVc-UK-Qzd" secondAttribute="bottom" id="56d-FD-LCv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="TVc-UK-Qzd" secondAttribute="trailing" id="Bm1-u7-c50"/>
+                                                                    <constraint firstItem="TVc-UK-Qzd" firstAttribute="leading" secondItem="SHr-tz-bdj" secondAttribute="leading" id="cjf-Wt-To8"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="110" height="158"/>
+                                                            <size key="customSize" width="148" height="211"/>
+                                                            <connections>
+                                                                <outlet property="profileImageView" destination="TVc-UK-Qzd" id="okb-Qp-DuL"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="36h-ob-9ef" id="AUC-mz-1zJ"/>
+                                                        <outlet property="delegate" destination="36h-ob-9ef" id="n4J-7e-UEA"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pzz-N5-GWK" firstAttribute="leading" secondItem="m0b-ah-b14" secondAttribute="leading" id="Y9d-zJ-IgH"/>
-                                                <constraint firstAttribute="bottom" secondItem="pzz-N5-GWK" secondAttribute="bottom" constant="20" symbolic="YES" id="lok-Tw-2io"/>
-                                                <constraint firstAttribute="trailing" secondItem="pzz-N5-GWK" secondAttribute="trailing" id="nBv-Nn-GB4"/>
-                                                <constraint firstItem="pzz-N5-GWK" firstAttribute="top" secondItem="m0b-ah-b14" secondAttribute="top" constant="20" symbolic="YES" id="sa3-sw-jza"/>
+                                                <constraint firstAttribute="bottom" secondItem="sFx-h1-RkK" secondAttribute="bottom" id="7MC-Ca-JNe"/>
+                                                <constraint firstAttribute="trailing" secondItem="sFx-h1-RkK" secondAttribute="trailing" id="gKm-3b-dS0"/>
+                                                <constraint firstItem="sFx-h1-RkK" firstAttribute="top" secondItem="m0b-ah-b14" secondAttribute="top" id="hdu-Lh-Fo2"/>
+                                                <constraint firstItem="sFx-h1-RkK" firstAttribute="leading" secondItem="m0b-ah-b14" secondAttribute="leading" id="zft-QX-2sj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="follwerCollectionView" destination="pzz-N5-GWK" id="iVO-UK-jS9"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -269,11 +273,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6G-Q2-D5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071.0144927536232" y="-206.25"/>
+            <point key="canvasLocation" x="1105.7971014492755" y="-206.25"/>
         </scene>
     </scenes>
     <resources>
         <image name="2019121461216" width="41" height="41"/>
+        <image name="2019122022808" width="129" height="163"/>
         <image name="731435467565772314707755242100861709482025N" width="164" height="164"/>
     </resources>
 </document>
