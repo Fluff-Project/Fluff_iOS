@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="KoPubWorld Dotum_Pro Medium.otf">
+            <string>KoPubWorldDotumPM</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LaunchVC-->
         <scene sceneID="tne-QT-ifu">
@@ -18,21 +23,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="13X" translatesAutoresizingMaskIntoConstraints="NO" id="BfD-Hz-kH1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="13X" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-4d-BTz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHc-6i-WlI">
+                                <rect key="frame" x="23.666666666666657" y="586" width="328" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gHc-6i-WlI" secondAttribute="height" multiplier="41:6" id="CPh-2O-FOO"/>
+                                    <constraint firstAttribute="width" constant="328" id="K0u-Yu-r2L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                <state key="normal" title="카카오톡으로 시작하기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm9-Eu-lR1">
+                                <rect key="frame" x="23.666666666666657" y="646" width="328" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="lEg-Lz-XVu"/>
+                                    <constraint firstAttribute="width" secondItem="Wm9-Eu-lR1" secondAttribute="height" multiplier="41:6" id="sKm-Db-RSf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="17"/>
+                                <state key="normal" title="로그인">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxU-ZI-UwT">
+                                <rect key="frame" x="143" y="710" width="89" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BxU-ZI-UwT" secondAttribute="height" multiplier="89:25" id="M84-os-ZBo"/>
+                                    <constraint firstAttribute="width" constant="89" id="wF0-Ca-273"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                <state key="normal" title="회원가입 하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BfD-Hz-kH1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="0f9-qZ-7vU"/>
-                            <constraint firstAttribute="trailing" secondItem="BfD-Hz-kH1" secondAttribute="trailing" constant="20" symbolic="YES" id="0gg-wh-gCg"/>
-                            <constraint firstAttribute="bottom" secondItem="BfD-Hz-kH1" secondAttribute="bottom" constant="20" symbolic="YES" id="6WL-BJ-wWb"/>
-                            <constraint firstItem="BfD-Hz-kH1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="pZd-eu-cyW"/>
+                            <constraint firstItem="BxU-ZI-UwT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Hb-hH-ArC"/>
+                            <constraint firstAttribute="trailing" secondItem="Sy2-4d-BTz" secondAttribute="trailing" id="9a7-va-DDX"/>
+                            <constraint firstItem="gHc-6i-WlI" firstAttribute="top" secondItem="z8C-HF-3uw" secondAttribute="bottom" constant="542" id="Th7-9J-zAu"/>
+                            <constraint firstAttribute="bottom" secondItem="Sy2-4d-BTz" secondAttribute="bottom" id="a2u-Dk-lXj"/>
+                            <constraint firstItem="Sy2-4d-BTz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="c3F-8X-sE4"/>
+                            <constraint firstItem="Wm9-Eu-lR1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kgf-gU-BZh"/>
+                            <constraint firstItem="BxU-ZI-UwT" firstAttribute="top" secondItem="Wm9-Eu-lR1" secondAttribute="bottom" constant="16" id="nzl-Tu-4JY"/>
+                            <constraint firstItem="Sy2-4d-BTz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ohh-A2-CHb"/>
+                            <constraint firstItem="gHc-6i-WlI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sKb-n1-WmL"/>
+                            <constraint firstItem="Wm9-Eu-lR1" firstAttribute="top" secondItem="gHc-6i-WlI" secondAttribute="bottom" constant="12" id="zBu-rK-tnU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ztv-Gk-JeP">
                         <nil key="title"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="kakaoStartButton" destination="gHc-6i-WlI" id="wBN-IQ-gAH"/>
+                        <outlet property="loginButton" destination="Wm9-Eu-lR1" id="q6n-0F-gKk"/>
+                        <outlet property="signUpButton" destination="BxU-ZI-UwT" id="rXz-2F-dod"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
