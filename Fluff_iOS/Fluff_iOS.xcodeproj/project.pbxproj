@@ -112,6 +112,27 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9D79379123B0C17B00A0CD3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9D79379223B0C18000A0CD3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D79379423B0C1AF00A0CD3E /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		A63C505623B08BF40069BAFB = {
 			isa = PBXGroup;
 			children = (
@@ -155,9 +176,12 @@
 			isa = PBXGroup;
 			children = (
 				9D79378023B0C14300A0CD3E /* Extensions */,
+				A63C507823B08C2C0069BAFB /* ViewControllers */,
+				9D79379223B0C18000A0CD3E /* Views */,
+				9D79379123B0C17B00A0CD3E /* Models */,
+				9D79379423B0C1AF00A0CD3E /* CollectionView */,
 				A63C506223B08BF40069BAFB /* AppDelegate.swift */,
 				A63C506423B08BF40069BAFB /* SceneDelegate.swift */,
-				A63C507823B08C2C0069BAFB /* ViewControllers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
