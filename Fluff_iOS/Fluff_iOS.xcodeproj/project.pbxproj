@@ -25,6 +25,21 @@
 		A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63C506B23B08BF60069BAFB /* Assets.xcassets */; };
 		A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */; };
 		A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C507C23B0A34D0069BAFB /* LoginVC.swift */; };
+		A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861E23B0D2CD00E7379B /* SCDream9.otf */; };
+		A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861F23B0D2CD00E7379B /* SCDream1.otf */; };
+		A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862123B0D2CD00E7379B /* SCDream2.otf */; };
+		A6D2863123B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862223B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf */; };
+		A6D2863223B0D2CD00E7379B /* SCDream4.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862323B0D2CD00E7379B /* SCDream4.otf */; };
+		A6D2863323B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862423B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf */; };
+		A6D2863423B0D2CD00E7379B /* SCDream5.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862523B0D2CD00E7379B /* SCDream5.otf */; };
+		A6D2863523B0D2CD00E7379B /* SCDream6.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862623B0D2CD00E7379B /* SCDream6.otf */; };
+		A6D2863623B0D2CD00E7379B /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862723B0D2CD00E7379B /* SCDream7.otf */; };
+		A6D2863723B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862823B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf */; };
+		A6D2863823B0D2CD00E7379B /* SCDream3.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862923B0D2CD00E7379B /* SCDream3.otf */; };
+		A6D2863923B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862A23B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf */; };
+		A6D2863A23B0D2CD00E7379B /* SCDream8.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862B23B0D2CD00E7379B /* SCDream8.otf */; };
+		A6D2863D23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863B23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf */; };
+		A6D2863E23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +65,21 @@
 		A63C506E23B08BF60069BAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63C507023B08BF60069BAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63C507C23B0A34D0069BAFB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		A6D2861E23B0D2CD00E7379B /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
+		A6D2861F23B0D2CD00E7379B /* SCDream1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream1.otf; sourceTree = "<group>"; };
+		A6D2862123B0D2CD00E7379B /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
+		A6D2862223B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Batang_Pro Medium.otf"; sourceTree = "<group>"; };
+		A6D2862323B0D2CD00E7379B /* SCDream4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream4.otf; sourceTree = "<group>"; };
+		A6D2862423B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Batang_Pro Bold.otf"; sourceTree = "<group>"; };
+		A6D2862523B0D2CD00E7379B /* SCDream5.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream5.otf; sourceTree = "<group>"; };
+		A6D2862623B0D2CD00E7379B /* SCDream6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream6.otf; sourceTree = "<group>"; };
+		A6D2862723B0D2CD00E7379B /* SCDream7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream7.otf; sourceTree = "<group>"; };
+		A6D2862823B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Batang_Pro Light.otf"; sourceTree = "<group>"; };
+		A6D2862923B0D2CD00E7379B /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
+		A6D2862A23B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Bold.otf"; sourceTree = "<group>"; };
+		A6D2862B23B0D2CD00E7379B /* SCDream8.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream8.otf; sourceTree = "<group>"; };
+		A6D2863B23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Medium.otf"; sourceTree = "<group>"; };
+		A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Light.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +195,7 @@
 		A63C507623B08BFC0069BAFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6D285FE23B0CED800E7379B /* Fonts */,
 				9D79377A23B0C09300A0CD3E /* APIService */,
 				A63C507923B08CAA0069BAFB /* Storyboards */,
 				9D79377F23B0C0FE00A0CD3E /* Nibs */,
@@ -202,6 +233,28 @@
 				A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A6D285FE23B0CED800E7379B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2862423B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf */,
+				A6D2862823B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf */,
+				A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */,
+				A6D2863B23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf */,
+				A6D2862223B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf */,
+				A6D2862A23B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf */,
+				A6D2861F23B0D2CD00E7379B /* SCDream1.otf */,
+				A6D2862123B0D2CD00E7379B /* SCDream2.otf */,
+				A6D2862923B0D2CD00E7379B /* SCDream3.otf */,
+				A6D2862323B0D2CD00E7379B /* SCDream4.otf */,
+				A6D2862523B0D2CD00E7379B /* SCDream5.otf */,
+				A6D2862623B0D2CD00E7379B /* SCDream6.otf */,
+				A6D2862723B0D2CD00E7379B /* SCDream7.otf */,
+				A6D2862B23B0D2CD00E7379B /* SCDream8.otf */,
+				A6D2861E23B0D2CD00E7379B /* SCDream9.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +317,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D2863223B0D2CD00E7379B /* SCDream4.otf in Resources */,
+				A6D2863123B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf in Resources */,
+				A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */,
+				A6D2863423B0D2CD00E7379B /* SCDream5.otf in Resources */,
+				A6D2863723B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf in Resources */,
+				A6D2863823B0D2CD00E7379B /* SCDream3.otf in Resources */,
 				A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */,
+				A6D2863623B0D2CD00E7379B /* SCDream7.otf in Resources */,
+				A6D2863323B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf in Resources */,
+				A6D2863E23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf in Resources */,
+				A6D2863D23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf in Resources */,
+				A6D2863523B0D2CD00E7379B /* SCDream6.otf in Resources */,
+				A6D2863A23B0D2CD00E7379B /* SCDream8.otf in Resources */,
+				A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */,
+				A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */,
 				A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */,
 				A63C506A23B08BF40069BAFB /* Main.storyboard in Resources */,
+				A6D2863923B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
