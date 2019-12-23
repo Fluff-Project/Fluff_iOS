@@ -21,6 +21,7 @@ class LaunchVC: UIViewController {
         loginButton.layer.borderWidth = 1
         loginButton.layer.cornerRadius = 24
         kakaoStartButton.layer.cornerRadius = 24
+
         // Do any additional setup after loading the view.
     }
 
