@@ -13,6 +13,7 @@
 		9D7937DC23B11ED500A0CD3E /* Taste.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7937DB23B11ED500A0CD3E /* Taste.storyboard */; };
 		9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */; };
 		9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */; };
+
 		9D7937E923B1333400A0CD3E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937E123B1333400A0CD3E /* UIColor+Extensions.swift */; };
 		9D7937EA23B1333400A0CD3E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937E223B1333400A0CD3E /* UIImageView+Extensions.swift */; };
 		9D7937EB23B1333400A0CD3E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937E323B1333400A0CD3E /* UIView+Extensions.swift */; };
@@ -25,6 +26,8 @@
 		9D7937F523B1350C00A0CD3E /* AnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F423B1350C00A0CD3E /* AnalysisTableViewCell.swift */; };
 		9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */; };
 		9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */; };
+
+
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -32,6 +35,18 @@
 		A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63C506B23B08BF60069BAFB /* Assets.xcassets */; };
 		A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */; };
 		A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C507C23B0A34D0069BAFB /* LoginVC.swift */; };
+
+
+		A64C4EFA23B0FDED0066FE7F /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF223B0FDED0066FE7F /* UINavigationBar+Extensions.swift */; };
+		A64C4EFB23B0FDED0066FE7F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF323B0FDED0066FE7F /* UIColor+Extensions.swift */; };
+		A64C4EFC23B0FDED0066FE7F /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF423B0FDED0066FE7F /* UIImageView+Extensions.swift */; };
+		A64C4EFD23B0FDED0066FE7F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF523B0FDED0066FE7F /* UIViewController+Extensions.swift */; };
+		A64C4EFE23B0FDED0066FE7F /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF623B0FDED0066FE7F /* UITabBar+Extensions.swift */; };
+		A64C4EFF23B0FDED0066FE7F /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF723B0FDED0066FE7F /* UIButton+Extensions.swift */; };
+		A64C4F0023B0FDED0066FE7F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF823B0FDED0066FE7F /* UIView+Extensions.swift */; };
+		A64C4F0123B0FDED0066FE7F /* NSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4EF923B0FDED0066FE7F /* NSNotificationName+Extensions.swift */; };
+		A64C4F0723B137590066FE7F /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */; };
+
 		A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861E23B0D2CD00E7379B /* SCDream9.otf */; };
 		A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861F23B0D2CD00E7379B /* SCDream1.otf */; };
 		A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862123B0D2CD00E7379B /* SCDream2.otf */; };
@@ -58,6 +73,7 @@
 		9D7937DB23B11ED500A0CD3E /* Taste.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Taste.storyboard; sourceTree = "<group>"; };
 		9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasteAnalysisVC.swift; sourceTree = "<group>"; };
 		9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasteCollectionViewCell.swift; sourceTree = "<group>"; };
+
 		9D7937E123B1333400A0CD3E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		9D7937E223B1333400A0CD3E /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		9D7937E323B1333400A0CD3E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../Project_Template/InitialProject/InitialProject/Sources/Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -70,6 +86,8 @@
 		9D7937F423B1350C00A0CD3E /* AnalysisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTableViewCell.swift; sourceTree = "<group>"; };
 		9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTasteAnalysisVC.swift; sourceTree = "<group>"; };
 		9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluvCollectionViewCell.swift; sourceTree = "<group>"; };
+
+
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +97,18 @@
 		A63C506E23B08BF60069BAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63C507023B08BF60069BAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63C507C23B0A34D0069BAFB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+
+
+		A64C4EF223B0FDED0066FE7F /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF323B0FDED0066FE7F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF423B0FDED0066FE7F /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF523B0FDED0066FE7F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF623B0FDED0066FE7F /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITabBar+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UITabBar+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF723B0FDED0066FE7F /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF823B0FDED0066FE7F /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4EF923B0FDED0066FE7F /* NSNotificationName+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSNotificationName+Extensions.swift"; path = "../../../../../../Downloads/아카이브/NSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
+		A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
+
 		A6D2861E23B0D2CD00E7379B /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
 		A6D2861F23B0D2CD00E7379B /* SCDream1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream1.otf; sourceTree = "<group>"; };
 		A6D2862123B0D2CD00E7379B /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
@@ -235,7 +265,11 @@
 				A63C507C23B0A34D0069BAFB /* LoginVC.swift */,
 				A63C506623B08BF40069BAFB /* LaunchVC.swift */,
 				9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */,
+
 				9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */,
+
+				A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */,
+
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -418,12 +452,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */,
 				9D7937EA23B1333400A0CD3E /* UIImageView+Extensions.swift in Sources */,
 				9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */,
 				9D7937F023B1333400A0CD3E /* UINavigationBar+Extensions.swift in Sources */,
 				9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */,
 				9D7937EE23B1333400A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
+
+				A64C4F0723B137590066FE7F /* SignUpEmailVC.swift in Sources */,
+
 				9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */,
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
 				9D7937EC23B1333400A0CD3E /* UIViewController+Extensions.swift in Sources */,
@@ -432,7 +470,10 @@
 				9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
+
 				9D7937E923B1333400A0CD3E /* UIColor+Extensions.swift in Sources */,
+
+
 				A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */,
 				9D7937EF23B1333400A0CD3E /* UITabBar+Extensions.swift in Sources */,
 				9D7937F523B1350C00A0CD3E /* AnalysisTableViewCell.swift in Sources */,
