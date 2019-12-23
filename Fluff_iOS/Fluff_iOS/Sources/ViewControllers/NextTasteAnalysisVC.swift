@@ -21,9 +21,17 @@ class NextTasteAnalysisVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        initialCompleteButton()
         followTableView.dataSource = self
         followTableView.delegate = self
+    }
+    
+    private func initialCompleteButton() {
+        let completeButton = UIButton(frame: CGRect(x: view.center.x, y: view.frame.height - 42, width: view.frame.width - 40, height: (view.frame.width - 40) / 8))
+        completeButton.backgroundColor = UIColor(red: 23/255, green: 23/255, blue: 23/255, alpha: 1.0)
+        completeButton.titleLabel?.textColor = .white
+        completeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        self.view.addSubview(completeButton)
     }
 }
 
@@ -71,5 +79,4 @@ extension NextTasteAnalysisVC: UICollectionViewDataSource {
 }
 
 extension NextTasteAnalysisVC: UICollectionViewDelegate {
-    
 }
