@@ -74,6 +74,13 @@
 			path = APIService;
 			sourceTree = "<group>";
 		};
+		9D79377F23B0C0FE00A0CD3E /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
 		A63C505623B08BF40069BAFB = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +115,7 @@
 			children = (
 				9D79377A23B0C09300A0CD3E /* APIService */,
 				A63C507923B08CAA0069BAFB /* Storyboards */,
+				9D79377F23B0C0FE00A0CD3E /* Nibs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
