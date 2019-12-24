@@ -53,7 +53,6 @@ extension TasteAnalysisVC: UICollectionViewDelegateFlowLayout {
         let cellWidth = (collectionView.frame.width-50) / 2
         return CGSize(width: cellWidth, height: cellWidth)
     }
-    
 }
 
 extension TasteAnalysisVC: UICollectionViewDelegate {

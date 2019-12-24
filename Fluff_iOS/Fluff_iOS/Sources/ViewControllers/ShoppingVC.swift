@@ -42,6 +42,15 @@ extension ShoppingVC: UICollectionViewDataSource {
     }
 }
 
+extension ShoppingVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailViewController = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+        
+        // 선택된 Index Model 다음 뷰에 전달
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
 extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let estimateHeight = collectionView.frame.height / 2

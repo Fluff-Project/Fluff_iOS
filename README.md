@@ -70,3 +70,5 @@
 6️⃣ backgroundColor
 
 7️⃣ contentStretch
+
+7. TextView 사이즈 동적으로 조절하기
