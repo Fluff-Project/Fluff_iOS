@@ -974,6 +974,22 @@
             </objects>
             <point key="canvasLocation" x="3694" y="2752"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ZTV-cZ-eCM">
+            <objects>
+                <viewController id="7aV-qQ-uLj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ke6-uH-5hZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="krE-dc-w47"/>
+                    </view>
+                    <size key="freeformSize" width="414" height="1300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73Y-zF-Alj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4452" y="2756"/>
+        </scene>
         <!--경매-->
         <scene sceneID="gIM-Nj-KjE">
             <objects>
