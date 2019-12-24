@@ -24,6 +24,8 @@ class TasteAnalysisVC: UIViewController {
         tasteCollectionView.delegate = self
         initialButton()
         
+        selectButton.setTitle("5개 이상 선택해주세요", for: .normal)
+        
         for _ in 0..<30 {
             isSelected.append(false)
         }
@@ -48,7 +50,7 @@ extension TasteAnalysisVC: UICollectionViewDataSource {
 
 extension TasteAnalysisVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = (collectionView.frame.width) / 2
+        let cellWidth = (collectionView.frame.width-50) / 2
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
@@ -65,6 +67,7 @@ extension TasteAnalysisVC: UICollectionViewDelegate {
             selectButton.backgroundColor = .black
             selectButton.titleLabel?.textColor = . white
             selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            selectButton.setTitle("다음", for: .normal)
         }
         
         if isSelected[indexPath.row] {

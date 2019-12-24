@@ -14,6 +14,9 @@ class ShopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var sellerNameLabel: UILabel!
     @IBOutlet weak var clotheNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var heartButton: UIButton!
+    
+    // heart 눌렀는지 User에 대한 모델 들어올거임
     
     func setShopImageView(imageName: String) {
         guard let shoppingImage = UIImage(named: imageName) else { return }
@@ -31,5 +34,12 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     func setPriceLabel(_ price: String) {
         priceLabel.text = price
+    }
+    
+    @IBAction func clickHeartButton(_ sender: Any) {
+        guard let heartFill = UIImage(systemName: "heart.fill") else { return }
+        heartButton.setBackgroundImage(heartFill, for: .normal)
+        
+        // 만약 눌렀으면 확인해서 heart 이미지로
     }
 }

@@ -35,6 +35,10 @@
 
 ### 실행화면
 
+
+
+**시작 화면**
+
 <img src="./images/login.png" height="400px"/>
 
 
@@ -48,4 +52,21 @@
 1. Git Merge Conflict 해결
 2. TableView 안 CollectionView 그리기
 3. TableView Header 같이 스크롤 되게 만들기
-4. CollectionView 레이아웃 잡기
+4. CollectionView 레이아웃 잡기 (DelegateFlowLayout 안잡힘)
+5. TextView Editing Point 잡기
+
+6. Animationable Property가 존재
+
+1️⃣ frame
+
+2️⃣ bounds
+
+3️⃣ center
+
+4️⃣ transform
+
+5️⃣ alpha
+
+6️⃣ backgroundColor
+
+7️⃣ contentStretch
