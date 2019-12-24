@@ -10,19 +10,17 @@ import UIKit
 
 class TasteCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var clotheImageView: UIImageView!
-    var coverView: UIView?
+    @IBOutlet weak var coverView: UIView!
     
     func selected(_ isSelected: Bool) {
         if isSelected {
-            coverView?.removeFromSuperview()
+            coverView.isHidden = true
         } else {
-            let coverView = UIView(frame: self.clotheImageView.frame)
-            coverView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
-            self.addSubview(coverView)
+            coverView.isHidden = false
         }
-        
-        let coverView = UIView(frame: self.clotheImageView.frame)
-        coverView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
-        self.addSubview(coverView)
+    }
+    
+    func setCoverView() {
+        coverView.isHidden = false
     }
 }

@@ -17,8 +17,9 @@ class ShoppingVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialSearch()
-        shoppingCollectionView.delegate = self
         shoppingCollectionView.dataSource = self
+        shoppingCollectionView.delegate = self
+        self.setNavigationBarClear()
     }
     
     private func initialSearch() {
@@ -41,8 +42,8 @@ extension ShoppingVC: UICollectionViewDataSource {
 
 extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width - 29) / 2
-        let height = collectionView.frame.height / 2
+        let width = (collectionView.frame.width-2) / 2
+        let height = width / 3 * 4
         return CGSize(width: width, height: height)
     }
 }

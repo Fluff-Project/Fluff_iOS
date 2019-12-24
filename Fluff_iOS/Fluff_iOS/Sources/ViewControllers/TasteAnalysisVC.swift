@@ -40,24 +40,33 @@ extension TasteAnalysisVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let tasteCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tasteCell", for: indexPath)
-        
-        
+        guard let tasteCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tasteCell", for: indexPath) as? TasteCollectionViewCell else { return UICollectionViewCell() }
+        if isSelected[indexPath.row] { tasteCell.setCoverView() }
         return tasteCell
     }
 }
 
 extension TasteAnalysisVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = (collectionView.frame.width-5) / 2
+        let cellWidth = (collectionView.frame.width) / 2
         return CGSize(width: cellWidth, height: cellWidth)
     }
+    
 }
 
 extension TasteAnalysisVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         guard let selectedCell = collectionView.cellForItem(at: indexPath) as? TasteCollectionViewCell else { return }
         selectedCell.selected(isSelected[indexPath.row])
+        selectedCount += 1
+        
+        if selectedCount >= 5 {
+            selectButton.backgroundColor = .black
+            selectButton.titleLabel?.textColor = . white
+            selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        }
+        
         if isSelected[indexPath.row] {
             isSelected[indexPath.row] = false
         } else {
