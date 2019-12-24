@@ -1,5 +1,5 @@
 //
-//  SignUpEmailVC.swift
+//  SignUpNicknameVC.swift
 //  Fluff_iOS
 //
 //  Created by TaeJin Oh on 2019/12/24.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-class SignUpEmailVC: UIViewController {
+class SignUpNicknameVC: UIViewController {
 
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.layer.masksToBounds = true
-        emailTextField.layer.cornerRadius = 22.0
-        emailTextField.layer.borderWidth = 1.0
+        nicknameTextField.layer.masksToBounds = true
+        nicknameTextField.layer.cornerRadius = 22.0
+        nicknameTextField.layer.borderWidth = 1.0
         nextButton.layer.cornerRadius = 24.0
         
-        emailTextField.addLeftPadding()
+        nicknameTextField.addLeftPadding()
 
         // Do any additional setup after loading the view.
     }
@@ -28,8 +28,6 @@ class SignUpEmailVC: UIViewController {
     @IBAction func back(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
     }
-    
-    
     
     /*
     // MARK: - Navigation

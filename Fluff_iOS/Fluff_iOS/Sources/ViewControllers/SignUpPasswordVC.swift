@@ -1,5 +1,5 @@
 //
-//  SignUpEmailVC.swift
+//  SignUpPasswordVC.swift
 //  Fluff_iOS
 //
 //  Created by TaeJin Oh on 2019/12/24.
@@ -8,29 +8,28 @@
 
 import UIKit
 
-class SignUpEmailVC: UIViewController {
-
-    @IBOutlet weak var emailTextField: UITextField!
+class SignUpPasswordVC: UIViewController {
+    
+    @IBOutlet weak var pwdTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailTextField.layer.masksToBounds = true
-        emailTextField.layer.cornerRadius = 22.0
-        emailTextField.layer.borderWidth = 1.0
+        pwdTextField.layer.masksToBounds = true
+        pwdTextField.layer.cornerRadius = 22.0
+        pwdTextField.layer.borderWidth = 1.0
         nextButton.layer.cornerRadius = 24.0
         
-        emailTextField.addLeftPadding()
+        pwdTextField.addLeftPadding()
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func back(_ sender: Any) {
-    self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
-    
-    
+
     /*
     // MARK: - Navigation
 
@@ -39,6 +38,7 @@ class SignUpEmailVC: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+     
+     */
 
 }
