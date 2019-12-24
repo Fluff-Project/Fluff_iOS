@@ -30,3 +30,22 @@
 
 - 'Alamofire', '~> 4.8.2'
 - 'KingFisher',`~> 5.4.0'
+
+
+
+### 실행화면
+
+<img src="./images/login.png" height="400px"/>
+
+
+
+
+
+
+
+### 어려운 것 해결한 것
+
+1. Git Merge Conflict 해결
+2. TableView 안 CollectionView 그리기
+3. TableView Header 같이 스크롤 되게 만들기
+4. CollectionView 레이아웃 잡기
