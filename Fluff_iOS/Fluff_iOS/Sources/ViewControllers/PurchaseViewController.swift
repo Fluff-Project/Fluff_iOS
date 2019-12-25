@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class PurchaseViewController: UIViewController {
     @IBOutlet weak var clotheImageView: UIImageView!
@@ -31,7 +32,8 @@ class PurchaseViewController: UIViewController {
     
     @IBOutlet weak var searchAddressButton: UIButton!
     
-    @IBOutlet weak var normalAddressCheckButton: UIButton!
+    @IBOutlet weak var normalAddressCheckBox: BEMCheckBox!
+    
     @IBOutlet weak var totalProductPriceLabel: UILabel!
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var totalPaymentLabel: UILabel!
@@ -53,9 +55,13 @@ class PurchaseViewController: UIViewController {
     
     private func setButton() {
         searchAddressButton.makeCornerRounded(radius: searchAddressButton.frame.width / 10)
-        normalAddressCheckButton.layer.borderWidth = 1
-        normalAddressCheckButton.layer.borderColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0).cgColor
-        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 7)
+        normalAddressCheckBox.boxType = .square
+        normalAddressCheckBox.tintColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
+        normalAddressCheckBox.onCheckColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
+        normalAddressCheckBox.onTintColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
+        normalAddressCheckBox.onAnimationType = .stroke
+        normalAddressCheckBox.offAnimationType = .stroke
+        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 15)
     }
     
     private func setMarginView() {
@@ -73,6 +79,11 @@ class PurchaseViewController: UIViewController {
         requestMarginView.layer.borderWidth = 1
         
     }
+    
+    @IBAction func clickNormalAddress(_ sender: Any) {
+        
+    }
+    
     @IBAction func clickPay(_ sender: Any) {
     }
 }
