@@ -36,6 +36,7 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var totalPaymentLabel: UILabel!
     
+    @IBOutlet weak var paymentButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,6 +55,7 @@ class PurchaseViewController: UIViewController {
         searchAddressButton.makeCornerRounded(radius: searchAddressButton.frame.width / 10)
         normalAddressCheckButton.layer.borderWidth = 1
         normalAddressCheckButton.layer.borderColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0).cgColor
+        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 7)
     }
     
     private func setMarginView() {
@@ -70,5 +72,7 @@ class PurchaseViewController: UIViewController {
         requestMarginView.layer.borderColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0).cgColor
         requestMarginView.layer.borderWidth = 1
         
+    }
+    @IBAction func clickPay(_ sender: Any) {
     }
 }
