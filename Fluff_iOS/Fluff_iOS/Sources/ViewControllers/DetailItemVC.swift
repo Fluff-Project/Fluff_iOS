@@ -11,8 +11,12 @@ import UIKit
 class DetailItemVC: UIViewController {
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
     
+    @IBOutlet weak var clotheNameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var followerCountLabel: UILabel!
@@ -51,6 +55,8 @@ class DetailItemVC: UIViewController {
     }
     
     @IBAction func clickPurchase(_ sender: Any) {
+        guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
+        self.navigationController?.pushViewController(purchaseVC, animated: true)
     }
     
     @IBAction func clickHeart(_ sender: Any) {

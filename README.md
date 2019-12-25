@@ -30,6 +30,7 @@
 
 - 'Alamofire', '~> 4.8.2'
 - 'KingFisher',`~> 5.4.0'
+- 'CHIPageControl', `~> 0.1.7'
 
 
 
@@ -53,8 +54,6 @@
 2. TableView 안 CollectionView 그리기
 3. TableView Header 같이 스크롤 되게 만들기
 4. CollectionView 레이아웃 잡기 (DelegateFlowLayout 안잡힘)
-5. TextView Editing Point 잡기
-
 6. Animationable Property가 존재
 
 1️⃣ frame
@@ -71,4 +70,8 @@
 
 7️⃣ contentStretch
 
-7. TextView 사이즈 동적으로 조절하기
+
+
+### 참가자
+
+* 오태진 - iOS
