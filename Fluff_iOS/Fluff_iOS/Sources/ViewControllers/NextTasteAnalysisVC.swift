@@ -10,6 +10,7 @@ import UIKit
 
 class NextTasteAnalysisVC: UIViewController {
 
+    @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var followTableView: UITableView!
     var images = [UIImage(named: "2019122024421"),
         UIImage(named: "2019122022738"),
@@ -27,11 +28,13 @@ class NextTasteAnalysisVC: UIViewController {
     }
     
     private func initialCompleteButton() {
-        let completeButton = UIButton(frame: CGRect(x: view.center.x, y: view.frame.height - 42, width: view.frame.width - 40, height: (view.frame.width - 40) / 8))
-        completeButton.backgroundColor = UIColor(red: 23/255, green: 23/255, blue: 23/255, alpha: 1.0)
-        completeButton.titleLabel?.textColor = .white
-        completeButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        self.view.addSubview(completeButton)
+        completeButton.makeCornerRounded(radius: completeButton.frame.width / 13.6)
+    }
+    
+    @IBAction func completeSignin(_ sender: Any) {
+        guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? UITabBarController else { return }
+        mainTabbarController.modalPresentationStyle = .fullScreen
+        self.present(mainTabbarController, animated: true, completion: nil)
     }
 }
 
@@ -62,7 +65,7 @@ extension NextTasteAnalysisVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 213
+        return self.view.frame.height / 4.2
     }
 }
 

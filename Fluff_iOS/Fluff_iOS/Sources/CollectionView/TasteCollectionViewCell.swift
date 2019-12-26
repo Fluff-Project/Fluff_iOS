@@ -23,4 +23,8 @@ class TasteCollectionViewCell: UICollectionViewCell {
     func setCoverView() {
         coverView.isHidden = false
     }
+    
+    func hideCoverView() {
+        coverView.isHidden = true
+    }
 }

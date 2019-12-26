@@ -51,10 +51,10 @@ extension ShoppingVC: UICollectionViewDelegate {
     }
 }
 
-extension ShoppingVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let estimateHeight = collectionView.frame.height / 2
-        let estimateWidth = estimateHeight / 2 + 5
-        return CGSize(width: estimateWidth, height: estimateHeight)
-    }
-}
+//extension ShoppingVC: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let estimateHeight = collectionView.frame.height / 2
+//        let estimateWidth = estimateHeight / 2 + 5
+//        return CGSize(width: estimateWidth, height: estimateHeight)
+//    }
+//}

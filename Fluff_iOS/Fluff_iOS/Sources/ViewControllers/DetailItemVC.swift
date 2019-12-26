@@ -36,7 +36,7 @@ class DetailItemVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         detailItemCollectionView.dataSource = self
-        detailItemCollectionView.delegate = self
+//        detailItemCollectionView.delegate = self
         otherItemCollectionView.dataSource = otherItemCollectionViewDataSource
         otherItemCollectionView.delegate = otherItemDelegate
         self.setNavigationBarClear()
@@ -83,8 +83,8 @@ extension DetailItemVC: UICollectionViewDataSource {
     }
 }
 
-extension DetailItemVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-}
+//extension DetailItemVC: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+//    }
+//}

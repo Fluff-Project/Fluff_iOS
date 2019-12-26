@@ -33,6 +33,15 @@ class TasteAnalysisVC: UIViewController {
     
     private func initialButton() {
         selectButton.makeCornerRounded(radius: selectButton.frame.width / 15)
+        selectButton.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func goAnalysisNext(_ sender: Any) {
+        if selectedCount >= 5 {
+            guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
+            nextAnalysisVC.modalPresentationStyle = .fullScreen
+            self.present(nextAnalysisVC, animated: true, completion: nil)
+        }
     }
 }
 
@@ -44,35 +53,43 @@ extension TasteAnalysisVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let tasteCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tasteCell", for: indexPath) as? TasteCollectionViewCell else { return UICollectionViewCell() }
         if isSelected[indexPath.row] { tasteCell.setCoverView() }
+        else { tasteCell.hideCoverView() }
         return tasteCell
     }
 }
 
-extension TasteAnalysisVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = (collectionView.frame.width-50) / 2
-        return CGSize(width: cellWidth, height: cellWidth)
-    }
-}
+//extension TasteAnalysisVC: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let cellWidth = (collectionView.frame.width-50) / 2
+//        return CGSize(width: cellWidth, height: cellWidth)
+//    }
+//}
 
 extension TasteAnalysisVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         guard let selectedCell = collectionView.cellForItem(at: indexPath) as? TasteCollectionViewCell else { return }
         selectedCell.selected(isSelected[indexPath.row])
-        selectedCount += 1
+        
+        if isSelected[indexPath.row] && selectedCount != 0 {
+            selectedCount -= 1
+        } else {
+            selectedCount += 1
+        }
         
         if selectedCount >= 5 {
             selectButton.backgroundColor = .black
             selectButton.titleLabel?.textColor = . white
             selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             selectButton.setTitle("다음", for: .normal)
+            selectButton.isUserInteractionEnabled = true
+        } else {
+            selectButton.backgroundColor = UIColor(red: 183/255, green: 183/255, blue: 183/255, alpha: 1.0)
+            selectButton.titleLabel?.textColor = .white
+            selectButton.setTitle("5개 이상을 선택해주세요", for: .normal)
+            selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            selectButton.isUserInteractionEnabled = false
         }
         
-        if isSelected[indexPath.row] {
-            isSelected[indexPath.row] = false
-        } else {
-            isSelected[indexPath.row] = true
-        }
+        isSelected[indexPath.row] = !isSelected[indexPath.row]
     }
 }

@@ -12,13 +12,18 @@ class MainTabbarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         setTabbarColor()
+        self.delegate = self
     }
     
     private func setTabbarColor() {
         self.tabBar.barTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.94)
         self.tabBar.isTranslucent = false
+    }
+}
+
+extension MainTabbarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
     }
 }
