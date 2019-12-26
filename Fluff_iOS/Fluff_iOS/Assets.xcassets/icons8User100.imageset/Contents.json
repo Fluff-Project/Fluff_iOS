@@ -1,20 +1,6 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
-      "idiom" : "universal",
-      "filename" : "icons8User100.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "icons8User100@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "icons8User100@3x.png",
-=======
       "scale" : "1x",
       "idiom" : "universal",
       "filename" : "icons8User100.png"
@@ -27,7 +13,6 @@
     {
       "filename" : "icons8User100@3x.png",
       "idiom" : "universal",
->>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
       "scale" : "3x"
     }
   ],

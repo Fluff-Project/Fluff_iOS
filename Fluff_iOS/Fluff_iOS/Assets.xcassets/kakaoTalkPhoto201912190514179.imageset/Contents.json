@@ -1,15 +1,9 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
       "idiom" : "universal",
       "filename" : "kakaoTalkPhoto201912190514179.png",
       "scale" : "1x"
-=======
-      "scale" : "1x",
-      "idiom" : "universal",
-      "filename" : "kakaoTalkPhoto201912190514179.png"
->>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
     },
     {
       "idiom" : "universal",
