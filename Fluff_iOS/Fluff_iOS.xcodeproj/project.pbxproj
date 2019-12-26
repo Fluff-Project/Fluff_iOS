@@ -69,7 +69,6 @@
 		A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */; };
 		A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */; };
 		A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860623B28674006FDE79 /* HomeVC.swift */; };
-		A6DF860923B294E0006FDE79 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860823B294E0006FDE79 /* Banner.swift */; };
 		A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860A23B29567006FDE79 /* BannerCell.swift */; };
 		A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */; };
 		A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */; };
@@ -144,7 +143,6 @@
 		A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		A6DF860623B28674006FDE79 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		A6DF860823B294E0006FDE79 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Banner.swift; path = Fluff_iOS/Sources/ViewControllers/Banner.swift; sourceTree = SOURCE_ROOT; };
 		A6DF860A23B29567006FDE79 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "/Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<absolute>"; };
@@ -209,7 +207,6 @@
 		9D79379123B0C17B00A0CD3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A6DF860823B294E0006FDE79 /* Banner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 				9D79382523B227CF00A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
 				9DE13BD323B370580040AEB2 /* MenuCategory.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,
-				A6DF860923B294E0006FDE79 /* Banner.swift in Sources */,
 				9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */,
 				9D79382423B227CF00A0CD3E /* UIViewController+Extensions.swift in Sources */,
 				9D79382223B227CF00A0CD3E /* UIImageView+Extensions.swift in Sources */,
