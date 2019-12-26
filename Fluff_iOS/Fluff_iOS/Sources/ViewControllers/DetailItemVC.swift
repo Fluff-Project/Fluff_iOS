@@ -100,3 +100,5 @@ extension DetailItemVC: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
+
+

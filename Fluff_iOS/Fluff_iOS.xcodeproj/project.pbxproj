@@ -10,6 +10,8 @@
 		9220E422FA1EA1290E06A7A1 /* Pods_Fluff_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */; };
 		9D385C9423B4B81000705218 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */; };
 		9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */; };
+		9D385C9823B53CB100705218 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9723B53CB100705218 /* AuctionVC.swift */; };
+		9D385C9A23B5416F00705218 /* AuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */; };
 		9D468AD023B2BAF800E98500 /* OtherItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */; };
 		9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468AD123B2D89800E98500 /* PurchaseViewController.swift */; };
 		9D70BFCF23B45B320025D22C /* LikeListParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BFCE23B45B320025D22C /* LikeListParentVC.swift */; };
@@ -82,6 +84,8 @@
 		9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
+		9D385C9723B53CB100705218 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
+		9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherItemDelegate.swift; sourceTree = "<group>"; };
 		9D468AD123B2D89800E98500 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		9D70BFCE23B45B320025D22C /* LikeListParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListParentVC.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 				A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */,
 				A6DF860A23B29567006FDE79 /* BannerCell.swift */,
 				9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */,
+				9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				9D70BFD423B468D80025D22C /* LikeTabbarController.swift */,
 				9D70BFD023B463760025D22C /* LikeListTabVC.swift */,
 				9D70BFD223B463D40025D22C /* FollowingListVC.swift */,
+				9D385C9723B53CB100705218 /* AuctionVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -535,10 +541,12 @@
 				9D70BFCF23B45B320025D22C /* LikeListParentVC.swift in Sources */,
 				A64C4F0723B137590066FE7F /* SignUpEmailVC.swift in Sources */,
 				9D7B342E23B2B4E500F1A530 /* OtherItemDataSource.swift in Sources */,
+				9D385C9A23B5416F00705218 /* AuctionCollectionViewCell.swift in Sources */,
 				9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */,
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
 				9D79382123B227CF00A0CD3E /* UITabBar+Extensions.swift in Sources */,
 				9D7937FD23B1751300A0CD3E /* ShoppingVC.swift in Sources */,
+				9D385C9823B53CB100705218 /* AuctionVC.swift in Sources */,
 				9D79381F23B227CF00A0CD3E /* UIButton+Extensions.swift in Sources */,
 				9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */,
 				9D70BFD123B463760025D22C /* LikeListTabVC.swift in Sources */,

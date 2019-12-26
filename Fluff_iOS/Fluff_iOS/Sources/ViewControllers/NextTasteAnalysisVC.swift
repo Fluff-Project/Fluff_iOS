@@ -60,12 +60,8 @@ extension NextTasteAnalysisVC: UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height / 4.2
+        return self.view.frame.height / 4.0
     }
 }
 

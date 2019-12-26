@@ -40,6 +40,7 @@ extension FollowingListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let followingCell = tableView.dequeueReusableCell(withIdentifier: "FollowingCell") as? FollowingTableViewCell else { return UITableViewCell() }
         followingCell.separatorInset = UIEdgeInsets.zero
+        followingCell.setInit()
         followingCell.setFollowButton(isFollow: isFollow[indexPath.row])
         return followingCell
     }
@@ -47,6 +48,6 @@ extension FollowingListVC: UITableViewDataSource {
 
 extension FollowingListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height / 8.73
+        return tableView.frame.height / 7
     }
 }
