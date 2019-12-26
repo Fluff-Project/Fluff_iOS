@@ -2,8 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
+<<<<<<< HEAD
       "filename" : "icons8Magazine100.png",
       "scale" : "1x"
+=======
+      "scale" : "1x",
+      "filename" : "icons8Magazine100.png"
+>>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
     },
     {
       "idiom" : "universal",
@@ -11,8 +16,13 @@
       "scale" : "2x"
     },
     {
+<<<<<<< HEAD
       "idiom" : "universal",
       "filename" : "icons8Magazine100@3x.png",
+=======
+      "filename" : "icons8Magazine100@3x.png",
+      "idiom" : "universal",
+>>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
       "scale" : "3x"
     }
   ],

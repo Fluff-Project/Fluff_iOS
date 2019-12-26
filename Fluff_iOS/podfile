@@ -7,6 +7,10 @@ target 'Fluff_iOS' do
 
   # Pods for Fluff_iOS
   pod 'Alamofire', '~> 4.8.2'
+<<<<<<< HEAD
   pod 'XLPagerTabStrip', '~> 9.0'
   pod 'BEMCheckBox'
+=======
+  pod 'CHIPageControl', '~>0.1.3'
+>>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
 end

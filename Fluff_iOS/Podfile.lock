@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+<<<<<<< HEAD
   - BEMCheckBox (1.4.1)
   - XLPagerTabStrip (9.0.0)
 
@@ -7,10 +8,34 @@ DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - BEMCheckBox
   - XLPagerTabStrip (~> 9.0)
+=======
+  - CHIPageControl (0.1.8):
+    - CHIPageControl/Aji (= 0.1.8)
+    - CHIPageControl/Aleppo (= 0.1.8)
+    - CHIPageControl/Chimayo (= 0.1.8)
+    - CHIPageControl/Fresno (= 0.1.8)
+    - CHIPageControl/Jalapeno (= 0.1.8)
+    - CHIPageControl/Jaloro (= 0.1.8)
+    - CHIPageControl/Paprika (= 0.1.8)
+    - CHIPageControl/Puya (= 0.1.8)
+  - CHIPageControl/Aji (0.1.8)
+  - CHIPageControl/Aleppo (0.1.8)
+  - CHIPageControl/Chimayo (0.1.8)
+  - CHIPageControl/Fresno (0.1.8)
+  - CHIPageControl/Jalapeno (0.1.8)
+  - CHIPageControl/Jaloro (0.1.8)
+  - CHIPageControl/Paprika (0.1.8)
+  - CHIPageControl/Puya (0.1.8)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.8.2)
+  - CHIPageControl (~> 0.1.3)
+>>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
 
 SPEC REPOS:
   trunk:
     - Alamofire
+<<<<<<< HEAD
     - BEMCheckBox
     - XLPagerTabStrip
 
@@ -20,5 +45,14 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
 PODFILE CHECKSUM: 14daf3a0a8fffcb44e0ac3a82b297d9f86f59273
+=======
+    - CHIPageControl
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CHIPageControl: 76b35c8309d8dd155e869c109cc6ffc0aaa465ff
+
+PODFILE CHECKSUM: 6c6f07380cd4af543f3bf2eda71f2f2c76dffefd
+>>>>>>> d4763bbb872d9b6e3f648c37ed763d3527054022
 
 COCOAPODS: 1.8.4

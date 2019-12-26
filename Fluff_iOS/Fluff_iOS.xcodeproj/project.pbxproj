@@ -67,6 +67,21 @@
 		A6D2863E23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */; };
 		A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */; };
 		A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */; };
+
+
+		A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860623B28674006FDE79 /* HomeVC.swift */; };
+		A6DF860923B294E0006FDE79 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860823B294E0006FDE79 /* Banner.swift */; };
+		A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860A23B29567006FDE79 /* BannerCell.swift */; };
+		A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */; };
+		A6F5433823B15DA50006FE9E /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433023B15DA50006FE9E /* UITabBar+Extensions.swift */; };
+		A6F5433923B15DA50006FE9E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433123B15DA50006FE9E /* UIColor+Extensions.swift */; };
+		A6F5433A23B15DA50006FE9E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433223B15DA50006FE9E /* UIViewController+Extensions.swift */; };
+		A6F5433B23B15DA50006FE9E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433323B15DA50006FE9E /* UIImageView+Extensions.swift */; };
+		A6F5433C23B15DA50006FE9E /* NSNotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433423B15DA50006FE9E /* NSNotificationName+Extensions.swift */; };
+		A6F5433D23B15DA50006FE9E /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433523B15DA50006FE9E /* UIButton+Extensions.swift */; };
+		A6F5433E23B15DA50006FE9E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433623B15DA50006FE9E /* UIView+Extensions.swift */; };
+		A6F5433F23B15DA50006FE9E /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */; };
+
 		A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */; };
 		A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */; };
 		A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */; };
@@ -137,6 +152,21 @@
 		A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Light.otf"; sourceTree = "<group>"; };
 		A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+
+
+		A6DF860623B28674006FDE79 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A6DF860823B294E0006FDE79 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Banner.swift; path = Fluff_iOS/Sources/ViewControllers/Banner.swift; sourceTree = SOURCE_ROOT; };
+		A6DF860A23B29567006FDE79 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6F5433023B15DA50006FE9E /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITabBar+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UITabBar+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433123B15DA50006FE9E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433223B15DA50006FE9E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433323B15DA50006FE9E /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433423B15DA50006FE9E /* NSNotificationName+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSNotificationName+Extensions.swift"; path = "../../../../../../Downloads/아카이브/NSNotificationName+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433523B15DA50006FE9E /* UIButton+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433623B15DA50006FE9E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+
 		A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordVC.swift; sourceTree = "<group>"; };
 		A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
 		A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGenderVC.swift; sourceTree = "<group>"; };
@@ -190,6 +220,7 @@
 		9D79379123B0C17B00A0CD3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6DF860823B294E0006FDE79 /* Banner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,12 +238,17 @@
 			children = (
 				9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */,
 				9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */,
+
 				9D79380023B1795D00A0CD3E /* ShopCollectionViewCell.swift */,
 				9D7B342923B28BE000F1A530 /* DetailItemCollectionViewCell.swift */,
 				9D7B342D23B2B4E500F1A530 /* OtherItemDataSource.swift */,
 				9D7B342F23B2B7F200F1A530 /* OtherItemCollectionViewCell.swift */,
 				9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */,
 				9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */,
+
+				A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */,
+				A6DF860A23B29567006FDE79 /* BannerCell.swift */,
+
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -299,6 +335,7 @@
 				A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */,
 				A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */,
 				A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */,
+				A6DF860623B28674006FDE79 /* HomeVC.swift */,
 				A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */,
 				9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */,
 				9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */,
@@ -526,10 +563,19 @@
 				9D79382523B227CF00A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
 				9DE13BD323B370580040AEB2 /* MenuCategory.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,
+				A6DF860923B294E0006FDE79 /* Banner.swift in Sources */,
 				9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */,
+
 				9D79382423B227CF00A0CD3E /* UIViewController+Extensions.swift in Sources */,
-				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
+
 				9D79382223B227CF00A0CD3E /* UIImageView+Extensions.swift in Sources */,
+
+				A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */,
+				A6F5433F23B15DA50006FE9E /* UINavigationBar+Extensions.swift in Sources */,
+				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
+				A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */,
+				A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */,
+
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
 				9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */,
 				A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */,
