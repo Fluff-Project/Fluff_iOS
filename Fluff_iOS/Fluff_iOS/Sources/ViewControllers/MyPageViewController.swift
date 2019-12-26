@@ -50,7 +50,12 @@ class MyPageViewController: UIViewController {
     
     private func initialNavi() {
         self.navigationController?.navigationBar.tintColor = UIColor(red: 58/255, green: 64/255, blue: 71/255, alpha: 1.0)
-        self.navigationController?.navigationBar.isHidden = true
+        self.setNavigationBarClear()
+    }
+    
+    @IBAction func goLikeListView(_ sender: Any) {
+        guard let likeListVC = self.storyboard?.instantiateViewController(identifier: "LikeListParentVC") as? LikeListParentVC else { return }
+        self.navigationController?.pushViewController(likeListVC, animated: true)
     }
 }
 

@@ -13,8 +13,28 @@ import UIKit
 
 extension UIColor {
     
-    // zepplin으로 색상 따온 코드 넣기
-    @nonobjc class var lightGreenishBlue: UIColor {
-      return UIColor(red: 114.0 / 255.0, green: 235.0 / 255.0, blue: 200.0 / 255.0, alpha: 1.0)
+    // fluff 검은 색상
+    @nonobjc class var black: UIColor {
+      return UIColor(white: 23.0 / 255.0, alpha: 1.0)
     }
+
+    // fluff 화이트 색상
+    @nonobjc class var fluffWhite: UIColor {
+      return UIColor(white: 248.0 / 255.0, alpha: 1.0)
+    }
+
+    @nonobjc class var white: UIColor {
+      return UIColor(white: 1.0, alpha: 1.0)
+    }
+
+    // greyishBrown 색상
+    @nonobjc class var greyishBrown: UIColor {
+      return UIColor(white: 64.0 / 255.0, alpha: 1.0)
+    }
+
+    // disableGrey 색상
+    @nonobjc class var disabledGrey: UIColor {
+      return UIColor(white: 219.0 / 255.0, alpha: 1.0)
+    }
+
 }

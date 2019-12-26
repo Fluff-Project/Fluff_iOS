@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.8.2)
   - BEMCheckBox (1.4.1)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - BEMCheckBox
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - BEMCheckBox
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: aca4eed7f9ade0b9d52a215da79361126a1ff345
+PODFILE CHECKSUM: 14daf3a0a8fffcb44e0ac3a82b297d9f86f59273
 
 COCOAPODS: 1.8.4
