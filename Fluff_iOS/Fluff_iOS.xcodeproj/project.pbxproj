@@ -41,6 +41,10 @@
 		A6D2863E23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */; };
 		A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */; };
 		A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */; };
+		A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860623B28674006FDE79 /* HomeVC.swift */; };
+		A6DF860923B294E0006FDE79 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860823B294E0006FDE79 /* Banner.swift */; };
+		A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860A23B29567006FDE79 /* BannerCell.swift */; };
+		A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */; };
 		A6F5433823B15DA50006FE9E /* UITabBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433023B15DA50006FE9E /* UITabBar+Extensions.swift */; };
 		A6F5433923B15DA50006FE9E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433123B15DA50006FE9E /* UIColor+Extensions.swift */; };
 		A6F5433A23B15DA50006FE9E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5433223B15DA50006FE9E /* UIViewController+Extensions.swift */; };
@@ -93,6 +97,10 @@
 		A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Light.otf"; sourceTree = "<group>"; };
 		A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		A6DF860623B28674006FDE79 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A6DF860823B294E0006FDE79 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Banner.swift; path = Fluff_iOS/Sources/ViewControllers/Banner.swift; sourceTree = SOURCE_ROOT; };
+		A6DF860A23B29567006FDE79 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6F5433023B15DA50006FE9E /* UITabBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITabBar+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UITabBar+Extensions.swift"; sourceTree = "<group>"; };
 		A6F5433123B15DA50006FE9E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		A6F5433223B15DA50006FE9E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "../../../../../../Downloads/아카이브/UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 		9D79379123B0C17B00A0CD3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A6DF860823B294E0006FDE79 /* Banner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +180,8 @@
 			children = (
 				9D7937DF23B11F1D00A0CD3E /* TasteCollectionViewCell.swift */,
 				9D7937F823B1455400A0CD3E /* FluvCollectionViewCell.swift */,
+				A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */,
+				A6DF860A23B29567006FDE79 /* BannerCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */,
 				A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */,
 				A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */,
+				A6DF860623B28674006FDE79 /* HomeVC.swift */,
 				A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */,
 				9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */,
 				9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */,
@@ -449,9 +461,13 @@
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,
+				A6DF860923B294E0006FDE79 /* Banner.swift in Sources */,
 				9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */,
+				A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */,
 				A6F5433F23B15DA50006FE9E /* UINavigationBar+Extensions.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
+				A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */,
+				A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
 				A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */,
 				A6F5433A23B15DA50006FE9E /* UIViewController+Extensions.swift in Sources */,
