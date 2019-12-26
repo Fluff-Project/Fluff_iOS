@@ -51,10 +51,22 @@ extension ShoppingVC: UICollectionViewDelegate {
     }
 }
 
-//extension ShoppingVC: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let estimateHeight = collectionView.frame.height / 2
-//        let estimateWidth = estimateHeight / 2 + 5
-//        return CGSize(width: estimateWidth, height: estimateHeight)
-//    }
-//}
+extension ShoppingVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let estimateHeight = collectionView.frame.height / 2
+        let estimateWidth = (collectionView.frame.width - collectionView.frame.width / 14.42) / 2
+        return CGSize(width: estimateWidth, height: estimateHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return collectionView.frame.width / 14.42
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 25
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+    }
+}

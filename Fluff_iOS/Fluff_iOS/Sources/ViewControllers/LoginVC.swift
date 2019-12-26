@@ -61,7 +61,7 @@ class LoginVC: UIViewController {
         }
         
         loginEstimateX = snsButton.frame.origin.x
-        loginEstimateY = snsButton.frame.origin.y - 300
+        loginEstimateY = snsButton.frame.origin.y - 280
         pwdEstimateY = loginButton.frame.origin.y - 250
         estimateSize = loginButton.frame.size
     }
@@ -78,10 +78,16 @@ class LoginVC: UIViewController {
         snsButton.layer.borderColor = UIColor.white.cgColor
     }
     
+    @IBAction func doLogin(_ sender: Any) {
+        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+        tasteAnalysisVC.modalPresentationStyle = .fullScreen
+        self.present(tasteAnalysisVC, animated: true, completion: nil)
+    }
+    
     @IBAction func animateLogin(_ sender: Any) {
         loginButton.backgroundColor = .white
         
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.signinButton.alpha = 0
             self.backgroundImageView.alpha = 1
             self.loginLabel.alpha = 0
@@ -89,7 +95,7 @@ class LoginVC: UIViewController {
             self.logoImageView.transform = CGAffineTransform(translationX: 0, y: -150)
             self.logoImageView.frame.size = CGSize(width: self.logoWidth-20, height: self.logoHeight-20)
             self.loginButton.transform = CGAffineTransform(translationX: 0, y: -250)
-            self.snsButton.transform = CGAffineTransform(translationX: 0, y: -300)
+            self.snsButton.transform = CGAffineTransform(translationX: 0, y: -280)
             
             self.doLoginButton.alpha = 1
             self.idPwdSearchButton.alpha = 1

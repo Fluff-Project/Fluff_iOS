@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9220E422FA1EA1290E06A7A1 /* Pods_Fluff_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */; };
+		9D385C9423B4B81000705218 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */; };
+		9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */; };
 		9D468AD023B2BAF800E98500 /* OtherItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */; };
 		9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468AD123B2D89800E98500 /* PurchaseViewController.swift */; };
 		9D70BFCF23B45B320025D22C /* LikeListParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BFCE23B45B320025D22C /* LikeListParentVC.swift */; };
@@ -79,6 +81,8 @@
 		10DBC2AAADF3EADBBB9EF552 /* Pods-Fluff_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff_iOS.release.xcconfig"; path = "Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5EE6AEDF89FB3A9A89FFCD46 /* Pods-Fluff_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherItemDelegate.swift; sourceTree = "<group>"; };
 		9D468AD123B2D89800E98500 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		9D70BFCE23B45B320025D22C /* LikeListParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListParentVC.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */,
 				A6DF860E23B33DC9006FDE79 /* TodayCollectionViewCell.swift */,
 				A6DF860A23B29567006FDE79 /* BannerCell.swift */,
+				9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				9D7937F223B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift */,
 				9D7937F423B1350C00A0CD3E /* AnalysisTableViewCell.swift */,
 				9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */,
+				9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D385C9423B4B81000705218 /* LikeCollectionViewCell.swift in Sources */,
 				9D79380123B1795D00A0CD3E /* ShopCollectionViewCell.swift in Sources */,
 				9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */,
 				9D70BFD323B463D40025D22C /* FollowingListVC.swift in Sources */,
@@ -556,6 +563,7 @@
 				9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */,
 				A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */,
 				9D7B343023B2B7F200F1A530 /* OtherItemCollectionViewCell.swift in Sources */,
+				9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */,
 				A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */,
 				9D7937F523B1350C00A0CD3E /* AnalysisTableViewCell.swift in Sources */,
 				9D468AD023B2BAF800E98500 /* OtherItemDelegate.swift in Sources */,

@@ -16,6 +16,10 @@ class LikeListParentVC: UIViewController {
         initNavi()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+    }
+    
     private func initNavi() {
         self.navigationController?.navigationBar.topItem?.title = ""
     }

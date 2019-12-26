@@ -34,6 +34,10 @@ class MyPageViewController: UIViewController {
         myPageButtonTableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.setNavigationBarClear()
+    }
+    
     private func setInitButton() {
         makeShopButton.makeCornerRounded(radius: makeShopButton.frame.width / 10)
     }
@@ -50,7 +54,6 @@ class MyPageViewController: UIViewController {
     
     private func initialNavi() {
         self.navigationController?.navigationBar.tintColor = UIColor(red: 58/255, green: 64/255, blue: 71/255, alpha: 1.0)
-        self.setNavigationBarClear()
     }
     
     @IBAction func goLikeListView(_ sender: Any) {
