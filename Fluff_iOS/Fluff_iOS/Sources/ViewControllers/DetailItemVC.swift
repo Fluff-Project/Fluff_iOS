@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CHIPageControl
 
 class DetailItemVC: UIViewController {
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
@@ -22,11 +23,11 @@ class DetailItemVC: UIViewController {
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var purchaseButton: UIButton!
     @IBOutlet weak var heartButton: UIButton!
-    
+    @IBOutlet weak var pageControl: CHIPageControlJalapeno!
     @IBOutlet weak var followButton: UIButton!
-    
     @IBOutlet weak var otherItemCollectionView: UICollectionView!
     
+    @IBOutlet weak var pageControlConstraint: NSLayoutConstraint!
     private var isClicked: Bool = false
     
     private var otherItemCollectionViewDataSource: OtherItemDataSource = OtherItemDataSource(otherItems: ["20191217115522", "20191218120524", "20191218120650"])
@@ -35,6 +36,7 @@ class DetailItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        initialButton()
         detailItemCollectionView.dataSource = self
         detailItemCollectionView.delegate = self
         otherItemCollectionView.dataSource = otherItemCollectionViewDataSource
@@ -42,16 +44,13 @@ class DetailItemVC: UIViewController {
         self.setNavigationBarClear()
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
-        initalButton()
+        pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 65
+        
     }
     
-    private func initalButton() {
+    private func initialButton() {
         followButton.makeCornerRounded(radius: followButton.frame.width / 7)
         purchaseButton.makeCornerRounded(radius: purchaseButton.frame.width / 13)
-    }
-    
-    private func initialNavi() {
-        
     }
     
     @IBAction func clickPurchase(_ sender: Any) {
@@ -83,6 +82,13 @@ extension DetailItemVC: UICollectionViewDataSource {
     }
 }
 
+extension DetailItemVC: UICollectionViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        pageControl.set(progress: page, animated: true)
+    }
+}
+
 extension DetailItemVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
@@ -100,5 +106,4 @@ extension DetailItemVC: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
-
 

@@ -12,6 +12,7 @@
 		9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */; };
 		9D385C9823B53CB100705218 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9723B53CB100705218 /* AuctionVC.swift */; };
 		9D385C9A23B5416F00705218 /* AuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */; };
+		9D385C9C23B5642300705218 /* AuctionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9B23B5642300705218 /* AuctionDetailVC.swift */; };
 		9D468AD023B2BAF800E98500 /* OtherItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */; };
 		9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468AD123B2D89800E98500 /* PurchaseViewController.swift */; };
 		9D70BFCF23B45B320025D22C /* LikeListParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D70BFCE23B45B320025D22C /* LikeListParentVC.swift */; };
@@ -86,6 +87,7 @@
 		9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		9D385C9723B53CB100705218 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
 		9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D385C9B23B5642300705218 /* AuctionDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionDetailVC.swift; sourceTree = "<group>"; };
 		9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherItemDelegate.swift; sourceTree = "<group>"; };
 		9D468AD123B2D89800E98500 /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		9D70BFCE23B45B320025D22C /* LikeListParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListParentVC.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				9D70BFD023B463760025D22C /* LikeListTabVC.swift */,
 				9D70BFD223B463D40025D22C /* FollowingListVC.swift */,
 				9D385C9723B53CB100705218 /* AuctionVC.swift */,
+				9D385C9B23B5642300705218 /* AuctionDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D385C9423B4B81000705218 /* LikeCollectionViewCell.swift in Sources */,
+				9D385C9C23B5642300705218 /* AuctionDetailVC.swift in Sources */,
 				9D79380123B1795D00A0CD3E /* ShopCollectionViewCell.swift in Sources */,
 				9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */,
 				9D70BFD323B463D40025D22C /* FollowingListVC.swift in Sources */,

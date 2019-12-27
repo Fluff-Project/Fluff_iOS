@@ -12,7 +12,7 @@ class AuctionVC: UIViewController {
 
     @IBOutlet weak var auctionCollectionView: UICollectionView!
     
-    private var auctionImage: [String] = ["4Bc14880E1F64E48739Ca6D291Dad9C6", "6Efd6954345E414E5063Aadfda3C3E81", "13924566178445931000"]
+    private var auctionImage: [String] = ["auctionimage1", "auctionimage2", "auctionimage3"]
     private var auctionPrice: [String] = ["260,000", "320,000", "300,000"]
     private var timer: [String] = ["12:32:52", "13:42:55", "00:05:00"]
     
@@ -21,6 +21,10 @@ class AuctionVC: UIViewController {
         // Do any additional setup after loading the view.
         auctionCollectionView.delegate = self
         auctionCollectionView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
 }
 
@@ -35,6 +39,13 @@ extension AuctionVC: UICollectionViewDataSource {
         
         auctionCell.setInit(auctionImage: auctionImage, timer: timer[indexPath.row], currentPrice: auctionPrice[indexPath.row], auctionItemName: "샤넬 1990's 트위드 자켓")
         return auctionCell
+    }
+}
+
+extension AuctionVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let auctionDetailVC = self.storyboard?.instantiateViewController(identifier: "auctionDetailVC") as? AuctionDetailVC else { return }
+        self.navigationController?.pushViewController(auctionDetailVC, animated: true)
     }
 }
 
