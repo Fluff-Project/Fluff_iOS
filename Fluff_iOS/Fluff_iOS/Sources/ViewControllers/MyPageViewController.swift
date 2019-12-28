@@ -40,6 +40,7 @@ class MyPageViewController: UIViewController {
     
     private func setInitButton() {
         makeShopButton.makeCornerRounded(radius: makeShopButton.frame.width / 10)
+        makeShopButton.makeShadow(opacity: 0.4, radius: 7)
     }
     
     private func setInitTableView() {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MenuCategory: Int {
+enum MenuCategory: Int, CaseIterable {
     case deliveryCheck = 0
     case reviseInformation = 1
     case tasteResetting = 2
