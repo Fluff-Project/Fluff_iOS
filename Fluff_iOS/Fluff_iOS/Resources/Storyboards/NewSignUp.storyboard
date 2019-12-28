@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4AC-Ry-in5">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="KoPubWorld Dotum_Pro Medium.otf">
+            <string>KoPubWorldDotumPM</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="NeY-RV-drQ">
+            <objects>
+                <viewController id="4AC-Ry-in5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fh7-kA-bWB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6G-NO-pPn">
+                                <rect key="frame" x="17" y="62" width="21.333333333333329" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="s6G-NO-pPn" secondAttribute="height" multiplier="20:17" id="RhS-4k-3Yc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="10"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg8-83-h5g">
+                                <rect key="frame" x="26" y="135" width="45" height="27"/>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Enq-b9-4QX">
+                                <rect key="frame" x="16" y="653" width="344" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="17"/>
+                                <state key="normal" title="다음">
+                                    <color key="titleColor" white="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-XX-iQX">
+                                <rect key="frame" x="32" y="636" width="307" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hX3-lV-E56">
+                                <rect key="frame" x="15.666666666666657" y="168" width="344" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hX3-lV-E56" secondAttribute="height" multiplier="86:11" id="2fb-1W-Umm"/>
+                                    <constraint firstAttribute="width" constant="344" id="jyB-lr-Xrc"/>
+                                    <constraint firstAttribute="width" secondItem="hX3-lV-E56" secondAttribute="height" multiplier="86:11" id="m5X-IO-wkN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="s6G-NO-pPn" firstAttribute="leading" secondItem="9b7-Js-YhE" secondAttribute="leading" constant="17" id="0dx-J7-ThK"/>
+                            <constraint firstItem="Sg8-83-h5g" firstAttribute="leading" secondItem="9b7-Js-YhE" secondAttribute="leading" constant="26" id="Dug-zS-pad"/>
+                            <constraint firstItem="hX3-lV-E56" firstAttribute="top" secondItem="Sg8-83-h5g" secondAttribute="bottom" constant="6" id="EG7-ol-AMJ"/>
+                            <constraint firstItem="hX3-lV-E56" firstAttribute="centerX" secondItem="9b7-Js-YhE" secondAttribute="centerX" id="hKB-Tr-gND"/>
+                            <constraint firstItem="Sg8-83-h5g" firstAttribute="top" secondItem="9b7-Js-YhE" secondAttribute="top" constant="91" id="io9-sb-ryB"/>
+                            <constraint firstItem="s6G-NO-pPn" firstAttribute="top" secondItem="9b7-Js-YhE" secondAttribute="top" constant="18" id="vuH-HA-YUi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9b7-Js-YhE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mao-zc-n5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="-108"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="10" width="16" height="16"/>
+    </resources>
+</document>
