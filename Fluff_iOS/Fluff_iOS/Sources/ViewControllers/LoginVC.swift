@@ -138,6 +138,15 @@ class LoginVC: UIViewController {
             self.view.addSubview(self.pwdTextField!)
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        if identifier == "signinSegue" {
+            let vc = segue.destination
+            vc.modalPresentationStyle = .fullScreen
+        }
+        
+    }
 }
 
 extension LoginVC {

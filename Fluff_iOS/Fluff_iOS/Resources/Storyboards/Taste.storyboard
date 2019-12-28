@@ -378,7 +378,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JJX-9f-Eid" kind="show" id="oM3-uz-7hU"/>
+                                    <segue destination="JJX-9f-Eid" kind="show" identifier="signinSegue" id="oM3-uz-7hU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="페이스북으로 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qar-pJ-8Na">
@@ -465,10 +465,10 @@
             </objects>
             <point key="canvasLocation" x="318.84057971014494" y="511.60714285714283"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--SignupVC-->
         <scene sceneID="RO0-xC-XDp">
             <objects>
-                <viewControllerPlaceholder id="JJX-9f-Eid" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="SignupVC" id="JJX-9f-Eid" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="09s-JS-pOA"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPx-6P-3r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -589,14 +589,14 @@
                                 <rect key="frame" x="20" y="106" width="335" height="30.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="868-A7-557">
-                                        <rect key="frame" x="16" y="-4.6666666666666714" width="40" height="40"/>
+                                        <rect key="frame" x="16" y="5.3333333333333286" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="868-A7-557" secondAttribute="height" multiplier="1:1" id="eeB-45-wKh"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="searchIcon"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-c2-Y38">
-                                        <rect key="frame" x="82" y="6.6666666666666714" width="238" height="17"/>
+                                        <rect key="frame" x="62" y="6.6666666666666714" width="258" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -985,7 +985,7 @@
                                                     <constraint firstItem="XQB-Uo-s3z" firstAttribute="height" secondItem="tqk-Sd-Reb" secondAttribute="height" multiplier="0.59" id="xBH-lF-egq"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="185" y="374" width="44" height="8"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -1703,7 +1703,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="238" id="zew-a5-kJJ"/>
                                                 </constraints>
-                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2156,22 +2156,6 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
             </objects>
             <point key="canvasLocation" x="2852" y="1954"/>
         </scene>
-        <!--홈-->
-        <scene sceneID="F7d-gz-Lni">
-            <objects>
-                <viewController id="2BY-A7-fVP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="se3-n9-tIG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="b6l-P8-m4Z"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="icons8Home1002" id="g3w-aR-pne"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tib-5C-gdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3692.753623188406" y="478.79464285714283"/>
-        </scene>
         <!--Main Tabbar Controller-->
         <scene sceneID="Yt8-4K-ab2">
             <objects>
@@ -2184,7 +2168,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2BY-A7-fVP" kind="relationship" relationship="viewControllers" id="J6K-pf-RU2"/>
+                        <segue destination="E9r-pG-3JZ" kind="relationship" relationship="viewControllers" id="J6K-pf-RU2"/>
                         <segue destination="Zba-BI-XHw" kind="relationship" relationship="viewControllers" id="wT1-WL-SIb"/>
                         <segue destination="9y8-bM-KII" kind="relationship" relationship="viewControllers" id="qET-gw-rl1"/>
                         <segue destination="AYa-Pe-i7h" kind="relationship" relationship="viewControllers" id="pml-oI-gNJ"/>
@@ -2491,6 +2475,35 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aG6-Ro-EFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104.8" y="1200.7389162561576"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="B5c-1b-bE7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9r-pG-3JZ" customClass="HomeNavigationVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="icons8Home1002" id="g3w-aR-pne"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GNv-Lw-nk0">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QqE-nu-Hhe" kind="relationship" relationship="rootViewController" id="ynL-LY-w0w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtN-Xr-h8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4028" y="478.81773399014781"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="ett-eE-hJG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="HomeVC" id="QqE-nu-Hhe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xOZ-Tj-WT0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tcb-tr-WAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4681" y="479"/>
         </scene>
     </scenes>
     <resources>

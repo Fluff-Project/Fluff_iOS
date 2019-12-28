@@ -29,7 +29,6 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
         let sCoreExtraLight = UIFont(name: "S-CoreDream-2ExtraLight", size: 24)
         let forYou: String = "당신을 위한 "
@@ -79,6 +78,11 @@ class HomeVC: UIViewController {
 
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
 
 }
