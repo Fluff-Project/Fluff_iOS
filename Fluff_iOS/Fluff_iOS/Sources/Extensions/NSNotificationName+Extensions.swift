@@ -12,4 +12,5 @@ import UIKit
 extension NSNotification.Name {
     static let clickApplyButton = NSNotification.Name("clickApplyButton")
     static let selectedDetailCategory = NSNotification.Name("selectedDetailCategory")
+    static let panFilterView = NSNotification.Name("panFilterView")
 }

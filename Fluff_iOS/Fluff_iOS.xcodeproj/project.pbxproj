@@ -53,6 +53,9 @@
 		9D7B342A23B28BE000F1A530 /* DetailItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B342923B28BE000F1A530 /* DetailItemCollectionViewCell.swift */; };
 		9D7B342E23B2B4E500F1A530 /* OtherItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B342D23B2B4E500F1A530 /* OtherItemDataSource.swift */; };
 		9D7B343023B2B7F200F1A530 /* OtherItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7B342F23B2B7F200F1A530 /* OtherItemCollectionViewCell.swift */; };
+		9D84B12223B920070019C7D4 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84B12123B920070019C7D4 /* CartVC.swift */; };
+		9D84B12423B938000019C7D4 /* CartListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84B12323B938000019C7D4 /* CartListTableViewCell.swift */; };
+		9D84B12623B9413F0019C7D4 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84B12523B9413F0019C7D4 /* CartItemCollectionViewCell.swift */; };
 		9DD73AF623B75A2E00E1DB97 /* HomeNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD73AF523B75A2E00E1DB97 /* HomeNavigationVC.swift */; };
 		9DD73AF823B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD73AF723B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift */; };
 		9DD73AFB23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD73AF923B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift */; };
@@ -153,6 +156,9 @@
 		9D7B342923B28BE000F1A530 /* DetailItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D7B342D23B2B4E500F1A530 /* OtherItemDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherItemDataSource.swift; sourceTree = "<group>"; };
 		9D7B342F23B2B7F200F1A530 /* OtherItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		9D84B12123B920070019C7D4 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		9D84B12323B938000019C7D4 /* CartListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartListTableViewCell.swift; sourceTree = "<group>"; };
+		9D84B12523B9413F0019C7D4 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD73AF523B75A2E00E1DB97 /* HomeNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationVC.swift; sourceTree = "<group>"; };
 		9DD73AF723B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD73AF923B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -299,13 +305,11 @@
 				9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */,
 				9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */,
 				9D5676EF23B6AEC500720F06 /* CategoryCollectionViewCell.swift */,
-
 				9DD73AF923B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift */,
 				9DD73AF723B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift */,
 				9D705A9423B7D30E00097FCF /* DetailCategoryDataSource.swift */,
-
 				A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */,
-
+				9D84B12523B9413F0019C7D4 /* CartItemCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -319,6 +323,7 @@
 				9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */,
 				9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */,
 				9D705A9E23B8AB5200097FCF /* DeliveryListTableViewCell.swift */,
+				9D84B12323B938000019C7D4 /* CartListTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				9D705A9823B8935900097FCF /* AuctionDetailVC.swift */,
 				9D705A9C23B8AA9A00097FCF /* CheckDeliveryVC.swift */,
 				9D705AA023B8BCE100097FCF /* MyInfoChangeVC.swift */,
+				9D84B12123B920070019C7D4 /* CartVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				9D705A9923B8935900097FCF /* AuctionDetailVC.swift in Sources */,
 				9D79382323B227CF00A0CD3E /* UIColor+Extensions.swift in Sources */,
 				9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */,
+				9D84B12623B9413F0019C7D4 /* CartItemCollectionViewCell.swift in Sources */,
 				9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */,
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,
@@ -648,6 +655,7 @@
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
 				9D79382123B227CF00A0CD3E /* UITabBar+Extensions.swift in Sources */,
 				A6DF861623B61748006FDE79 /* HowFluvCollectionViewCell.swift in Sources */,
+				9D84B12423B938000019C7D4 /* CartListTableViewCell.swift in Sources */,
 				9D7937FD23B1751300A0CD3E /* ShoppingVC.swift in Sources */,
 				9D385C9823B53CB100705218 /* AuctionVC.swift in Sources */,
 				9D79381F23B227CF00A0CD3E /* UIButton+Extensions.swift in Sources */,
@@ -658,6 +666,7 @@
 				A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				9D705A9523B7D30E00097FCF /* DetailCategoryDataSource.swift in Sources */,
+				9D84B12223B920070019C7D4 /* CartVC.swift in Sources */,
 				9D5676F123B6AEC500720F06 /* CategoryCollectionViewCell.swift in Sources */,
 				9D79382523B227CF00A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
 				9DD73AF823B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift in Sources */,

@@ -48,8 +48,6 @@ class DetailCategoryDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let detailFilterCell = collectionView.cellForItem(at: indexPath) as? DetailCategoryCollectionViewCell else { return }
         
-        print(indexPath.row)
-    
         if isSelectedDetailCategory[indexPath.row] {
             isSelectedDetailCategory[indexPath.row] = false
             detailFilterCell.setNotSelected()

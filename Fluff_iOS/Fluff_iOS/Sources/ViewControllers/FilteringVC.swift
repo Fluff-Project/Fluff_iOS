@@ -61,8 +61,14 @@ class FilteringVC: UIViewController {
     
     private func setSwipeArea() {
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(hideView))
-        swipeGesture.direction = .down
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panView))
+        swipeArea.addGestureRecognizer(panGesture)
         swipeArea.addGestureRecognizer(swipeGesture)
+        swipeGesture.direction = .down
+    }
+    
+    @objc func panView(recognizer: UIPanGestureRecognizer) {
+//        NotificationCenter.default.post(name: .panFilterView, object: nil, userInfo: <#T##[AnyHashable : Any]?#>)
     }
     
     @objc func hideView() {
@@ -209,7 +215,20 @@ class FilteringVC: UIViewController {
     }
     
     @IBAction func clickApply(_ sender: Any) {
-        NotificationCenter.default.post(name: .clickApplyButton, object: nil, userInfo: nil)
+        var filterCount: Int = 0
+        isSelectedColor.forEach {
+            if $0 { filterCount += 1 }
+        }
+        isSelectedCategory.forEach {
+            if $0 { filterCount += 1 }
+        }
+        isSelectedDetailCategory.forEach {
+            if $0 { filterCount += 1 }
+        }
+        isSelectedSize.forEach {
+            if $0 { filterCount += 1 }
+        }
+        NotificationCenter.default.post(name: .clickApplyButton, object: nil, userInfo: ["count": filterCount])
     }
 }
 
@@ -340,8 +359,10 @@ extension FilteringVC {
     }
     
     @objc func setSelectedDetailCategory(_ notification: NSNotification) {
-        guard let selectedIndex = notification.userInfo?["index"] as? Int else { return }
+        guard let selectedIndex = notification.userInfo?["selectedIndex"] as? Int else { return }
         guard let isSelected = notification.userInfo?["isSelected"] as? Bool else { return }
+        print(selectedIndex)
+        print(isSelected)
         isSelectedDetailCategory[selectedIndex] = isSelected
     }
 }

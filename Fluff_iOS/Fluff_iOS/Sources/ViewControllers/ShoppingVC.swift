@@ -17,12 +17,16 @@ class ShoppingVC: UIViewController {
     private var filteringVC: FilteringVC!
     private var transparentView: UIView!
     private var coverBlurView: UIVisualEffectView!
-
+    
+    @IBOutlet weak var filterButton: UIButton!
+    
+    private var filterCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addObserver()
-        initialSearch()
+        initButton()
         shoppingCollectionView.dataSource = self
         shoppingCollectionView.delegate = self
         self.setNavigationBarClear()
@@ -37,6 +41,13 @@ class ShoppingVC: UIViewController {
         self.filteringVC.view.removeFromSuperview()
         self.transparentView.removeFromSuperview()
         self.coverBlurView.removeFromSuperview()
+    }
+    
+    private func initButton() {
+        filterButton.backgroundColor = UIColor(red: 23/255, green: 23/255, blue: 23/255, alpha: 1)
+        filterButton.setTitle("필터", for: .normal)
+        filterButton.makeCornerRounded(radius: filterButton.frame.width / 6)
+        filterButton.makeShadow(opacity: 0.16, radius: 6)
     }
     
     private func initFilterfing() {
@@ -73,12 +84,6 @@ class ShoppingVC: UIViewController {
         }, completion: nil)
     }
     
-    private func initialSearch() {
-        backgroundSearchView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-        backgroundSearchView.makeCornerRounded(radius: backgroundSearchView.frame.width / 20)
-        searchTextField.backgroundColor = .clear
-    }
-    
     @IBAction func slideupFilteringView(_ sender: Any) {
         transparentView.alpha = 1
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
@@ -94,6 +99,9 @@ extension ShoppingVC {
     }
     
     @objc func applyFilter(_ notification: NSNotification) {
+        guard let filterCount = notification.userInfo?["count"] as? Int else { return }
+        if filterCount == 0 { filterButton.setTitle("필터", for: .normal) }
+        else { filterButton.setTitle("필터 (\(filterCount))", for: .normal) }
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.coverBlurView.transform = .identity
             self.filteringVC.view.transform = .identity
@@ -125,7 +133,7 @@ extension ShoppingVC: UICollectionViewDelegate {
 
 extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let estimateHeight = collectionView.frame.height / 2
+        let estimateHeight = (collectionView.frame.height - 100) / 2
         let estimateWidth = (collectionView.frame.width - collectionView.frame.width / 14.2) / 2
         return CGSize(width: estimateWidth, height: estimateHeight)
     }
@@ -139,6 +147,6 @@ extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
 }
