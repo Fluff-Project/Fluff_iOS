@@ -14,4 +14,18 @@ class BannerIntoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bannerIntoSellerLabel: UILabel!
     @IBOutlet weak var bannerIntoItemLabel: UILabel!
     @IBOutlet weak var bannerIntoPriceLabel: UILabel!
+    @IBOutlet weak var bannerIntoHeartButton: UIButton!
+    
+    var like: Bool = false
+    
+    @IBAction func heartClicked(_ sender: UIButton) {
+        if like == false {
+            like = true
+            bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartFilledIc"), for: .normal)
+        } else {
+            like = false
+            bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartEmptyIc"), for: .normal)
+        }
+        
+    }
 }

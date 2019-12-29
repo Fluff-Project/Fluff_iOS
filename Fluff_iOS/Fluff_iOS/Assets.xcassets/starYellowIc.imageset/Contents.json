@@ -2,16 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "heartFilledIc.png",
+      "filename" : "starYellowIc.png",
       "scale" : "1x"
     },
     {
-      "filename" : "heartFilledIc@2x.png",
       "idiom" : "universal",
+      "filename" : "starYellowIc@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "heartFilledIc@3x.png",
+      "filename" : "starYellowIc@3x.png",
       "scale" : "3x",
       "idiom" : "universal"
     }
