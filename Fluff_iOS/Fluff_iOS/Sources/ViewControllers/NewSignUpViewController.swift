@@ -26,14 +26,6 @@ class NewSignUpViewController: UIViewController {
     var userNickname = String()
     var userIsMale: Bool = true
     
-    enum ProgressStatus: Int {
-        case emailInput = 0
-        case pwdInput = 1
-        case nicknameInput = 2
-        case genderInput = 3
-        case complete = 4
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,44 +48,50 @@ class NewSignUpViewController: UIViewController {
         femaleButton.layer.borderColor = UIColor.disabledGrey.cgColor
         femaleButton.isHidden = true
         
-        
+        signupProgressBar.transform = signupProgressBar.transform.scaledBy(x: 1, y: 2.5)
+
 
         // Do any additional setup after loading the view.
     }
     
     @objc func textFieldEdited(textField: UITextField) {
+        
         switch currentView {
+            // 이메일 입력 뷰
         case 0:
             if isValidEmail(email: userInfoTextField.text) == true {
                 nextButton.isEnabled = true
                 errorLabel.text = ""
                 nextButton.backgroundColor = UIColor.black
             } else {
+                nextButton.isEnabled = false
                 errorLabel.text = "이메일 형식에 맞게 입력해 주세요"
                 nextButton.backgroundColor = UIColor.disabledGrey
             }
-            
+            // 비밀번호 입력 뷰
         case 1:
             if (userInfoTextField.text!.count > 0) {
                 nextButton.isEnabled = true
                 errorLabel.text = ""
                 nextButton.backgroundColor = UIColor.black
             } else {
+                nextButton.isEnabled = false
                 errorLabel.text = "비밀번호를 입력해 주세요"
                 nextButton.backgroundColor = UIColor.disabledGrey
             }
+            //닉네임 입력 뷰
         case 2:
             if (0 < userInfoTextField.text!.count) && (userInfoTextField.text!.count < 11) {
                 nextButton.isEnabled = true
                 errorLabel.text = ""
                 nextButton.backgroundColor = UIColor.black
             } else {
+                nextButton.isEnabled = false
                 errorLabel.text = "10자 이내로 닉네임을 입력해 주세요"
                 nextButton.backgroundColor = UIColor.disabledGrey
             }
-            
         default:
-            break
+            return
         }
     }
     
@@ -108,28 +106,25 @@ class NewSignUpViewController: UIViewController {
     }
     
     @IBAction func goNext(_ sender: UIButton) {
-         guard let status = ProgressStatus(rawValue: currentView) else { return }
         
-        switch status {
-        case .emailInput:
+        switch currentView {
+            // 이메일 입력 뷰
+        case 0:
             userEmail = userInfoTextField.text!
-        case .pwdInput:
+            // 비밀번호 입력 뷰
+        case 1:
             userPassword = userInfoTextField.text!
-        case .nicknameInput:
+        case 2:
             userNickname = userInfoTextField.text!
-        case .genderInput:
-            return
-        case .complete:
+        default:
             return
         }
         
         currentView += 1
         
-       
-        
-        
-        switch status {
-        case .emailInput:
+        switch currentView {
+            // 이메일 입력 뷰
+        case 0:
             userInfoLabel.text = "이메일"
             userInfoTextField.text = ""
             userInfoTextField.placeholder = "이메일을 적어주세요"
@@ -137,7 +132,8 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             errorLabel.text = ""
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .pwdInput:
+            // 비밀번호 입력 뷰
+        case 1:
             userInfoLabel.text = "비밀번호"
             userInfoTextField.text = ""
             userInfoTextField.placeholder = "비밀번호를 적어주세요"
@@ -145,7 +141,8 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             errorLabel.text = ""
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .nicknameInput:
+            //닉네임 입력 뷰
+        case 2:
             userInfoLabel.text = "닉네임"
             userInfoTextField.placeholder = "플러프에서 사용할 닉네임을 입력해주세요"
             userInfoTextField.text = ""
@@ -153,7 +150,8 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             errorLabel.text = ""
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .genderInput:
+            //성별 입력 뷰
+        case 3:
             userInfoTextField.isHidden = true
             maleButton.isHidden = false
             femaleButton.isHidden = false
@@ -162,30 +160,33 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             errorLabel.text = ""
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .complete: return
+        default:
+            return
             
         }
         
     }
     @IBAction func goBack(_ sender: UIButton) {
-        guard let status = ProgressStatus(rawValue: currentView) else { return }
         
         currentView -= 1
         
-        switch status {
-        case .emailInput:
+        switch currentView {
+            // 이메일 입력 뷰
+        case 0:
             userInfoLabel.text = "이메일"
             userInfoTextField.placeholder = "이메일을 적어주세요"
             userInfoTextField.text = ""
             signupProgressBar.setProgress(0.25, animated: true)
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .pwdInput:
+            // 비밀번호 입력 뷰
+        case 1:
             userInfoLabel.text = "비밀번호"
             userInfoTextField.placeholder = "비밀번호를 적어주세요"
             userInfoTextField.text = ""
             signupProgressBar.setProgress(0.5, animated: true)
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .nicknameInput:
+            //닉네임 입력 뷰
+        case 2:
             userInfoLabel.text = "닉네임"
             userInfoTextField.placeholder = "플러프에서 사용할 닉네임을 입력해주세요"
             userInfoTextField.text = ""
@@ -196,7 +197,8 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             nextButton.backgroundColor = UIColor.disabledGrey
             nextButton.setTitle("다음", for: .normal)
-        case .genderInput:
+            //성별 입력 뷰
+        case 3:
             userInfoTextField.isHidden = true
             maleButton.isHidden = false
             femaleButton.isHidden = false
@@ -205,7 +207,7 @@ class NewSignUpViewController: UIViewController {
             signupProgressBar.setProgress(1, animated: true)
             nextButton.isEnabled = false
             nextButton.backgroundColor = UIColor.disabledGrey
-        case .complete:
+        default:
             return
         }
         

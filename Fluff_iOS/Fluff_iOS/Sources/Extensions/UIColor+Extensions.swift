@@ -36,5 +36,10 @@ extension UIColor {
     @nonobjc class var disabledGrey: UIColor {
       return UIColor(white: 219.0 / 255.0, alpha: 1.0)
     }
+    
+    // borderGrey 색상
+    @nonobjc class var borderGrey: UIColor {
+      return UIColor(white: 232.0 / 255.0, alpha: 1.0)
+    }
 
 }
