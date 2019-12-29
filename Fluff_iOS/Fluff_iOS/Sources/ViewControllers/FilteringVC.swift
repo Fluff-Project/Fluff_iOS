@@ -30,6 +30,7 @@ class FilteringVC: UIViewController {
     private var detailCategoryCollectionViewDataSource: DetailCategoryDataSource = DetailCategoryDataSource(detailFilterData: [])
     private var detailCategoryDelegate: DetailCategoryDelegateFlowLayout = DetailCategoryDelegateFlowLayout(detailFilterData: [])
     
+    private var selectedCategoryIndex: IndexPath?
     private var isSelectedColor: [Bool] = []
     private var isSelectedCategory: [Bool] = []
     private var isSelectedSize: [Bool] = []
@@ -218,6 +219,12 @@ extension FilteringVC: UICollectionViewDataSource {
         guard let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
         guard let category = FilteringCategory(rawValue: indexPath.row) else { return UICollectionViewCell() }
         
+        //이승수가 맘대로 코딩함
+//        guard let categoryImage = UIImage(named: category.getNotSelectImageName()) else { return UICollectionViewCell() }
+//        categoryCell.categoryImageView.image = categoryImage
+//        categoryCell.categoryLabel.text = category.getCategoryName()
+//
+//
         if isSelectedCategory[indexPath.row] {
             guard let categoryImage = UIImage(named: category.getSelctImageName()) else { return UICollectionViewCell() }
             categoryCell.setcategoryImage(categoryImage)
@@ -251,10 +258,10 @@ extension FilteringVC: UICollectionViewDelegate {
             categoryCell.setcategoryImage(selectedImage)
             categoryCell.setCategoryLabelColor(UIColor(red: 250/255, green: 31/255, blue: 147/255, alpha: 1))
             isSelectedCategory[indexPath.row] = true
-            
+
             detailCategoryCollectionViewDataSource.setDetailFilterData(category.getDetailFilter())
             detailCategoryCollectionView.reloadData()
-            
+
             for index in 0..<isSelectedCategory.count {
                 if index != indexPath.row && isSelectedCategory[index] == true {
                     isSelectedCategory[index] = false

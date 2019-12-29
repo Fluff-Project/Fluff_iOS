@@ -54,7 +54,18 @@
 
 2. TableView 안 CollectionView 그리기
 4. CollectionView 레이아웃 잡기 (DelegateFlowLayout 안잡힘)
-6. Animationable Property가 존재
+
+🔵 Interface Builder AutoLayout 옵션에서 `None`으로 지정하면 코드로 지정한대로 설정
+
+```swift
+extension ViewController: UICollectionViewDelegateFlowLayout {
+  
+}
+```
+
+
+
+3. Animationable Property가 존재
 
 1️⃣ frame
 
@@ -72,7 +83,18 @@
 
 
 
-4. UIView Blur 처리
+4. ScrollView Delegate활용 PageControl ( ✅ `CHIPageControl` 사용 )
+
+```swift
+func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+  let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
+  pageControl.set(progress: page, animated: true)
+}
+```
+
+
+
+5. UIView Blur 처리
 
 ```swift
 var backgroundEffectView: UIVisualEffectView!		// Visual Effect을 넣을 수 있는 View
@@ -85,7 +107,7 @@ func setBlurView() {
 
 
 
-5. 전체 레이아웃이 제대로 적용 안되는 문제 iPhone 11 Pro Max 에서 작업 후 ==> iPhone 11 Pro에 적용할 경우 레이아웃이 Pro Max로 적용되어 Button의 Radius가 적용이 안됨
+6. 전체 레이아웃이 제대로 적용 안되는 문제 iPhone 11 Pro Max 에서 작업 후 ==> iPhone 11 Pro에 적용할 경우 레이아웃이 Pro Max로 적용되어 Button의 Radius가 적용이 안됨
 
 ```swift
 // Layout 관련 메소드 공부들 더 필요
@@ -100,7 +122,7 @@ override func viewDidLayoutSubviews() {
 
 
 
-6. StackView 이용 Animation 적용 AutoLayout 잡아주기
+7. StackView 이용 Animation 적용 AutoLayout 잡아주기
 
 🔵 필터를 적용했을 때만 선택하는 메뉴에서 StackView을 활용 오토레이아웃을 잡아주었다. `isHidden` 옵션 활용
 

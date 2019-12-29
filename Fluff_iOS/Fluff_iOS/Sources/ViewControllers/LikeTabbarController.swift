@@ -19,12 +19,13 @@ class LikeTabbarController: ButtonBarPagerTabStripViewController {
     }
     
     override func viewDidLoad() {
+        self.settings.style.selectedBarHeight = 4
+        settings.style.buttonBarItemBackgroundColor = UIColor.fluffWhite
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.backgroundColor = UIColor.fluffWhite
-        settings.style.buttonBarItemBackgroundColor = UIColor.fluffWhite
-        settings.style.buttonBarLeftContentInset = 77
-        settings.style.buttonBarRightContentInset = 77
-        
+        self.settings.style.buttonBarHeight = 36
+        self.settings.style.buttonBarMinimumInteritemSpacing = 1000
+        self.settings.style.buttonBarMinimumLineSpacing = 100
     }
 }
