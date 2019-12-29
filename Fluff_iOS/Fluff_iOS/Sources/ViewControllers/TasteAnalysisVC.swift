@@ -62,8 +62,6 @@ extension TasteAnalysisVC: UICollectionViewDataSource {
 extension TasteAnalysisVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = (collectionView.frame.width - 5) / 2
-        print(collectionView.frame)
-        print(cellWidth)
         return CGSize(width: cellWidth, height: cellWidth)
     }
     

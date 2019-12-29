@@ -45,26 +45,48 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tasteCell" id="hB5-45-5Ro" customClass="TasteCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                        <rect key="frame" x="81.666666666666671" y="0.0" width="164" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hM9-TG-Et6">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="731435467565772314707755242100861709482025N" translatesAutoresizingMaskIntoConstraints="NO" id="TVW-jc-nyq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                                                 </imageView>
                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DfM-y9-fSi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4uP-hF-nXd">
-                                                            <rect key="frame" x="28" y="30" width="74" height="70"/>
+                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uP-hF-nXd" customClass="BEMCheckBox">
+                                                            <rect key="frame" x="54.666666666666657" y="54.666666666666657" width="55" height="55"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="tintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="4uP-hF-nXd" secondAttribute="height" multiplier="1:1" id="Iij-CK-Q6C"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
+                                                                    <color key="value" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="offFillColor">
+                                                                    <color key="value" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                                                    <color key="value" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                                    <color key="value" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31970730633802819" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="4uP-hF-nXd" firstAttribute="centerX" secondItem="DfM-y9-fSi" secondAttribute="centerX" id="QVg-EV-Ln3"/>
+                                                        <constraint firstItem="4uP-hF-nXd" firstAttribute="width" secondItem="DfM-y9-fSi" secondAttribute="width" multiplier="0.335366" id="qKN-ws-Zzv"/>
                                                         <constraint firstItem="4uP-hF-nXd" firstAttribute="centerY" secondItem="DfM-y9-fSi" secondAttribute="centerY" id="yIb-jL-l3v"/>
                                                     </constraints>
                                                 </view>
@@ -80,8 +102,9 @@
                                                 <constraint firstItem="TVW-jc-nyq" firstAttribute="leading" secondItem="hM9-TG-Et6" secondAttribute="leading" id="uum-K1-czP"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="130" height="130"/>
+                                        <size key="customSize" width="164" height="164"/>
                                         <connections>
+                                            <outlet property="checkboxButton" destination="4uP-hF-nXd" id="F8m-ee-esA"/>
                                             <outlet property="clotheImageView" destination="TVW-jc-nyq" id="Upj-fB-Duw"/>
                                             <outlet property="coverView" destination="DfM-y9-fSi" id="ocM-ha-nHg"/>
                                         </connections>
@@ -589,14 +612,14 @@
                                 <rect key="frame" x="20" y="106" width="335" height="30.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="868-A7-557">
-                                        <rect key="frame" x="16" y="5.3333333333333286" width="20" height="20"/>
+                                        <rect key="frame" x="16" y="-4.6666666666666714" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="868-A7-557" secondAttribute="height" multiplier="1:1" id="eeB-45-wKh"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="searchIcon"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-c2-Y38">
-                                        <rect key="frame" x="62" y="6.6666666666666714" width="258" height="17"/>
+                                        <rect key="frame" x="82" y="6.6666666666666714" width="238" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1576,104 +1599,133 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-1i-ioV">
-                                <rect key="frame" x="0.0" y="-88" width="375" height="1472"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tv-1i-ioV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1384"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKN-eh-vID">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1472"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1384"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSQ-Md-Q4q">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auctionimage1-1" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-UA-CLG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="샤넬 1990's 트위드 재킷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-kL-CdO">
-                                                        <rect key="frame" x="16" y="524" width="196" height="24"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ypB-UO-5GZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="594"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="NKN-UA-CLG" firstAttribute="leading" secondItem="BSQ-Md-Q4q" secondAttribute="leading" id="8au-0k-sCt"/>
-                                                    <constraint firstAttribute="trailing" secondItem="NKN-UA-CLG" secondAttribute="trailing" id="E6K-ET-e2h"/>
-                                                    <constraint firstAttribute="width" secondItem="BSQ-Md-Q4q" secondAttribute="height" multiplier="375:574" id="F6H-7n-Hwn"/>
-                                                    <constraint firstItem="NKN-UA-CLG" firstAttribute="top" secondItem="BSQ-Md-Q4q" secondAttribute="top" id="GNh-em-7CP"/>
-                                                    <constraint firstAttribute="bottom" secondItem="NKN-UA-CLG" secondAttribute="bottom" id="Tot-kh-KVa"/>
-                                                    <constraint firstItem="dGi-kL-CdO" firstAttribute="leading" secondItem="BSQ-Md-Q4q" secondAttribute="leading" constant="16" id="pqR-Mf-7ik"/>
-                                                    <constraint firstAttribute="bottom" secondItem="dGi-kL-CdO" secondAttribute="bottom" constant="26" id="tgm-gO-Jyu"/>
+                                                    <constraint firstAttribute="width" secondItem="ypB-UO-5GZ" secondAttribute="height" multiplier="375:594" id="YiI-Yt-ynM"/>
                                                 </constraints>
-                                            </view>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="R8q-OG-3tJ">
+                                                    <size key="itemSize" width="375" height="594"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="auctionDetailCell" id="FbF-K1-Eb1" customClass="AuctionDetailCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="594"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d73-LL-ED5">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="594"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="13924566_17844593_1000" translatesAutoresizingMaskIntoConstraints="NO" id="VLE-wp-Poc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="594"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="VLE-wp-Poc" secondAttribute="trailing" id="Okf-ae-X1a"/>
+                                                                <constraint firstItem="VLE-wp-Poc" firstAttribute="leading" secondItem="d73-LL-ED5" secondAttribute="leading" id="Zta-4C-ALM"/>
+                                                                <constraint firstItem="VLE-wp-Poc" firstAttribute="top" secondItem="d73-LL-ED5" secondAttribute="top" id="om5-Kf-FAl"/>
+                                                                <constraint firstAttribute="bottom" secondItem="VLE-wp-Poc" secondAttribute="bottom" id="yzX-HF-Xb0"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="375" height="594"/>
+                                                        <connections>
+                                                            <outlet property="auctionDetailImage" destination="VLE-wp-Poc" id="ZKr-lY-pBk"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 최고가" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41u-aX-6o1">
-                                                <rect key="frame" x="16" y="577" width="64.666666666666671" height="17"/>
+                                                <rect key="frame" x="16" y="597" width="64.666666666666671" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="3T6-xh-Ho3"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="260,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNB-y6-GFh">
-                                                <rect key="frame" x="16" y="595" width="150.66666666666666" height="43"/>
+                                                <rect key="frame" x="16" y="615" width="150.66666666666666" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="yhT-Xp-vjM"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn5-JR-EOS">
-                                                <rect key="frame" x="171.66666666666666" y="618" width="14" height="20"/>
+                                                <rect key="frame" x="171.66666666666666" y="638" width="14" height="20"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR9-eJ-BaW">
-                                                <rect key="frame" x="322" y="622" width="34" height="16"/>
+                                                <rect key="frame" x="322" y="642" width="34" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43 명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-CQ-Jpn">
-                                                <rect key="frame" x="289.66666666666669" y="622" width="32.333333333333314" height="16"/>
+                                                <rect key="frame" x="289.66666666666669" y="642" width="32.333333333333314" height="16"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사이즈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-UR-Qi6">
-                                                <rect key="frame" x="16" y="668" width="34" height="15.666666666666629"/>
+                                                <rect key="frame" x="16" y="688" width="34" height="15.666666666666629"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15.666666666666629" id="Gdn-bb-QQf"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-PT-RLk">
-                                                <rect key="frame" x="82" y="668.33333333333337" width="7" height="15"/>
+                                                <rect key="frame" x="82" y="688.33333333333337" width="7" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옷 상태" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNq-0Y-hTt">
-                                                <rect key="frame" x="16" y="687.66666666666663" width="38" height="16"/>
+                                                <rect key="frame" x="16" y="707.66666666666663" width="38" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="16" id="pNi-fX-Z0e"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8q-vh-fRc">
-                                                <rect key="frame" x="82" y="687.66666666666663" width="20" height="16"/>
+                                                <rect key="frame" x="82" y="707.66666666666663" width="20" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDv-uo-51H">
-                                                <rect key="frame" x="102" y="687.66666666666663" width="19" height="16"/>
+                                                <rect key="frame" x="102" y="707.66666666666663" width="19" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="샤네루 1990's 트위드 자켓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-x4-Hx0">
-                                                <rect key="frame" x="16" y="760.66666666666663" width="143.66666666666666" height="15.666666666666629"/>
+                                                <rect key="frame" x="16" y="780.66666666666663" width="143.66666666666666" height="15.666666666666629"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15.666666666666629" id="KCR-Wz-v0k"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-jd-8yh">
-                                                <rect key="frame" x="19" y="782.33333333333337" width="337" height="166.66666666666663"/>
+                                                <rect key="frame" x="19" y="802.33333333333337" width="337" height="166.66666666666663"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="166.66999999999999" id="TC7-Qq-8lf"/>
@@ -1691,19 +1743,28 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9k-sp-QZj">
-                                                <rect key="frame" x="0.0" y="970" width="375" height="6"/>
-                                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="0.0" y="990" width="375" height="6"/>
+                                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="vpp-Nw-bkh"/>
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uvo-kk-fNI">
-                                                <rect key="frame" x="20" y="996" width="335" height="238"/>
+                                                <rect key="frame" x="20" y="1016" width="335" height="238"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="238" id="zew-a5-kJJ"/>
                                                 </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <string key="text">소재 구성
+안감: 실크 100%
+겉감: 울 100%
+
+세탁 방법
+드라이크리닝 전용
+디자이너 스타일 ID: CHA1800AF
+
+모델 착용 사이즈
+키: 1.78 m, 사이즈: 40 (FR)</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1713,16 +1774,13 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                         <constraints>
                                             <constraint firstItem="iNq-0Y-hTt" firstAttribute="leading" secondItem="Owa-UR-Qi6" secondAttribute="leading" id="0uw-2e-yLc"/>
                                             <constraint firstItem="DR9-eJ-BaW" firstAttribute="leading" secondItem="fHw-CQ-Jpn" secondAttribute="trailing" id="1oQ-4L-Qly"/>
-                                            <constraint firstItem="41u-aX-6o1" firstAttribute="top" secondItem="BSQ-Md-Q4q" secondAttribute="bottom" constant="3" id="2L3-aa-tkB"/>
                                             <constraint firstItem="uvo-kk-fNI" firstAttribute="leading" secondItem="XKN-eh-vID" secondAttribute="leading" constant="20" id="2VZ-QP-9b7"/>
                                             <constraint firstItem="cNB-y6-GFh" firstAttribute="leading" secondItem="41u-aX-6o1" secondAttribute="leading" id="2rd-sP-cWW"/>
                                             <constraint firstItem="cNB-y6-GFh" firstAttribute="top" secondItem="41u-aX-6o1" secondAttribute="bottom" constant="1" id="3Ae-tb-JQf"/>
                                             <constraint firstItem="Jn5-JR-EOS" firstAttribute="bottom" secondItem="cNB-y6-GFh" secondAttribute="bottom" id="3m5-qI-i4H"/>
                                             <constraint firstAttribute="trailing" secondItem="M9k-sp-QZj" secondAttribute="trailing" id="4Fx-3s-ZGh"/>
                                             <constraint firstItem="41u-aX-6o1" firstAttribute="leading" secondItem="XKN-eh-vID" secondAttribute="leading" constant="16" id="9iA-y0-P5N"/>
-                                            <constraint firstItem="BSQ-Md-Q4q" firstAttribute="top" secondItem="XKN-eh-vID" secondAttribute="top" id="9pA-sf-XzM"/>
                                             <constraint firstItem="vAG-PT-RLk" firstAttribute="centerY" secondItem="Owa-UR-Qi6" secondAttribute="centerY" id="A0w-Lq-bBT"/>
-                                            <constraint firstItem="BSQ-Md-Q4q" firstAttribute="leading" secondItem="XKN-eh-vID" secondAttribute="leading" id="Etk-aj-pHg"/>
                                             <constraint firstItem="uvo-kk-fNI" firstAttribute="top" secondItem="M9k-sp-QZj" secondAttribute="bottom" constant="20" id="Fy5-Vw-eFm"/>
                                             <constraint firstItem="Owa-UR-Qi6" firstAttribute="leading" secondItem="cNB-y6-GFh" secondAttribute="leading" id="Gm7-un-pFE"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uvo-kk-fNI" secondAttribute="bottom" constant="30" id="Hlr-3d-Zv0"/>
@@ -1735,7 +1793,6 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                             <constraint firstItem="Jn5-JR-EOS" firstAttribute="leading" secondItem="cNB-y6-GFh" secondAttribute="trailing" constant="5" id="Lin-7Q-v2r"/>
                                             <constraint firstItem="fHw-CQ-Jpn" firstAttribute="bottom" secondItem="DR9-eJ-BaW" secondAttribute="bottom" id="Nj0-DL-Tci"/>
                                             <constraint firstAttribute="trailing" secondItem="uvo-kk-fNI" secondAttribute="trailing" constant="20" id="Okb-uB-LlB"/>
-                                            <constraint firstAttribute="trailing" secondItem="BSQ-Md-Q4q" secondAttribute="trailing" id="RON-NR-Mml"/>
                                             <constraint firstItem="I8q-vh-fRc" firstAttribute="centerY" secondItem="iNq-0Y-hTt" secondAttribute="centerY" id="Wf6-pR-9bL"/>
                                             <constraint firstItem="ihf-jd-8yh" firstAttribute="leading" secondItem="XKN-eh-vID" secondAttribute="leading" constant="19" id="Wuv-Xs-9qA"/>
                                             <constraint firstItem="M9k-sp-QZj" firstAttribute="leading" secondItem="XKN-eh-vID" secondAttribute="leading" id="bMp-91-2sP"/>
@@ -1744,9 +1801,13 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                             <constraint firstAttribute="trailing" secondItem="ihf-jd-8yh" secondAttribute="trailing" constant="19" id="eiP-se-1kg"/>
                                             <constraint firstItem="KDv-uo-51H" firstAttribute="centerY" secondItem="I8q-vh-fRc" secondAttribute="centerY" id="ekB-Pq-Ond"/>
                                             <constraint firstItem="KDv-uo-51H" firstAttribute="leading" secondItem="I8q-vh-fRc" secondAttribute="trailing" id="gBa-hb-NLm"/>
+                                            <constraint firstItem="ypB-UO-5GZ" firstAttribute="leading" secondItem="XKN-eh-vID" secondAttribute="leading" id="hKs-eI-P0G"/>
                                             <constraint firstItem="DR9-eJ-BaW" firstAttribute="bottom" secondItem="Jn5-JR-EOS" secondAttribute="bottom" id="mv6-wF-MKP"/>
+                                            <constraint firstAttribute="trailing" secondItem="ypB-UO-5GZ" secondAttribute="trailing" id="oGG-vu-pPO"/>
                                             <constraint firstAttribute="trailing" secondItem="DR9-eJ-BaW" secondAttribute="trailing" constant="19" id="qEn-G0-oFM"/>
+                                            <constraint firstItem="ypB-UO-5GZ" firstAttribute="top" secondItem="XKN-eh-vID" secondAttribute="top" id="t5K-gp-mBg"/>
                                             <constraint firstItem="I8q-vh-fRc" firstAttribute="leading" secondItem="vAG-PT-RLk" secondAttribute="leading" id="vD4-OZ-IPB"/>
+                                            <constraint firstItem="41u-aX-6o1" firstAttribute="top" secondItem="ypB-UO-5GZ" secondAttribute="bottom" constant="3" id="vP3-zp-C3f"/>
                                             <constraint firstItem="Owa-UR-Qi6" firstAttribute="top" secondItem="cNB-y6-GFh" secondAttribute="bottom" constant="30" id="zaR-WS-F8D"/>
                                         </constraints>
                                     </view>
@@ -1805,7 +1866,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                             <constraint firstAttribute="bottom" secondItem="ecH-sd-Ug2" secondAttribute="bottom" id="6uf-lR-rQc"/>
                             <constraint firstItem="pgg-Uo-yCf" firstAttribute="trailing" secondItem="5tv-1i-ioV" secondAttribute="trailing" id="FlK-Ib-vOJ"/>
                             <constraint firstItem="5tv-1i-ioV" firstAttribute="leading" secondItem="pgg-Uo-yCf" secondAttribute="leading" id="MWm-Ni-SOf"/>
-                            <constraint firstItem="5tv-1i-ioV" firstAttribute="top" secondItem="qHn-nb-TC1" secondAttribute="top" constant="-88" id="TFw-gY-QiG"/>
+                            <constraint firstItem="5tv-1i-ioV" firstAttribute="top" secondItem="qHn-nb-TC1" secondAttribute="top" id="TFw-gY-QiG"/>
                             <constraint firstItem="pgg-Uo-yCf" firstAttribute="trailing" secondItem="ecH-sd-Ug2" secondAttribute="trailing" id="TOW-Jk-0mz"/>
                             <constraint firstItem="ecH-sd-Ug2" firstAttribute="top" secondItem="5tv-1i-ioV" secondAttribute="bottom" id="cp8-DG-TyL"/>
                             <constraint firstItem="ecH-sd-Ug2" firstAttribute="leading" secondItem="pgg-Uo-yCf" secondAttribute="leading" id="w9o-j5-l30"/>
@@ -1816,8 +1877,8 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                     <connections>
                         <outlet property="apllicantLabel" destination="fHw-CQ-Jpn" id="h0W-i0-ziP"/>
                         <outlet property="auctionDetailScrollView" destination="5tv-1i-ioV" id="yfB-WF-H0l"/>
+                        <outlet property="auctionImageCollectionView" destination="ypB-UO-5GZ" id="n5d-kB-8Gg"/>
                         <outlet property="biddingButton" destination="iyr-eO-iid" id="OQK-IC-Bdw"/>
-                        <outlet property="clotheNameLabel" destination="dGi-kL-CdO" id="KkJ-hX-sJo"/>
                         <outlet property="descriptionNameLabel" destination="gMT-x4-Hx0" id="mkJ-wp-X69"/>
                         <outlet property="descriptionTextView" destination="ihf-jd-8yh" id="wBW-Va-dff"/>
                         <outlet property="priceLabel" destination="cNB-y6-GFh" id="ief-f7-VeH"/>
@@ -1828,7 +1889,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PO-ib-95C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="2254"/>
+            <point key="canvasLocation" x="1061.5999999999999" y="2253.6945812807885"/>
         </scene>
         <!--AuctionVC-->
         <scene sceneID="gIM-Nj-KjE">
@@ -2507,6 +2568,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         </scene>
     </scenes>
     <resources>
+        <image name="13924566_17844593_1000" width="1000" height="1334"/>
         <image name="13X" width="375" height="811"/>
         <image name="2019121461216" width="41" height="41"/>
         <image name="20191218120650" width="147" height="167"/>
@@ -2515,7 +2577,6 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         <image name="53X" width="375" height="811"/>
         <image name="731435467565772314707755242100861709482025N" width="164" height="164"/>
         <image name="auctionimage1" width="343" height="254"/>
-        <image name="auctionimage1-1" width="375" height="594"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="filterIc" width="20" height="20.666666030883789"/>
         <image name="heart" catalog="system" width="64" height="54"/>

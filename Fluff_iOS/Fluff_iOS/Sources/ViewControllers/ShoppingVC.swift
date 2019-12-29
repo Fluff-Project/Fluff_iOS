@@ -21,14 +21,15 @@ class ShoppingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        addObserver()
         initialSearch()
         shoppingCollectionView.dataSource = self
         shoppingCollectionView.delegate = self
         self.setNavigationBarClear()
-        initFilterfing()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         initFilterfing()
     }
     
@@ -40,24 +41,26 @@ class ShoppingVC: UIViewController {
     
     private func initFilterfing() {
         guard let window = UIApplication.shared.keyWindow else { return }
-        transparentView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        guard let tabbarHeight = self.tabBarController?.tabBar.frame.height else { return }
+        
+        transparentView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height + tabbarHeight))
         transparentView.backgroundColor = .clear
         let slideDownGesture = UITapGestureRecognizer(target: self, action: #selector(tapViewWhenSlidUpAppear))
         transparentView.addGestureRecognizer(slideDownGesture)
         window.addSubview(transparentView)
         transparentView.alpha = 0
         
-        let filteringViewEstimateHeight = self.view.bounds.height / 1.0958
-        coverBlurView = UIVisualEffectView(frame: CGRect(x: 0, y: self.view.bounds.height, width: self.view.bounds.width, height: filteringViewEstimateHeight))
+        let filteringViewEstimateHeight = (self.view.bounds.height + tabbarHeight) / 1.0958
+        coverBlurView = UIVisualEffectView(frame: CGRect(x: 0, y: self.view.bounds.height + tabbarHeight, width: self.view.bounds.width, height: filteringViewEstimateHeight))
         let blurEffect = UIBlurEffect(style: .dark)
         coverBlurView.backgroundColor = .clear
         coverBlurView.effect = blurEffect
         coverBlurView.makeCornerRounded(radius: coverBlurView.frame.width / 30)
         coverBlurView.clipsToBounds = true
         window.addSubview(coverBlurView)
-        
+
         filteringVC = FilteringVC(nibName: "FilteringVC", bundle: nil)
-        filteringVC?.view.frame = CGRect(x: 0, y: self.view.bounds.height , width: self.view.bounds.width, height: filteringViewEstimateHeight)
+        filteringVC?.view.frame = CGRect(x: 0, y: self.view.bounds.height + tabbarHeight , width: self.view.bounds.width, height: filteringViewEstimateHeight)
         filteringVC.view.makeCornerRounded(radius: 100)
         window.addSubview(filteringVC.view)
     }
@@ -81,6 +84,20 @@ class ShoppingVC: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             self.filteringVC.view.transform = CGAffineTransform(translationX: 0, y: -self.filteringVC.view.frame.height)
             self.coverBlurView.transform = CGAffineTransform(translationX: 0, y: -self.coverBlurView.frame.height)
+        }, completion: nil)
+    }
+}
+
+extension ShoppingVC {
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(applyFilter(_:)), name: .clickApplyButton, object: nil)
+    }
+    
+    @objc func applyFilter(_ notification: NSNotification) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            self.coverBlurView.transform = .identity
+            self.filteringVC.view.transform = .identity
+            self.transparentView.alpha = 0
         }, completion: nil)
     }
 }

@@ -63,6 +63,7 @@ class LoginVC: UIViewController {
         loginEstimateX = snsButton.frame.origin.x
         loginEstimateY = snsButton.frame.origin.y - 280
         pwdEstimateY = loginButton.frame.origin.y - 250
+        
         estimateSize = loginButton.frame.size
     }
     
@@ -145,7 +146,6 @@ class LoginVC: UIViewController {
             let vc = segue.destination
             vc.modalPresentationStyle = .fullScreen
         }
-        
     }
 }
 

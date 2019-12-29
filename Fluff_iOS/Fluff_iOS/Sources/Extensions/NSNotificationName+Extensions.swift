@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 extension NSNotification.Name {
-    static let clickButton = NSNotification.Name("animation")
+    static let clickApplyButton = NSNotification.Name("clickApplyButton")
+    
 }
