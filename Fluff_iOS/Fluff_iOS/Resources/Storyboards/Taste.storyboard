@@ -367,6 +367,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-uE-lLi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="324" translatesAutoresizingMaskIntoConstraints="NO" id="vfW-PD-Yap">
                                 <rect key="frame" x="95" y="356" width="185" height="101.33333333333331"/>
                                 <constraints>
@@ -457,10 +461,14 @@
                             <constraint firstItem="E3P-Ab-STJ" firstAttribute="top" secondItem="Pq5-av-mkK" secondAttribute="bottom" constant="11" id="NoK-mY-PwA"/>
                             <constraint firstItem="E3P-Ab-STJ" firstAttribute="centerX" secondItem="OwE-z0-WZY" secondAttribute="centerX" id="Nta-da-qWY"/>
                             <constraint firstAttribute="bottom" secondItem="MPW-tG-Q38" secondAttribute="bottom" id="OIQ-fm-w6j"/>
+                            <constraint firstAttribute="bottom" secondItem="m7R-uE-lLi" secondAttribute="bottom" id="Pud-iw-fJb"/>
+                            <constraint firstItem="m7R-uE-lLi" firstAttribute="leading" secondItem="OwE-z0-WZY" secondAttribute="leading" id="RNn-C6-xM7"/>
                             <constraint firstItem="zCo-f8-3uH" firstAttribute="centerX" secondItem="MPW-tG-Q38" secondAttribute="centerX" id="TNW-jx-ndD"/>
                             <constraint firstItem="pXK-2O-GZO" firstAttribute="top" secondItem="7cL-iA-jMZ" secondAttribute="top" id="U2j-zn-we7"/>
+                            <constraint firstItem="m7R-uE-lLi" firstAttribute="top" secondItem="7cL-iA-jMZ" secondAttribute="top" id="WrB-Iy-2xN"/>
                             <constraint firstItem="dbf-WT-3q2" firstAttribute="top" secondItem="0zJ-a0-hN4" secondAttribute="bottom" constant="12" id="aU8-bC-vnG"/>
                             <constraint firstAttribute="trailing" secondItem="pXK-2O-GZO" secondAttribute="trailing" id="ajY-Sf-CKq"/>
+                            <constraint firstItem="m7R-uE-lLi" firstAttribute="trailing" secondItem="OwE-z0-WZY" secondAttribute="trailing" id="bgk-1x-p5M"/>
                             <constraint firstAttribute="bottom" secondItem="pXK-2O-GZO" secondAttribute="bottom" id="iIa-aC-67m"/>
                             <constraint firstItem="OwE-z0-WZY" firstAttribute="bottom" secondItem="dbf-WT-3q2" secondAttribute="bottom" constant="118" id="jIg-dF-pA2"/>
                             <constraint firstItem="Qar-pJ-8Na" firstAttribute="centerY" secondItem="0zJ-a0-hN4" secondAttribute="centerY" id="jcb-z5-Obt"/>
@@ -474,6 +482,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="MPW-tG-Q38" id="S1H-kY-Yan"/>
                         <outlet property="blurBackgroundImageView" destination="pXK-2O-GZO" id="6QF-Zf-Sca"/>
+                        <outlet property="coverView" destination="m7R-uE-lLi" id="ltp-7W-Tjn"/>
                         <outlet property="doLoginButton" destination="Pq5-av-mkK" id="xGD-YO-UGv"/>
                         <outlet property="idPwdSearchButton" destination="Vpw-Tg-jUa" id="mI7-4v-L1s"/>
                         <outlet property="loginButton" destination="dbf-WT-3q2" id="bu0-Bt-sPe"/>
@@ -487,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr6-8V-bx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="511"/>
+            <point key="canvasLocation" x="1104.8" y="510.59113300492612"/>
         </scene>
         <!--NewSignUp-->
         <scene sceneID="KVC-oF-Xoc">
@@ -1009,7 +1018,7 @@
                                                     <constraint firstItem="XQB-Uo-s3z" firstAttribute="height" secondItem="tqk-Sd-Reb" secondAttribute="height" multiplier="0.59" id="xBH-lF-egq"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="185" y="374" width="44" height="8"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>

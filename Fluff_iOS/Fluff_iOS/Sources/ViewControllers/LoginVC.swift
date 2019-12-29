@@ -14,6 +14,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var coverView: UIView!
     // Animate 되기전 SNS 로그인 분기 버튼
     @IBOutlet weak var snsButton: UIButton!
     // Animate 되기전 Login으로 분기 버튼
@@ -60,6 +61,8 @@ class LoginVC: UIViewController {
             self.backgroundImageView.alpha = 0
         }
         
+        coverView.alpha = 0
+        
         loginEstimateX = snsButton.frame.origin.x
         loginEstimateY = snsButton.frame.origin.y - 280
         pwdEstimateY = loginButton.frame.origin.y - 250
@@ -101,7 +104,7 @@ class LoginVC: UIViewController {
             self.logoImageView.frame.size = CGSize(width: self.logoWidth-20, height: self.logoHeight-20)
             self.loginButton.transform = CGAffineTransform(translationX: 0, y: -250)
             self.snsButton.transform = CGAffineTransform(translationX: 0, y: -280)
-            
+            self.coverView.alpha = 0.5
             self.doLoginButton.alpha = 1
             self.idPwdSearchButton.alpha = 1
         }, completion: { isAnimate in
@@ -166,7 +169,7 @@ extension LoginVC {
             self.pwdView?.alpha = 0
             self.emailLabel?.alpha = 0
             self.pwdLabel?.alpha = 0
-            
+            self.coverView.alpha = 0
             self.logoImageView.transform = .identity
             self.logoImageView.frame.size = CGSize(width: self.logoWidth, height: self.logoHeight)
             self.loginButton.alpha = 1

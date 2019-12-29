@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class AuctionDetailVC: UIViewController {
 
@@ -30,6 +31,9 @@ class AuctionDetailVC: UIViewController {
         auctionImageCollectionView.dataSource = self
         setNavi()
         initButton()
+        self.hero.isEnabled = true
+        auctionImageCollectionView.hero.id = "auctionImage"
+        priceLabel.hero.id = "priceLabel"
     }
     
     private func setNavi() {

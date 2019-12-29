@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Hero
 
 class AuctionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var auctionItemImageView: UIImageView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
     @IBOutlet weak var auctionItemLabel: UILabel!
+    
+    override func awakeFromNib() {
+        auctionItemImageView.hero.id = "auctionImage"
+        currentPriceLabel.hero.id = "priceLabel"
+    }
     
     
     func setInit(auctionImage: UIImage, timer: String, currentPrice: String, auctionItemName: String) {

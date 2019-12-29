@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class AuctionVC: UIViewController {
 
@@ -21,10 +22,7 @@ class AuctionVC: UIViewController {
         // Do any additional setup after loading the view.
         auctionCollectionView.delegate = self
         auctionCollectionView.dataSource = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.hero.isEnabled = true
     }
 }
 
@@ -44,7 +42,9 @@ extension AuctionVC: UICollectionViewDataSource {
 
 extension AuctionVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         guard let auctionDetailVC = self.storyboard?.instantiateViewController(identifier: "auctionDetailVC") as? AuctionDetailVC else { return }
+        auctionDetailVC.hero.isEnabled = true
         self.navigationController?.pushViewController(auctionDetailVC, animated: true)
     }
 }

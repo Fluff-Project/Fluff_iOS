@@ -11,5 +11,5 @@ import UIKit
 
 extension NSNotification.Name {
     static let clickApplyButton = NSNotification.Name("clickApplyButton")
-    
+    static let selectedDetailCategory = NSNotification.Name("selectedDetailCategory")
 }

@@ -28,7 +28,7 @@ class FilteringVC: UIViewController {
     @IBOutlet weak var detailFilterView: UIView!
     
     private var detailCategoryCollectionViewDataSource: DetailCategoryDataSource = DetailCategoryDataSource(detailFilterData: [])
-    private var detailCategoryDelegate: DetailCategoryDelegateFlowLayout = DetailCategoryDelegateFlowLayout(detailFilterData: [])
+    private var detailCategoryDelegate: DetailCategoryDelegateFlowLayout = DetailCategoryDelegateFlowLayout(isSelectedDetailCategory: [])
     
     private var selectedCategoryIndex: IndexPath?
     private var isSelectedColor: [Bool] = []
@@ -49,6 +49,7 @@ class FilteringVC: UIViewController {
         checkboxButton.offAnimationType = .stroke
         applyButton.makeCornerRounded(radius: applyButton.frame.width / 15)
         initCategorySelected()
+        addObserver()
         
         self.detailFilterView.isHidden = true
     }
@@ -66,7 +67,6 @@ class FilteringVC: UIViewController {
     
     @objc func hideView() {
         print("swipe")
-//        NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>, userInfo: <#T##[AnyHashable : Any]?#>)
     }
     
     private func initBlurView() {
@@ -203,6 +203,9 @@ class FilteringVC: UIViewController {
                 changeColorButton(selectedColorButton: colorButtons[index], selectedIndex: index)
             }
         }
+        
+        isSelectedDetailCategory.removeAll()
+        animateWhenNotSelected()
     }
     
     @IBAction func clickApply(_ sender: Any) {
@@ -235,8 +238,6 @@ extension FilteringVC: UICollectionViewDataSource {
             categoryCell.setcategoryImage(categoryImage)
         }
         
-        print("\(indexPath.row) : \(isSelectedCategory[indexPath.row])")
-        
         categoryCell.setCategoryLabel(name: category.getCategoryName())
         return categoryCell
     }
@@ -251,6 +252,10 @@ extension FilteringVC: UICollectionViewDelegate {
             isSelectedCategory[indexPath.row] = false
             categoryCell.setCategoryLabelColor(.white)
             categoryCell.setcategoryImage(notSelectedImage)
+            isSelectedDetailCategory.removeAll()
+            detailCategoryDelegate.setSelectedIndex(isSelectedDetailCategory)
+            detailCategoryCollectionViewDataSource.setDetailFilterData([])
+            detailCategoryCollectionView.reloadData()
         } else {
             guard let category = FilteringCategory(rawValue: indexPath.row) else { return }
             guard let categoryCell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell else { return }
@@ -258,14 +263,18 @@ extension FilteringVC: UICollectionViewDelegate {
             categoryCell.setcategoryImage(selectedImage)
             categoryCell.setCategoryLabelColor(UIColor(red: 250/255, green: 31/255, blue: 147/255, alpha: 1))
             isSelectedCategory[indexPath.row] = true
-
+            
             detailCategoryCollectionViewDataSource.setDetailFilterData(category.getDetailFilter())
             detailCategoryCollectionView.reloadData()
+            
+            for _ in 0..<category.getDetailFilter().count {
+                isSelectedDetailCategory.append(false)
+            }
+            detailCategoryDelegate.setSelectedIndex(isSelectedDetailCategory)
 
             for index in 0..<isSelectedCategory.count {
                 if index != indexPath.row && isSelectedCategory[index] == true {
                     isSelectedCategory[index] = false
-                    print(index)
                     guard let category = FilteringCategory(rawValue: index) else { return }
                     guard let categoryCell = collectionView.cellForItem(at: IndexPath(row: index, section: 0)) as? CategoryCollectionViewCell else { return }
                     guard let notSelectedImage = UIImage(named: category.getNotSelectImageName()) else { return }
@@ -322,5 +331,17 @@ extension FilteringVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension FilteringVC {
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setSelectedDetailCategory(_:)), name: .selectedDetailCategory, object: nil)
+    }
+    
+    @objc func setSelectedDetailCategory(_ notification: NSNotification) {
+        guard let selectedIndex = notification.userInfo?["index"] as? Int else { return }
+        guard let isSelected = notification.userInfo?["isSelected"] as? Bool else { return }
+        isSelectedDetailCategory[selectedIndex] = isSelected
     }
 }

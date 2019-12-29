@@ -35,14 +35,30 @@ class DetailCategoryDataSource: NSObject, UICollectionViewDataSource {
 
 
 class DetailCategoryDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-    private var detailFilterData: [String] = []
+    private var isSelectedDetailCategory: [Bool] = []
     
-    init(detailFilterData: [String]) {
-        self.detailFilterData = detailFilterData
+    init(isSelectedDetailCategory: [Bool]) {
+        self.isSelectedDetailCategory = isSelectedDetailCategory
     }
     
-    func setDetailFilterData(_ detailFilterData: [String]) {
-        self.detailFilterData = detailFilterData
+    func setSelectedIndex(_ isSelectedDetailCategory: [Bool]) {
+        self.isSelectedDetailCategory = isSelectedDetailCategory
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailFilterCell = collectionView.cellForItem(at: indexPath) as? DetailCategoryCollectionViewCell else { return }
+        
+        print(indexPath.row)
+    
+        if isSelectedDetailCategory[indexPath.row] {
+            isSelectedDetailCategory[indexPath.row] = false
+            detailFilterCell.setNotSelected()
+        } else {
+            isSelectedDetailCategory[indexPath.row] = true
+            detailFilterCell.setSelected()
+        }
+        
+        NotificationCenter.default.post(name: .selectedDetailCategory, object: nil, userInfo: ["selectedIndex": indexPath.row, "isSelected": isSelectedDetailCategory[indexPath.row]])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -55,13 +55,13 @@ class ShoppingVC: UIViewController {
         let blurEffect = UIBlurEffect(style: .dark)
         coverBlurView.backgroundColor = .clear
         coverBlurView.effect = blurEffect
-        coverBlurView.makeCornerRounded(radius: coverBlurView.frame.width / 30)
+        coverBlurView.makeCornerRounded(radius: coverBlurView.frame.width / 15)
         coverBlurView.clipsToBounds = true
         window.addSubview(coverBlurView)
 
         filteringVC = FilteringVC(nibName: "FilteringVC", bundle: nil)
         filteringVC?.view.frame = CGRect(x: 0, y: self.view.bounds.height + tabbarHeight , width: self.view.bounds.width, height: filteringViewEstimateHeight)
-        filteringVC.view.makeCornerRounded(radius: 100)
+        filteringVC.view.makeCornerRounded(radius: filteringVC.view.frame.width / 20)
         window.addSubview(filteringVC.view)
     }
     
