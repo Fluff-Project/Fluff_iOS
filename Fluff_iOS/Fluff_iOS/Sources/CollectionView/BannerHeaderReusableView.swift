@@ -10,4 +10,6 @@ import UIKit
 
 class BannerHeaderReusableView: UICollectionReusableView {
         
+    @IBOutlet weak var headerImage: UIImageView!
+    
 }

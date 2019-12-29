@@ -15,7 +15,6 @@ class HomeVC: UIViewController {
     @IBOutlet weak var bannerPageControl: CHIPageControlJalapeno!
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var todayLabel: UILabel!
-    @IBOutlet weak var stockLabel: UILabel!
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var recentLabel: UILabel!
     @IBOutlet weak var howFluvLabel: UILabel!
@@ -26,37 +25,50 @@ class HomeVC: UIViewController {
     @IBOutlet weak var todayVintageCollectionView: UICollectionView!
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var keyWordTableView: UITableView!
+    let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
+    let sCoreExtraLight = UIFont(name: "S-CoreDream-2ExtraLight", size: 24)
+    let forYou: String = "당신을 위한 "
+    var whatSeen = String()
+    let recommendVintage: String = "의 추천 빈티지"
+    var dayOfTheWeek = String()
+    var todayAttributedStr = NSMutableAttributedString()
+    var recentAttributedStr = NSMutableAttributedString()
+    
+    var howFluvAttributedStr = NSMutableAttributedString()
+    
+    var nowAuctionAttributedStr = NSMutableAttributedString()
+    
+    var todayVintageAttributedStr = NSMutableAttributedString()
+    
+    var keywordAttributedStr = NSMutableAttributedString()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
-        let sCoreExtraLight = UIFont(name: "S-CoreDream-2ExtraLight", size: 24)
-        let forYou: String = "당신을 위한 "
-        var whatSeen = String()
-        let recommendVintage: String = "의 추천 빈티지"
-        var dayOfTheWeek = String()
         whatSeen = "무스탕"
         dayOfTheWeek = "화요일"
         
         let attributes: [NSAttributedString.Key: Any] = [.kern: -1.44, .font: sCoreMedium as Any]
         
-        let recentAttributedStr = NSMutableAttributedString(string: forYou + whatSeen)
+        todayAttributedStr = NSMutableAttributedString(string: todayLabel.text!)
         
-        let howFluvAttributedStr = NSMutableAttributedString(string: howFluvLabel.text!)
+        recentAttributedStr = NSMutableAttributedString(string: forYou + whatSeen)
         
-        let nowAuctionAttributedStr = NSMutableAttributedString(string: nowAuctionLabel.text!)
+        howFluvAttributedStr = NSMutableAttributedString(string: howFluvLabel.text!)
         
-        let todayVintageAttributedStr = NSMutableAttributedString(string: dayOfTheWeek + recommendVintage)
+        nowAuctionAttributedStr = NSMutableAttributedString(string: nowAuctionLabel.text!)
         
-        let keywordAttributedStr = NSMutableAttributedString(string: keywordLabel.text!)
+        todayVintageAttributedStr = NSMutableAttributedString(string: dayOfTheWeek + recommendVintage)
         
+        keywordAttributedStr = NSMutableAttributedString(string: keywordLabel.text!)
+        
+        todayAttributedStr.addAttributes(attributes, range: NSRange(location: 0, length: 2))
         recentAttributedStr.addAttributes(attributes, range: NSRange(location: 7, length: whatSeen.count))
         howFluvAttributedStr.addAttributes(attributes, range: NSRange(location: 3, length: 2))
         nowAuctionAttributedStr.addAttributes(attributes, range: NSRange(location: 8, length: 2))
         todayVintageAttributedStr.addAttributes(attributes, range: NSRange(location: 0, length: 3))
         keywordAttributedStr.addAttributes(attributes, range: NSRange(location: 4, length: 2))
         
-        
+        todayLabel.attributedText = todayAttributedStr
         recentLabel.attributedText = recentAttributedStr
         howFluvLabel.attributedText = howFluvAttributedStr
         nowAuctionLabel.attributedText = nowAuctionAttributedStr
@@ -82,8 +94,33 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
-
+    @IBAction func goTodayTheme(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
+        nextVC.whatTheme = "Today"
+        nextVC.titleStr = todayAttributedStr
+        nextVC.suggestionStr = "회원님이 좋아할 만한 셀러에요"
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @IBAction func goRecentTheme(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
+        nextVC.whatTheme = "Recent"
+        nextVC.titleStr = recentAttributedStr
+        nextVC.suggestionStr = "회원님이 좋아할 만한 셀러에요"
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @IBAction func goTodayVintageTheme(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
+        nextVC.whatTheme = "TodayVintage"
+        nextVC.titleStr = todayVintageAttributedStr
+        nextVC.suggestionStr = "오늘은 이런 빈티지 어떨까요?"
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }
+
+
 
 extension HomeVC: UICollectionViewDataSource{
     
@@ -99,11 +136,13 @@ extension HomeVC: UICollectionViewDataSource{
         let howFluvImgList: [UIImage] = [#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715")]
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
         let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
+        
         let howFluvNameList: [String] = ["화자네 빈티지", "호준호준", "허정마니바니", "한나는하나"]
         let todayProductList: [String] = ["빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건", "빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건"]
         let nowAuctionItemList: [String] = ["Yves Saint Laurent 원피스", "MaxMara 만다린 자켓", "Yves Saint Laurent 원피스", "MaxMara 만다린 자켓"]
         let nowAuctionTimeList: [String] = ["곧 경매 종료", "종료까지 2시간", "곧 경매 종료", "종료까지 2시간"]
         let todayVintageProductList: [String] = ["오베이 갈매기 패턴 캠프캡", "폴로 스포츠 블루 덕다운 패딩", "오베이 갈매기 패턴 캠프캡", "폴로 스포츠 블루 덕다운 패딩"]
+        let starNumList: [Int] = [2,4,5,1]
         
         switch collectionView {
             
@@ -134,6 +173,45 @@ extension HomeVC: UICollectionViewDataSource{
             
             howFluvCollectionViewCell.fluvProfileImage.image = howFluvImgList[indexPath.row]
             howFluvCollectionViewCell.fluvName.text = howFluvNameList[indexPath.row]
+            switch starNumList[indexPath.row] {
+            
+            case 1:
+                howFluvCollectionViewCell.star1.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star2.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star3.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star4.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star5.image = #imageLiteral(resourceName: "starGreyIc")
+            case 2:
+                howFluvCollectionViewCell.star1.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star2.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star3.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star4.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star5.image = #imageLiteral(resourceName: "starGreyIc")
+            case 3:
+                howFluvCollectionViewCell.star1.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star2.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star3.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star4.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star5.image = #imageLiteral(resourceName: "starGreyIc")
+            case 4:
+                howFluvCollectionViewCell.star1.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star2.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star3.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star4.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star5.image = #imageLiteral(resourceName: "starGreyIc")
+            case 5:
+                howFluvCollectionViewCell.star1.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star2.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star3.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star4.image = #imageLiteral(resourceName: "starYellowIc")
+                howFluvCollectionViewCell.star5.image = #imageLiteral(resourceName: "starYellowIc")
+            default:
+                howFluvCollectionViewCell.star1.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star2.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star3.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star4.image = #imageLiteral(resourceName: "starGreyIc")
+                howFluvCollectionViewCell.star5.image = #imageLiteral(resourceName: "starGreyIc")
+            }
             
             howFluvCollectionViewCell.howFluvView.backgroundColor = UIColor.white
             howFluvCollectionViewCell.howFluvView.layer.borderColor = UIColor.borderGrey.cgColor
@@ -213,7 +291,7 @@ extension HomeVC: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "homeDetailVC") as? BannerIntoVC else { return }
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "BannerIntoVC") as? BannerIntoVC else { return }
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

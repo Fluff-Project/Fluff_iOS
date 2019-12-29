@@ -16,20 +16,13 @@ class BannerIntoVC: UIViewController {
         super.viewDidLoad()
         
         bannerIntoCollectionView.dataSource = self
+        bannerIntoCollectionView.delegate = self
         
-        // Do any additional setup after loading the view.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+     @IBAction func back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
      }
-     */
     
 }
 
@@ -51,13 +44,30 @@ extension BannerIntoVC: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "BannerHeaderReusableView", for: indexPath) as! BannerHeaderReusableView
+            
+            header.headerImage.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.45)
+            
             return header
         default:
             assert(false)
         }
     }
-    
-    
-    
+}
+
+extension BannerIntoVC: UICollectionViewDelegateFlowLayout {
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let cellWidth = (collectionView.frame.width - 91) / 2
+    let cellHeight = cellWidth * (253 / 142)
+    return CGSize(width: cellWidth, height: cellHeight)
+}
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 40, left: 33, bottom: 0, right: 32)
     
 }
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 29
+    }
+}
+
