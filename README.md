@@ -2,18 +2,22 @@
 
 
 
-### Commit Message
-
-- [Update], [Create], [Delete] 시작 메세지는 이렇게
-- 메세지를 ViewController의 '스크롤링 기능 구현'
 
 
+## Commit Message
+
+🔵 [Update], [Create], [Fix] ➡️ **메세지 통일**
+
+🔵 한글로 변경된 폴더명, 기능 구현 순 ➡️ **메세지 통일**
 
 
 
-### Code Convention
 
-* 서로 파일 만들 때, 직관적으로 알아볼 수 있는지 물어보기
+
+## Code Convention
+
+ 서로 파일 만들 때, 직관적으로 알아볼 수 있는지 물어보기
+
 * ViewController 같은 경우 ==> ~~VC
 * 변수명은 Lower Camel 사용 
 * 함수명도 Lower Camel 사용
@@ -28,11 +32,17 @@
 
 ### 라이브러리
 
-- 'Alamofire', '~> 4.8.2'
-- 'KingFisher',`~> 5.4.0'
-- 'CHIPageControl', `~> 0.1.7'
-- 'XLPagerTabStrip', '~> 9.0'
-- 'BEMCheckBox'
+✅ Alamofire
+
+✅ KingFisher
+
+✅ CHIPageControl
+
+✅ XLPagerTabStrip
+
+✅ BEMCheckBox
+
+✅ Hero
 
 
 
@@ -51,6 +61,8 @@
 
 
 ### 어려운 것 해결한 것
+
+1. 
 
 2. TableView 안 CollectionView 그리기
 4. CollectionView 레이아웃 잡기 (DelegateFlowLayout 안잡힘)
@@ -84,6 +96,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 
 4. ScrollView Delegate활용 PageControl ( ✅ `CHIPageControl` 사용 )
+
+**페이지 번호 계산**
+
+ 현재 x 위치로 View의 Width을 나누어서 현재 페이지 계산 ➡️ Int 값으로 환산을 하면 페이지 값이 나온다.
 
 ```swift
 func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -125,6 +141,21 @@ override func viewDidLayoutSubviews() {
 7. StackView 이용 Animation 적용 AutoLayout 잡아주기
 
 🔵 필터를 적용했을 때만 선택하는 메뉴에서 StackView을 활용 오토레이아웃을 잡아주었다. `isHidden` 옵션 활용
+
+```swift
+detailFilterView.isHidden = false
+// setNeedsLayout 필요 isHidden 후 ==> 이 부분도 공부 필요
+self.view.setNeedsLayout()
+UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                    self.view.layoutIfNeeded()
+// 보통 isHidden 후 나타날때, 화면 버벅거리는 문제로 layoutIfNeeded() 필요
+// 여기도 공부 필요
+                }, completion: nil)
+```
+
+
+
+8. Tabbar 뷰에서 삭제하기
 
 ```
 
