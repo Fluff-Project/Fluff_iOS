@@ -67,6 +67,10 @@ class LoginVC: UIViewController {
         estimateSize = loginButton.frame.size
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     private func initialButton() {
         idPwdSearchButton.alpha = 0
         doLoginButton.alpha = 0
@@ -80,7 +84,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func doLogin(_ sender: Any) {
-        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
         tasteAnalysisVC.modalPresentationStyle = .fullScreen
         self.present(tasteAnalysisVC, animated: true, completion: nil)
     }
@@ -138,14 +142,6 @@ class LoginVC: UIViewController {
             self.pwdTextField?.borderStyle = .none
             self.view.addSubview(self.pwdTextField!)
         })
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        if identifier == "signinSegue" {
-            let vc = segue.destination
-            vc.modalPresentationStyle = .fullScreen
-        }
     }
 }
 

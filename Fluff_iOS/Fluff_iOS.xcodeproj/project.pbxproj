@@ -72,6 +72,9 @@
 		A66F23FD23B6DCB6004B57FA /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F23FC23B6DCB6004B57FA /* KeywordTableViewCell.swift */; };
 		A66F23FF23B6E796004B57FA /* NewSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */; };
 		A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240023B7532C004B57FA /* NewSignUpViewController.swift */; };
+		A66F240723B8A509004B57FA /* BannerIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240623B8A509004B57FA /* BannerIntoVC.swift */; };
+		A66F240B23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240A23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift */; };
+		A66F240D23B8BADB004B57FA /* BannerHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */; };
 		A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861E23B0D2CD00E7379B /* SCDream9.otf */; };
 		A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861F23B0D2CD00E7379B /* SCDream1.otf */; };
 		A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862123B0D2CD00E7379B /* SCDream2.otf */; };
@@ -171,6 +174,9 @@
 		A66F23FC23B6DCB6004B57FA /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
 		A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSignUp.storyboard; sourceTree = "<group>"; };
 		A66F240023B7532C004B57FA /* NewSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignUpViewController.swift; sourceTree = "<group>"; };
+		A66F240623B8A509004B57FA /* BannerIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoVC.swift; sourceTree = "<group>"; };
+		A66F240A23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHeaderReusableView.swift; sourceTree = "<group>"; };
 		A6D2861E23B0D2CD00E7379B /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
 		A6D2861F23B0D2CD00E7379B /* SCDream1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream1.otf; sourceTree = "<group>"; };
 		A6D2862123B0D2CD00E7379B /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
@@ -283,6 +289,7 @@
 				A6DF861923B66FF3006FDE79 /* TodayVintageCollectionViewCell.swift */,
 				9D7B342923B28BE000F1A530 /* DetailItemCollectionViewCell.swift */,
 				A6DF861523B61748006FDE79 /* HowFluvCollectionViewCell.swift */,
+				A66F240A23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift */,
 				9D7B342D23B2B4E500F1A530 /* OtherItemDataSource.swift */,
 				9D7B342F23B2B7F200F1A530 /* OtherItemCollectionViewCell.swift */,
 				9D468ACF23B2BAF800E98500 /* OtherItemDelegate.swift */,
@@ -292,9 +299,13 @@
 				9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */,
 				9D385C9923B5416F00705218 /* AuctionCollectionViewCell.swift */,
 				9D5676EF23B6AEC500720F06 /* CategoryCollectionViewCell.swift */,
+
 				9DD73AF923B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift */,
 				9DD73AF723B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift */,
 				9D705A9423B7D30E00097FCF /* DetailCategoryDataSource.swift */,
+
+				A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */,
+
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -396,6 +407,7 @@
 				A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */,
 				A66F240023B7532C004B57FA /* NewSignUpViewController.swift */,
 				A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */,
+				A66F240623B8A509004B57FA /* BannerIntoVC.swift */,
 				A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */,
 				A6DF860623B28674006FDE79 /* HomeVC.swift */,
 				A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */,
@@ -621,6 +633,7 @@
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,
 				9D79382C23B2871400A0CD3E /* DetailItemVC.swift in Sources */,
+				A66F240B23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift in Sources */,
 				9D5676F423B6B64D00720F06 /* FilteringCategory.swift in Sources */,
 				9D705A9F23B8AB5200097FCF /* DeliveryListTableViewCell.swift in Sources */,
 				A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */,
@@ -669,8 +682,10 @@
 				9D7B343023B2B7F200F1A530 /* OtherItemCollectionViewCell.swift in Sources */,
 				9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */,
 				A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */,
+				A66F240D23B8BADB004B57FA /* BannerHeaderReusableView.swift in Sources */,
 				9D7937F523B1350C00A0CD3E /* AnalysisTableViewCell.swift in Sources */,
 				9D468AD023B2BAF800E98500 /* OtherItemDelegate.swift in Sources */,
+				A66F240723B8A509004B57FA /* BannerIntoVC.swift in Sources */,
 				9D7B342A23B28BE000F1A530 /* DetailItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@
         <!--Check DeliveryVC-->
         <scene sceneID="B6m-VK-Qqj">
             <objects>
-                <viewController id="TBC-uL-lDH" customClass="CheckDeliveryVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="checkDeliveryVC" id="TBC-uL-lDH" customClass="CheckDeliveryVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cyo-4j-fEV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,4 +11,5 @@ target 'Fluff_iOS' do
   pod 'CHIPageControl', '~> 0.1.3'
   pod 'BEMCheckBox'
   pod 'XLPagerTabStrip', '~> 9.0'
+  pod 'Hero'
 end

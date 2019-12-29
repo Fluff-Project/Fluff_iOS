@@ -35,11 +35,10 @@ class HomeVC: UIViewController {
         var whatSeen = String()
         let recommendVintage: String = "의 추천 빈티지"
         var dayOfTheWeek = String()
-        
         whatSeen = "무스탕"
         dayOfTheWeek = "화요일"
         
-        let attributes: [NSAttributedString.Key: Any] = [.kern: -1.44, .font: sCoreMedium]
+        let attributes: [NSAttributedString.Key: Any] = [.kern: -1.44, .font: sCoreMedium as Any]
         
         let recentAttributedStr = NSMutableAttributedString(string: forYou + whatSeen)
         
@@ -62,7 +61,7 @@ class HomeVC: UIViewController {
         howFluvLabel.attributedText = howFluvAttributedStr
         nowAuctionLabel.attributedText = nowAuctionAttributedStr
         todayVintageLabel.attributedText = todayVintageAttributedStr
-        keywordLabel.attributedText = todayVintageAttributedStr
+        keywordLabel.attributedText = keywordAttributedStr
         
         bannerCollectionView.dataSource = self
         todayCollectionView.dataSource = self
@@ -76,7 +75,6 @@ class HomeVC: UIViewController {
        bannerCollectionView.showsHorizontalScrollIndicator = false
         todayCollectionView.showsHorizontalScrollIndicator = false
 
-        
         // Do any additional setup after loading the view.
     }
     
@@ -100,7 +98,7 @@ extension HomeVC: UICollectionViewDataSource{
         let recentImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716")]
         let howFluvImgList: [UIImage] = [#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715")]
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
-        let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
+        let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
         let howFluvNameList: [String] = ["화자네 빈티지", "호준호준", "허정마니바니", "한나는하나"]
         let todayProductList: [String] = ["빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건", "빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건"]
         let nowAuctionItemList: [String] = ["Yves Saint Laurent 원피스", "MaxMara 만다린 자켓", "Yves Saint Laurent 원피스", "MaxMara 만다린 자켓"]
@@ -136,6 +134,11 @@ extension HomeVC: UICollectionViewDataSource{
             
             howFluvCollectionViewCell.fluvProfileImage.image = howFluvImgList[indexPath.row]
             howFluvCollectionViewCell.fluvName.text = howFluvNameList[indexPath.row]
+            
+            howFluvCollectionViewCell.howFluvView.backgroundColor = UIColor.white
+            howFluvCollectionViewCell.howFluvView.layer.borderColor = UIColor.borderGrey.cgColor
+            
+            howFluvCollectionViewCell.howFluvView.layer.borderWidth = 1
         
             return howFluvCollectionViewCell
             
@@ -143,6 +146,8 @@ extension HomeVC: UICollectionViewDataSource{
             let nowAuctionCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "NowAuctionCollectionViewCell", for: indexPath) as! NowAuctionCollectionViewCell
             
             nowAuctionCollectionViewCell.nowAuctionImage.image = nowAuctionImgList[indexPath.row]
+            
+            nowAuctionCollectionViewCell.nowAuctionGradient.image = #imageLiteral(resourceName: "478")
             nowAuctionCollectionViewCell.nowAuctionItem.text = nowAuctionItemList[indexPath.row]
             
             nowAuctionCollectionViewCell.nowAuctionTime.text = nowAuctionTimeList[indexPath.row]
@@ -168,26 +173,51 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        switch collectionView {
+        case self.bannerCollectionView:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        case self.howFluvCollectionView:
+            return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+        default:
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        switch collectionView {
+        case self.howFluvCollectionView:
+            return 12
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        switch collectionView {
+        case self.howFluvCollectionView:
+            return 12
+        default:
+            return 0
+        }
+        
     }
 }
 
 extension HomeVC: UICollectionViewDelegate {
 
-func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-    let page = Int(targetContentOffset.pointee.x / self.bannerCollectionView.frame.width)
-  self.bannerPageControl.set(progress: page, animated: true)
-}
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / self.bannerCollectionView.frame.width)
+      self.bannerPageControl.set(progress: page, animated: true)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "homeDetailVC") as? BannerIntoVC else { return }
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
+
 
 extension HomeVC: UITableViewDataSource {
     
@@ -202,12 +232,11 @@ extension HomeVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let keywordList: [String] = ["# 스카프", "# 데님자켓", "# 중절모"]
-        let keywordImgList: [UIImage] = [#imageLiteral(resourceName: "92"),#imageLiteral(resourceName: "92"),#imageLiteral(resourceName: "92")]
         
         let keywordTableViewCell = tableView.dequeueReusableCell(withIdentifier: "KeywordTableViewCell", for: indexPath) as! KeywordTableViewCell
-        keywordTableViewCell.keywordButton.titleLabel?.text = keywordList[indexPath.row]
+        keywordTableViewCell.keywordButton.setTitle(keywordList[indexPath.row], for: .normal)
         
-        keywordTableViewCell.keywordImageView.image = keywordImgList[indexPath.row]
+        keywordTableViewCell.keywordImageView.image = #imageLiteral(resourceName: "105")
         
         return keywordTableViewCell
     }

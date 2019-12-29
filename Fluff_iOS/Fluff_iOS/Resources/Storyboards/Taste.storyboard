@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sP6-lB-fsB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gBr-ua-q5c">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -368,7 +368,7 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="324" translatesAutoresizingMaskIntoConstraints="NO" id="vfW-PD-Yap">
-                                <rect key="frame" x="95" y="312" width="185" height="101.33333333333331"/>
+                                <rect key="frame" x="95" y="356" width="185" height="101.33333333333331"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vfW-PD-Yap" secondAttribute="height" multiplier="51:28" id="IXl-E7-Uhx"/>
                                 </constraints>
@@ -401,7 +401,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="JJX-9f-Eid" kind="show" identifier="signinSegue" id="oM3-uz-7hU"/>
+                                    <segue destination="th8-wm-HHt" kind="show" identifier="signupSegue" id="I8f-jq-eDn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="페이스북으로 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qar-pJ-8Na">
@@ -470,6 +470,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OwE-z0-WZY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wt5-HP-shY"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="MPW-tG-Q38" id="S1H-kY-Yan"/>
                         <outlet property="blurBackgroundImageView" destination="pXK-2O-GZO" id="6QF-Zf-Sca"/>
@@ -486,17 +487,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr6-8V-bx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318.84057971014494" y="511.60714285714283"/>
+            <point key="canvasLocation" x="1105" y="511"/>
         </scene>
-        <!--SignupVC-->
-        <scene sceneID="RO0-xC-XDp">
+        <!--NewSignUp-->
+        <scene sceneID="KVC-oF-Xoc">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="SignupVC" id="JJX-9f-Eid" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="09s-JS-pOA"/>
+                <viewControllerPlaceholder storyboardName="NewSignUp" referencedIdentifier="NewSignUp" id="th8-wm-HHt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NqH-iJ-LZh"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LPx-6P-3r2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BEX-Be-hcD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="512"/>
+            <point key="canvasLocation" x="1925.5999999999999" y="602.95566502463055"/>
         </scene>
         <!--ShoppingVC-->
         <scene sceneID="dAd-xC-2r4">
@@ -1008,7 +1009,7 @@
                                                     <constraint firstItem="XQB-Uo-s3z" firstAttribute="height" secondItem="tqk-Sd-Reb" secondAttribute="height" multiplier="0.59" id="xBH-lF-egq"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="185" y="374" width="44" height="8"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -1938,7 +1939,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzY-xc-JDw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2855.072463768116" y="479.46428571428567"/>
+            <point key="canvasLocation" x="3796" y="478.81773399014781"/>
         </scene>
         <!--둘러보기-->
         <scene sceneID="tlR-or-Yfw">
@@ -2608,7 +2609,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtN-Xr-h8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4028" y="478.81773399014781"/>
+            <point key="canvasLocation" x="4970.3999999999996" y="478.81773399014781"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="ett-eE-hJG">
@@ -2618,7 +2619,25 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tcb-tr-WAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4681" y="479"/>
+            <point key="canvasLocation" x="5622.3999999999996" y="478.81773399014781"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BQj-C3-ZKF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gBr-ua-q5c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="10V-ir-azF">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MWN-jh-Ivm" kind="relationship" relationship="rootViewController" id="ahf-dQ-h5o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-Vb-fX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="317.60000000000002" y="511.33004926108379"/>
         </scene>
     </scenes>
     <resources>

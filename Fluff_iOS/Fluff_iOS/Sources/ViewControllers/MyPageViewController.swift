@@ -102,4 +102,19 @@ extension MyPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height / 4
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedMenu = MenuCategory(rawValue: indexPath.row) else { return }
+        switch selectedMenu {
+        case .deliveryCheck:
+            let checkStoryboard = UIStoryboard(name: "checkDelivery", bundle: nil)
+            guard let deliveryVC = checkStoryboard.instantiateViewController(identifier: "checkDeliveryVC") as? CheckDeliveryVC else { return }
+            self.navigationController?.pushViewController(deliveryVC, animated: true)
+        case .reviseInformation: return
+        case .tasteResetting: return
+        case .logout: return
+            
+        
+        }
+    }
 }

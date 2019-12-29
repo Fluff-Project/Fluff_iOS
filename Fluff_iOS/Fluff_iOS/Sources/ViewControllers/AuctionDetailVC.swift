@@ -25,7 +25,6 @@ class AuctionDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         auctionImageCollectionView.delegate = self
         auctionImageCollectionView.dataSource = self

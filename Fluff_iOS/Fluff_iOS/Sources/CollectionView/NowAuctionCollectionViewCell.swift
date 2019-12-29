@@ -13,4 +13,5 @@ class NowAuctionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nowAuctionImage: UIImageView!
     @IBOutlet weak var nowAuctionItem: UILabel!
     @IBOutlet weak var nowAuctionTime: UILabel!
+    @IBOutlet weak var nowAuctionGradient: UIImageView!
 }
