@@ -24,14 +24,11 @@ class FilteringVC: UIViewController {
     @IBOutlet weak var checkboxButton: BEMCheckBox!
     @IBOutlet weak var applyButton: UIButton!
     
-    @IBOutlet weak var detailFilterStackView: UIStackView!
-    @IBOutlet weak var detailFilterStackViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var detailFilterLabelView: UIView!
-    @IBOutlet weak var detailFilterTitleLabel: UILabel!
-    
     @IBOutlet weak var detailCategoryCollectionView: UICollectionView!
-    private var detailCategoryCollectionViewDataSource: DetailCategoryDataSource = DetailCategoryDataSource(detailFilterData: ["자켓", "가디건", "점퍼", "야상", "베스트", "코트"])
-    private var detailCategoryDelegate: DetailCategoryDelegateFlowLayout = DetailCategoryDelegateFlowLayout(detailFilterData: ["자켓", "가디건", "점퍼", "야상", "베스트", "코트"])
+    @IBOutlet weak var detailFilterView: UIView!
+    
+    private var detailCategoryCollectionViewDataSource: DetailCategoryDataSource = DetailCategoryDataSource(detailFilterData: [])
+    private var detailCategoryDelegate: DetailCategoryDelegateFlowLayout = DetailCategoryDelegateFlowLayout(detailFilterData: [])
     
     private var isSelectedColor: [Bool] = []
     private var isSelectedCategory: [Bool] = []
@@ -44,7 +41,6 @@ class FilteringVC: UIViewController {
         setSwipeArea()
         initConstaint()
         initSwipe()
-        initColorButtons()
         setCollectionView()
         initSizeFilterButtons()
         checkboxButton.boxType = .square
@@ -52,6 +48,13 @@ class FilteringVC: UIViewController {
         checkboxButton.offAnimationType = .stroke
         applyButton.makeCornerRounded(radius: applyButton.frame.width / 15)
         initCategorySelected()
+        
+        self.detailFilterView.isHidden = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        initColorButtons()
     }
     
     private func setSwipeArea() {
@@ -225,6 +228,8 @@ extension FilteringVC: UICollectionViewDataSource {
             categoryCell.setcategoryImage(categoryImage)
         }
         
+        print("\(indexPath.row) : \(isSelectedCategory[indexPath.row])")
+        
         categoryCell.setCategoryLabel(name: category.getCategoryName())
         return categoryCell
     }
@@ -247,9 +252,13 @@ extension FilteringVC: UICollectionViewDelegate {
             categoryCell.setCategoryLabelColor(UIColor(red: 250/255, green: 31/255, blue: 147/255, alpha: 1))
             isSelectedCategory[indexPath.row] = true
             
+            detailCategoryCollectionViewDataSource.setDetailFilterData(category.getDetailFilter())
+            detailCategoryCollectionView.reloadData()
+            
             for index in 0..<isSelectedCategory.count {
                 if index != indexPath.row && isSelectedCategory[index] == true {
                     isSelectedCategory[index] = false
+                    print(index)
                     guard let category = FilteringCategory(rawValue: index) else { return }
                     guard let categoryCell = collectionView.cellForItem(at: IndexPath(row: index, section: 0)) as? CategoryCollectionViewCell else { return }
                     guard let notSelectedImage = UIImage(named: category.getNotSelectImageName()) else { return }
@@ -257,6 +266,36 @@ extension FilteringVC: UICollectionViewDelegate {
                     categoryCell.setCategoryLabelColor(.white)
                 }
             }
+            
+            // 여기부분 로직 문제 ==> reload가 안됨
+        }
+        
+        animateWhenNotSelected()
+    }
+    
+    private func animateWhenNotSelected() {
+        var notSelected = true
+        
+        for selected in isSelectedCategory {
+            if selected {
+                detailFilterView.alpha = 0
+                detailFilterView.isHidden = false
+                self.view.setNeedsLayout()
+                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                    self.detailFilterView.alpha = 1
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+                notSelected = false
+                break
+            }
+        }
+        
+        if notSelected == true {
+            detailFilterView.isHidden = true
+            self.view.setNeedsLayout()
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
         }
     }
 }

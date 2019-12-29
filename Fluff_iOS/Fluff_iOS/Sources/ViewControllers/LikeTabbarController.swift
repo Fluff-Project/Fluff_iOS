@@ -23,5 +23,8 @@ class LikeTabbarController: ButtonBarPagerTabStripViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.backgroundColor = UIColor.fluffWhite
         settings.style.buttonBarItemBackgroundColor = UIColor.fluffWhite
+        settings.style.buttonBarLeftContentInset = 77
+        settings.style.buttonBarRightContentInset = 77
+        
     }
 }
