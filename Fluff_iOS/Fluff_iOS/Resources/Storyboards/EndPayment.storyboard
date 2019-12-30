@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--How To Pay View Controller-->
+        <!--How To PayVC-->
         <scene sceneID="2aZ-6A-ZAc">
             <objects>
-                <viewController id="bDP-zD-lc8" customClass="HowToPayViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bDP-zD-lc8" customClass="HowToPayVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rdd-lp-a7V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1D7-IP-6z8">
                                 <rect key="frame" x="16" y="170" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="3kQ-3m-No8"/>
+                                    <constraint firstAttribute="width" secondItem="1D7-IP-6z8" secondAttribute="height" multiplier="1:1" id="Anu-dY-dDd"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="21"/>
                                 <state key="selected" backgroundImage="selectIc"/>
                                 <connections>
@@ -70,7 +74,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0W-1b-0RJ">
-                                        <rect key="frame" x="333.66666666666669" y="59.333333333333343" width="15.333333333333314" height="9"/>
+                                        <rect key="frame" x="333.33333333333331" y="59.333333333333343" width="15.666666666666686" height="9"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="9" id="whs-CI-aHu"/>
                                         </constraints>
@@ -118,23 +122,42 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BbC-IB-nu4" kind="show" id="pxC-cz-9Fb"/>
+                                    <action selector="paymentComplete:" destination="bDP-zD-lc8" eventType="touchUpInside" id="wcG-dH-zpB"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfw-xQ-chv">
+                                <rect key="frame" x="0.0" y="478" width="375" height="300"/>
+                                <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="j7a-7T-mOF"/>
+                                </constraints>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqr-lV-LmT">
+                                <rect key="frame" x="0.0" y="434" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="완료" id="G53-xC-p0c"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sij-ci-7cx" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" constant="16" id="3qs-Uk-uZ5"/>
                             <constraint firstItem="sij-ci-7cx" firstAttribute="top" secondItem="lTl-n4-odc" secondAttribute="top" constant="40" id="77X-po-tkT"/>
+                            <constraint firstItem="yfw-xQ-chv" firstAttribute="top" secondItem="Cqr-lV-LmT" secondAttribute="bottom" symbolic="YES" id="8yn-wy-YlW"/>
                             <constraint firstItem="CA7-4z-Qvj" firstAttribute="trailing" secondItem="lTl-n4-odc" secondAttribute="trailing" id="9To-fC-KDP"/>
+                            <constraint firstItem="Cqr-lV-LmT" firstAttribute="trailing" secondItem="lTl-n4-odc" secondAttribute="trailing" id="9iZ-Ve-rXC"/>
                             <constraint firstItem="CA7-4z-Qvj" firstAttribute="top" secondItem="Vkz-2x-JBi" secondAttribute="bottom" constant="23" id="BaO-YA-UMg"/>
                             <constraint firstItem="Vkz-2x-JBi" firstAttribute="leading" secondItem="1D7-IP-6z8" secondAttribute="trailing" constant="12" id="D92-Vb-V0g"/>
+                            <constraint firstItem="Cqr-lV-LmT" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" id="OBQ-vT-3U7"/>
+                            <constraint firstItem="lTl-n4-odc" firstAttribute="trailing" secondItem="yfw-xQ-chv" secondAttribute="trailing" id="P7U-5Q-iYm"/>
                             <constraint firstItem="1D7-IP-6z8" firstAttribute="top" secondItem="sij-ci-7cx" secondAttribute="bottom" constant="14" id="QUZ-v7-dlQ"/>
                             <constraint firstItem="lTl-n4-odc" firstAttribute="bottom" secondItem="U6U-mg-sQF" secondAttribute="bottom" constant="26" id="QzX-cv-KJs"/>
                             <constraint firstItem="1D7-IP-6z8" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" constant="16" id="VnE-kB-W08"/>
                             <constraint firstItem="U6U-mg-sQF" firstAttribute="centerX" secondItem="lTl-n4-odc" secondAttribute="centerX" id="czw-sj-RHa"/>
                             <constraint firstItem="Vkz-2x-JBi" firstAttribute="top" secondItem="sij-ci-7cx" secondAttribute="bottom" constant="12" id="iTS-dz-Kmo"/>
                             <constraint firstItem="CA7-4z-Qvj" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" id="utz-Qh-3V1"/>
+                            <constraint firstItem="yfw-xQ-chv" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" id="v9Q-l7-pDV"/>
+                            <constraint firstItem="lTl-n4-odc" firstAttribute="bottom" secondItem="yfw-xQ-chv" secondAttribute="bottom" id="xvQ-rb-yTS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lTl-n4-odc"/>
                     </view>
@@ -145,7 +168,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accountTransferButton" destination="1D7-IP-6z8" id="DZ9-rF-Ebs"/>
+                        <outlet property="bankPickerView" destination="yfw-xQ-chv" id="8p0-Oc-LgN"/>
                         <outlet property="customerNameTextField" destination="Aef-wK-zZ3" id="BWz-HB-qN1"/>
+                        <outlet property="doneSelectToolbar" destination="Cqr-lV-LmT" id="Xtg-GC-Vgo"/>
                         <outlet property="howToPayView" destination="CA7-4z-Qvj" id="32e-fb-yiH"/>
                         <outlet property="payCompleteButton" destination="U6U-mg-sQF" id="S4P-Y6-1Ft"/>
                         <outlet property="selectBankTextField" destination="4Fm-8c-C8c" id="vnh-md-7yR"/>
@@ -158,7 +183,7 @@
         <!--End PaymentVC-->
         <scene sceneID="fmz-Fs-0oN">
             <objects>
-                <viewController id="BbC-IB-nu4" customClass="EndPaymentVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndPaymentVC" id="BbC-IB-nu4" customClass="EndPaymentVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Q5-1D-K9a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,10 +192,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbD-yQ-Ncr">
-                                <rect key="frame" x="23.666666666666657" y="72.333333333333314" width="328" height="601"/>
+                                <rect key="frame" x="23.666666666666657" y="72.333333333333314" width="328" height="600"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="billImg" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-SA-qFw">
-                                        <rect key="frame" x="0.0" y="0.0" width="328" height="600"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="billImg" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-SA-qFw">
+                                        <rect key="frame" x="0.0" y="0.0" width="328" height="570"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedImg" translatesAutoresizingMaskIntoConstraints="NO" id="6b6-ct-Rpx">
                                         <rect key="frame" x="118.33333333333331" y="32.666666666666664" width="91" height="90.666666666666686"/>
@@ -289,7 +314,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매 내역은 마이 페이지에서 확인 가능해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHU-1C-SJG">
-                                        <rect key="frame" x="43.333333333333329" y="584" width="241.33333333333337" height="17"/>
+                                        <rect key="frame" x="43.333333333333329" y="583" width="241.33333333333337" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -310,9 +335,10 @@
                                     <constraint firstItem="wn9-nG-Dxr" firstAttribute="top" secondItem="pc0-dX-ZHH" secondAttribute="bottom" constant="10.333333333333314" id="756-rG-GT5"/>
                                     <constraint firstItem="ciy-AV-Ch0" firstAttribute="top" secondItem="wn9-nG-Dxr" secondAttribute="bottom" constant="32" id="B3R-YD-Rjq"/>
                                     <constraint firstItem="41e-J0-A0Y" firstAttribute="leading" secondItem="S9H-5z-BiD" secondAttribute="leading" id="Byg-Fb-gLk"/>
+                                    <constraint firstAttribute="bottom" secondItem="LRI-SA-qFw" secondAttribute="bottom" constant="30" id="CFQ-Nk-KeA"/>
                                     <constraint firstItem="CfC-g3-Yxc" firstAttribute="leading" secondItem="cJ4-qH-GGZ" secondAttribute="leading" id="Dgx-li-y8K"/>
                                     <constraint firstItem="41e-J0-A0Y" firstAttribute="top" secondItem="RJ6-pz-xBx" secondAttribute="bottom" constant="11.999999999999972" id="ENG-4f-t7P"/>
-                                    <constraint firstAttribute="bottom" secondItem="vHU-1C-SJG" secondAttribute="bottom" id="FTx-E3-Dme"/>
+                                    <constraint firstItem="vHU-1C-SJG" firstAttribute="bottom" secondItem="dbD-yQ-Ncr" secondAttribute="bottom" id="FTx-E3-Dme"/>
                                     <constraint firstItem="mAw-Vb-7C4" firstAttribute="top" secondItem="5n1-zU-g6g" secondAttribute="top" id="H5a-U2-uBj"/>
                                     <constraint firstAttribute="trailing" secondItem="LRI-SA-qFw" secondAttribute="trailing" id="HMV-UO-ylq"/>
                                     <constraint firstItem="fZ0-Gn-Sru" firstAttribute="leading" secondItem="cJ4-qH-GGZ" secondAttribute="leading" id="HYj-BO-Sfm"/>
@@ -324,7 +350,6 @@
                                     <constraint firstItem="ial-z1-zVQ" firstAttribute="top" secondItem="wn9-nG-Dxr" secondAttribute="bottom" constant="32" id="U6J-dN-k5F"/>
                                     <constraint firstItem="S9H-5z-BiD" firstAttribute="centerX" secondItem="dbD-yQ-Ncr" secondAttribute="centerX" id="WIp-Ea-G0i"/>
                                     <constraint firstItem="73U-Up-g2P" firstAttribute="top" secondItem="6b6-ct-Rpx" secondAttribute="bottom" constant="20.333333333333314" id="WMa-PI-pd6"/>
-                                    <constraint firstItem="vHU-1C-SJG" firstAttribute="top" secondItem="LRI-SA-qFw" secondAttribute="bottom" constant="14" id="X7q-6A-e9A"/>
                                     <constraint firstItem="S9H-5z-BiD" firstAttribute="top" secondItem="73U-Up-g2P" secondAttribute="bottom" constant="19.999999999999972" id="Xli-ub-jGb"/>
                                     <constraint firstItem="pc0-dX-ZHH" firstAttribute="trailing" secondItem="cJ4-qH-GGZ" secondAttribute="trailing" id="YdN-69-IeW"/>
                                     <constraint firstAttribute="width" constant="328" id="Z28-80-fJI"/>
@@ -350,7 +375,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tul-ry-kWs">
-                                <rect key="frame" x="27" y="711" width="321" height="48"/>
+                                <rect key="frame" x="27" y="710" width="321" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Tul-ry-kWs" secondAttribute="height" multiplier="107:16" id="86x-Dt-1rn"/>
