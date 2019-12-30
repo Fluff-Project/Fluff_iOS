@@ -84,7 +84,7 @@ class HomeVC: UIViewController {
         howFluvCollectionView.dataSource = self
         nowAuctionCollectionView.dataSource = self
         todayVintageCollectionView.dataSource = self
-        self.keyWordTableView.dataSource = self as! UITableViewDataSource
+        self.keyWordTableView.dataSource = self as UITableViewDataSource
         howFluvCollectionView.delegate = self
         bannerCollectionView.delegate = self
        bannerCollectionView.showsHorizontalScrollIndicator = false
