@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "10.png",
       "scale" : "1x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "triangleIc.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "10@2x.png",
+      "filename" : "triangleIc@2x.png",
       "scale" : "2x"
     },
     {
+      "filename" : "triangleIc@3x.png",
       "scale" : "3x",
-      "idiom" : "universal",
-      "filename" : "10@3x.png"
+      "idiom" : "universal"
     }
   ],
   "info" : {

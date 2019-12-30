@@ -18,17 +18,138 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Title-->
+        <!--How To Pay View Controller-->
         <scene sceneID="2aZ-6A-ZAc">
             <objects>
-                <viewController id="bDP-zD-lc8" sceneMemberID="viewController">
+                <viewController id="bDP-zD-lc8" customClass="HowToPayViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rdd-lp-a7V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제수단" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sij-ci-7cx">
+                                <rect key="frame" x="16" y="128" width="63" height="28"/>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1D7-IP-6z8">
+                                <rect key="frame" x="16" y="170" width="21" height="21"/>
+                                <state key="normal" backgroundImage="21"/>
+                                <state key="selected" backgroundImage="selectIc"/>
+                                <connections>
+                                    <action selector="transferOrNot:" destination="bDP-zD-lc8" eventType="touchUpInside" id="L5f-UW-2Cb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌이체 / 무통장입금" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-2x-JBi">
+                                <rect key="frame" x="49" y="168" width="142" height="24.666666666666657"/>
+                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA7-4z-Qvj" userLabel="HowToPayView">
+                                <rect key="frame" x="0.0" y="215.66666666666663" width="375" height="206"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입금할 은행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQK-Qm-fVB">
+                                        <rect key="frame" x="16" y="11.000000000000002" width="74.666666666666671" height="24.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                        <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입금자명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hc-Ng-fC6">
+                                        <rect key="frame" x="16" y="102.66666666666666" width="56" height="24.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                        <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="입금자 이름을 적어주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-wK-zZ3">
+                                        <rect key="frame" x="16" y="134.66666666666666" width="343" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="ZlE-xC-ewK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0W-1b-0RJ">
+                                        <rect key="frame" x="333.66666666666669" y="59.333333333333343" width="15.333333333333314" height="9"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="9" id="whs-CI-aHu"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="triangleIc"/>
+                                        <connections>
+                                            <action selector="showBankList:" destination="bDP-zD-lc8" eventType="touchUpInside" id="bEf-Ks-lyY"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="입금할 은행을 선택해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fm-8c-C8c">
+                                        <rect key="frame" x="16" y="42.666666666666657" width="343" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="brJ-A9-iFI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Q0W-1b-0RJ" firstAttribute="centerY" secondItem="4Fm-8c-C8c" secondAttribute="centerY" id="2Va-Gb-c2B"/>
+                                    <constraint firstItem="3Hc-Ng-fC6" firstAttribute="leading" secondItem="lQK-Qm-fVB" secondAttribute="leading" id="4ZA-Q5-Ljf"/>
+                                    <constraint firstItem="lQK-Qm-fVB" firstAttribute="leading" secondItem="CA7-4z-Qvj" secondAttribute="leading" constant="16" id="ED2-QF-Pbg"/>
+                                    <constraint firstItem="4Fm-8c-C8c" firstAttribute="trailing" secondItem="Q0W-1b-0RJ" secondAttribute="trailing" constant="10" id="H8e-lt-T0J"/>
+                                    <constraint firstItem="3Hc-Ng-fC6" firstAttribute="top" secondItem="4Fm-8c-C8c" secondAttribute="bottom" constant="18" id="KCG-0X-sr5"/>
+                                    <constraint firstItem="Aef-wK-zZ3" firstAttribute="centerX" secondItem="CA7-4z-Qvj" secondAttribute="centerX" id="Nmn-zo-aQt"/>
+                                    <constraint firstItem="4Fm-8c-C8c" firstAttribute="centerX" secondItem="CA7-4z-Qvj" secondAttribute="centerX" id="e4Z-bV-D3p"/>
+                                    <constraint firstItem="4Fm-8c-C8c" firstAttribute="top" secondItem="lQK-Qm-fVB" secondAttribute="bottom" constant="7" id="lBM-37-6Dt"/>
+                                    <constraint firstItem="Aef-wK-zZ3" firstAttribute="top" secondItem="3Hc-Ng-fC6" secondAttribute="bottom" constant="7.3333333333333286" id="rJx-xF-tsQ"/>
+                                    <constraint firstAttribute="width" secondItem="CA7-4z-Qvj" secondAttribute="height" multiplier="375:206" id="ujR-Gp-AC2"/>
+                                    <constraint firstItem="lQK-Qm-fVB" firstAttribute="top" secondItem="CA7-4z-Qvj" secondAttribute="top" constant="11" id="vIB-EZ-MqI"/>
+                                    <constraint firstItem="4Fm-8c-C8c" firstAttribute="leading" secondItem="lQK-Qm-fVB" secondAttribute="leading" id="vsR-4a-Fkw"/>
+                                    <constraint firstItem="Aef-wK-zZ3" firstAttribute="leading" secondItem="4Fm-8c-C8c" secondAttribute="leading" id="xsS-7y-fLs"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6U-mg-sQF">
+                                <rect key="frame" x="15.666666666666657" y="704" width="344" height="48"/>
+                                <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="344" id="LAg-Hg-mOa"/>
+                                    <constraint firstAttribute="width" constant="344" id="Qeh-KD-Dg1"/>
+                                    <constraint firstAttribute="width" secondItem="U6U-mg-sQF" secondAttribute="height" multiplier="43:6" id="xGh-Pa-MKv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="결제 완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BbC-IB-nu4" kind="show" id="pxC-cz-9Fb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="sij-ci-7cx" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" constant="16" id="3qs-Uk-uZ5"/>
+                            <constraint firstItem="sij-ci-7cx" firstAttribute="top" secondItem="lTl-n4-odc" secondAttribute="top" constant="40" id="77X-po-tkT"/>
+                            <constraint firstItem="CA7-4z-Qvj" firstAttribute="trailing" secondItem="lTl-n4-odc" secondAttribute="trailing" id="9To-fC-KDP"/>
+                            <constraint firstItem="CA7-4z-Qvj" firstAttribute="top" secondItem="Vkz-2x-JBi" secondAttribute="bottom" constant="23" id="BaO-YA-UMg"/>
+                            <constraint firstItem="Vkz-2x-JBi" firstAttribute="leading" secondItem="1D7-IP-6z8" secondAttribute="trailing" constant="12" id="D92-Vb-V0g"/>
+                            <constraint firstItem="1D7-IP-6z8" firstAttribute="top" secondItem="sij-ci-7cx" secondAttribute="bottom" constant="14" id="QUZ-v7-dlQ"/>
+                            <constraint firstItem="lTl-n4-odc" firstAttribute="bottom" secondItem="U6U-mg-sQF" secondAttribute="bottom" constant="26" id="QzX-cv-KJs"/>
+                            <constraint firstItem="1D7-IP-6z8" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" constant="16" id="VnE-kB-W08"/>
+                            <constraint firstItem="U6U-mg-sQF" firstAttribute="centerX" secondItem="lTl-n4-odc" secondAttribute="centerX" id="czw-sj-RHa"/>
+                            <constraint firstItem="Vkz-2x-JBi" firstAttribute="top" secondItem="sij-ci-7cx" secondAttribute="bottom" constant="12" id="iTS-dz-Kmo"/>
+                            <constraint firstItem="CA7-4z-Qvj" firstAttribute="leading" secondItem="lTl-n4-odc" secondAttribute="leading" id="utz-Qh-3V1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lTl-n4-odc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="IQD-Ri-kmt"/>
+                    <navigationItem key="navigationItem" id="wgx-nn-pcG">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="10" id="8rV-58-Jja">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="accountTransferButton" destination="1D7-IP-6z8" id="DZ9-rF-Ebs"/>
+                        <outlet property="customerNameTextField" destination="Aef-wK-zZ3" id="BWz-HB-qN1"/>
+                        <outlet property="howToPayView" destination="CA7-4z-Qvj" id="32e-fb-yiH"/>
+                        <outlet property="payCompleteButton" destination="U6U-mg-sQF" id="S4P-Y6-1Ft"/>
+                        <outlet property="selectBankTextField" destination="4Fm-8c-C8c" id="vnh-md-7yR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RW-Ka-gp9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,8 +169,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbD-yQ-Ncr">
                                 <rect key="frame" x="23.666666666666657" y="72.333333333333314" width="328" height="601"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="billImg" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-SA-qFw">
-                                        <rect key="frame" x="0.0" y="0.0" width="328" height="570"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="billImg" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-SA-qFw">
+                                        <rect key="frame" x="0.0" y="0.0" width="328" height="600"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedImg" translatesAutoresizingMaskIntoConstraints="NO" id="6b6-ct-Rpx">
                                         <rect key="frame" x="118.33333333333331" y="32.666666666666664" width="91" height="90.666666666666686"/>
@@ -93,7 +214,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wn9-nG-Dxr" userLabel="ThirdDashedLine">
-                                        <rect key="frame" x="24" y="436" width="280" height="1"/>
+                                        <rect key="frame" x="24" y="435" width="280" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="e6N-aX-KmQ"/>
@@ -101,19 +222,19 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수령인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41e-J0-A0Y">
-                                        <rect key="frame" x="23.999999999999996" y="231.66666666666669" width="39.333333333333329" height="23.333333333333343"/>
+                                        <rect key="frame" x="24" y="231.66666666666669" width="39" height="23.333333333333343"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="15"/>
                                         <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 상품가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CfC-g3-Yxc">
-                                        <rect key="frame" x="24" y="370" width="70" height="24"/>
+                                        <rect key="frame" x="24" y="369.33333333333337" width="70" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="15"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="배송비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZ0-Gn-Sru">
-                                        <rect key="frame" x="23.999999999999996" y="402" width="39.333333333333329" height="23.333333333333314"/>
+                                        <rect key="frame" x="24" y="400.66666666666669" width="39" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="15"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -144,25 +265,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최종 결제 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpG-nh-VYU">
-                                        <rect key="frame" x="24" y="331" width="88" height="24"/>
+                                        <rect key="frame" x="23.999999999999993" y="331" width="87.333333333333314" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제 금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ial-z1-zVQ">
-                                        <rect key="frame" x="23.999999999999993" y="469.00000000000006" width="79.333333333333314" height="24.666666666666686"/>
+                                        <rect key="frame" x="23.999999999999993" y="468.00000000000006" width="79.333333333333314" height="24.666666666666686"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg8-te-A6L">
-                                        <rect key="frame" x="240.33333333333334" y="369.66666666666669" width="63.666666666666657" height="24.666666666666686"/>
+                                        <rect key="frame" x="241" y="368.66666666666669" width="63" height="24.666666666666686"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc0-dX-ZHH">
-                                        <rect key="frame" x="249.33333333333334" y="401.66666666666669" width="54.666666666666657" height="24"/>
+                                        <rect key="frame" x="250" y="400" width="54" height="24.666666666666686"/>
                                         <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -174,7 +295,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22,500원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciy-AV-Ch0">
-                                        <rect key="frame" x="198" y="469.00000000000006" width="106" height="28"/>
+                                        <rect key="frame" x="198.33333333333334" y="468.00000000000006" width="105.66666666666666" height="28"/>
                                         <fontDescription key="fontDescription" name="S-CoreDream-6Bold" family="S-Core Dream" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -255,6 +376,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KLJ-of-DaQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="76h-AM-Sz9"/>
                     <connections>
                         <outlet property="addressLabel" destination="mAw-Vb-7C4" id="iyY-yY-1G7"/>
                         <outlet property="confirmButton" destination="Tul-ry-kWs" id="KFr-dP-GWH"/>
@@ -288,8 +410,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="10" width="16" height="16"/>
+        <image name="21" width="21" height="21"/>
         <image name="bgImg" width="375" height="812"/>
         <image name="billImg" width="328" height="570"/>
         <image name="checkedImg" width="91" height="91"/>
+        <image name="selectIc" width="21" height="21"/>
+        <image name="triangleIc" width="15.666666984558105" height="9"/>
     </resources>
 </document>
