@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Hero
 
 class AuctionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var auctionItemImageView: UIImageView!
@@ -16,8 +15,7 @@ class AuctionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var auctionItemLabel: UILabel!
     
     override func awakeFromNib() {
-        auctionItemImageView.hero.id = "auctionImage"
-        currentPriceLabel.hero.id = "priceLabel"
+        
     }
     
     
