@@ -45,7 +45,7 @@ class MyPageViewController: UIViewController {
     }
     
     private func setInitButton() {
-        makeShopButton.makeCornerRounded(radius: makeShopButton.frame.width / 7)
+        makeShopButton.makeCornerRounded(radius: makeShopButton.frame.width / 10)
         makeShopButton.makeShadow(opacity: 0.4, radius: 7)
     }
     
@@ -67,6 +67,11 @@ class MyPageViewController: UIViewController {
         guard let likeListVC = self.storyboard?.instantiateViewController(identifier: "LikeListParentVC") as? LikeListParentVC else { return }
         likeListVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(likeListVC, animated: true)
+    }
+    
+    @IBAction func goMakeShopView(_ sender: Any) {
+        guard let fluvApplyVC = self.storyboard?.instantiateViewController(identifier: "FluvApplyVC") as? FluvApplyVC else { return }
+        self.navigationController?.pushViewController(fluvApplyVC, animated: true)
     }
 }
 

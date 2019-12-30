@@ -22,6 +22,11 @@ class FluvApplyVC: UIViewController {
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var updateDayLabel: UILabel!
+    
+    private let picker = UIImagePickerController()
+    @IBOutlet weak var profileButton: UIButton!
+    private var profileImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +35,7 @@ class FluvApplyVC: UIViewController {
         setButtons()
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.setNavigationBarClear()
+        picker.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,12 +61,14 @@ class FluvApplyVC: UIViewController {
     }
     
     private func setButtons() {
+        profileButton.makeCornerRounded(radius: profileButton.frame.width / 2)
+        profileButton.clipsToBounds = true
         keywordOneButton.layer.borderColor = UIColor.black.cgColor
         keywordOneButton.layer.borderWidth = 1
-        keywordOneButton.makeCornerRounded(radius: keywordOneButton.frame.width / 6)
+        keywordOneButton.makeCornerRounded(radius: keywordOneButton.frame.width / 7)
         keywordOneButton.clipsToBounds = true
         keywordTwoButton.layer.borderColor = UIColor.black.cgColor
-        keywordTwoButton.makeCornerRounded(radius: keywordTwoButton.frame.width / 6)
+        keywordTwoButton.makeCornerRounded(radius: keywordTwoButton.frame.width / 7)
         keywordTwoButton.layer.borderWidth = 1
         keywordTwoButton.clipsToBounds = true
     }
@@ -70,15 +78,50 @@ class FluvApplyVC: UIViewController {
     }
     
     @objc func completeApply() {
-        print("complete")
+    }
+    
+    @IBAction func addProfileImage(_ sender: Any) {
+        let alertController = UIAlertController(title: "사진을 골라주세요", message: "", preferredStyle: .actionSheet)
+        let galaryAlert = UIAlertAction(title: "갤러리", style: .default) { action in
+            self.openLibrary()
+        }
+        let cameraAlert = UIAlertAction(title: "사진", style: .default) { action in
+            self.openCamera()
+        }
+        let cancelAlert = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alertController.addAction(galaryAlert)
+        alertController.addAction(cameraAlert)
+        alertController.addAction(cancelAlert)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension FluvApplyVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+        }
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            profileImage = image
+            profileButton.setBackgroundImage(profileImage, for: .normal)
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 
 extension FluvApplyVC {
-    func openLibrary() {
-    }
-    
-    func openCamera() {
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
