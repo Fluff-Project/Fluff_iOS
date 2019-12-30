@@ -2130,7 +2130,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGM-1c-pwV">
                                 <rect key="frame" x="101" y="664" width="173" height="39"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fGM-1c-pwV" secondAttribute="height" multiplier="4.43:1" id="VEg-P5-GYp"/>
                                 </constraints>
@@ -2885,6 +2885,105 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
             </objects>
             <point key="canvasLocation" x="5622.3999999999996" y="478.81773399014781"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="a4R-2d-Vbe">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="EZw-Jb-rWd" customClass="WelcomeViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IwB-tm-QiZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frankFloresEyFcZllYvfAUnsplash" translatesAutoresizingMaskIntoConstraints="NO" id="BIZ-ky-D7O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yc-By-k6P">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="324" translatesAutoresizingMaskIntoConstraints="NO" id="8yx-GL-m5G">
+                                <rect key="frame" x="85.666666666666686" y="130" width="204" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8yx-GL-m5G" secondAttribute="height" multiplier="51:28" id="RwF-oC-BEC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex3-09-ftM">
+                                <rect key="frame" x="166.66666666666666" y="263" width="42" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeP-hh-vuw">
+                                <rect key="frame" x="23.666666666666657" y="677" width="328" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MeP-hh-vuw" secondAttribute="height" multiplier="41:6" id="k58-YS-ldG"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="플러프">
+                                            <attributes>
+                                                <color key="NSColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".AppleSDGothicNeoI-Regular"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="시작하기">
+                                            <attributes>
+                                                <color key="NSColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".AppleSDGothicNeoI-Regular"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="clickStartButton:" destination="EZw-Jb-rWd" eventType="touchUpInside" id="VcF-Wo-Tlp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BIZ-ky-D7O" firstAttribute="leading" secondItem="aQ7-TL-z5d" secondAttribute="leading" id="6Hg-We-jEB"/>
+                            <constraint firstItem="ex3-09-ftM" firstAttribute="top" secondItem="8yx-GL-m5G" secondAttribute="bottom" constant="21" id="88m-qe-4Sz"/>
+                            <constraint firstItem="8yx-GL-m5G" firstAttribute="width" secondItem="BIZ-ky-D7O" secondAttribute="width" multiplier="0.544" id="BFo-S3-1lc"/>
+                            <constraint firstItem="2Yc-By-k6P" firstAttribute="top" secondItem="IwB-tm-QiZ" secondAttribute="top" id="CAq-zT-CNo"/>
+                            <constraint firstAttribute="bottom" secondItem="2Yc-By-k6P" secondAttribute="bottom" id="Ihg-hL-Z6i"/>
+                            <constraint firstAttribute="bottom" secondItem="BIZ-ky-D7O" secondAttribute="bottom" id="KEF-Bp-CVZ"/>
+                            <constraint firstItem="aQ7-TL-z5d" firstAttribute="trailing" secondItem="BIZ-ky-D7O" secondAttribute="trailing" id="RYR-qG-Ja2"/>
+                            <constraint firstItem="8yx-GL-m5G" firstAttribute="top" secondItem="IwB-tm-QiZ" secondAttribute="top" constant="130" id="Sj6-VA-sb2"/>
+                            <constraint firstItem="MeP-hh-vuw" firstAttribute="centerX" secondItem="BIZ-ky-D7O" secondAttribute="centerX" id="T1U-Iw-KZv"/>
+                            <constraint firstItem="BIZ-ky-D7O" firstAttribute="top" secondItem="IwB-tm-QiZ" secondAttribute="top" id="Vpv-mb-SOj"/>
+                            <constraint firstItem="8yx-GL-m5G" firstAttribute="centerX" secondItem="BIZ-ky-D7O" secondAttribute="centerX" id="Z9G-W5-aE3"/>
+                            <constraint firstItem="aQ7-TL-z5d" firstAttribute="trailing" secondItem="2Yc-By-k6P" secondAttribute="trailing" id="ZCd-H4-Di5"/>
+                            <constraint firstAttribute="bottom" secondItem="MeP-hh-vuw" secondAttribute="bottom" constant="87" id="dnh-eZ-BZE"/>
+                            <constraint firstItem="MeP-hh-vuw" firstAttribute="width" secondItem="BIZ-ky-D7O" secondAttribute="width" multiplier="0.874667" id="rFS-Pb-hRi"/>
+                            <constraint firstItem="2Yc-By-k6P" firstAttribute="leading" secondItem="aQ7-TL-z5d" secondAttribute="leading" id="uMb-3w-5oQ"/>
+                            <constraint firstItem="ex3-09-ftM" firstAttribute="centerX" secondItem="BIZ-ky-D7O" secondAttribute="centerX" id="yXt-Vp-9Z9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aQ7-TL-z5d"/>
+                    </view>
+                    <connections>
+                        <outlet property="startButton" destination="MeP-hh-vuw" id="VyC-MF-ybu"/>
+                        <outlet property="transparentView" destination="2Yc-By-k6P" id="HQj-Uo-lAm"/>
+                        <outlet property="welcomeLabel" destination="ex3-09-ftM" id="Me1-nW-f48"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxG-Rq-OEq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2279" y="-207"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="BQj-C3-ZKF">
             <objects>
@@ -2916,8 +3015,9 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         <image name="731435467565772314707755242100861709482025N" width="164" height="164"/>
         <image name="auctionimage1" width="343" height="254"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="frankFloresEyFcZllYvfAUnsplash" width="649" height="812"/>
         <image name="heart" catalog="system" width="64" height="54"/>
-        <image name="heartEmptyIc" width="36" height="33"/>
+        <image name="heartEmptyIc" width="26.333333969116211" height="24"/>
         <image name="icons8Clothes961" width="25" height="25"/>
         <image name="icons8Home1002" width="25" height="25"/>
         <image name="icons8Magazine100" width="25" height="25"/>

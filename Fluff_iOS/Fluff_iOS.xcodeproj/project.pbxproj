@@ -61,6 +61,7 @@
 		9DD73AFB23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD73AF923B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift */; };
 		9DD73AFC23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD73AFA23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.xib */; };
 		9DE13BD323B370580040AEB2 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE13BD223B370580040AEB2 /* MenuCategory.swift */; };
+		9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4AAD523B9677E0095A5B3 /* WelcomeViewController.swift */; };
 		9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF723B350540036AA50 /* MyPageViewController.swift */; };
 		9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */; };
 		9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */; };
@@ -92,10 +93,10 @@
 		A6D2863623B0D2CD00E7379B /* SCDream7.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862723B0D2CD00E7379B /* SCDream7.otf */; };
 		A6D2863723B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862823B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf */; };
 		A6D2863823B0D2CD00E7379B /* SCDream3.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862923B0D2CD00E7379B /* SCDream3.otf */; };
-		A6D2863923B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862A23B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf */; };
+		A6D2863923B0D2CD00E7379B /* KoPubWorldDotumPB.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862A23B0D2CD00E7379B /* KoPubWorldDotumPB.otf */; };
 		A6D2863A23B0D2CD00E7379B /* SCDream8.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862B23B0D2CD00E7379B /* SCDream8.otf */; };
 		A6D2863D23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863B23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf */; };
-		A6D2863E23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */; };
+		A6D2863E23B0DAB500E7379B /* KoPubWorldDotumPL.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863C23B0DAB500E7379B /* KoPubWorldDotumPL.otf */; };
 		A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */; };
 		A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */; };
 		A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860623B28674006FDE79 /* HomeVC.swift */; };
@@ -167,6 +168,7 @@
 		9DD73AF923B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DD73AFA23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		9DE13BD223B370580040AEB2 /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
+		9DE4AAD523B9677E0095A5B3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9DFA7FF723B350540036AA50 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -200,10 +202,10 @@
 		A6D2862723B0D2CD00E7379B /* SCDream7.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream7.otf; sourceTree = "<group>"; };
 		A6D2862823B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Batang_Pro Light.otf"; sourceTree = "<group>"; };
 		A6D2862923B0D2CD00E7379B /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
-		A6D2862A23B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Bold.otf"; sourceTree = "<group>"; };
+		A6D2862A23B0D2CD00E7379B /* KoPubWorldDotumPB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumPB.otf; sourceTree = "<group>"; };
 		A6D2862B23B0D2CD00E7379B /* SCDream8.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream8.otf; sourceTree = "<group>"; };
 		A6D2863B23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Medium.otf"; sourceTree = "<group>"; };
-		A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KoPubWorld Dotum_Pro Light.otf"; sourceTree = "<group>"; };
+		A6D2863C23B0DAB500E7379B /* KoPubWorldDotumPL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumPL.otf; sourceTree = "<group>"; };
 		A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		A6DF860623B28674006FDE79 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -315,11 +317,9 @@
 				9DD73AF723B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift */,
 				9D705A9423B7D30E00097FCF /* DetailCategoryDataSource.swift */,
 				A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */,
-
 				9D84B12523B9413F0019C7D4 /* CartItemCollectionViewCell.swift */,
 				A66F241023B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift */,
 				A66F241223B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift */,
-
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -443,11 +443,9 @@
 				9D705A9823B8935900097FCF /* AuctionDetailVC.swift */,
 				9D705A9C23B8AA9A00097FCF /* CheckDeliveryVC.swift */,
 				9D705AA023B8BCE100097FCF /* MyInfoChangeVC.swift */,
-
 				9D84B12123B920070019C7D4 /* CartVC.swift */,
-
 				A66F240E23B9045B004B57FA /* ThemeIntoVC.swift */,
-
+				9DE4AAD523B9677E0095A5B3 /* WelcomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -484,10 +482,10 @@
 			children = (
 				A6D2862423B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf */,
 				A6D2862823B0D2CD00E7379B /* KoPubWorld Batang_Pro Light.otf */,
-				A6D2863C23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf */,
+				A6D2863C23B0DAB500E7379B /* KoPubWorldDotumPL.otf */,
 				A6D2863B23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf */,
 				A6D2862223B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf */,
-				A6D2862A23B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf */,
+				A6D2862A23B0D2CD00E7379B /* KoPubWorldDotumPB.otf */,
 				A6D2861F23B0D2CD00E7379B /* SCDream1.otf */,
 				A6D2862123B0D2CD00E7379B /* SCDream2.otf */,
 				A6D2862923B0D2CD00E7379B /* SCDream3.otf */,
@@ -571,7 +569,7 @@
 				A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */,
 				A6D2863623B0D2CD00E7379B /* SCDream7.otf in Resources */,
 				A6D2863323B0D2CD00E7379B /* KoPubWorld Batang_Pro Bold.otf in Resources */,
-				A6D2863E23B0DAB500E7379B /* KoPubWorld Dotum_Pro Light.otf in Resources */,
+				A6D2863E23B0DAB500E7379B /* KoPubWorldDotumPL.otf in Resources */,
 				A6D2863D23B0DAB500E7379B /* KoPubWorld Dotum_Pro Medium.otf in Resources */,
 				A6D2863523B0D2CD00E7379B /* SCDream6.otf in Resources */,
 				A6D2863A23B0D2CD00E7379B /* SCDream8.otf in Resources */,
@@ -584,7 +582,7 @@
 				A66F23FF23B6E796004B57FA /* NewSignUp.storyboard in Resources */,
 				A63C506A23B08BF40069BAFB /* Main.storyboard in Resources */,
 				9D5676F223B6AEC500720F06 /* CategoryCollectionViewCell.xib in Resources */,
-				A6D2863923B0D2CD00E7379B /* KoPubWorld Dotum_Pro Bold.otf in Resources */,
+				A6D2863923B0D2CD00E7379B /* KoPubWorldDotumPB.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +648,7 @@
 				9D79382323B227CF00A0CD3E /* UIColor+Extensions.swift in Sources */,
 				9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */,
 				9D84B12623B9413F0019C7D4 /* CartItemCollectionViewCell.swift in Sources */,
+				9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */,
 				9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */,
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,

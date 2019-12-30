@@ -27,8 +27,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Ko</string>
-		<string></string>
+		<string>KoPubWorldDotumPL.otf</string>
+		<string>KoPubWorldDotumPB.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -32,7 +32,7 @@ class NextTasteAnalysisVC: UIViewController {
     }
     
     @IBAction func completeSignin(_ sender: Any) {
-        guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? UITabBarController else { return }
+        guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else { return }
         mainTabbarController.modalPresentationStyle = .fullScreen
         self.present(mainTabbarController, animated: true, completion: nil)
     }
