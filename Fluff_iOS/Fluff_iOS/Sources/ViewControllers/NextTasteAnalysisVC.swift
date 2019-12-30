@@ -9,7 +9,10 @@
 import UIKit
 
 class NextTasteAnalysisVC: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var oneDescriptionLabel: UILabel!
+    @IBOutlet weak var twoDescriptionLabel: UILabel!
+    
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var followTableView: UITableView!
     var images = [UIImage(named: "2019122024421"),
@@ -19,8 +22,6 @@ class NextTasteAnalysisVC: UIViewController {
         UIImage(named: "2019122024353"),
         UIImage(named: "2019122024421")]
     
-    private var isResetting: Bool?
-    
     private var analysisStatus: AnalysisStatus?
     
     override func viewDidLoad() {
@@ -29,10 +30,18 @@ class NextTasteAnalysisVC: UIViewController {
         followTableView.dataSource = self
         followTableView.delegate = self
         initialCompleteButton()
+        initFont()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setNaviBar()
+    }
+    
+    private func initFont() {
+        titleLabel.attributedText = NSMutableAttributedString(string: "당신이 좋아할만 한 플럽이에요!", attributes: [.font: UIFont(name: "S-CoreDream-5Medium", size: 24)!, .foregroundColor: UIColor.black, NSAttributedString.Key.kern: CGFloat(-1.92)])
+        
+        oneDescriptionLabel.attributedText = NSMutableAttributedString(string: "팔로우를 한 후, 멋진 상품을 놓치지말고", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 15)!, .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: CGFloat(-0.3)])
+        twoDescriptionLabel.attributedText = NSMutableAttributedString(string: "바로바로 확인해보세요!", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 15)!, .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: CGFloat(-0.3)])
     }
     
     func setAnalysisStatus(_ analysisStatus: AnalysisStatus) {
@@ -93,7 +102,7 @@ extension NextTasteAnalysisVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "analysisCell") else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "analysisCell") as? AnalysisTableViewCell else { return UITableViewCell() }
         return cell
     }
     
@@ -123,4 +132,22 @@ extension NextTasteAnalysisVC: UICollectionViewDataSource {
 }
 
 extension NextTasteAnalysisVC: UICollectionViewDelegate {
+}
+
+extension NextTasteAnalysisVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 14
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }

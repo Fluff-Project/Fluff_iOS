@@ -55,7 +55,7 @@ extension AuctionVC: UICollectionViewDelegate {
 extension AuctionVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let spacingWidth = collectionView.frame.width / 23.4375
-        return UIEdgeInsets(top: 8, left: spacingWidth, bottom: 0, right: spacingWidth)
+        return UIEdgeInsets(top: 8, left: spacingWidth, bottom: 20, right: spacingWidth)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

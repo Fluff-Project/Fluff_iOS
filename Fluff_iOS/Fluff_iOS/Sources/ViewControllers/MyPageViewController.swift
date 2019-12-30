@@ -39,14 +39,13 @@ class MyPageViewController: UIViewController {
         self.setNavigationBarClear()
         if tabBarController!.tabBar.isHidden {
             bottomConstraint.constant = self.tabBarController!.tabBar.frame.height
-//            self.view.setNeedsLayout()
         }
         
         self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setInitButton() {
-        makeShopButton.makeCornerRounded(radius: makeShopButton.frame.width / 10)
+        makeShopButton.makeCornerRounded(radius: makeShopButton.frame.width / 7)
         makeShopButton.makeShadow(opacity: 0.4, radius: 7)
     }
     

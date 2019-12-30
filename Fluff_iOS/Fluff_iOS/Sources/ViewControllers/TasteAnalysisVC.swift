@@ -12,12 +12,16 @@ class TasteAnalysisVC: UIViewController {
 
     @IBOutlet weak var tasteCollectionView: UICollectionView!
     @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    @IBOutlet weak var oneDescriptionLabel: UILabel!
+    @IBOutlet weak var twoDescriptionLabel: UILabel!
+    
     private var selectedCount: Int = 0
     
     private var isSelected: [Bool] = []
     // 임시변수 선택 정할
-    
-    private var isResetting: Bool?
     private var analysisStatus: AnalysisStatus?
     
     override func viewDidLoad() {
@@ -27,6 +31,7 @@ class TasteAnalysisVC: UIViewController {
         tasteCollectionView.dataSource = self
         tasteCollectionView.delegate = self
         initialButton()
+        initFont()
         
         selectButton.setTitle("3개 이상 선택해주세요", for: .normal)
         self.navigationController?.navigationBar.isHidden = true
@@ -36,12 +41,8 @@ class TasteAnalysisVC: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         self.analysisStatus = nil
-        self.isResetting = nil
     }
     
     private func initialButton() {
@@ -49,8 +50,17 @@ class TasteAnalysisVC: UIViewController {
         selectButton.isUserInteractionEnabled = false
     }
     
-    func setResetting(_ isResetting: Bool) {
-        self.isResetting = isResetting
+    private func initFont() {
+        titleLabel.attributedText = NSMutableAttributedString(string: "당신의 스타일을 선택해주세요!", attributes: [
+            .font: UIFont(name: "S-CoreDream-5Medium", size: 24.0)!,
+          .foregroundColor: UIColor.black,
+          NSAttributedString.Key.kern: CGFloat(-1.92)
+        ])
+                
+        oneDescriptionLabel.attributedText = NSMutableAttributedString(string: "평소에 좋아하는 옷 스타일을 선택해주세요", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 15)!, .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: CGFloat(-0.3)
+        ])
+        
+        twoDescriptionLabel.attributedText = NSMutableAttributedString(string: "플러프가 당신이 좋아할만한 옷을 추천해드립니다!", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 15)!, .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: CGFloat(-0.3)])
     }
     
     func setAnalysisStatus(_ analysisStatus: AnalysisStatus) {

@@ -63,6 +63,7 @@
 		9DE13BD323B370580040AEB2 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE13BD223B370580040AEB2 /* MenuCategory.swift */; };
 		9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4AAD523B9677E0095A5B3 /* WelcomeViewController.swift */; };
 		9DE4AAD823BA05610095A5B3 /* AnalysisStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4AAD723BA05610095A5B3 /* AnalysisStatus.swift */; };
+		9DF0EB5E23BA6B3100EEC259 /* FluvApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */; };
 		9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF723B350540036AA50 /* MyPageViewController.swift */; };
 		9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */; };
 		9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */; };
@@ -173,6 +174,7 @@
 		9DE13BD223B370580040AEB2 /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
 		9DE4AAD523B9677E0095A5B3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9DE4AAD723BA05610095A5B3 /* AnalysisStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisStatus.swift; sourceTree = "<group>"; };
+		9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluvApplyVC.swift; sourceTree = "<group>"; };
 		9DFA7FF723B350540036AA50 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -452,11 +454,9 @@
 				9D705AA023B8BCE100097FCF /* MyInfoChangeVC.swift */,
 				9D84B12123B920070019C7D4 /* CartVC.swift */,
 				A66F240E23B9045B004B57FA /* ThemeIntoVC.swift */,
-
 				9DE4AAD523B9677E0095A5B3 /* WelcomeViewController.swift */,
-
 				A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */,
-
+				9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -688,6 +688,7 @@
 				9D79381F23B227CF00A0CD3E /* UIButton+Extensions.swift in Sources */,
 				9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */,
 				9D70BFD123B463760025D22C /* LikeListTabVC.swift in Sources */,
+				9DF0EB5E23BA6B3100EEC259 /* FluvApplyVC.swift in Sources */,
 				A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */,
 				9D0C626D23B674BF00F31502 /* FilteringVC.swift in Sources */,
 				A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */,

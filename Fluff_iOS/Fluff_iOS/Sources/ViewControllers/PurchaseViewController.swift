@@ -71,7 +71,7 @@ class PurchaseViewController: UIViewController {
         normalAddressCheckBox.onTintColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
         normalAddressCheckBox.onAnimationType = .stroke
         normalAddressCheckBox.offAnimationType = .stroke
-        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 15)
+        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 12)
     }
     
     private func setMarginView() {

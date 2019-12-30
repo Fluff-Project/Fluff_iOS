@@ -29,15 +29,8 @@ class AuctionDetailVC: UIViewController {
         auctionImageCollectionView.delegate = self
         auctionImageCollectionView.dataSource = self
         setNavi()
-//        setTabbar()
         initButton()
     }
-    
-//    private func setTabbar() {
-//        self.tabBarController?.tabBar.isHidden = true
-//        edgesForExtendedLayout = UIRectEdge.bottom
-//        extendedLayoutIncludesOpaqueBars = true
-//    }
     
     private func setNavi() {
         self.navigationController?.navigationBar.isHidden = false
