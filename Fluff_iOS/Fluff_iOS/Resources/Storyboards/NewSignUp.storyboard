@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="KoPubWorld Dotum_Pro Medium.otf">
+        <array key="KoPubWorldDotumPM.otf">
             <string>KoPubWorldDotumPM</string>
         </array>
     </customFonts>
@@ -31,15 +31,17 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sg8-83-h5g">
-                                <rect key="frame" x="26" y="135" width="45" height="27"/>
+                                <rect key="frame" x="26" y="135" width="45" height="20"/>
                                 <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Enq-b9-4QX">
-                                <rect key="frame" x="16" y="653" width="344" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Enq-b9-4QX">
+                                <rect key="frame" x="15.666666666666657" y="653" width="344" height="48"/>
                                 <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Enq-b9-4QX" secondAttribute="height" multiplier="43:6" id="kjJ-Qq-IOp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="17"/>
                                 <state key="normal" title="다음">
                                     <color key="titleColor" white="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,14 +50,13 @@
                                     <action selector="goNext:" destination="4AC-Ry-in5" eventType="touchUpInside" id="UCP-3X-mCy"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-XX-iQX">
-                                <rect key="frame" x="32" y="636" width="307" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-XX-iQX">
+                                <rect key="frame" x="34" y="636" width="307" height="2"/>
                                 <color key="progressTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <color key="trackTintColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                             </progressView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hX3-lV-E56">
-                                <rect key="frame" x="15.666666666666657" y="168" width="344" height="44"/>
+                                <rect key="frame" x="15.666666666666657" y="161" width="344" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hX3-lV-E56" secondAttribute="height" multiplier="86:11" id="2fb-1W-Umm"/>
                                     <constraint firstAttribute="width" constant="344" id="jyB-lr-Xrc"/>
@@ -65,7 +66,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkq-nR-nfA" userLabel="Male Button">
-                                <rect key="frame" x="16" y="168" width="168" height="44"/>
+                                <rect key="frame" x="16" y="161" width="168" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="168" id="5Za-9Q-K1t"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="8Ka-Zo-8L5"/>
@@ -83,7 +84,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaK-z4-qwo">
-                                <rect key="frame" x="191" y="168" width="168" height="44"/>
+                                <rect key="frame" x="191" y="161" width="168" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="UaK-z4-qwo" secondAttribute="height" multiplier="42:11" id="mcJ-4G-UVp"/>
                                     <constraint firstAttribute="width" constant="168" id="uRp-uE-mAZ"/>
@@ -100,7 +101,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxL-Q3-PdE">
-                                <rect key="frame" x="26" y="215" width="0.0" height="0.0"/>
+                                <rect key="frame" x="26" y="208" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -112,18 +113,25 @@
                             <constraint firstItem="Sg8-83-h5g" firstAttribute="leading" secondItem="9b7-Js-YhE" secondAttribute="leading" constant="26" id="Dug-zS-pad"/>
                             <constraint firstItem="hX3-lV-E56" firstAttribute="top" secondItem="Sg8-83-h5g" secondAttribute="bottom" constant="6" id="EG7-ol-AMJ"/>
                             <constraint firstItem="yxL-Q3-PdE" firstAttribute="top" secondItem="Sg8-83-h5g" secondAttribute="bottom" constant="53" id="HLf-of-IUw"/>
+                            <constraint firstItem="Enq-b9-4QX" firstAttribute="top" secondItem="Z4a-XX-iQX" secondAttribute="bottom" constant="15" id="J0j-LK-rSc"/>
                             <constraint firstItem="9b7-Js-YhE" firstAttribute="trailing" secondItem="UaK-z4-qwo" secondAttribute="trailing" constant="16" id="Lw3-y0-feh"/>
+                            <constraint firstItem="Z4a-XX-iQX" firstAttribute="centerX" secondItem="9b7-Js-YhE" secondAttribute="centerX" id="WIB-Or-QX3"/>
                             <constraint firstItem="yxL-Q3-PdE" firstAttribute="leading" secondItem="9b7-Js-YhE" secondAttribute="leading" constant="26" id="a5o-30-E2d"/>
+                            <constraint firstItem="Z4a-XX-iQX" firstAttribute="width" secondItem="Fh7-kA-bWB" secondAttribute="width" multiplier="0.818667" id="bTG-zR-wta"/>
                             <constraint firstItem="UaK-z4-qwo" firstAttribute="top" secondItem="Sg8-83-h5g" secondAttribute="bottom" constant="6" id="cwp-OH-ztS"/>
+                            <constraint firstAttribute="bottom" secondItem="Enq-b9-4QX" secondAttribute="bottom" constant="111" id="eaC-o1-R47"/>
                             <constraint firstItem="hX3-lV-E56" firstAttribute="centerX" secondItem="9b7-Js-YhE" secondAttribute="centerX" id="hKB-Tr-gND"/>
                             <constraint firstItem="Sg8-83-h5g" firstAttribute="top" secondItem="9b7-Js-YhE" secondAttribute="top" constant="91" id="io9-sb-ryB"/>
+                            <constraint firstItem="Enq-b9-4QX" firstAttribute="width" secondItem="Fh7-kA-bWB" secondAttribute="width" multiplier="0.917333" id="pul-Jo-v82"/>
                             <constraint firstItem="rkq-nR-nfA" firstAttribute="leading" secondItem="9b7-Js-YhE" secondAttribute="leading" constant="16" id="q8H-Wl-Ktx"/>
                             <constraint firstItem="s6G-NO-pPn" firstAttribute="top" secondItem="9b7-Js-YhE" secondAttribute="top" constant="18" id="vuH-HA-YUi"/>
+                            <constraint firstItem="Enq-b9-4QX" firstAttribute="centerX" secondItem="9b7-Js-YhE" secondAttribute="centerX" id="yCm-Gx-PbU"/>
                             <constraint firstItem="rkq-nR-nfA" firstAttribute="top" secondItem="Sg8-83-h5g" secondAttribute="bottom" constant="6" id="zEE-ac-6dJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9b7-Js-YhE"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="eaC-o1-R47" id="dxB-rJ-GUU"/>
                         <outlet property="errorLabel" destination="yxL-Q3-PdE" id="5XW-fl-HOM"/>
                         <outlet property="femaleButton" destination="UaK-z4-qwo" id="hCD-1w-cOA"/>
                         <outlet property="goBackButton" destination="s6G-NO-pPn" id="vAp-6H-xMX"/>

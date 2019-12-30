@@ -11,6 +11,7 @@ import CHIPageControl
 
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var homeScrollView: UIScrollView!
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var bannerPageControl: CHIPageControlJalapeno!
     @IBOutlet weak var todayCollectionView: UICollectionView!
@@ -25,6 +26,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var todayVintageCollectionView: UICollectionView!
     @IBOutlet weak var keywordLabel: UILabel!
     @IBOutlet weak var keyWordTableView: UITableView!
+    var current_y: CGFloat = 0
     let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
     let sCoreExtraLight = UIFont(name: "S-CoreDream-2ExtraLight", size: 24)
     let forYou: String = "당신을 위한 "
@@ -75,6 +77,7 @@ class HomeVC: UIViewController {
         todayVintageLabel.attributedText = todayVintageAttributedStr
         keywordLabel.attributedText = keywordAttributedStr
         
+        homeScrollView.delegate = self
         bannerCollectionView.dataSource = self
         todayCollectionView.dataSource = self
         recentCollectionView.dataSource = self
@@ -126,7 +129,11 @@ class HomeVC: UIViewController {
     }
 }
 
-
+extension HomeVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        current_y = homeScrollView.contentOffset.y
+    }
+}
 
 extension HomeVC: UICollectionViewDataSource{
     

@@ -19,6 +19,7 @@ class NewSignUpViewController: UIViewController {
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var currentView: Int = 0
     var userEmail = String()
@@ -29,6 +30,7 @@ class NewSignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addObserver()
         userInfoTextField.addLeftPadding()
         userInfoTextField.layer.cornerRadius = 22
         userInfoTextField.layer.borderWidth = 1
@@ -250,5 +252,26 @@ class NewSignUpViewController: UIViewController {
 extension NewSignUpViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+}
+
+extension NewSignUpViewController: UITextFieldDelegate {
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(upKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(downKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func upKeyboard() {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.nextButton.transform = CGAffineTransform(translationX: 0, y: -200)
+            self.signupProgressBar.transform = CGAffineTransform(translationX: 0, y: -200)
+        }, completion: nil)
+    }
+    
+    @objc func downKeyboard() {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
+            self.nextButton.transform = .identity
+            self.signupProgressBar.transform = .identity
+        }, completion: nil)
     }
 }
