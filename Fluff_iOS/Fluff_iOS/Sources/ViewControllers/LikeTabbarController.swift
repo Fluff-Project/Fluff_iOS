@@ -27,5 +27,6 @@ class LikeTabbarController: ButtonBarPagerTabStripViewController {
         self.settings.style.buttonBarHeight = 36
         self.settings.style.buttonBarMinimumInteritemSpacing = 1000
         self.settings.style.buttonBarMinimumLineSpacing = 100
+        self.settings.style.buttonBarItemsShouldFillAvailableWidth = true
     }
 }

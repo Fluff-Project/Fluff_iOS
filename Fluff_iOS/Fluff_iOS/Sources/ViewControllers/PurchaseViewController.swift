@@ -46,6 +46,16 @@ class PurchaseViewController: UIViewController {
         setConstraint()
         setMarginView()
         setButton()
+        setNaviBackButton()
+    }
+    
+    private func setNaviBackButton() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
+            #selector(popView))
+    }
+    
+    @objc func popView() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setConstraint() {
@@ -85,5 +95,9 @@ class PurchaseViewController: UIViewController {
     }
     
     @IBAction func clickPay(_ sender: Any) {
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

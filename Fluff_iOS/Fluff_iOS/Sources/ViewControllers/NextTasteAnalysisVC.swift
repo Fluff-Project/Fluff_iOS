@@ -19,22 +19,67 @@ class NextTasteAnalysisVC: UIViewController {
         UIImage(named: "2019122024353"),
         UIImage(named: "2019122024421")]
     
+    private var isResetting: Bool?
+    
+    private var analysisStatus: AnalysisStatus?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        initialCompleteButton()
         followTableView.dataSource = self
         followTableView.delegate = self
+        initialCompleteButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setNaviBar()
+    }
+    
+    func setAnalysisStatus(_ analysisStatus: AnalysisStatus) {
+        self.analysisStatus = analysisStatus
+    }
+    
+    private func setNaviBar() {
+        guard let analysisStatus = self.analysisStatus else { return }
+        switch analysisStatus {
+        case .signup:
+            self.navigationController?.navigationBar.isHidden = true
+        case .recommend:
+            self.navigationController?.navigationBar.isHidden = false
+            self.navigationController?.navigationBar.tintColor = UIColor(red: 23/255, green: 23/255, blue: 23/255, alpha: 1)
+            self.navigationController?.navigationBar.topItem?.title = ""
+            self.setNavigationBarClear()
+        case .resetting:
+            self.navigationController?.navigationBar.isHidden = true
+        }
     }
     
     private func initialCompleteButton() {
         completeButton.makeCornerRounded(radius: completeButton.frame.width / 13.6)
+        
+        guard let analysisStatus = self.analysisStatus else { return }
+        switch analysisStatus {
+        case .signup:
+            completeButton.setTitle("가입 완료", for: .normal)
+        case .resetting:
+            completeButton.setTitle("설정 완료", for: .normal)
+        case .recommend:
+            completeButton.isHidden = true
+        }
     }
     
     @IBAction func completeSignin(_ sender: Any) {
-        guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else { return }
-        mainTabbarController.modalPresentationStyle = .fullScreen
-        self.present(mainTabbarController, animated: true, completion: nil)
+        guard let analysisStatus = self.analysisStatus else { return }
+        switch analysisStatus {
+        case .signup:
+            guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else { return }
+            mainTabbarController.modalPresentationStyle = .fullScreen
+            self.present(mainTabbarController, animated: true, completion: nil)
+        case .resetting:
+            self.navigationController?.popToRootViewController(animated: true)
+        case .recommend:
+            return
+        }
     }
 }
 

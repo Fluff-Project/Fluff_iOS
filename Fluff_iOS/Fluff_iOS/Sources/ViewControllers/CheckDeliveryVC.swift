@@ -19,9 +19,12 @@ class CheckDeliveryVC: UIViewController {
         // Do any additional setup after loading the view.
         deliveryListTableView.delegate = self
         deliveryListTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "주문 / 배송 확인"
         self.navigationController?.navigationBar.topItem?.title = ""
-        
+        self.navigationController?.navigationBar.isHidden = false
     }
 }
 

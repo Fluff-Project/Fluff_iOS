@@ -25,6 +25,7 @@ class AuctionVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
     }
 }
@@ -46,6 +47,7 @@ extension AuctionVC: UICollectionViewDataSource {
 extension AuctionVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let auctionDetailVC = self.storyboard?.instantiateViewController(identifier: "auctionDetailVC") as? AuctionDetailVC else { return }
+        auctionDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(auctionDetailVC, animated: true)
     }
 }

@@ -118,6 +118,12 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    @IBAction func goFluvRecomend(_ sender: Any) {
+        let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+        guard let fluvRecommendVC = tasteStoryboard.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
+        fluvRecommendVC.setAnalysisStatus(.recommend)
+        self.navigationController?.pushViewController(fluvRecommendVC, animated: true)
+    }
 }
 
 
@@ -147,21 +153,19 @@ extension HomeVC: UICollectionViewDataSource{
         switch collectionView {
             
         case self.todayCollectionView:
-            print("todayCollectionview")
             let todayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCollectionViewCell", for: indexPath) as! TodayCollectionViewCell
         todayCollectionViewCell.todayImage.image = todayImgList[indexPath.row]
         todayCollectionViewCell.todayProductLabel.text = todayProductList[indexPath.row]
             return todayCollectionViewCell
             
         case self.bannerCollectionView:
-            print("bannerCollectionView")
+            
             let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
             
             bannerCell.bannerImg.image = bannerImgList[indexPath.row]
             return bannerCell
         
         case self.recentCollectionView:
-        print("recentCollectionView")
             let recentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentCollectionViewCell", for: indexPath) as! RecentCollectionViewCell
         
         recentCollectionViewCell.recentImage.image = recentImgList[indexPath.row]

@@ -110,6 +110,7 @@ class NewSignUpViewController: UIViewController {
         if signupProgressBar.progress == 1 {
             let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
             guard let analysisVC = tasteStoryboard.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+            analysisVC.setAnalysisStatus(.signup)
             self.navigationController?.pushViewController(analysisVC, animated: true)
         }
         
@@ -166,15 +167,8 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             errorLabel.text = ""
             nextButton.backgroundColor = UIColor.disabledGrey
-        default:
-            return
-            
+        default: return
         }
-        
-        print(currentView)
-        
-        
-        
     }
     @IBAction func goBack(_ sender: UIButton) {
         
@@ -251,17 +245,6 @@ class NewSignUpViewController: UIViewController {
         nextButton.setTitle("가입 완료하기", for: .normal)
         nextButton.backgroundColor = UIColor.black
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension NewSignUpViewController {

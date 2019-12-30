@@ -26,6 +26,17 @@ class CartVC: UIViewController {
         cartListTableView.dataSource = self
         cartListTableView.delegate = self
         self.navigationItem.title = "장바구니"
+        setLeftButton()
+    }
+    
+    private func setLeftButton() {
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action: #selector(popView))
+    }
+    
+    @objc func popView() {
+        print("POP")
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func initNavi() {

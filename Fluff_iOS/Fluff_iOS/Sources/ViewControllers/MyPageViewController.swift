@@ -20,6 +20,7 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var myPageButtonTableView: UITableView!
     
     @IBOutlet weak var makeShopButton: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,12 @@ class MyPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.setNavigationBarClear()
+        if tabBarController!.tabBar.isHidden {
+            bottomConstraint.constant = self.tabBarController!.tabBar.frame.height
+//            self.view.setNeedsLayout()
+        }
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setInitButton() {
@@ -59,6 +66,7 @@ class MyPageViewController: UIViewController {
     
     @IBAction func goLikeListView(_ sender: Any) {
         guard let likeListVC = self.storyboard?.instantiateViewController(identifier: "LikeListParentVC") as? LikeListParentVC else { return }
+        likeListVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(likeListVC, animated: true)
     }
 }
@@ -109,9 +117,14 @@ extension MyPageViewController: UITableViewDelegate {
         case .deliveryCheck:
             let checkStoryboard = UIStoryboard(name: "checkDelivery", bundle: nil)
             guard let deliveryVC = checkStoryboard.instantiateViewController(identifier: "checkDeliveryVC") as? CheckDeliveryVC else { return }
+            deliveryVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(deliveryVC, animated: true)
         case .reviseInformation: return
-        case .tasteResetting: return
+        case .tasteResetting:
+            guard let tasteAnalysis = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+            tasteAnalysis.setAnalysisStatus(.resetting)
+            tasteAnalysis.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(tasteAnalysis, animated: true)
         case .logout: return
             
         

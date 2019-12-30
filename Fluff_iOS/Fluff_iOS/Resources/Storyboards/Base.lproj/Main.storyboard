@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="KoPubWorld Dotum_Pro Medium.otf">
+        <array key="KoPubWorldDotumPM.otf">
             <string>KoPubWorldDotumPM</string>
         </array>
         <array key="SCDream2.otf">
@@ -771,6 +771,9 @@
                                                             <constraint firstAttribute="width" constant="50" id="pPT-hf-mPt"/>
                                                             <constraint firstAttribute="width" secondItem="aVn-Hk-Qfs" secondAttribute="height" multiplier="1:1" id="xU4-Im-0Ao"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="goFluvRecomend:" destination="1V2-Mk-LMF" eventType="touchUpInside" id="SMg-yu-fYc"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>

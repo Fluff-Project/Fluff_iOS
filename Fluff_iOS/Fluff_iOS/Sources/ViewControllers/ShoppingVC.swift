@@ -34,6 +34,8 @@ class ShoppingVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        self.hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.isHidden = false
         initFilterfing()
     }
     
@@ -90,6 +92,13 @@ class ShoppingVC: UIViewController {
             self.filteringVC.view.transform = CGAffineTransform(translationX: 0, y: -self.filteringVC.view.frame.height)
             self.coverBlurView.transform = CGAffineTransform(translationX: 0, y: -self.coverBlurView.frame.height)
         }, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identiriler = segue.identifier else { return }
+        if identiriler == "cartSegue" {
+            segue.destination.hidesBottomBarWhenPushed = true
+        }
     }
 }
 

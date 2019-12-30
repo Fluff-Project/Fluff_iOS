@@ -17,6 +17,9 @@ class TasteAnalysisVC: UIViewController {
     private var isSelected: [Bool] = []
     // 임시변수 선택 정할
     
+    private var isResetting: Bool?
+    private var analysisStatus: AnalysisStatus?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,11 +28,20 @@ class TasteAnalysisVC: UIViewController {
         tasteCollectionView.delegate = self
         initialButton()
         
-        selectButton.setTitle("5개 이상 선택해주세요", for: .normal)
+        selectButton.setTitle("3개 이상 선택해주세요", for: .normal)
+        self.navigationController?.navigationBar.isHidden = true
         
         for _ in 0..<30 {
             isSelected.append(false)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.analysisStatus = nil
+        self.isResetting = nil
     }
     
     private func initialButton() {
@@ -37,11 +49,30 @@ class TasteAnalysisVC: UIViewController {
         selectButton.isUserInteractionEnabled = false
     }
     
+    func setResetting(_ isResetting: Bool) {
+        self.isResetting = isResetting
+    }
+    
+    func setAnalysisStatus(_ analysisStatus: AnalysisStatus) {
+        self.analysisStatus = analysisStatus
+    }
+    
     @IBAction func goAnalysisNext(_ sender: Any) {
-        if selectedCount >= 5 {
-            guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
-            nextAnalysisVC.modalPresentationStyle = .fullScreen
-            self.present(nextAnalysisVC, animated: true, completion: nil)
+        guard let analysisStatus = self.analysisStatus else { return }
+        switch analysisStatus {
+        case .signup:
+            if selectedCount >= 3 {
+                guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
+                nextAnalysisVC.modalPresentationStyle = .fullScreen
+                nextAnalysisVC.setAnalysisStatus(analysisStatus)
+                self.present(nextAnalysisVC, animated: true, completion: nil)
+            }
+        default:
+            if selectedCount >= 3 {
+                guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
+                nextAnalysisVC.setAnalysisStatus(analysisStatus)
+                self.navigationController?.pushViewController(nextAnalysisVC, animated: true)
+            }
         }
     }
 }
@@ -89,7 +120,7 @@ extension TasteAnalysisVC: UICollectionViewDelegate {
             selectedCount += 1
         }
         
-        if selectedCount >= 5 {
+        if selectedCount >= 3 {
             selectButton.backgroundColor = .black
             selectButton.titleLabel?.textColor = . white
             selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -98,7 +129,7 @@ extension TasteAnalysisVC: UICollectionViewDelegate {
         } else {
             selectButton.backgroundColor = UIColor(red: 183/255, green: 183/255, blue: 183/255, alpha: 1.0)
             selectButton.titleLabel?.textColor = .white
-            selectButton.setTitle("5개 이상을 선택해주세요", for: .normal)
+            selectButton.setTitle("3개 이상을 선택해주세요", for: .normal)
             selectButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             selectButton.isUserInteractionEnabled = false
         }

@@ -60,11 +60,11 @@ class DetailItemVC: UIViewController {
     
     @IBAction func clickHeart(_ sender: Any) {
         if isClicked {
-            guard let heartImage = UIImage(named: "heartEmptyIc") else { return }
+            guard let heartImage = UIImage(named: "heartEmptyIc-1") else { return }
             heartButton.setBackgroundImage(heartImage, for: .normal)
             isClicked = !isClicked
         } else {
-            guard let heartImage = UIImage(named: "heartFilledIc") else { return }
+            guard let heartImage = UIImage(named: "heartFilledIc-1") else { return }
             heartButton.setBackgroundImage(heartImage, for: .normal)
             isClicked = !isClicked
         }

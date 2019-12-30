@@ -14,6 +14,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     
+    private var isAnimated: Bool = false
     private var touchCount: Int = 0
     
     @IBOutlet weak var coverView: UIView!
@@ -96,6 +97,7 @@ class LoginVC: UIViewController {
     
     @IBAction func animateLogin(_ sender: Any) {
         loginButton.backgroundColor = .white
+        self.isAnimated = true
         
         UIView.animate(withDuration: 0.5, animations: {
             self.signinButton.alpha = 0
@@ -157,10 +159,10 @@ extension LoginVC {
     }
     
     @objc func resetView() {
-        if touchCount == 0 {
+        if isAnimated && touchCount == 0 {
             self.view.endEditing(true)
             touchCount += 1
-        } else {
+        } else if isAnimated && touchCount == 1 {
             loginView?.alpha = 0
             pwdView?.alpha = 0
             loginButton.backgroundColor = .clear
@@ -186,6 +188,7 @@ extension LoginVC {
                 self.loginLabel.alpha = 1
             }, completion: { isAnimate in
                 self.logoImageView.frame.size = CGSize(width: self.logoWidth, height: self.logoHeight)
+                self.isAnimated = false
                 self.touchCount = 0
             })
         }

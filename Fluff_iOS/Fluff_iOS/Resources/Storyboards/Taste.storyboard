@@ -648,7 +648,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="shoppingbagIc" id="QYC-PL-eKE">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="DOU-eN-gQx" kind="show" id="mMn-od-J6R"/>
+                                <segue destination="DOU-eN-gQx" kind="show" identifier="cartSegue" id="VyG-nL-NIo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -664,7 +664,7 @@
         <!--CartVC-->
         <scene sceneID="HRP-z5-GWU">
             <objects>
-                <viewController id="DOU-eN-gQx" customClass="CartVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="DOU-eN-gQx" customClass="CartVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i7p-gu-pfs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1239,8 +1239,11 @@
                                                 <rect key="frame" x="0.0" y="1117.6666666666667" width="414" height="92"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQB-Uo-s3z">
-                                                        <rect key="frame" x="16" y="19.000000000000004" width="322.66666666666669" height="54.333333333333343"/>
+                                                        <rect key="frame" x="16" y="22" width="292" height="48"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="XQB-Uo-s3z" secondAttribute="height" multiplier="73:12" id="zRr-c2-VOM"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                         <state key="normal" title="구매하기">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1249,28 +1252,25 @@
                                                             <action selector="clickPurchase:" destination="cZc-1p-aQQ" eventType="touchUpInside" id="pK5-W0-B9e"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lw0-9t-iWs">
-                                                        <rect key="frame" x="354.66666666666669" y="27.333333333333254" width="41.333333333333314" height="37.666666666666657"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-2l-bry">
+                                                        <rect key="frame" x="360" y="29.666666666666515" width="36" height="33"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="lw0-9t-iWs" secondAttribute="height" multiplier="12:11" id="pFk-wo-pzV"/>
+                                                            <constraint firstAttribute="width" secondItem="4a8-2l-bry" secondAttribute="height" multiplier="12:11" id="zYs-6p-iiT"/>
                                                         </constraints>
-                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" backgroundImage="heartEmptyIc"/>
+                                                        <state key="normal" backgroundImage="heartEmptyIc-1"/>
                                                         <connections>
-                                                            <action selector="clickHeart:" destination="cZc-1p-aQQ" eventType="touchUpInside" id="oO1-4W-c6E"/>
+                                                            <action selector="clickHeart:" destination="cZc-1p-aQQ" eventType="touchUpInside" id="HRm-nE-YZd"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tqk-Sd-Reb" secondAttribute="height" multiplier="4.5:1" id="5tE-7E-wQ0"/>
                                                     <constraint firstItem="XQB-Uo-s3z" firstAttribute="centerY" secondItem="tqk-Sd-Reb" secondAttribute="centerY" id="AaP-yv-f87"/>
-                                                    <constraint firstItem="lw0-9t-iWs" firstAttribute="centerY" secondItem="tqk-Sd-Reb" secondAttribute="centerY" id="YdK-ZH-Fdg"/>
-                                                    <constraint firstItem="lw0-9t-iWs" firstAttribute="width" secondItem="tqk-Sd-Reb" secondAttribute="width" multiplier="0.1" id="dPG-La-r5n"/>
+                                                    <constraint firstItem="XQB-Uo-s3z" firstAttribute="width" secondItem="tqk-Sd-Reb" secondAttribute="width" multiplier="0.705314" id="Jab-TM-Rjt"/>
                                                     <constraint firstItem="XQB-Uo-s3z" firstAttribute="leading" secondItem="tqk-Sd-Reb" secondAttribute="leading" constant="16" id="fbW-pn-jnS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="lw0-9t-iWs" secondAttribute="trailing" constant="18" id="jD2-Dr-BL1"/>
-                                                    <constraint firstItem="lw0-9t-iWs" firstAttribute="leading" secondItem="XQB-Uo-s3z" secondAttribute="trailing" constant="16" id="nBL-XL-458"/>
-                                                    <constraint firstItem="XQB-Uo-s3z" firstAttribute="height" secondItem="tqk-Sd-Reb" secondAttribute="height" multiplier="0.59" id="xBH-lF-egq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4a8-2l-bry" secondAttribute="trailing" constant="18" id="hxy-kx-mhJ"/>
+                                                    <constraint firstItem="4a8-2l-bry" firstAttribute="centerY" secondItem="tqk-Sd-Reb" secondAttribute="centerY" id="lHV-3q-SZc"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
@@ -1369,7 +1369,7 @@
                         <outlet property="detailItemCollectionView" destination="2Qx-3Z-3QH" id="a7s-7b-1cW"/>
                         <outlet property="followButton" destination="l2P-gN-rzY" id="xzU-jD-U6e"/>
                         <outlet property="followerCountLabel" destination="k2K-e4-WXE" id="Oum-RK-OEj"/>
-                        <outlet property="heartButton" destination="lw0-9t-iWs" id="EEh-bJ-9RY"/>
+                        <outlet property="heartButton" destination="4a8-2l-bry" id="JQD-0H-Hte"/>
                         <outlet property="nicknameLabel" destination="nUj-gB-JTL" id="YNd-P2-vwA"/>
                         <outlet property="otherItemCollectionView" destination="b8X-d8-UKO" id="vHv-Zp-N8V"/>
                         <outlet property="pageControl" destination="VHM-yR-VCX" id="KwL-qq-EjR"/>
@@ -2169,6 +2169,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="D4C-V3-TM1"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="S5d-Ak-5fI" id="TlV-qX-NQs"/>
                         <outlet property="currentProductCollectionView" destination="FDi-7l-xgr" id="awX-fP-KNg"/>
                         <outlet property="currentProductViewTopConstraint" destination="5hE-AN-sBJ" id="x0l-KZ-5hS"/>
                         <outlet property="emailLabel" destination="gEb-jS-sVR" id="NJr-Cd-329"/>
@@ -2180,7 +2181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRI-MI-wMi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2852" y="1954"/>
+            <point key="canvasLocation" x="2854" y="1954"/>
         </scene>
         <!--Main Tabbar Controller-->
         <scene sceneID="Yt8-4K-ab2">
@@ -3017,7 +3018,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="frankFloresEyFcZllYvfAUnsplash" width="649" height="812"/>
         <image name="heart" catalog="system" width="64" height="54"/>
-        <image name="heartEmptyIc" width="26.333333969116211" height="24"/>
+        <image name="heartEmptyIc-1" width="36" height="33"/>
         <image name="icons8Clothes961" width="25" height="25"/>
         <image name="icons8Home1002" width="25" height="25"/>
         <image name="icons8Magazine100" width="25" height="25"/>
