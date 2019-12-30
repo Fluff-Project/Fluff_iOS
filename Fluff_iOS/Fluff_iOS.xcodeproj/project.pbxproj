@@ -102,6 +102,8 @@
 		A6DF861623B61748006FDE79 /* HowFluvCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF861523B61748006FDE79 /* HowFluvCollectionViewCell.swift */; };
 		A6DF861823B6611B006FDE79 /* NowAuctionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF861723B6611B006FDE79 /* NowAuctionCollectionViewCell.swift */; };
 		A6DF861A23B66FF3006FDE79 /* TodayVintageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF861923B66FF3006FDE79 /* TodayVintageCollectionViewCell.swift */; };
+		A6E2ABB623BA107900EC8E66 /* EndPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */; };
+		A6E2ABB823BA280800EC8E66 /* EndPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */; };
 		A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */; };
 		A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */; };
 		A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */; };
@@ -207,6 +209,8 @@
 		A6DF861523B61748006FDE79 /* HowFluvCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowFluvCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6DF861723B6611B006FDE79 /* NowAuctionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowAuctionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A6DF861923B66FF3006FDE79 /* TodayVintageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVintageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndPayment.storyboard; sourceTree = "<group>"; };
+		A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPaymentVC.swift; sourceTree = "<group>"; };
 		A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "/Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<absolute>"; };
 		A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordVC.swift; sourceTree = "<group>"; };
 		A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
@@ -434,6 +438,7 @@
 				9D705A9C23B8AA9A00097FCF /* CheckDeliveryVC.swift */,
 				9D705AA023B8BCE100097FCF /* MyInfoChangeVC.swift */,
 				A66F240E23B9045B004B57FA /* ThemeIntoVC.swift */,
+				A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				A63C506823B08BF40069BAFB /* Main.storyboard */,
+				A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */,
 				A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */,
 				A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */,
 				9D7937DB23B11ED500A0CD3E /* Taste.storyboard */,
@@ -548,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D2863223B0D2CD00E7379B /* SCDream4.otf in Resources */,
+				A6E2ABB623BA107900EC8E66 /* EndPayment.storyboard in Resources */,
 				9D705A9B23B8AA7400097FCF /* checkDelivery.storyboard in Resources */,
 				A6D2863123B0D2CD00E7379B /* KoPubWorld Batang_Pro Medium.otf in Resources */,
 				A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */,
@@ -680,6 +687,7 @@
 				9D705AA123B8BCE100097FCF /* MyInfoChangeVC.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
 				A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */,
+				A6E2ABB823BA280800EC8E66 /* EndPaymentVC.swift in Sources */,
 				A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */,
 				A6DF861823B6611B006FDE79 /* NowAuctionCollectionViewCell.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
