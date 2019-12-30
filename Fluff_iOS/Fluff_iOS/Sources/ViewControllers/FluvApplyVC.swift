@@ -73,3 +73,12 @@ class FluvApplyVC: UIViewController {
         print("complete")
     }
 }
+
+extension FluvApplyVC {
+    func openLibrary() {
+    }
+    
+    func openCamera() {
+        
+    }
+}

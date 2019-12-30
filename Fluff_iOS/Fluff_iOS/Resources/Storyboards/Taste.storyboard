@@ -1878,14 +1878,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHW-L2-qae">
-                                <rect key="frame" x="142.66666666666666" y="54" width="90" height="91"/>
+                                <rect key="frame" x="97.666666666666686" y="54" width="180" height="182"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pHW-L2-qae" secondAttribute="height" multiplier="90:91" id="saO-CS-8eY"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="emptyuserIc"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="D8u-L9-4KI">
-                                <rect key="frame" x="0.0" y="172" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="263" width="375" height="130"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAI-hQ-e5S">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -1897,12 +1897,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가게 이름을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bZk-0Z-g7V">
-                                                <rect key="frame" x="114.33333333333333" y="6.6666666666666572" width="244.66666666666669" height="17"/>
+                                                <rect key="frame" x="114.33333333333333" y="6.6666666666666856" width="244.66666666666669" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-gi-AsX">
-                                                <rect key="frame" x="114.33333333333333" y="25.666666666666657" width="244.66666666666669" height="0.33333333333333215"/>
+                                                <rect key="frame" x="114.33333333333333" y="25.666666666666686" width="244.66666666666669" height="0.33333333333333215"/>
                                                 <color key="backgroundColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="lz5-cC-kKE"/>
@@ -1931,12 +1931,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가게에 대한 한 줄 소개를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wr1-qr-k1A">
-                                                <rect key="frame" x="114.33333333333333" y="6.6666666666666572" width="244.66666666666669" height="17"/>
+                                                <rect key="frame" x="114.33333333333333" y="6.6666666666666856" width="244.66666666666669" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-Cs-1Ia">
-                                                <rect key="frame" x="114.33333333333333" y="25.666666666666657" width="244.66666666666669" height="0.33333333333333215"/>
+                                                <rect key="frame" x="114.33333333333333" y="25.666666666666686" width="244.66666666666669" height="0.33333333333333215"/>
                                                 <color key="backgroundColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="KDU-Zk-bGy"/>
@@ -2007,13 +2007,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdA-MD-xVa">
-                                <rect key="frame" x="16.000000000000004" y="330" width="63.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="16.000000000000004" y="421" width="63.333333333333343" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-9L-EQU">
-                                <rect key="frame" x="0.0" y="366.33333333333326" width="375" height="295"/>
+                                <rect key="frame" x="0.0" y="457.33333333333326" width="375" height="295"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yno-s1-xeB">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -2041,7 +2041,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0U-B4-J8Y">
-                                        <rect key="frame" x="0.0" y="75" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="75.000000000000057" width="375" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="교환/환불 여부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scv-Qe-CK1">
                                                 <rect key="frame" x="16" y="18" width="98" height="20.333333333333329"/>
@@ -2050,7 +2050,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="교환과 환불 여부에 대한 설명을 적어주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAv-0c-t0t">
-                                                <rect key="frame" x="16" y="41.333333333333371" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="41.333333333333258" width="343" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
