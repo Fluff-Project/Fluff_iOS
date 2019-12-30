@@ -4,7 +4,7 @@
 
 ## Work Flow
 
-<img src="./images/workflow.png" height="400px"/>
+<img src="./images/workFlow.png" height="400px"/>
 
 
 
