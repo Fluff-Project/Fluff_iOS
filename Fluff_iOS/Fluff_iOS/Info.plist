@@ -27,6 +27,19 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>KoPubWorldBatangPB.otf</string>
+		<string>KoPubWorldBatangPM.otf</string>
+		<string>KoPubWorldBatangPL.otf</string>
+		<string>KoPubWorldDotumPM.otf</string>
+		<string>SCDream9.otf</string>
+		<string>SCDream8.otf</string>
+		<string>SCDream7.otf</string>
+		<string>SCDream6.otf</string>
+		<string>SCDream5.otf</string>
+		<string>SCDream4.otf</string>
+		<string>SCDream3.otf</string>
+		<string>SCDream2.otf</string>
+		<string>SCDream1.otf</string>
 		<string>KoPubWorldDotumPL.otf</string>
 		<string>KoPubWorldDotumPB.otf</string>
 	</array>

@@ -1273,7 +1273,7 @@
                                                     <constraint firstItem="XQB-Uo-s3z" firstAttribute="height" secondItem="tqk-Sd-Reb" secondAttribute="height" multiplier="0.59" id="xBH-lF-egq"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="185" y="374" width="44" height="8"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -2928,8 +2928,8 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                     <attributedString key="attributedTitle">
                                         <fragment content="플러프">
                                             <attributes>
-                                                <color key="NSColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name=".AppleSDGothicNeoI-Regular"/>
+                                                <color key="NSColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
                                                 <font key="NSOriginalFont" metaFont="system" size="15"/>
                                             </attributes>
                                         </fragment>
@@ -2941,8 +2941,8 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                                         </fragment>
                                         <fragment content="시작하기">
                                             <attributes>
-                                                <color key="NSColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="15" name=".AppleSDGothicNeoI-Regular"/>
+                                                <color key="NSColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" metaFont="system" size="15"/>
                                                 <font key="NSOriginalFont" metaFont="system" size="15"/>
                                             </attributes>
                                         </fragment>

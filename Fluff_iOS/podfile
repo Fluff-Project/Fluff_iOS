@@ -12,4 +12,5 @@ target 'Fluff_iOS' do
   pod 'BEMCheckBox'
   pod 'XLPagerTabStrip', '~> 9.0'
   pod 'RZTransitions'
+  pod 'Hero'
 end

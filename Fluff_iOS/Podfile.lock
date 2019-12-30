@@ -18,6 +18,7 @@ PODS:
   - CHIPageControl/Jaloro (0.1.8)
   - CHIPageControl/Paprika (0.1.8)
   - CHIPageControl/Puya (0.1.8)
+  - Hero (1.4.0)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - BEMCheckBox
   - CHIPageControl (~> 0.1.3)
+  - Hero
   - Kingfisher (~> 5.0)
   - RZTransitions
   - XLPagerTabStrip (~> 9.0)
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Alamofire
     - BEMCheckBox
     - CHIPageControl
+    - Hero
     - Kingfisher
     - RZTransitions
     - XLPagerTabStrip
@@ -45,10 +48,11 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   CHIPageControl: 76b35c8309d8dd155e869c109cc6ffc0aaa465ff
+  Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 3a978ff80210d27b1b32ac40bf02c97b5c72fa5f
+PODFILE CHECKSUM: eb73c92f33241db10e500b18125d2df9f999db96
 
 COCOAPODS: 1.8.4
