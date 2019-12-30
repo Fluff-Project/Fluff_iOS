@@ -212,7 +212,7 @@ extension ViewController: UITableViewDataSource {}
 
 ### 어려운 것 해결한 것
 
-4. CollectionView 레이아웃 잡기 (DelegateFlowLayout 안잡힘)
+1. CollectionView 레이아웃 잡기 (DelegateFlowLayout 안잡힘)
 
 🔵 Interface Builder AutoLayout 옵션에서 `None`으로 지정하면 코드로 지정한대로 설정
 
@@ -322,6 +322,17 @@ UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSp
 ```swift
 guard let window = UIApplication.shared.keyWindow else { return }
 window.addSubView(UIView())
+```
+
+
+
+8. Tabbar `isHidden` 을 Bottom에 Spacing이 생기는 문제
+
+```swift
+// hideBottomBarWhenPushed을 넘어가는 View에 설정
+private func setTabbar() {
+  self.hidesBottomBarWhenPushed = true
+}
 ```
 
 
