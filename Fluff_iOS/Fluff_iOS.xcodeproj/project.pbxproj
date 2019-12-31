@@ -111,6 +111,7 @@
 		A6E2ABB623BA107900EC8E66 /* EndPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */; };
 		A6E2ABB823BA280800EC8E66 /* EndPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */; };
 		A6E2ABBA23BA5EB500EC8E66 /* HowToPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2ABB923BA5EB500EC8E66 /* HowToPayVC.swift */; };
+		A6E2ABBC23BA9F4100EC8E66 /* Magazine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */; };
 		A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */; };
 		A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */; };
 		A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */; };
@@ -225,6 +226,7 @@
 		A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndPayment.storyboard; sourceTree = "<group>"; };
 		A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPaymentVC.swift; sourceTree = "<group>"; };
 		A6E2ABB923BA5EB500EC8E66 /* HowToPayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPayVC.swift; sourceTree = "<group>"; };
+		A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Magazine.storyboard; sourceTree = "<group>"; };
 		A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "/Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<absolute>"; };
 		A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordVC.swift; sourceTree = "<group>"; };
 		A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
@@ -460,7 +462,6 @@
 				A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */,
 				9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */,
 				A6E2ABB923BA5EB500EC8E66 /* HowToPayVC.swift */,
-
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -469,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				A63C506823B08BF40069BAFB /* Main.storyboard */,
+				A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */,
 				A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */,
 				A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */,
 				A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */,
@@ -593,6 +595,7 @@
 				A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */,
 				9DD73AFC23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.xib in Resources */,
 				A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */,
+				A6E2ABBC23BA9F4100EC8E66 /* Magazine.storyboard in Resources */,
 				9D7937DC23B11ED500A0CD3E /* Taste.storyboard in Resources */,
 				A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */,
 				9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */,
