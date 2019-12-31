@@ -12,6 +12,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var transparentView: UIView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var oneBackgroundView: UIImageView!
+    @IBOutlet weak var twoBackgroundView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,17 @@ class WelcomeViewController: UIViewController {
         self.transparentView.alpha = 0.8
         UIView.animate(withDuration: 0.5, animations: {
             self.transparentView.alpha = 0.35
+        }, completion: nil)
+        
+        oneBackgroundView.transform = CGAffineTransform(translationX: 300, y: 0)
+        twoBackgroundView.transform = CGAffineTransform(translationX: -300, y: 0)
+        initAnimtaion()
+    }
+    
+    private func initAnimtaion() {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.oneBackgroundView.transform = .identity
+            self.twoBackgroundView.transform = .identity
         }, completion: nil)
     }
     

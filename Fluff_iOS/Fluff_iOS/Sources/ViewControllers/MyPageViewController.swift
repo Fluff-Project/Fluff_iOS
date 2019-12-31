@@ -71,6 +71,7 @@ class MyPageViewController: UIViewController {
     
     @IBAction func goMakeShopView(_ sender: Any) {
         guard let fluvApplyVC = self.storyboard?.instantiateViewController(identifier: "FluvApplyVC") as? FluvApplyVC else { return }
+        fluvApplyVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(fluvApplyVC, animated: true)
     }
 }
@@ -82,7 +83,6 @@ extension MyPageViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let currentProductCell = collectionView.dequeueReusableCell(withReuseIdentifier: "currentProductCell", for: indexPath) as? CurrentProductCollectionViewCell else { return UICollectionViewCell() }
-        
         
         return currentProductCell
     }

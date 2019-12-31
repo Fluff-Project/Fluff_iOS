@@ -47,6 +47,7 @@ class PurchaseViewController: UIViewController {
         setMarginView()
         setButton()
         setNaviBackButton()
+        self.view.endEditing(true)
     }
     
     private func setNaviBackButton() {
@@ -71,7 +72,7 @@ class PurchaseViewController: UIViewController {
         normalAddressCheckBox.onTintColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
         normalAddressCheckBox.onAnimationType = .stroke
         normalAddressCheckBox.offAnimationType = .stroke
-        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 12)
+        paymentButton.makeCornerRounded(radius: paymentButton.frame.width / 16)
     }
     
     private func setMarginView() {
@@ -90,11 +91,11 @@ class PurchaseViewController: UIViewController {
         
     }
     
-    @IBAction func clickNormalAddress(_ sender: Any) {
-        
-    }
-    
     @IBAction func clickPay(_ sender: Any) {
+        let paymentStoryboard = UIStoryboard(name: "EndPayment", bundle: nil)
+        guard let howToPayVC = paymentStoryboard.instantiateViewController(identifier: "HowToPayVC") as? HowToPayVC else { return }
+        howToPayVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(howToPayVC, animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

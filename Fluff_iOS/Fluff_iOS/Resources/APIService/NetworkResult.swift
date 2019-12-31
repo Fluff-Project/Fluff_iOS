@@ -13,5 +13,5 @@ enum NetworkResult<T> {
     case requestErr(T)
     case pathErr
     case serverErr
-    case networkErr
+    case networkFail
 }

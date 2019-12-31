@@ -681,7 +681,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqj-2d-yk6" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="163" y="471" width="49" height="5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="tintColor" red="0.24705882352941178" green="0.10196078431372549" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pqj-2d-yk6" secondAttribute="height" multiplier="49:5" id="AUY-88-Wt8"/>
                                                     <constraint firstAttribute="width" constant="49" id="SfH-n7-DgU"/>
@@ -1334,7 +1334,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="XnT-ec-nT3" secondAttribute="height" multiplier="1:1" id="hmX-4U-Rvh"/>
                                             </constraints>
-                                            <state key="normal" backgroundImage="10"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" backgroundImage="15"/>
                                             <connections>
                                                 <action selector="back:" destination="FK8-pi-HSd" eventType="touchUpInside" id="uP8-OD-rUk"/>
                                             </connections>
@@ -1566,6 +1567,7 @@
         <image name="10" width="16" height="16"/>
         <image name="104" width="343" height="229"/>
         <image name="14" width="8" height="16"/>
+        <image name="15" width="16" height="16"/>
         <image name="478" width="180" height="216"/>
         <image name="beccaMchaffieFzde6ITjkwUnsplash2" width="516" height="516"/>
         <image name="femaleSelected" width="157" height="158"/>

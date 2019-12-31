@@ -38,6 +38,7 @@ class DetailItemVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initialButton()
+        setNavi()
         detailItemCollectionView.dataSource = self
         detailItemCollectionView.delegate = self
         otherItemCollectionView.dataSource = otherItemCollectionViewDataSource
@@ -46,7 +47,6 @@ class DetailItemVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
         pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 65
-        
     }
     
     private func initialButton() {
@@ -54,8 +54,18 @@ class DetailItemVC: UIViewController {
         purchaseButton.makeCornerRounded(radius: purchaseButton.frame.width / 13)
     }
     
+    private func setNavi() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
+        #selector(popView))
+    }
+    
+    @objc func popView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func clickPurchase(_ sender: Any) {
         guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
+        purchaseVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(purchaseVC, animated: true)
     }
     

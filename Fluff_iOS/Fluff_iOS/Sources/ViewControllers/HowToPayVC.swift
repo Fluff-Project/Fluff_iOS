@@ -28,6 +28,7 @@ class HowToPayVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavi()
         
         howToPayView.isHidden = true
         bankPickerView.isHidden = true
@@ -53,14 +54,21 @@ class HowToPayVC: UIViewController {
         bankPickerView.isHidden = true
     }
     
+    private func setNavi() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
+        #selector(popView))
+    }
+    
+    @objc func popView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func showBankList(_ sender: UIButton) {
         bankPickerView.isHidden = false
         doneSelectToolbar.isHidden = false
     }
     
     
-    
-
     @IBAction func transferOrNot(_ sender: UIButton) {
         if buttonClicked == true {
             buttonClicked = false
@@ -73,21 +81,12 @@ class HowToPayVC: UIViewController {
             howToPayView.isHidden = false
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func paymentComplete(_ sender: UIButton) {
         whatName = customerNameTextField.text!
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "EndPaymentVC") as? EndPaymentVC else { return }
+        nextVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
@@ -111,5 +110,9 @@ extension HowToPayVC: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         whatBank = bankList[row]
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }

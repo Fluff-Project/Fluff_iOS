@@ -23,9 +23,16 @@ class FluvApplyVC: UIViewController {
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var updateDayLabel: UILabel!
     
-    private let picker = UIImagePickerController()
+    private let imagePicker = UIImagePickerController()
     @IBOutlet weak var profileButton: UIButton!
     private var profileImage: UIImage?
+    @IBOutlet weak var keywordPickerStackView: UIStackView!
+    @IBOutlet weak var keywordPickerView: UIPickerView!
+    
+    private var selectedKeywordIndex: Int = 0
+    
+    private var keywordOne: HashTagCategory?
+    private var keywordTwo: HashTagCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +42,18 @@ class FluvApplyVC: UIViewController {
         setButtons()
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.setNavigationBarClear()
-        picker.delegate = self
+        imagePicker.delegate = self
+        setKeywordPickerView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    private func setKeywordPickerView() {
+        keywordPickerStackView.alpha = 0
+        keywordPickerView.dataSource = self
+        keywordPickerView.delegate = self
     }
     
     private func setFont() {
@@ -95,20 +109,54 @@ class FluvApplyVC: UIViewController {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func setKeywordOne(_ sender: Any) {
+        selectedKeywordIndex = 1
+        UIView.animate(withDuration: 0.3) {
+            self.keywordPickerStackView.alpha = 1
+        }
+    }
+    
+    @IBAction func setKeywordTwo(_ sender: Any) {
+        selectedKeywordIndex = 2
+        UIView.animate(withDuration: 0.3) {
+            self.keywordPickerStackView.alpha = 1
+        }
+    }
+    
+    @IBAction func selectKeyword(_ sender: Any) {
+        if selectedKeywordIndex == 1 {
+            let selectedIndex = keywordPickerView.selectedRow(inComponent: 0)
+            guard let hashTag = HashTagCategory(rawValue: selectedIndex) else { return }
+            keywordOne = hashTag
+            keywordOneButton.setTitle("#\(hashTag.getTagName())", for: .normal)
+            UIView.animate(withDuration: 0.3) {
+                self.keywordPickerStackView.alpha = 0
+            }
+        } else {
+            let selectedIndex = keywordPickerView.selectedRow(inComponent: 0)
+            guard let hashTag = HashTagCategory(rawValue: selectedIndex) else { return }
+            keywordTwo = hashTag
+            keywordTwoButton.setTitle("#\(hashTag.getTagName())", for: .normal)
+            UIView.animate(withDuration: 0.3) {
+                self.keywordPickerStackView.alpha = 0
+            }
+        }
+    }
 }
 
 extension FluvApplyVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func openLibrary() {
-        picker.sourceType = .photoLibrary
-        present(picker, animated: false, completion: nil)
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: false, completion: nil)
     }
     
     func openCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
+            imagePicker.sourceType = .camera
         } else {
         }
-        present(picker, animated: false, completion: nil)
+        present(imagePicker, animated: false, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -118,6 +166,25 @@ extension FluvApplyVC: UIImagePickerControllerDelegate, UINavigationControllerDe
             dismiss(animated: true, completion: nil)
         }
     }
+}
+
+extension FluvApplyVC: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return HashTagCategory.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        guard let hashTag = HashTagCategory(rawValue: row) else { return "" }
+        return hashTag.getTagName()
+    }
+}
+
+extension FluvApplyVC: UIPickerViewDelegate {
+    
 }
 
 extension FluvApplyVC {

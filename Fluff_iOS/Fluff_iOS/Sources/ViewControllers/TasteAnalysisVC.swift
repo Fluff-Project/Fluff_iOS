@@ -42,7 +42,6 @@ class TasteAnalysisVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.analysisStatus = nil
     }
     
     private func initialButton() {

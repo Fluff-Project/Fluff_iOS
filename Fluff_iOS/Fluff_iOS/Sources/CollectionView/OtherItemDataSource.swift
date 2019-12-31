@@ -23,9 +23,9 @@ class OtherItemDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "otherItemCell", for: indexPath) as? OtherItemCollectionViewCell else { return UICollectionViewCell() }
         
-        guard let otherItem = otherItems?[indexPath.row] else { return UICollectionViewCell() }
-        guard let clotheImage = UIImage(named: otherItem) else { return UICollectionViewCell() }
-        detailCell.setClotheImage(clotheImage)
+//        guard let otherItem = otherItems?[indexPath.row] else { return UICollectionViewCell() }
+//        guard let clotheImage = UIImage(named: otherItem) else { return UICollectionViewCell() }
+//        detailCell.setClotheImage(clotheImage)
         
         return detailCell
     }

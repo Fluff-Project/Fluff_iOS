@@ -17,7 +17,6 @@ class BannerIntoVC: UIViewController {
         
         bannerIntoCollectionView.dataSource = self
         bannerIntoCollectionView.delegate = self
-        
     }
     
      @IBAction func back(_ sender: UIButton) {
