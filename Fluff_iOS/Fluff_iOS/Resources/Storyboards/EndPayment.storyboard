@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BbC-IB-nu4">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -422,8 +422,11 @@
                         <outlet property="confirmButton" destination="Tul-ry-kWs" id="KFr-dP-GWH"/>
                         <outlet property="customerLabel" destination="OU1-ex-PMK" id="zpZ-wN-w6c"/>
                         <outlet property="deliveryFeeLabel" destination="pc0-dX-ZHH" id="o2w-Zk-t1d"/>
+                        <outlet property="fistDashedLine" destination="S9H-5z-BiD" id="AFX-cC-1No"/>
                         <outlet property="priceLabel" destination="pg8-te-A6L" id="Vwa-1J-aR0"/>
+                        <outlet property="secondDashedLine" destination="cJ4-qH-GGZ" id="WSL-gs-8OJ"/>
                         <outlet property="sumLabel" destination="ciy-AV-Ch0" id="1Uc-oI-0Zu"/>
+                        <outlet property="thirdDashedLine" destination="wn9-nG-Dxr" id="7gh-Af-KHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBk-mc-lBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
