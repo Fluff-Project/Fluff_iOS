@@ -50,13 +50,13 @@ struct SigninService {
     
     private func isUser(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let signinData = try? decoder.decode(SigninData.self, from: value) else { return .pathErr }
-        print("Decoding Code :\(signinData.code)")
-        if signinData.code == 200 {
-            return .success(signinData)
-        } else if signinData.code == 400 {
-            return .requestErr(signinData)
-        }
+//        guard let signinData = try? decoder.decode(SigninData.self, from: value) else { return .pathErr }
+//        print("Decoding Code :\(signinData.code)")
+//        if signinData.code == 200 {
+//            return .success(signinData)
+//        } else if signinData.code == 400 {
+//            return .requestErr(signinData)
+//        }
         return .pathErr
     }
 }

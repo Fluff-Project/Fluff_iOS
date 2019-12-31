@@ -10,10 +10,10 @@ import Foundation
 
 struct SigninData: Codable {
     let code: Int
-    let json: JsonData
+    let json: SigninJsonData
 }
 
-struct JsonData: Codable {
+struct SigninJsonData: Codable {
     let success: Bool
     let message: String
     let data: UserData?

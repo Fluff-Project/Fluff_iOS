@@ -10,6 +10,8 @@
 		9220E422FA1EA1290E06A7A1 /* Pods_Fluff_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */; };
 		9D0C626D23B674BF00F31502 /* FilteringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C626C23B674BF00F31502 /* FilteringVC.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
+		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
+		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
 		9D385C9423B4B81000705218 /* LikeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */; };
 		9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */; };
 		9D385C9823B53CB100705218 /* AuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D385C9723B53CB100705218 /* AuctionVC.swift */; };
@@ -127,6 +129,8 @@
 		9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0C626C23B674BF00F31502 /* FilteringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringVC.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
+		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
+		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
 		9D385C9323B4B81000705218 /* LikeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCollectionViewCell.swift; sourceTree = "<group>"; };
 		9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		9D385C9723B53CB100705218 /* AuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionVC.swift; sourceTree = "<group>"; };
@@ -294,6 +298,7 @@
 				9D79377B23B0C0AF00A0CD3E /* APIConstants.swift */,
 				9D79377D23B0C0D400A0CD3E /* NetworkResult.swift */,
 				9DF0EB6123BAD8CC00EEC259 /* SigninService.swift */,
+				9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				9DF0EB6323BADF4E00EEC259 /* SigninData.swift */,
+				9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -481,10 +487,7 @@
 				A6E2ABB723BA280800EC8E66 /* EndPaymentVC.swift */,
 				9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */,
 				A6E2ABB923BA5EB500EC8E66 /* HowToPayVC.swift */,
-
 				9DE5C98523BB40FB00D7359C /* FluvVC.swift */,
-
-
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				A66F241123B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				9D705A9523B7D30E00097FCF /* DetailCategoryDataSource.swift in Sources */,
+				9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */,
 				9D84B12223B920070019C7D4 /* CartVC.swift in Sources */,
 				9D5676F123B6AEC500720F06 /* CategoryCollectionViewCell.swift in Sources */,
 				9D79382523B227CF00A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
@@ -739,6 +743,7 @@
 				9D7937F923B1455400A0CD3E /* FluvCollectionViewCell.swift in Sources */,
 				9D79382423B227CF00A0CD3E /* UIViewController+Extensions.swift in Sources */,
 				9D79382223B227CF00A0CD3E /* UIImageView+Extensions.swift in Sources */,
+				9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */,
 				A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */,
 				9D705AA123B8BCE100097FCF /* MyInfoChangeVC.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,

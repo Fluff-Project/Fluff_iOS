@@ -96,26 +96,26 @@ class LoginVC: UIViewController {
         guard let inputEmail = emailTextField?.text else { return }
         guard let inputPwd = pwdTextField?.text else { return }
         
-        SigninService.shared.signin(email: inputEmail, pwd: inputPwd) { networkResult in
-            switch networkResult {
-            case .success(let data):
-                guard let jsonData = data as? JsonData else {
-                    print("jsonData 가져오기 실패")
-                    return
-                }
-                guard let realData = jsonData.data else {
-                    print("데이터 분해 실패")
-                    return
-                }
-            case .requestErr(let data):
-                guard let jsonData = data as? JsonData else { return }
-                print(jsonData.message)
-            case .pathErr: return
-            case .serverErr: return
-            case .networkFail: return
-                
-            }
-        }
+//        SigninService.shared.signin(email: inputEmail, pwd: inputPwd) { networkResult in
+//            switch networkResult {
+//            case .success(let data):
+//                guard let jsonData = data as? JsonData else {
+//                    print("jsonData 가져오기 실패")
+//                    return
+//                }
+//                guard let realData = jsonData.data else {
+//                    print("데이터 분해 실패")
+//                    return
+//                }
+//            case .requestErr(let data):
+//                guard let jsonData = data as? JsonData else { return }
+//                print(jsonData.message)
+//            case .pathErr: return
+//            case .serverErr: return
+//            case .networkFail: return
+//                
+//            }
+//        }
         
         guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
         tasteAnalysisVC.modalPresentationStyle = .fullScreen
