@@ -19,6 +19,9 @@ class EndPaymentVC: UIViewController {
     @IBOutlet weak var deliveryFeeLabel: UILabel!
     @IBOutlet weak var sumLabel: UILabel!
     @IBOutlet weak var checkbox: BEMCheckBox!
+    @IBOutlet weak var fistDashedLine: UIView!
+    @IBOutlet weak var secondDashedLine: UIView!
+    @IBOutlet weak var thirdDashedLine: UIView!
     
     let numberFormatter = NumberFormatter()
     var customerName = String()
@@ -30,6 +33,7 @@ class EndPaymentVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+       
         price = 5700
         deliveryFee = 2300
         sum = price + deliveryFee
