@@ -115,15 +115,15 @@
             </objects>
             <point key="canvasLocation" x="1820" y="-477"/>
         </scene>
-        <!--View Controller-->
+        <!--Magazine DetailVC-->
         <scene sceneID="VpX-42-TUg">
             <objects>
-                <viewController id="ZwV-0j-g1n" sceneMemberID="viewController">
+                <viewController id="ZwV-0j-g1n" customClass="MagazineDetailVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXy-ff-Wnf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08I-Gh-rAH">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="08I-Gh-rAH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4PG-LU-qzG">
@@ -162,14 +162,23 @@
                                                     <constraint firstItem="NoG-3L-8WJ" firstAttribute="top" secondItem="rK4-Sw-HdE" secondAttribute="top" id="v1C-HV-gDh"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YwY-t8-BhQ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwY-t8-BhQ">
                                                 <rect key="frame" x="16" y="473" width="343" height="303"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="343" id="7sp-D0-zVl"/>
                                                     <constraint firstAttribute="width" secondItem="YwY-t8-BhQ" secondAttribute="height" multiplier="343:303" id="kQz-U8-dWh"/>
                                                 </constraints>
-                                                <string key="text">어김없이 뼈가 시린 겨울이 찾아왔다.필자는 아직도 군인 시절의 뼈가 시린 혹한기 훈련은 잊을 수 없다. 옛날 군인 아저씨들은 어떻게 이리도 추운 겨울을 견딜 수 있었을까. 입을 때는 몰랐지만 알고 보면 과거 군대에서 시작된 패션 빈티지 아이템 8가지를 소개한다.</string>
+                                                <string key="text">어김없이 뼈가 시린 겨울이 찾아왔다.
+
+필자는 아직도 군인 시절의
+뼈가 시린 혹한기 훈련은 잊을 수 없다.
+옛날 군인 아저씨들은 어떻게
+이리도 추운 겨울을 견딜 수 있었을까.
+
+입을 때는 몰랐지만
+알고 보면 과거 군대에서 시작된
+패션 빈티지 아이템 8가지를 소개한다.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -193,16 +202,48 @@
                                                     <constraint firstAttribute="width" secondItem="fSw-9Y-MOe" secondAttribute="height" multiplier="227:310" id="p2n-Ir-ARn"/>
                                                 </constraints>
                                             </view>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2S-ux-uCR">
+                                                <rect key="frame" x="16" y="1129" width="343" height="66"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="343" id="Tgc-2S-8pH"/>
+                                                </constraints>
+                                                <string key="text">1. 저먼 아미 트레이너
+GERMAN ARMY TRAINER</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz0-Gn-JJ5">
+                                                <rect key="frame" x="16" y="1217" width="343" height="149"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="zz0-Gn-JJ5" secondAttribute="height" multiplier="343:149" id="70g-gn-OAq"/>
+                                                    <constraint firstAttribute="width" constant="343" id="ZXq-jr-Ja9"/>
+                                                </constraints>
+                                                <string key="text">흔히 ‘독일군 스니커’라고 불리는 신발
+실제로 1970년대 독일 연방군
+병사들에게 활동화로 지급됐다.
+메종 마르지엘라의 레플리카
+스니커즈로도 더 잘 알려져 있다.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="KoPubWorldDotumPM" family="KoPubWorldDotum_Pro" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="fSw-9Y-MOe" firstAttribute="top" secondItem="YwY-t8-BhQ" secondAttribute="bottom" constant="7" id="9Jq-rY-HdW"/>
                                             <constraint firstAttribute="trailing" secondItem="rK4-Sw-HdE" secondAttribute="trailing" id="DbZ-r5-5Jq"/>
                                             <constraint firstItem="YwY-t8-BhQ" firstAttribute="top" secondItem="rK4-Sw-HdE" secondAttribute="bottom" constant="50" id="REG-po-TTg"/>
+                                            <constraint firstAttribute="bottom" secondItem="fSw-9Y-MOe" secondAttribute="bottom" constant="307" id="T67-jF-7VZ"/>
+                                            <constraint firstItem="s2S-ux-uCR" firstAttribute="centerX" secondItem="4PG-LU-qzG" secondAttribute="centerX" id="ZLZ-nZ-iHL"/>
+                                            <constraint firstItem="zz0-Gn-JJ5" firstAttribute="centerX" secondItem="4PG-LU-qzG" secondAttribute="centerX" id="bAL-fJ-xea"/>
                                             <constraint firstItem="rK4-Sw-HdE" firstAttribute="top" secondItem="4PG-LU-qzG" secondAttribute="top" id="bkR-cZ-3J4"/>
+                                            <constraint firstItem="s2S-ux-uCR" firstAttribute="top" secondItem="fSw-9Y-MOe" secondAttribute="bottom" constant="36" id="hNB-1H-xRx"/>
+                                            <constraint firstItem="zz0-Gn-JJ5" firstAttribute="top" secondItem="s2S-ux-uCR" secondAttribute="bottom" constant="22" id="rs4-GH-eqg"/>
                                             <constraint firstItem="rK4-Sw-HdE" firstAttribute="leading" secondItem="4PG-LU-qzG" secondAttribute="leading" id="sZr-Cv-MKT"/>
                                             <constraint firstItem="fSw-9Y-MOe" firstAttribute="centerX" secondItem="rK4-Sw-HdE" secondAttribute="centerX" id="uj7-Of-cpP"/>
-                                            <constraint firstAttribute="bottom" secondItem="fSw-9Y-MOe" secondAttribute="bottom" constant="307" id="xVm-Id-sgU"/>
                                             <constraint firstItem="YwY-t8-BhQ" firstAttribute="centerX" secondItem="4PG-LU-qzG" secondAttribute="centerX" id="yWQ-Au-O8T"/>
                                         </constraints>
                                     </view>
@@ -213,10 +254,8 @@
                                     <constraint firstItem="4PG-LU-qzG" firstAttribute="top" secondItem="08I-Gh-rAH" secondAttribute="top" id="VRU-y5-eb1"/>
                                     <constraint firstItem="4PG-LU-qzG" firstAttribute="width" secondItem="08I-Gh-rAH" secondAttribute="width" id="i4p-iF-yOa"/>
                                     <constraint firstAttribute="trailing" secondItem="4PG-LU-qzG" secondAttribute="trailing" id="rjd-wx-Dea"/>
-                                    <constraint firstItem="4PG-LU-qzG" firstAttribute="height" secondItem="08I-Gh-rAH" secondAttribute="height" id="yrk-yP-YDu"/>
+                                    <constraint firstItem="4PG-LU-qzG" firstAttribute="height" secondItem="08I-Gh-rAH" secondAttribute="height" priority="250" id="yrk-yP-YDu"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="GX2-wt-4HF"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="jrP-pC-WBb"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -229,6 +268,10 @@
                         <viewLayoutGuide key="safeArea" id="GJ7-GW-MTw"/>
                     </view>
                     <size key="freeformSize" width="375" height="1400"/>
+                    <connections>
+                        <outlet property="item1Name" destination="s2S-ux-uCR" id="RyG-hM-7lY"/>
+                        <outlet property="itemView" destination="fSw-9Y-MOe" id="WZY-oK-D3j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9g-yW-k0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
