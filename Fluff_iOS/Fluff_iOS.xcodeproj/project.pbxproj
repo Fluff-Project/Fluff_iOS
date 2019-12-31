@@ -66,6 +66,7 @@
 		9DF0EB5E23BA6B3100EEC259 /* FluvApplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */; };
 		9DF0EB6023BAA1B200EEC259 /* HashTagCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0EB5F23BAA1B200EEC259 /* HashTagCategory.swift */; };
 		9DF0EB6223BAD8CC00EEC259 /* SigninService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0EB6123BAD8CC00EEC259 /* SigninService.swift */; };
+		9DF0EB6423BADF4E00EEC259 /* SigninData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF0EB6323BADF4E00EEC259 /* SigninData.swift */; };
 		9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF723B350540036AA50 /* MyPageViewController.swift */; };
 		9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */; };
 		9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */; };
@@ -180,6 +181,7 @@
 		9DF0EB5D23BA6B3100EEC259 /* FluvApplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluvApplyVC.swift; sourceTree = "<group>"; };
 		9DF0EB5F23BAA1B200EEC259 /* HashTagCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCategory.swift; sourceTree = "<group>"; };
 		9DF0EB6123BAD8CC00EEC259 /* SigninService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninService.swift; sourceTree = "<group>"; };
+		9DF0EB6323BADF4E00EEC259 /* SigninData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninData.swift; sourceTree = "<group>"; };
 		9DFA7FF723B350540036AA50 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -373,6 +375,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		9DF0EB6523BADF5E00EEC259 /* NetworkData */ = {
+			isa = PBXGroup;
+			children = (
+				9DF0EB6323BADF4E00EEC259 /* SigninData.swift */,
+			);
+			path = NetworkData;
+			sourceTree = "<group>";
+		};
 		A63C505623B08BF40069BAFB = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +427,7 @@
 		A63C507723B08C070069BAFB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9DF0EB6523BADF5E00EEC259 /* NetworkData */,
 				9DD73AF423B75A1600E1DB97 /* NavigationControllers */,
 				9DE13BD123B3704A0040AEB2 /* Enum */,
 				A64C4EF123B0FDBD0066FE7F /* Extensions */,
@@ -710,6 +721,7 @@
 				9D79382523B227CF00A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
 				9DD73AF823B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift in Sources */,
 				A66F23FD23B6DCB6004B57FA /* KeywordTableViewCell.swift in Sources */,
+				9DF0EB6423BADF4E00EEC259 /* SigninData.swift in Sources */,
 				9DE13BD323B370580040AEB2 /* MenuCategory.swift in Sources */,
 				9D705A9723B83D9E00097FCF /* ColorCategory.swift in Sources */,
 				A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */,

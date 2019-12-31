@@ -15,7 +15,7 @@ class FollowingListVC: UIViewController, IndicatorInfoProvider {
     private var isFollow: [Bool] = []
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        guard let followingImage = UIImage(named: "favoriteMarketIcSelected") else { return IndicatorInfo(title: "") }
+        guard let followingImage = UIImage(named: "favoriteMarketlcSelected1") else { return IndicatorInfo(title: "") }
         return IndicatorInfo(image: followingImage)
     }
     
@@ -29,6 +29,23 @@ class FollowingListVC: UIViewController, IndicatorInfoProvider {
         for _ in 0..<30 {
             self.isFollow.append(false)
         }
+        
+        isFollow[0] = true
+        isFollow[5] = true
+        isFollow[7] = true
+        addObserver()
+    }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setFollowButton(_:)), name: .clickFollowButton, object: nil)
+    }
+    
+    @objc func setFollowButton(_ notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        guard let row = userInfo["row"] as? Int else { return }
+        guard let isFollowFluv = userInfo["isFollow"] as? Bool else { return }
+        isFollow[row] = !isFollowFluv
+        followingTableView.reloadData()
     }
 }
 
@@ -40,7 +57,9 @@ extension FollowingListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let followingCell = tableView.dequeueReusableCell(withIdentifier: "FollowingCell") as? FollowingTableViewCell else { return UITableViewCell() }
         followingCell.separatorInset = UIEdgeInsets.zero
-        followingCell.setInit()
+        followingCell.setNeedsDisplay()
+        followingCell.setNeedsLayout()
+        followingCell.setRow(indexPath.row)
         followingCell.setFollowButton(isFollow: isFollow[indexPath.row])
         return followingCell
     }

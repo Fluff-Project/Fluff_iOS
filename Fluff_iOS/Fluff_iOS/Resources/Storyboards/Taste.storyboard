@@ -964,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYL-I9-vNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="2601"/>
+            <point key="canvasLocation" x="2854" y="2636"/>
         </scene>
         <!--Detail ItemVC-->
         <scene sceneID="wyU-fv-nUQ">
@@ -2250,6 +2250,21 @@
             </objects>
             <point key="canvasLocation" x="5544.8000000000002" y="2635.7142857142858"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ebY-XO-lBa">
+            <objects>
+                <viewController id="5gY-aW-IJK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="crH-7q-jvz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="S9l-qx-1re"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9AA-gL-lf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5561" y="3315"/>
+        </scene>
         <!--AuctionVC-->
         <scene sceneID="gIM-Nj-KjE">
             <objects>
@@ -2682,14 +2697,20 @@
                                                     <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#페미닌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4n-fM-H6d">
-                                                    <rect key="frame" x="94" y="61.666666666666657" width="33" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#페미닌" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4n-fM-H6d">
+                                                    <rect key="frame" x="94" y="57.666666666666657" width="45" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="w4n-fM-H6d" secondAttribute="height" multiplier="45:16" id="qF9-0d-zOd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#페미닌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWi-Hx-fpt">
-                                                    <rect key="frame" x="132" y="61.666666666666657" width="33" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#페미닌" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWi-Hx-fpt">
+                                                    <rect key="frame" x="144" y="57.666666666666657" width="45" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="NWi-Hx-fpt" secondAttribute="height" multiplier="45:16" id="DHy-pP-2Op"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2711,6 +2732,7 @@
                                             <constraints>
                                                 <constraint firstItem="Fiw-j6-hmS" firstAttribute="leading" secondItem="TZf-Vr-2CX" secondAttribute="trailing" constant="17" id="2Fn-eK-X77"/>
                                                 <constraint firstItem="TZf-Vr-2CX" firstAttribute="height" secondItem="jOU-EL-hhf" secondAttribute="height" multiplier="0.580645" id="433-H8-6y5"/>
+                                                <constraint firstItem="w4n-fM-H6d" firstAttribute="width" secondItem="jOU-EL-hhf" secondAttribute="width" multiplier="0.12" id="6Ac-3n-QPR"/>
                                                 <constraint firstItem="TZf-Vr-2CX" firstAttribute="leading" secondItem="jOU-EL-hhf" secondAttribute="leading" constant="24" id="CUT-Pl-dd4"/>
                                                 <constraint firstItem="Fiw-j6-hmS" firstAttribute="centerY" secondItem="TZf-Vr-2CX" secondAttribute="centerY" id="DRC-JD-Vd5"/>
                                                 <constraint firstItem="NWi-Hx-fpt" firstAttribute="leading" secondItem="w4n-fM-H6d" secondAttribute="trailing" constant="5" id="EJX-tO-O0C"/>
@@ -2723,6 +2745,7 @@
                                                 <constraint firstItem="gig-I1-74e" firstAttribute="leading" secondItem="TZf-Vr-2CX" secondAttribute="trailing" constant="16" id="Xyq-Kf-iH6"/>
                                                 <constraint firstItem="NWi-Hx-fpt" firstAttribute="centerY" secondItem="w4n-fM-H6d" secondAttribute="centerY" id="ejA-Lx-MPv"/>
                                                 <constraint firstItem="9Yw-mk-nVd" firstAttribute="height" secondItem="jOU-EL-hhf" secondAttribute="height" multiplier="0.258" id="mGh-Kx-6es"/>
+                                                <constraint firstItem="NWi-Hx-fpt" firstAttribute="width" secondItem="jOU-EL-hhf" secondAttribute="width" multiplier="0.12" id="xeu-W1-P1T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

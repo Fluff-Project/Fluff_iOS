@@ -17,7 +17,7 @@ class LikeListParentVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+    self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
     }
     
     private func initNavi() {

@@ -20,14 +20,43 @@ struct SigninService {
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
             case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                print(statusCode)
+                guard let value = dataResponse.result.value else { return }
+                let networkResult = self.judge(by: statusCode, value: value)
+                completion(networkResult)
             case .failure(let err):
                 print("\(err.localizedDescription)")
-                completion(.networkErr)
+                completion(.networkFail)
             }
         }
     }
     
     private func makeParameter(_ id: String, _ pwd: String) -> Parameters {
         return ["email": id, "pwd": pwd]
+    }
+    
+    private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
+        switch statusCode {
+        case 200:
+            print("200코드")
+            return isUser(value)
+        case 400:
+            print("400코드")
+            return .pathErr
+        default: return .serverErr
+        }
+    }
+    
+    private func isUser(_ value: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let signinData = try? decoder.decode(SigninData.self, from: value) else { return .pathErr }
+        print("Decoding Code :\(signinData.code)")
+        if signinData.code == 200 {
+            return .success(signinData)
+        } else if signinData.code == 400 {
+            return .requestErr(signinData)
+        }
+        return .pathErr
     }
 }

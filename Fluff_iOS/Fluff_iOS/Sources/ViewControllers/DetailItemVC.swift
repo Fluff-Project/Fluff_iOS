@@ -105,10 +105,7 @@ extension DetailItemVC: UICollectionViewDataSource {
 }
 
 extension DetailItemVC: UICollectionViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
-        pageControl.set(progress: page, animated: true)
-    }
+    
 }
 
 extension DetailItemVC: UICollectionViewDelegateFlowLayout {

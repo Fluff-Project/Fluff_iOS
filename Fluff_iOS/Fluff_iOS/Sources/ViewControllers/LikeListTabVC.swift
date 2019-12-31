@@ -14,7 +14,7 @@ class LikeListTabVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var searchResultLabel: UILabel!
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        guard let likeImage = UIImage(named: "favoriteClothesIcSelected") else { return IndicatorInfo(title: "") }
+        guard let likeImage = UIImage(named: "favoriteClotheslcSelected1") else { return IndicatorInfo(title: "ㅁㅈㅇㅁㅈㅇ") }
         return IndicatorInfo(image: likeImage)
     }
     

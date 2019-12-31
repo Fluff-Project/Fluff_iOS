@@ -10,5 +10,5 @@ import Foundation
 
 struct APIConstants {
     static let baseURL = "http://15.164.47.5:3000"
-    static let signin = baseURL + "/auth/emailAuth"
+    static let signin = baseURL + "/auth/login"
 }
