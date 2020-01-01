@@ -337,6 +337,34 @@ private func setTabbar() {
 
 
 
+9. 서버 데이터를 처리할 때, 서버에서 Key값 처리하는 경우
+
+ 🔵 `JSON` 에서 항상 Key값은 String이니깐 CodingKeys라는 enum은 CodingKey라는 프로토콜을 채택하게 한다.
+
+🔵 `JSON` 타입에서 name의 키가 있을 경우 ➡️ myName으로 대입
+
+🔵 `JSON` 타입에서 age의 키가 있을 경우 ➡️ myAge으로 대입
+
+```swift
+struct Person: Codable {
+  var myName: String
+  var myAge: Int?
+  
+  enum CodingKeys: String, CodingKey {
+    case myName = "name"
+    case myAge = "age"
+  }
+  
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    myName = (try? values.decode(String.self, forkey: .myName)) ?? ""
+    myAge = (try? values.decode(String.self, forkey: .myAge)) ?? nil
+  }
+}
+```
+
+
+
 
 
 ### 참가자
