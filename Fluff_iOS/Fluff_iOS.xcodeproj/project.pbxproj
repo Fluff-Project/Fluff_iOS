@@ -71,6 +71,9 @@
 		9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF723B350540036AA50 /* MyPageViewController.swift */; };
 		9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */; };
 		9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */; };
+		A607C60323BC7B9E00B4D56A /* InfoCrystal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A607C60223BC7B9E00B4D56A /* InfoCrystal.storyboard */; };
+		A607C60523BC7D6A00B4D56A /* InfoCrystalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */; };
+		A607C60723BCA65D00B4D56A /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60623BCA65D00B4D56A /* UILabel+Extensions.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -189,6 +192,9 @@
 		9DFA7FF723B350540036AA50 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		9DFA7FF923B363A00036AA50 /* CurrentProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		A607C60223BC7B9E00B4D56A /* InfoCrystal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoCrystal.storyboard; sourceTree = "<group>"; };
+		A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCrystalVC.swift; sourceTree = "<group>"; };
+		A607C60623BCA65D00B4D56A /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -485,6 +491,7 @@
 				A6E2ABB923BA5EB500EC8E66 /* HowToPayVC.swift */,
 				9DE5C98523BB40FB00D7359C /* FluvVC.swift */,
 				A6E2ABBD23BB98AD00EC8E66 /* MagazineDetailVC.swift */,
+				A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -494,6 +501,7 @@
 			children = (
 				A63C506823B08BF40069BAFB /* Main.storyboard */,
 				A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */,
+				A607C60223BC7B9E00B4D56A /* InfoCrystal.storyboard */,
 				A6E2ABB523BA107900EC8E66 /* EndPayment.storyboard */,
 				A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */,
 				A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */,
@@ -514,6 +522,7 @@
 				9D79381923B227CF00A0CD3E /* UITabBar+Extensions.swift */,
 				9D79381E23B227CF00A0CD3E /* UIView+Extensions.swift */,
 				9D79381C23B227CF00A0CD3E /* UIViewController+Extensions.swift */,
+				A607C60623BCA65D00B4D56A /* UILabel+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -619,6 +628,7 @@
 				9DD73AFC23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.xib in Resources */,
 				A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */,
 				A6E2ABBC23BA9F4100EC8E66 /* Magazine.storyboard in Resources */,
+				A607C60323BC7B9E00B4D56A /* InfoCrystal.storyboard in Resources */,
 				9D7937DC23B11ED500A0CD3E /* Taste.storyboard in Resources */,
 				A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */,
 				9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */,
@@ -690,6 +700,7 @@
 				A6DF861423B55AE8006FDE79 /* RecentCollectionViewCell.swift in Sources */,
 				9D705A9923B8935900097FCF /* AuctionDetailVC.swift in Sources */,
 				9D79382323B227CF00A0CD3E /* UIColor+Extensions.swift in Sources */,
+				A607C60523BC7D6A00B4D56A /* InfoCrystalVC.swift in Sources */,
 				9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */,
 				9D84B12623B9413F0019C7D4 /* CartItemCollectionViewCell.swift in Sources */,
 				9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */,
@@ -745,6 +756,7 @@
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
 				A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */,
 				A6E2ABB823BA280800EC8E66 /* EndPaymentVC.swift in Sources */,
+				A607C60723BCA65D00B4D56A /* UILabel+Extensions.swift in Sources */,
 				A6E2ABBA23BA5EB500EC8E66 /* HowToPayVC.swift in Sources */,
 				A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */,
 				A6DF861823B6611B006FDE79 /* NowAuctionCollectionViewCell.swift in Sources */,
