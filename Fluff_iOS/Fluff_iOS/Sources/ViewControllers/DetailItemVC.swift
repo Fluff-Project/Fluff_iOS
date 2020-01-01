@@ -81,10 +81,7 @@ class DetailItemVC: UIViewController {
         }
     }
     
-    func setFont(title: String, price: String) {
-        clotheNameLabel.attributedText = NSMutableAttributedString(string: title, attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 20)!, .foregroundColor: UIColor.black , NSAttributedString.Key.kern: CGFloat(-0.6)])
-        priceLabel.attributedText = NSMutableAttributedString(string: price, attributes: [.font: UIFont(name: "S-CoreDream-6Bold", size: 25)!, .foregroundColor: UIColor.black, NSAttributedString.Key.kern: -0.25])
-    }
+    
     
     func setSellerTalk(talk: String) {
         sellerTextView.attributedText = NSMutableAttributedString(string: talk, attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 14), .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: -0.42])

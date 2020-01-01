@@ -28,6 +28,8 @@ class HowToPayVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        whatBank = bankList[0]
+        print(whatName)
         setNavi()
         
         howToPayView.isHidden = true
@@ -44,7 +46,19 @@ class HowToPayVC: UIViewController {
         customerNameTextField.addLeftPadding16()
         customerNameTextField.setBorderColor(color: UIColor(white: 214.0 / 255.0, alpha: 1.0).cgColor)
         
-        doneSelectToolbar.items = [UIBarButtonItem.init(title: "완료", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let done = UIBarButtonItem(title: "완료", style: .done, target: nil, action: #selector(onDoneButtonTapped))
+
+        
+        doneSelectToolbar.setItems([flexibleSpace, done], animated: false)
+
+        
+        done.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
+
+        
+
+        
         // Do any additional setup after loading the view.
     }
     

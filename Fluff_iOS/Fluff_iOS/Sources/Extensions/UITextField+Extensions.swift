@@ -21,4 +21,9 @@ extension UITextField {
       self.leftView = paddingView
       self.leftViewMode = ViewMode.always
     }
+    
+    func borderToGrey() {
+        self.setBorderColor(color: UIColor(white: 221 / 255, alpha: 1).cgColor)
+        self.layer.borderWidth = 1
+    }
 }
