@@ -109,6 +109,11 @@ extension DetailItemVC: UICollectionViewDelegate {
 }
 
 extension DetailItemVC: UICollectionViewDelegateFlowLayout {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        pageControl.set(progress: page, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }

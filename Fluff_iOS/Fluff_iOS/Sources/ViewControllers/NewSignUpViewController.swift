@@ -26,6 +26,7 @@ class NewSignUpViewController: UIViewController {
     var userPassword = String()
     var userNickname = String()
     var userIsMale: Bool = true
+    var gender: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,26 +111,64 @@ class NewSignUpViewController: UIViewController {
     @IBAction func goNext(_ sender: UIButton) {
         
         if signupProgressBar.progress == 1 {
-            let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
-            guard let analysisVC = tasteStoryboard.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
-            analysisVC.setAnalysisStatus(.signup)
-            self.navigationController?.pushViewController(analysisVC, animated: true)
+            SignupService.shared.signup(email: userEmail, pwd: userPassword, username: userNickname, gender: gender) { networkResult in
+                switch networkResult {
+                case .success(let data):
+                    guard let signupData = data as? SignupData else { return }
+                    guard let userData = signupData.json.data else { return }
+                    print(signupData.json)
+                    guard let loginVC = self.navigationController?.viewControllers[0] as? LoginVC else { return }
+                    loginVC.setUserData(userData)
+                    self.navigationController?.popViewController(animated: true)
+                    
+                case .requestErr(let message):
+                    self.presentAlertController(title: "디비 내부 오류 발생", message: "재요청 부탁드립니다.")
+                case .serverErr:
+                    self.presentAlertController(title: "서버 내부 오류 발생", message: "서버에 문제가 생겼습니다.")
+                case .pathErr:
+                    print("패스 에러")
+                case .networkFail:
+                    
+                    //
+                    guard let loginVC = self.navigationController?.viewControllers[0] as? LoginVC else { return }
+                    loginVC.setUserData(SignupUserInform(email: "awd", pwd: "awd", username: "awd", gender: "awd"))
+                    self.navigationController?.popViewController(animated: true)
+                    NotificationCenter.default.post(name: .autoLoginExcute, object: nil)
+                    
+                    //나중에 이 로직으로 바꾸기
+//                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+                }
+            }
+            return
         }
         
         switch currentView {
             // 이메일 입력 뷰
         case 0:
             userEmail = userInfoTextField.text!
+            SignupService.shared.checkDuplicated(email: self.userEmail) { networkResult in
+                switch networkResult {
+                case .success(let data):
+                    guard let duplicatedInform = data as? DuplicatedInform else { return }
+                    self.userEmail = duplicatedInform.email
+                case .requestErr(let message):
+                    guard let duplicatedInform = message as? DuplicatedInform else { return }
+                    print("중복된 이메일: \(duplicatedInform.email)")
+                    self.presentAlertController(title: "중복되는 ID입니다.", message: nil)
+                case .pathErr: print("패스 에러")
+                case .serverErr: print("서버 에러")
+                case .networkFail: print("네트워크 에러")
+                }
+            }
             // 비밀번호 입력 뷰
         case 1:
             userPassword = userInfoTextField.text!
+            currentView += 1
         case 2:
             userNickname = userInfoTextField.text!
-        default:
-            return
+            currentView += 1
+        default: return
         }
-        
-        currentView += 1
         
         switch currentView {
             // 이메일 입력 뷰
@@ -150,6 +189,7 @@ class NewSignUpViewController: UIViewController {
             nextButton.isEnabled = false
             errorLabel.text = ""
             nextButton.backgroundColor = UIColor.disabledGrey
+            print("여기에 관한건 필요없음")
             //닉네임 입력 뷰
         case 2:
             userInfoLabel.text = "닉네임"
@@ -172,6 +212,7 @@ class NewSignUpViewController: UIViewController {
         default: return
         }
     }
+    
     @IBAction func goBack(_ sender: UIButton) {
         
         currentView -= 1
@@ -230,6 +271,7 @@ class NewSignUpViewController: UIViewController {
         maleButton.layer.borderColor = UIColor.black.cgColor
         maleButton.setTitleColor(UIColor.black, for: .normal)
         userIsMale = true
+        gender = "m"
         nextButton.isEnabled = true
         nextButton.setTitle("가입 완료하기", for: .normal)
         nextButton.titleLabel?.text = "가입 완료하기"
@@ -244,6 +286,7 @@ class NewSignUpViewController: UIViewController {
         femaleButton.setTitleColor(UIColor.black, for: .normal)
         userIsMale = false
         nextButton.isEnabled = true
+        gender = "f"
         nextButton.setTitle("가입 완료하기", for: .normal)
         nextButton.backgroundColor = UIColor.black
     }
@@ -259,6 +302,8 @@ extension NewSignUpViewController: UITextFieldDelegate {
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(upKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(downKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(progressSignup), name: .finishEmailCheck, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(successSignup), name: .finishSignup, object: nil)
     }
     
     @objc func upKeyboard() {
@@ -273,5 +318,21 @@ extension NewSignUpViewController: UITextFieldDelegate {
             self.nextButton.transform = .identity
             self.signupProgressBar.transform = .identity
         }, completion: nil)
+    }
+    
+    @objc func progressSignup() {
+        self.currentView += 1
+        
+        userInfoLabel.text = "비밀번호"
+        userInfoTextField.text = ""
+        userInfoTextField.placeholder = "비밀번호를 적어주세요"
+        signupProgressBar.setProgress(0.5, animated: true)
+        nextButton.isEnabled = false
+        errorLabel.text = ""
+        nextButton.backgroundColor = UIColor.disabledGrey
+    }
+    
+    @objc func successSignup() {
+        print("회원가입 성공")
     }
 }

@@ -18,6 +18,7 @@ class TasteAnalysisVC: UIViewController {
     @IBOutlet weak var oneDescriptionLabel: UILabel!
     @IBOutlet weak var twoDescriptionLabel: UILabel!
     
+    private var userToken: String?
     private var selectedCount: Int = 0
     
     private var isSelected: [Bool] = []
@@ -39,9 +40,17 @@ class TasteAnalysisVC: UIViewController {
         for _ in 0..<30 {
             isSelected.append(false)
         }
+        
+        requestClothImage()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        userToken = nil
+        analysisStatus = nil
+    }
+    
+    func setToken(_ token: String) {
+        self.userToken = token
     }
     
     private func initialButton() {
@@ -68,6 +77,7 @@ class TasteAnalysisVC: UIViewController {
     
     @IBAction func goAnalysisNext(_ sender: Any) {
         guard let analysisStatus = self.analysisStatus else { return }
+        print(analysisStatus)
         switch analysisStatus {
         case .signup:
             if selectedCount >= 3 {
@@ -144,5 +154,11 @@ extension TasteAnalysisVC: UICollectionViewDelegate {
         }
         
         isSelected[indexPath.row] = !isSelected[indexPath.row]
+    }
+}
+
+extension TasteAnalysisVC {
+    private func requestClothImage() {
+        print(userToken)
     }
 }

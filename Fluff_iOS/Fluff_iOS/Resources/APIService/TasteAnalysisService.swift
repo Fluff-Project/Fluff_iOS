@@ -7,11 +7,47 @@
 //
 
 import Foundation
+import Alamofire
 
-struct TasteAnalysis {
-    static let shared = TasteAnalysis()
+struct TasteAnalysisService {
+    static let shared = TasteAnalysisService()
     
-    func tasteAnalysis () {
+    func tasteAnalysis(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let header: HTTPHeaders = ["Content-Type": "application/jsoin", "x-access-token": token]
         
+        let dataRequest = Alamofire.request(APIConstants.tatsteAnalysis, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+        
+        dataRequest.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                guard let value = dataResponse.result.value else { return }
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(.networkFail)
+            }
+        }
+        
+    }
+    
+    private func makePapameter(_ token: String) -> Parameters {
+        return ["token": token]
+    }
+    
+    private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
+        switch statusCode {
+        case 200:
+            return .success(value)
+        case 400:
+            print("400번대 오류")
+            return .pathErr
+        default: return .serverErr
+        }
+    }
+    
+    private func isLoadingImage(_ value: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        return .pathErr
     }
 }

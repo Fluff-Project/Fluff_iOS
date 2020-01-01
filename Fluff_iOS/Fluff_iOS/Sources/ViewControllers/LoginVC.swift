@@ -52,9 +52,10 @@ class LoginVC: UIViewController {
     private var pwdEstimateY: CGFloat?
     private var estimateSize: CGSize?
 
-    
     lazy var logoWidth: CGFloat = self.logoImageView.frame.size.width
     lazy var logoHeight: CGFloat = self.logoImageView.frame.size.height
+    
+    private var userData: SignupUserInform?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,7 @@ class LoginVC: UIViewController {
         pwdEstimateY = loginButton.frame.origin.y - 250
         
         estimateSize = loginButton.frame.size
+        addObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,37 +91,49 @@ class LoginVC: UIViewController {
         snsButton.layer.borderColor = UIColor.white.cgColor
     }
     
+    func setUserData(_ userData: SignupUserInform) {
+        self.userData = userData
+    }
+    
     @IBAction func doLogin(_ sender: Any) {
         // Login 실행
-        print("button Click")
-        
         guard let inputEmail = emailTextField?.text else { return }
         guard let inputPwd = pwdTextField?.text else { return }
         
-//        SigninService.shared.signin(email: inputEmail, pwd: inputPwd) { networkResult in
-//            switch networkResult {
-//            case .success(let data):
-//                guard let jsonData = data as? JsonData else {
-//                    print("jsonData 가져오기 실패")
-//                    return
-//                }
-//                guard let realData = jsonData.data else {
-//                    print("데이터 분해 실패")
-//                    return
-//                }
-//            case .requestErr(let data):
-//                guard let jsonData = data as? JsonData else { return }
-//                print(jsonData.message)
-//            case .pathErr: return
-//            case .serverErr: return
-//            case .networkFail: return
-//                
-//            }
-//        }
-        
-        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
-        tasteAnalysisVC.modalPresentationStyle = .fullScreen
-        self.present(tasteAnalysisVC, animated: true, completion: nil)
+        SigninService.shared.signin(email: inputEmail, pwd: inputPwd) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let jsonData = data as? SigninJsonData else { return }
+                if jsonData.success {
+                    guard let userToken = jsonData.data else { return }
+                    let token = userToken.token
+//                    if isTasted {
+//
+//                    } eles {
+//
+//                    }
+                    guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+                    tasteAnalysisVC.setToken(token)
+                    tasteAnalysisVC.setAnalysisStatus(.signup)
+                    self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
+//                    guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
+//                    mainTabbarController.modalPresentationStyle = .fullScreen
+//                    mainTabbarController.setToken(token)
+//                    self.present(mainTabbarController, animated: true, completion: nil)
+                }
+            case .requestErr(let data):
+                self.presentAlertController(title: "회원가입이 필요합니다", message: "")
+            case .pathErr:
+                print("pathErr")
+                return
+            case .serverErr:
+                print("server")
+                return
+            case .networkFail:
+                print("네트워크 연결 필요")
+                return
+            }
+        }
     }
     
     @IBAction func animateLogin(_ sender: Any) {
@@ -188,7 +202,7 @@ extension LoginVC {
     @objc func resetView() {
         if isAnimated && touchCount == 0 {
             self.view.endEditing(true)
-            touchCount += 1
+            touchCount = 1
         } else if isAnimated && touchCount == 1 {
             loginView?.alpha = 0
             pwdView?.alpha = 0
@@ -222,4 +236,19 @@ extension LoginVC {
     }
 }
 
-
+extension LoginVC {
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(doAutoLogin), name: .autoLoginExcute, object: nil)
+    }
+    
+    @objc func doAutoLogin() {
+        guard let userData = self.userData else { return }
+        print(userData)
+        // 여기에 login로직 추가
+        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
+        self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
+//        SigninService.shared.signin(email: userData.email, pwd: userData.pwd) { networkResult in
+//
+//        }
+    }
+}

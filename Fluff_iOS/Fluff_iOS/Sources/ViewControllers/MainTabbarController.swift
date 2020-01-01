@@ -9,12 +9,19 @@
 import UIKit
 
 class MainTabbarController: UITabBarController {
+    
+    private var userToken: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setTabbarColor()
         self.delegate = self
+        
+    }
+    
+    func setToken(_ token: String) {
+        self.userToken = token
     }
     
     private func setTabbarColor() {

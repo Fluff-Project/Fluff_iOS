@@ -29,8 +29,11 @@ class CartVC: UIViewController {
         setLeftButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     private func setLeftButton() {
-        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action: #selector(popView))
     }
     

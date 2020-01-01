@@ -20,4 +20,12 @@ extension UIViewController {
         bar.shadowImage = UIImage()
         bar.backgroundColor = UIColor.clear
     }
+    
+    // AlertController 화면에 띄우기
+    func presentAlertController(title: String, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
