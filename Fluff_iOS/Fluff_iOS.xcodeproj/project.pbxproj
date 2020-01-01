@@ -12,6 +12,9 @@
 		9D0E2A4F23BC502900E73F40 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A4E23BC502900E73F40 /* SignupService.swift */; };
 		9D0E2A5323BC660700E73F40 /* SignupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5223BC660700E73F40 /* SignupData.swift */; };
 		9D0E2A5523BC727B00E73F40 /* DuplicatedEmailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */; };
+		9D0E2A5723BCBCE300E73F40 /* SurveyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5623BCBCE300E73F40 /* SurveyResult.swift */; };
+		9D0E2A5923BCCA9100E73F40 /* RecommendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5823BCCA9100E73F40 /* RecommendService.swift */; };
+		9D0E2A5D23BD1B7C00E73F40 /* RecommendedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -138,6 +141,9 @@
 		9D0E2A4E23BC502900E73F40 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
 		9D0E2A5223BC660700E73F40 /* SignupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupData.swift; sourceTree = "<group>"; };
 		9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicatedEmailData.swift; sourceTree = "<group>"; };
+		9D0E2A5623BCBCE300E73F40 /* SurveyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResult.swift; sourceTree = "<group>"; };
+		9D0E2A5823BCCA9100E73F40 /* RecommendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendService.swift; sourceTree = "<group>"; };
+		9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedData.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 				9DF0EB6123BAD8CC00EEC259 /* SigninService.swift */,
 				9D0E2A4E23BC502900E73F40 /* SignupService.swift */,
 				9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */,
+				9D0E2A5823BCCA9100E73F40 /* RecommendService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -321,6 +328,7 @@
 		9D79379123B0C17B00A0CD3E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9D0E2A5623BCBCE300E73F40 /* SurveyResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -406,6 +414,7 @@
 				9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */,
 				9D0E2A5223BC660700E73F40 /* SignupData.swift */,
 				9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */,
+				9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -719,6 +728,7 @@
 				9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */,
 				9D0E2A5323BC660700E73F40 /* SignupData.swift in Sources */,
 				9D84B12623B9413F0019C7D4 /* CartItemCollectionViewCell.swift in Sources */,
+				9D0E2A5723BCBCE300E73F40 /* SurveyResult.swift in Sources */,
 				9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */,
 				9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */,
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
@@ -779,6 +789,7 @@
 				A607C60723BCA65D00B4D56A /* UILabel+Extensions.swift in Sources */,
 				A6E2ABBA23BA5EB500EC8E66 /* HowToPayVC.swift in Sources */,
 				A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */,
+				9D0E2A5D23BD1B7C00E73F40 /* RecommendedData.swift in Sources */,
 				A6DF861823B6611B006FDE79 /* NowAuctionCollectionViewCell.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
 				A66F241323B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift in Sources */,
@@ -793,6 +804,7 @@
 				A66F240D23B8BADB004B57FA /* BannerHeaderReusableView.swift in Sources */,
 				9DE4AAD823BA05610095A5B3 /* AnalysisStatus.swift in Sources */,
 				9D7937F523B1350C00A0CD3E /* AnalysisTableViewCell.swift in Sources */,
+				9D0E2A5923BCCA9100E73F40 /* RecommendService.swift in Sources */,
 				9D468AD023B2BAF800E98500 /* OtherItemDelegate.swift in Sources */,
 				A66F240723B8A509004B57FA /* BannerIntoVC.swift in Sources */,
 				9D7B342A23B28BE000F1A530 /* DetailItemCollectionViewCell.swift in Sources */,

@@ -14,6 +14,7 @@ struct APIConstants {
     // 회원가입 전 email 중복확인 체크
     static let duplicatedEmail = baseURL + "/auth/checkEmail"
     // 회원가입 정보들 총 종합 확인하는 주소
-    static let signup = baseURL + "/auth/directSignUp    "
+    static let signup = baseURL + "/auth/directSignUp"
     static let tatsteAnalysis = baseURL + "/survey"
+    static let recommend = baseURL + "/recommend/keyDB"
 }

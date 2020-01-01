@@ -14,9 +14,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
     
-    private var isAnimated: Bool = false
-    private var touchCount: Int = 0
-    
     @IBOutlet weak var coverView: UIView!
     // Animate 되기전 SNS 로그인 분기 버튼
     @IBOutlet weak var snsButton: UIButton!
@@ -97,8 +94,14 @@ class LoginVC: UIViewController {
     
     @IBAction func doLogin(_ sender: Any) {
         // Login 실행
-        guard let inputEmail = emailTextField?.text else { return }
-        guard let inputPwd = pwdTextField?.text else { return }
+        guard let inputEmail = emailTextField?.text, inputEmail != "" else {
+            self.presentAlertController(title: "ID을 입력해주세요", message: nil)
+            return
+        }
+        guard let inputPwd = pwdTextField?.text, inputPwd != "" else {
+            self.presentAlertController(title: "PW을 입력해주세요", message: nil)
+            return
+        }
         
         SigninService.shared.signin(email: inputEmail, pwd: inputPwd) { networkResult in
             switch networkResult {
@@ -107,13 +110,17 @@ class LoginVC: UIViewController {
                 if jsonData.success {
                     guard let userToken = jsonData.data else { return }
                     let token = userToken.token
-//                    if isTasted {
+                    UserDefaults.standard.set(token, forKey: "token")
+                    
+                    // style 값이 있는 경우 취향 조사를 하지 않음
+//                    if let isStyle = userToken.style, isStyle == false {
+                    // 취향조사 페이지로 분기
 //
-//                    } eles {
+//                    } else {
+                    // 메인 홈탭으로 분기
 //
 //                    }
                     guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
-                    tasteAnalysisVC.setToken(token)
                     tasteAnalysisVC.setAnalysisStatus(.signup)
                     self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
 //                    guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
@@ -130,7 +137,7 @@ class LoginVC: UIViewController {
                 print("server")
                 return
             case .networkFail:
-                print("네트워크 연결 필요")
+                self.presentAlertController(title: "네트워크 연결 불가", message: "네트워크를 연결해주세요")
                 return
             }
         }
@@ -138,7 +145,6 @@ class LoginVC: UIViewController {
     
     @IBAction func animateLogin(_ sender: Any) {
         loginButton.backgroundColor = .white
-        self.isAnimated = true
         
         UIView.animate(withDuration: 0.5, animations: {
             self.signinButton.alpha = 0
@@ -195,44 +201,46 @@ class LoginVC: UIViewController {
 
 extension LoginVC {
     private func addGestureRecognizer() {
-        let taps = UITapGestureRecognizer(target: self, action: #selector(resetView))
-        self.view.addGestureRecognizer(taps)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(resetView))
+        doubleTap.numberOfTapsRequired = 2
+        self.coverView.addGestureRecognizer(doubleTap)
+        
+        let oneTap = UITapGestureRecognizer(target: self, action: #selector(downKeyboard))
+        oneTap.numberOfTapsRequired = 1
+        self.coverView.addGestureRecognizer(oneTap)
+    }
+    
+    @objc func downKeyboard() {
+        self.view.endEditing(true)
     }
     
     @objc func resetView() {
-        if isAnimated && touchCount == 0 {
-            self.view.endEditing(true)
-            touchCount = 1
-        } else if isAnimated && touchCount == 1 {
-            loginView?.alpha = 0
-            pwdView?.alpha = 0
-            loginButton.backgroundColor = .clear
-            UIView.animate(withDuration: 1.0, animations: {
-                self.doLoginButton.alpha = 0
-                self.idPwdSearchButton.alpha = 0
-                self.signinButton.alpha = 1
-                self.backgroundImageView.alpha = 0
-                self.emailTextField?.alpha = 0
-                self.pwdTextField?.alpha = 0
-                self.loginView?.alpha = 0
-                self.pwdView?.alpha = 0
-                self.emailLabel?.alpha = 0
-                self.pwdLabel?.alpha = 0
-                self.coverView.alpha = 0
-                self.logoImageView.transform = .identity
-                self.logoImageView.frame.size = CGSize(width: self.logoWidth, height: self.logoHeight)
-                self.loginButton.alpha = 1
-                self.loginButton.transform = .identity
-                self.snsLabel.alpha = 1
-                self.snsButton.alpha = 1
-                self.snsButton.transform = .identity
-                self.loginLabel.alpha = 1
-            }, completion: { isAnimate in
-                self.logoImageView.frame.size = CGSize(width: self.logoWidth, height: self.logoHeight)
-                self.isAnimated = false
-                self.touchCount = 0
-            })
-        }
+        loginView?.alpha = 0
+        pwdView?.alpha = 0
+        loginButton.backgroundColor = .clear
+        UIView.animate(withDuration: 1.0, animations: {
+            self.doLoginButton.alpha = 0
+            self.idPwdSearchButton.alpha = 0
+            self.signinButton.alpha = 1
+            self.backgroundImageView.alpha = 0
+            self.emailTextField?.alpha = 0
+            self.pwdTextField?.alpha = 0
+            self.loginView?.alpha = 0
+            self.pwdView?.alpha = 0
+            self.emailLabel?.alpha = 0
+            self.pwdLabel?.alpha = 0
+            self.coverView.alpha = 0
+            self.logoImageView.transform = .identity
+            self.logoImageView.frame.size = CGSize(width: self.logoWidth, height: self.logoHeight)
+            self.loginButton.alpha = 1
+            self.loginButton.transform = .identity
+            self.snsLabel.alpha = 1
+            self.snsButton.alpha = 1
+            self.snsButton.transform = .identity
+            self.loginLabel.alpha = 1
+        }, completion: { isAnimate in
+            self.logoImageView.frame.size = CGSize(width: self.logoWidth, height: self.logoHeight)
+        })
     }
 }
 

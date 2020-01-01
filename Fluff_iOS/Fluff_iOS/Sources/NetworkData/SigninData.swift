@@ -35,4 +35,18 @@ struct SigninJsonData: Codable {
 struct SigninToken: Codable {
     let token: String
     let refreshToken: String
+    let style: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case token = "token"
+        case refreshToken = "refreshToken"
+        case style = "false"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        token = (try? values.decode(String.self, forKey: .token)) ?? ""
+        refreshToken = (try? values.decode(String.self, forKey: .refreshToken)) ?? ""
+        style = (try? values.decode(Bool.self, forKey: .style)) ?? nil
+    }
 }
