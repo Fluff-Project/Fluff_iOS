@@ -82,6 +82,10 @@
 		A607C60323BC7B9E00B4D56A /* InfoCrystal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A607C60223BC7B9E00B4D56A /* InfoCrystal.storyboard */; };
 		A607C60523BC7D6A00B4D56A /* InfoCrystalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */; };
 		A607C60723BCA65D00B4D56A /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60623BCA65D00B4D56A /* UILabel+Extensions.swift */; };
+		A607C60923BCAE4E00B4D56A /* GoodsThumbnailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */; };
+		A607C60B23BCB4C000B4D56A /* FetchThumbnailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60A23BCB4C000B4D56A /* FetchThumbnailService.swift */; };
+		A607C60D23BD264B00B4D56A /* MagazineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60C23BD264B00B4D56A /* MagazineData.swift */; };
+		A607C60F23BD2E9E00B4D56A /* MagazineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60E23BD2E9E00B4D56A /* MagazineService.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -211,6 +215,10 @@
 		A607C60223BC7B9E00B4D56A /* InfoCrystal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoCrystal.storyboard; sourceTree = "<group>"; };
 		A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCrystalVC.swift; sourceTree = "<group>"; };
 		A607C60623BCA65D00B4D56A /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsThumbnailData.swift; sourceTree = "<group>"; };
+		A607C60A23BCB4C000B4D56A /* FetchThumbnailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchThumbnailService.swift; sourceTree = "<group>"; };
+		A607C60C23BD264B00B4D56A /* MagazineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineData.swift; sourceTree = "<group>"; };
+		A607C60E23BD2E9E00B4D56A /* MagazineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineService.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -320,7 +328,10 @@
 				9DF0EB6123BAD8CC00EEC259 /* SigninService.swift */,
 				9D0E2A4E23BC502900E73F40 /* SignupService.swift */,
 				9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */,
+
 				9D0E2A5823BCCA9100E73F40 /* RecommendService.swift */,
+				A607C60A23BCB4C000B4D56A /* FetchThumbnailService.swift */,
+				A607C60E23BD2E9E00B4D56A /* MagazineService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -414,7 +425,11 @@
 				9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */,
 				9D0E2A5223BC660700E73F40 /* SignupData.swift */,
 				9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */,
+
 				9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */,
+
+				A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */,
+				A607C60C23BD264B00B4D56A /* MagazineData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -720,9 +735,11 @@
 				A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */,
 				9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */,
 				A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */,
+				A607C60B23BCB4C000B4D56A /* FetchThumbnailService.swift in Sources */,
 				9D79382623B227CF00A0CD3E /* UIView+Extensions.swift in Sources */,
 				A6DF861423B55AE8006FDE79 /* RecentCollectionViewCell.swift in Sources */,
 				9D705A9923B8935900097FCF /* AuctionDetailVC.swift in Sources */,
+				A607C60F23BD2E9E00B4D56A /* MagazineService.swift in Sources */,
 				9D79382323B227CF00A0CD3E /* UIColor+Extensions.swift in Sources */,
 				A607C60523BC7D6A00B4D56A /* InfoCrystalVC.swift in Sources */,
 				9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */,
@@ -731,6 +748,7 @@
 				9D0E2A5723BCBCE300E73F40 /* SurveyResult.swift in Sources */,
 				9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */,
 				9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */,
+				A607C60D23BD264B00B4D56A /* MagazineData.swift in Sources */,
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,
 				9D79382C23B2871400A0CD3E /* DetailItemVC.swift in Sources */,
@@ -797,6 +815,7 @@
 				9DD73AFB23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift in Sources */,
 				9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */,
 				A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */,
+				A607C60923BCAE4E00B4D56A /* GoodsThumbnailData.swift in Sources */,
 				9DF0EB6223BAD8CC00EEC259 /* SigninService.swift in Sources */,
 				9D7B343023B2B7F200F1A530 /* OtherItemCollectionViewCell.swift in Sources */,
 				9D385C9623B4DA1800705218 /* FollowingTableViewCell.swift in Sources */,

@@ -61,6 +61,7 @@ struct SignupService {
             print("파싱 에러")
             return .pathErr
         }
+        
         if emailData.code == 500 { return .serverErr }
         else if emailData.code == 200 {
             guard let duplicatedInform = emailData.json.data else { return .pathErr }
