@@ -16,7 +16,7 @@ struct TasteAnalysisData: Codable {
 struct TasteAnalysisJsonData: Codable {
     let success: Bool
     let message: String
-    let data: ServeyInfotmation?
+    let data: SurveyInformation?
     
     enum CodingKeys: String, CodingKey {
         case success = "success"
@@ -28,11 +28,11 @@ struct TasteAnalysisJsonData: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode(ServeyInfotmation.self, forKey: .data))
+        data = (try? values.decode(SurveyInformation.self, forKey: .data))
     }
 }
 
-struct ServeyInfotmation: Codable {
+struct SurveyInformation: Codable {
     let _id: String
     let surveyVersion: String
     let surveyList: [ClotheInformation]

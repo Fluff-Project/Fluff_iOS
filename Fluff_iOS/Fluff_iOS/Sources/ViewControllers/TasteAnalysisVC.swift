@@ -24,6 +24,7 @@ class TasteAnalysisVC: UIViewController {
     private var isSelected: [Bool] = []
     // 임시변수 선택 정할
     private var analysisStatus: AnalysisStatus?
+    private var clothesInformation: [ClotheInformation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,13 +99,14 @@ class TasteAnalysisVC: UIViewController {
 
 extension TasteAnalysisVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return clothesInformation.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let tasteCell = collectionView.dequeueReusableCell(withReuseIdentifier: "tasteCell", for: indexPath) as? TasteCollectionViewCell else { return UICollectionViewCell() }
         if isSelected[indexPath.row] { tasteCell.setCoverView() }
         else { tasteCell.hideCoverView() }
+        tasteCell.setClotheImage(url: clothesInformation[indexPath.row].img)
         return tasteCell
     }
 }
@@ -161,7 +163,23 @@ extension TasteAnalysisVC {
     private func requestClothImage() {
         guard let userToken = self.userToken else { return }
         TasteAnalysisService.shared.tasteAnalysis(token: userToken) { networkResult in
-            print("데이터 받아오기 끝")
+            switch networkResult {
+            case .success(let data):
+                guard let surveyInform = data as? SurveyInformation else { return }
+                self.clothesInformation = surveyInform.surveyList
+                for inform in self.clothesInformation {
+                    self.isSelected.append(false)
+                }
+                self.tasteCollectionView.reloadData()
+            case .requestErr(let data):
+                print("request Err")
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
         }
     }
 }

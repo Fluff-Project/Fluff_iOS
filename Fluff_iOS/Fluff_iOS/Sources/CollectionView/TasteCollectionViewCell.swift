@@ -17,13 +17,15 @@ class TasteCollectionViewCell: UICollectionViewCell {
     func selected(_ isSelected: Bool) {
         if isSelected {
             coverView.isHidden = true
-//            checkboxButton.on = false
             checkboxButton.setOn(false, animated: true)
         } else {
             coverView.isHidden = false
-//            checkboxButton.on = true
             checkboxButton.setOn(true, animated: true)
         }
+    }
+    
+    func setClotheImage(url: String) {
+        clotheImageView.setImage(with: url)
     }
     
     func setCoverView() {

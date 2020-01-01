@@ -22,13 +22,13 @@ struct TasteAnalysisService {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.result.value else { return }
-                print(self.judge(by: statusCode, value: value))
+                let networkResult = self.judge(by: statusCode, value: value)
+                completion(networkResult)
             case .failure(let err):
                 print(err.localizedDescription)
                 completion(.networkFail)
             }
         }
-        
     }
     
     private func makePapameter(_ token: String) -> Parameters {
@@ -37,11 +37,8 @@ struct TasteAnalysisService {
     
     private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
         switch statusCode {
-        case 200:
-            return isLoadingImage(value)
-        case 400:
-            print("400번대 오류")
-            return .pathErr
+        case 200: return isLoadingImage(value)
+        case 400: return .pathErr
         default: return .serverErr
         }
     }
@@ -52,9 +49,11 @@ struct TasteAnalysisService {
             print("디코딩 실패")
             return .pathErr
         }
-        if clotheData.code == 200 { }
-        else if clotheData.code == 400 {  }
-        
+        if clotheData.code == 200 {
+            guard let surveyInformation = clotheData.json.data else { return .pathErr }
+            return .success(surveyInformation)
+        }
+        else if clotheData.code == 400 { return .requestErr(clotheData) }
         return .pathErr
     }
 }
