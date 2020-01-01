@@ -159,6 +159,9 @@ extension TasteAnalysisVC: UICollectionViewDelegate {
 
 extension TasteAnalysisVC {
     private func requestClothImage() {
-        print(userToken)
+        guard let userToken = self.userToken else { return }
+        TasteAnalysisService.shared.tasteAnalysis(token: userToken) { networkResult in
+            print("데이터 받아오기 끝")
+        }
     }
 }

@@ -22,7 +22,7 @@ struct TasteAnalysisService {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.result.value else { return }
-                
+                print(self.judge(by: statusCode, value: value))
             case .failure(let err):
                 print(err.localizedDescription)
                 completion(.networkFail)
@@ -38,7 +38,7 @@ struct TasteAnalysisService {
     private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
         switch statusCode {
         case 200:
-            return .success(value)
+            return isLoadingImage(value)
         case 400:
             print("400번대 오류")
             return .pathErr
@@ -48,6 +48,13 @@ struct TasteAnalysisService {
     
     private func isLoadingImage(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
+        guard let clotheData = try? decoder.decode(TasteAnalysisData.self, from: value) else {
+            print("디코딩 실패")
+            return .pathErr
+        }
+        if clotheData.code == 200 { }
+        else if clotheData.code == 400 {  }
+        
         return .pathErr
     }
 }

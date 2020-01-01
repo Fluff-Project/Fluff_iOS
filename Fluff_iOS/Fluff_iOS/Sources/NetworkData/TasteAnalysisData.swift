@@ -34,8 +34,8 @@ struct TasteAnalysisJsonData: Codable {
 
 struct ServeyInfotmation: Codable {
     let _id: String
-    let serveyVersion: String
-    let serveyList: [ClotheInformation]
+    let surveyVersion: String
+    let surveyList: [ClotheInformation]
 }
 
 struct ClotheInformation: Codable {
