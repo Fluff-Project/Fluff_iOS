@@ -16,9 +16,16 @@ class AuctionVC: UIViewController {
     private var auctionPrice: [String] = ["260,000", "320,000", "300,000"]
     private var timer: [String] = ["12:32:52", "13:42:55", "00:05:00"]
     
+    var firstTimeLeft = 45172
+    var secondTimeLeft = 49275
+    var thirdTimeLeft = 300
+    var timeCounter: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        timeCounter = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        
         auctionCollectionView.delegate = self
         auctionCollectionView.dataSource = self
     }
@@ -28,6 +35,27 @@ class AuctionVC: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
     }
+    
+    @objc func onTimerFires()
+    {
+        firstTimeLeft -= 1
+        secondTimeLeft -= 1
+        thirdTimeLeft -= 1
+        
+        timer[0] = secToTime(sec: firstTimeLeft)
+        timer[1] = secToTime(sec: secondTimeLeft)
+        timer[2] = secToTime(sec: thirdTimeLeft)
+
+    }
+    
+    func secToTime(sec: Int) -> String {
+        let hour = sec / 3600
+        let minute = (sec % 3600) / 60
+        let second = (sec % 3600) % 60
+        
+        return String(hour) + ":" + String(minute) + ":" + String(second)
+    }
+
 }
 
 extension AuctionVC: UICollectionViewDataSource {
@@ -40,6 +68,8 @@ extension AuctionVC: UICollectionViewDataSource {
         guard let auctionImage = UIImage(named: auctionImage[indexPath.row]) else { return UICollectionViewCell() }
         
         auctionCell.setInit(auctionImage: auctionImage, timer: timer[indexPath.row], currentPrice: auctionPrice[indexPath.row], auctionItemName: "샤넬 1990's 트위드 자켓")
+        
+        
         return auctionCell
     }
 }
@@ -50,6 +80,7 @@ extension AuctionVC: UICollectionViewDelegate {
         auctionDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(auctionDetailVC, animated: true)
     }
+    
 }
 
 extension AuctionVC: UICollectionViewDelegateFlowLayout {

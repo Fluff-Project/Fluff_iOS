@@ -23,15 +23,40 @@ class AuctionDetailVC: UIViewController {
     @IBOutlet weak var biddingButton: UIButton!
     @IBOutlet weak var buttonView: UIView!
     
+    var timer: Timer?
+    
+    let registrationTime = Date()
+    lazy var deadlineTime = Date(timeInterval: 86400, since: registrationTime)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Do any additional setup after loading the view.\
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        
         auctionImageCollectionView.delegate = self
         auctionImageCollectionView.dataSource = self
         setNavi()
         initButton()
     }
     
+    @objc func onTimerFires()
+    {
+        let calendar = Calendar.current
+        let now = Date()
+        let dateGap = calendar.dateComponents([.hour,.minute,.second], from: now, to: deadlineTime)
+        
+        if case let (h?, m?, s?) = (dateGap.hour, dateGap.minute, dateGap.second)
+        {
+          timeLabel.text = String(h) + ":" + String(m) + ":" + String(s)
+        } else {
+            timer?.invalidate()
+            timer = nil
+            
+        }
+    }
+   
     private func setNavi() {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.topItem?.title = ""
