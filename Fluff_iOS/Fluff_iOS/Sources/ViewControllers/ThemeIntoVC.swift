@@ -25,22 +25,35 @@ class ThemeIntoVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavi()
+    }
+    
+    private func setNavi() {
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backArrowIc"), style: .done, target: self, action:
+        #selector(popView))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shoppingbagIc"), style: .done, target: self, action: #selector(goCartView))
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.setNavigationBarClear()
+    }
+    
+    @objc func popView() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func goCartView() {
+        let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+        guard let cartVC = tasteStoryboard.instantiateViewController(identifier: "CartVC") as? CartVC else { return }
+        cartVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
     
     @IBAction func back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ThemeIntoVC: UICollectionViewDataSource {

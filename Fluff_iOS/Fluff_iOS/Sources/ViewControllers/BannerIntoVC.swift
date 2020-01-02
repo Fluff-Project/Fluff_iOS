@@ -19,10 +19,19 @@ class BannerIntoVC: UIViewController {
         bannerIntoCollectionView.delegate = self
     }
     
-     @IBAction func back(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backArrowIc"), style: .done, target: self, action:
+        #selector(popView))
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
+        self.setNavigationBarClear()
+    }
     
+    @objc func popView() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension BannerIntoVC: UICollectionViewDataSource {

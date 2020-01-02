@@ -15,7 +15,7 @@ class CartVC: UIViewController {
     @IBOutlet weak var allSelectCheckBox: BEMCheckBox!
     @IBOutlet weak var deleteButton: UIButton!
     
-    @IBOutlet weak var cartListTableView: UITableView!
+    @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var buyButton: UIButton!
     
     override func viewDidLoad() {
@@ -23,8 +23,8 @@ class CartVC: UIViewController {
         // Do any additional setup after loading the view.
         initButton()
         initNavi()
-        cartListTableView.dataSource = self
-        cartListTableView.delegate = self
+        cartTableView.delegate = self
+        cartTableView.dataSource = self
         self.navigationItem.title = "장바구니"
         setLeftButton()
     }
@@ -38,7 +38,6 @@ class CartVC: UIViewController {
     }
     
     @objc func popView() {
-        print("POP")
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -62,51 +61,19 @@ class CartVC: UIViewController {
 
 extension CartVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.view.layoutSubviews()
-        guard let cartListCell = tableView.dequeueReusableCell(withIdentifier: "cartListCell") as? CartListTableViewCell else { return UITableViewCell() }
-        return cartListCell
+        guard let cartCell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell else { return UITableViewCell() }
+        return cartCell
     }
 }
 
 extension CartVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 324
+        return 148
     }
 }
 
-extension CartVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cartItemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartItemCell", for: indexPath) as? CartItemCollectionViewCell else { return UICollectionViewCell() }
-        return cartItemCell
-    }
-}
-
-extension CartVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.height / 2.189, height: collectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-}
-
-extension CartVC: UICollectionViewDelegate {
-    
-}

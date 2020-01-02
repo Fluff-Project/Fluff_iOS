@@ -87,7 +87,7 @@ class HomeVC: UIViewController {
         self.keyWordTableView.dataSource = self as UITableViewDataSource
         howFluvCollectionView.delegate = self
         bannerCollectionView.delegate = self
-       bannerCollectionView.showsHorizontalScrollIndicator = false
+        bannerCollectionView.showsHorizontalScrollIndicator = false
         todayCollectionView.showsHorizontalScrollIndicator = false
 
         // Do any additional setup after loading the view.
@@ -97,6 +97,7 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
+    
     @IBAction func goTodayTheme(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
         nextVC.whatTheme = "Today"

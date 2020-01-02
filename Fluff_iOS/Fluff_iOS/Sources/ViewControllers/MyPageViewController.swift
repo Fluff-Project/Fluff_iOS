@@ -22,6 +22,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var makeShopButton: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    private var images: [String] = ["kakaoTalkPhoto2019121905141721", "13924566_17844591_1000", "kakaoTalkPhoto2019121905141728", "kakaoTalkPhoto2019121905141728", "kakaoTalkPhoto2019121905141734", "731435467565772314707755242100861709482025N", "20191218120650", "7534924024389318263707043656857836335384421N", "20191218120524"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -74,16 +76,23 @@ class MyPageViewController: UIViewController {
         fluvApplyVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(fluvApplyVC, animated: true)
     }
+    
+    @IBAction func goMakeCartView(_ sender: Any) {
+        guard let cartVC = self.storyboard?.instantiateViewController(identifier: "CartVC") as? CartVC else { return }
+        cartVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
 }
 
 extension MyPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let currentProductCell = collectionView.dequeueReusableCell(withReuseIdentifier: "currentProductCell", for: indexPath) as? CurrentProductCollectionViewCell else { return UICollectionViewCell() }
-        
+        guard let image = UIImage(named: images[indexPath.row]) else { return UICollectionViewCell() }
+        currentProductCell.setClotheImage(image: image)
         return currentProductCell
     }
 }
@@ -123,7 +132,11 @@ extension MyPageViewController: UITableViewDelegate {
             guard let deliveryVC = checkStoryboard.instantiateViewController(identifier: "checkDeliveryVC") as? CheckDeliveryVC else { return }
             deliveryVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(deliveryVC, animated: true)
-        case .reviseInformation: return
+        case .reviseInformation:
+            let infoCrystalStoryboard = UIStoryboard(name: "InfoCrystal", bundle: nil)
+            guard let infoCrystalVC = infoCrystalStoryboard.instantiateViewController(identifier: "InfoCrystalVC") as? InfoCrystalVC else { return }
+            infoCrystalVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(infoCrystalVC, animated: true)
         case .tasteResetting:
             guard let tasteAnalysis = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
             tasteAnalysis.setAnalysisStatus(.resetting)

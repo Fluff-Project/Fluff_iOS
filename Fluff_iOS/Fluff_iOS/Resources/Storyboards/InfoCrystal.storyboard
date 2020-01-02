@@ -15,7 +15,7 @@
         <!--Info CrystalVC-->
         <scene sceneID="PgH-RD-11N">
             <objects>
-                <viewController id="gyG-Fc-Nrb" customClass="InfoCrystalVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoCrystalVC" id="gyG-Fc-Nrb" customClass="InfoCrystalVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ryQ-Wz-bAR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="846"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -284,8 +284,8 @@
                                     <constraint firstAttribute="trailing" secondItem="edS-37-FKA" secondAttribute="trailing" id="nyn-u2-aX2"/>
                                     <constraint firstItem="edS-37-FKA" firstAttribute="leading" secondItem="Sfa-9t-wow" secondAttribute="leading" id="oIi-D7-bqa"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="c1k-46-A1A"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="l2D-SH-sQs"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="dUX-uM-iKC"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="zES-3S-RIg"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,6 +308,7 @@
                         <outlet property="completeButtonView" destination="EJx-eZ-O09" id="1X8-k4-QQ6"/>
                         <outlet property="contactLabel" destination="Jnt-hV-UcJ" id="rMs-c1-m8z"/>
                         <outlet property="contactTextField" destination="BAQ-KV-Gc9" id="tni-hB-fzU"/>
+                        <outlet property="contentView" destination="edS-37-FKA" id="qVa-rw-xY1"/>
                         <outlet property="femaleButton" destination="frz-b7-9Bg" id="oKt-ed-WEP"/>
                         <outlet property="findAddressButton" destination="U3g-52-gP5" id="v3N-n3-oop"/>
                         <outlet property="genderSelectLabel" destination="55s-J9-ePD" id="C6i-m5-gWZ"/>

@@ -29,6 +29,13 @@ class FluvApplyVC: UIViewController {
     @IBOutlet weak var keywordPickerStackView: UIStackView!
     @IBOutlet weak var keywordPickerView: UIPickerView!
     
+    @IBOutlet weak var storenameTextField: UITextField!
+    @IBOutlet weak var oneCommentTextField: UITextField!
+    @IBOutlet weak var storeIntroduceTextField: UITextField!
+    @IBOutlet weak var isExchangeTextField: UITextField!
+    @IBOutlet weak var deliveryInformTextField: UITextField!
+    @IBOutlet weak var uploadDayTextField: UITextField!
+    
     private var selectedKeywordIndex: Int = 0
     
     private var keywordOne: HashTagCategory?
@@ -41,14 +48,21 @@ class FluvApplyVC: UIViewController {
         setFont()
         setButtons()
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.setNavigationBarClear()
         imagePicker.delegate = self
         setKeywordPickerView()
+        setTextFieldDelegate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
+        self.setNavigationBarClear()
+
+    }
+    
+    private func setTextFieldDelegate() {
+        isExchangeTextField.delegate = self
+        deliveryInformTextField.delegate = self
+        uploadDayTextField.delegate = self
     }
     
     private func setKeywordPickerView() {
@@ -191,5 +205,16 @@ extension FluvApplyVC: UIPickerViewDelegate {
 extension FluvApplyVC {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        UIView.animate(withDuration: 0.2) {
+            self.view.transform = .identity
+        }
+    }
+}
+
+extension FluvApplyVC: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            self.view.transform = CGAffineTransform(translationX: 0, y: -200)
+        }
     }
 }

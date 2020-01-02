@@ -57,6 +57,12 @@ class DetailItemVC: UIViewController {
     private func setNavi() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
         #selector(popView))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shoppingbagIc"), style: .done, target: self, action: #selector(goCartView))
+    }
+    
+    @objc func goCartView() {
+        guard let cartVC = self.storyboard?.instantiateViewController(identifier: "CartVC") as? CartVC else { return }
+        self.navigationController?.pushViewController(cartVC, animated: true)
     }
     
     @objc func popView() {
@@ -81,13 +87,9 @@ class DetailItemVC: UIViewController {
         }
     }
     
-    
-    
     func setSellerTalk(talk: String) {
         sellerTextView.attributedText = NSMutableAttributedString(string: talk, attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 14), .foregroundColor: UIColor.greyishBrown, NSAttributedString.Key.kern: -0.42])
     }
-    
-    
 }
 
 extension DetailItemVC: UICollectionViewDataSource {

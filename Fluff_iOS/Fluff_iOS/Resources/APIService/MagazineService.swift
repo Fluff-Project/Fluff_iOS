@@ -15,21 +15,21 @@ struct MagazineService {
     func getMagazine(completion: @escaping (NetworkResult<Any>) -> Void) {
         let header: HTTPHeaders = ["Content-Type": "application/json"]
     
-        let dataRequest = Alamofire.request(APIConstants.signin, method: .get, parameters: makeParameter(email, pwd), encoding: JSONEncoding.default, headers: header)
+//        let dataRequest = Alamofire.request(APIConstants.signin, method: .get, parameters: makeParameter(email, pwd), encoding: JSONEncoding.default, headers: header)
         
-        dataRequest.responseData { dataResponse in
-            
-            switch dataResponse.result {
-            case .success:
-                guard let statusCode = dataResponse.response?.statusCode else { return }
-                guard let value = dataResponse.result.value else { return }
-                let networkResult = self.judge(by: statusCode, value: value)
-                completion(networkResult)
-            case .failure(let err):
-                print("\(err.localizedDescription)")
-                completion(.networkFail)
-            }
-        }
+//        dataRequest.responseData { dataResponse in
+//            
+//            switch dataResponse.result {
+//            case .success:
+//                guard let statusCode = dataResponse.response?.statusCode else { return }
+//                guard let value = dataResponse.result.value else { return }
+//                let networkResult = self.judge(by: statusCode, value: value)
+//                completion(networkResult)
+//            case .failure(let err):
+//                print("\(err.localizedDescription)")
+//                completion(.networkFail)
+//            }
+//        }
     }
     
     private func makeParameter(_ id: String, _ pwd: String) -> Parameters {
