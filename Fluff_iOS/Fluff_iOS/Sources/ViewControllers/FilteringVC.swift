@@ -241,12 +241,6 @@ extension FilteringVC: UICollectionViewDataSource {
         guard let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCollectionViewCell else { return UICollectionViewCell() }
         guard let category = FilteringCategory(rawValue: indexPath.row) else { return UICollectionViewCell() }
         
-        //이승수가 맘대로 코딩함
-//        guard let categoryImage = UIImage(named: category.getNotSelectImageName()) else { return UICollectionViewCell() }
-//        categoryCell.categoryImageView.image = categoryImage
-//        categoryCell.categoryLabel.text = category.getCategoryName()
-//
-//
         if isSelectedCategory[indexPath.row] {
             guard let categoryImage = UIImage(named: category.getSelctImageName()) else { return UICollectionViewCell() }
             categoryCell.setcategoryImage(categoryImage)
