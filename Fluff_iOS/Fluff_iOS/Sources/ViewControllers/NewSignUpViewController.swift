@@ -52,8 +52,6 @@ class NewSignUpViewController: UIViewController {
         femaleButton.isHidden = true
         
         signupProgressBar.transform = signupProgressBar.transform.scaledBy(x: 1, y: 2.5)
-
-
         // Do any additional setup after loading the view.
     }
     
@@ -120,23 +118,16 @@ class NewSignUpViewController: UIViewController {
                     guard let loginVC = self.navigationController?.viewControllers[0] as? LoginVC else { return }
                     loginVC.setUserData(userData)
                     self.navigationController?.popViewController(animated: true)
-                    
-                case .requestErr(let message):
+                    NotificationCenter.default.post(name: .autoLoginExcute, object: nil)
+                case .requestErr( _):
                     self.presentAlertController(title: "디비 내부 오류 발생", message: "재요청 부탁드립니다.")
                 case .serverErr:
                     self.presentAlertController(title: "서버 내부 오류 발생", message: "서버에 문제가 생겼습니다.")
                 case .pathErr:
                     print("패스 에러")
                 case .networkFail:
-                    
-                    //
-                    guard let loginVC = self.navigationController?.viewControllers[0] as? LoginVC else { return }
-                    loginVC.setUserData(SignupUserInform(email: "awd", pwd: "awd", username: "awd", gender: "awd"))
-                    self.navigationController?.popViewController(animated: true)
-                    NotificationCenter.default.post(name: .autoLoginExcute, object: nil)
-                    
                     //나중에 이 로직으로 바꾸기
-//                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
                 }
             }
             return

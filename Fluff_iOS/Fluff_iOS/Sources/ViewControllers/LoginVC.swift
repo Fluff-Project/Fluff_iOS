@@ -255,10 +255,37 @@ extension LoginVC {
         print(userData)
         // 여기에 login로직 추가
         // 로그인 로직에 따라 로그인 되게 추가!!!!!
-        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? MainTabbarController else { return }
-        self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
-//        SigninService.shared.signin(email: userData.email, pwd: userData.pwd) { networkResult in
-//
-//        }
+        SigninService.shared.signin(email: userData.email, pwd: userData.pwd) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let jsonData = data as? SigninJsonData else { return }
+                if jsonData.success {
+                    guard let userToken = jsonData.data else { return }
+                    let token = userToken.token
+                    // token 값 UserDefault 내부 DB에 저장
+                    UserDefaults.standard.set(token, forKey: "token")
+                    print("userToken: \(token)")
+                    
+                    // Style 값이 있는 경우 취향조사 페이지로 분기
+                    if let isStyle = userToken.style, isStyle == false {
+                        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+                        tasteAnalysisVC.setAnalysisStatus(.signup)
+                        self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
+                    }
+                }
+            case .requestErr(_):
+                self.presentAlertController(title: "회원가입이 필요합니다", message: "")
+                return
+            case .pathErr:
+                self.presentAlertController(title: "경로 에러", message: "")
+                return
+            case .serverErr:
+                print("server")
+                return
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 불가", message: "네트워크를 연결해주세요")
+                return
+            }
+        }
     }
 }

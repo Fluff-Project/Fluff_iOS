@@ -75,6 +75,7 @@ class DetailItemVC: UIViewController {
 //        self.navigationController?.pushViewController(purchaseVC, animated: true)
         self.presentAlertController(title: "장바구니 담기 성공", message: "장바구니에 담겼습니다.")
     }
+
     
     @IBAction func clickHeart(_ sender: Any) {
         if isClicked {

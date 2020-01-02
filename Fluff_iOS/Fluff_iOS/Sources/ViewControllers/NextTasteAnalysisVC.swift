@@ -15,12 +15,8 @@ class NextTasteAnalysisVC: UIViewController {
     
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var followTableView: UITableView!
-    var images = [UIImage(named: "2019122024421"),
-        UIImage(named: "2019122022738"),
-        UIImage(named: "2019122023153"),
-        UIImage(named: "2019122024223"),
-        UIImage(named: "2019122024353"),
-        UIImage(named: "2019122024421")]
+    
+    private var sellers: [SellerData] = []
     
     private var analysisStatus: AnalysisStatus?
     
@@ -32,6 +28,7 @@ class NextTasteAnalysisVC: UIViewController {
         initialCompleteButton()
         initFont()
         
+        // 서버에서 Recommended 팔로워 가지고 오는 코드
         getRecommendedFollowers()
     }
     
@@ -99,9 +96,9 @@ class NextTasteAnalysisVC: UIViewController {
             switch networkResult {
             case .success(let data):
                 guard let follwerData = data as? RecommededFollowerData else { return }
-                print(follwerData.json.message)
-                print(follwerData.json.data)
-                
+                guard let parsingSellerData = follwerData.json.data else { return }
+                self.sellers = parsingSellerData
+                self.followTableView.reloadData()
             case .requestErr(_):
                 self.presentAlertController(title: "조회 실패", message: nil)
             case .serverErr:
@@ -112,14 +109,12 @@ class NextTasteAnalysisVC: UIViewController {
                 self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
             }
         }
-        
     }
-    
 }
 
 extension NextTasteAnalysisVC: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        5
+        return sellers.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -127,52 +122,17 @@ extension NextTasteAnalysisVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "analysisCell") as? AnalysisTableViewCell else { return UITableViewCell() }
-        return cell
+        guard let analysisCell = tableView.dequeueReusableCell(withIdentifier: "analysisCell") as? AnalysisTableViewCell else { return UITableViewCell() }
+        analysisCell.setClotheImages(imagesURL: sellers[indexPath.section].img)
+        analysisCell.setFluvProfileImage(url: sellers[indexPath.section].sellerImg)
+        analysisCell.setFluvShop(sellers[indexPath.section].sellerName)
+        return analysisCell
     }
     
 }
 
 extension NextTasteAnalysisVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? AnalysisHeaderTableViewCell else { return UIView() }
-        return cell
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.frame.height / 4.0
-    }
-}
-
-extension NextTasteAnalysisVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let fluvCell = collectionView.dequeueReusableCell(withReuseIdentifier: "fluvCell", for: indexPath) as? FluvCollectionViewCell else { return UICollectionViewCell() }
-        fluvCell.setProfile(images[indexPath.row]!)
-        return fluvCell
-    }
-}
-
-extension NextTasteAnalysisVC: UICollectionViewDelegate {
-}
-
-extension NextTasteAnalysisVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 0)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 14
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 260
     }
 }

@@ -37,6 +37,20 @@ class MyPageViewController: UIViewController {
         myPageButtonTableView.delegate = self
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        // 이 부분은 아래 부분의 didSelectRowAt 부분을 먼저 읽고 다시 와주세요!
+        /*
+         didSelectRowAt 함수에서 해당 셀을 선택하고 음악 상세정보 뷰로 전환되었다가 다시 돌아오면
+         그 셀이 선택된 상태로 남아 있는 현상을 해결합니다. (궁금하다면 이 부분을 주석처리하고 실행해보세요!)
+         viewDidDisappear 안에 선언되어 뷰가 다시 나타날 때 아래 코드가 실행되고
+         현재 선택된 row 의 인덱스를 가져와 그 인덱스에 해당하는 row 를 이용해 deslect 를 해줍니다.
+         */
+        if let index = myPageButtonTableView.indexPathForSelectedRow {
+            myPageButtonTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.setNavigationBarClear()
         if tabBarController!.tabBar.isHidden {
@@ -142,8 +156,10 @@ extension MyPageViewController: UITableViewDelegate {
             tasteAnalysis.setAnalysisStatus(.resetting)
             tasteAnalysis.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(tasteAnalysis, animated: true)
-        case .logout: return
-            
+        case .logout:
+            guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginVC else { return }
+            self.present(loginVC, animated: true, completion: nil)
+            UserDefaults.standard.set(nil, forKey: "token")
         
         }
     }

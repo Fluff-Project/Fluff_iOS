@@ -15,4 +15,8 @@ class FluvCollectionViewCell: UICollectionViewCell {
     func setProfile(_ image: UIImage) {
         profileImageView.image = image
     }
+    
+    func setProfileImage(url: String) {
+        profileImageView.setImage(with: url)
+    }
 }

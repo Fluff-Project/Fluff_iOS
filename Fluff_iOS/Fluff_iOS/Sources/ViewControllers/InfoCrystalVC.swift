@@ -90,7 +90,6 @@ class InfoCrystalVC: UIViewController {
         userIsMale = true
     }
     
-    
     @IBAction func femaleSelected(_ sender: UIButton) {
         maleButton.layer.borderColor = UIColor.disabledGrey.cgColor
         maleButton.setTitleColor(UIColor.disabledGrey, for: .normal)

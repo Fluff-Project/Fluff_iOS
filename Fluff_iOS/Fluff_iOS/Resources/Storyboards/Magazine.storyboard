@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ynp-vd-e0Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AWb-lJ-XDo">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -28,6 +28,11 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1WA-8I-Vbp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="magImg"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -64,7 +69,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옷만큼 개성있는" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajb-lq-CKc">
-                                <rect key="frame" x="18" y="343" width="286" height="30"/>
+                                <rect key="frame" x="18" y="343" width="268" height="30"/>
                                 <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -84,16 +89,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="realOngzolIc" translatesAutoresizingMaskIntoConstraints="NO" id="rhh-hE-ORQ">
                                 <rect key="frame" x="17.999999999999996" y="458.33333333333331" width="41.666666666666657" height="10.666666666666686"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-M3-8gS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <connections>
+                                    <action selector="intoTheContents:" destination="Ynp-vd-e0Q" eventType="touchUpInside" id="3dI-1N-uoA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zoT-M3-8gS" firstAttribute="leading" secondItem="9Nj-ca-Jfd" secondAttribute="leading" id="0LF-GT-6ao"/>
+                            <constraint firstItem="zoT-M3-8gS" firstAttribute="top" secondItem="wF6-WE-8BG" secondAttribute="top" id="3X2-yw-dFm"/>
                             <constraint firstItem="wYv-PW-Xtu" firstAttribute="leading" secondItem="9Nj-ca-Jfd" secondAttribute="leading" constant="18" id="4VY-Bu-dxF"/>
                             <constraint firstItem="Ajb-lq-CKc" firstAttribute="leading" secondItem="wYv-PW-Xtu" secondAttribute="leading" id="5VJ-Tg-WEc"/>
                             <constraint firstItem="9Nj-ca-Jfd" firstAttribute="top" secondItem="pEQ-36-8ac" secondAttribute="top" constant="6" id="8YZ-jV-6sC"/>
+                            <constraint firstAttribute="bottom" secondItem="zoT-M3-8gS" secondAttribute="bottom" id="9mY-1f-a1I"/>
                             <constraint firstItem="CjT-AG-5V1" firstAttribute="leading" secondItem="9Nj-ca-Jfd" secondAttribute="leading" id="Bbh-ry-bC1"/>
                             <constraint firstItem="9Nj-ca-Jfd" firstAttribute="top" secondItem="bP9-CC-hB0" secondAttribute="top" constant="44" id="Bzn-hn-TGg"/>
                             <constraint firstItem="CjT-AG-5V1" firstAttribute="trailing" secondItem="9Nj-ca-Jfd" secondAttribute="trailing" id="FsD-kl-Fxv"/>
-                            <constraint firstItem="Ajb-lq-CKc" firstAttribute="trailing" secondItem="bP9-CC-hB0" secondAttribute="trailing" constant="9" id="LKQ-np-aFc"/>
+                            <constraint firstItem="bP9-CC-hB0" firstAttribute="trailing" secondItem="Ajb-lq-CKc" secondAttribute="trailing" constant="9" id="LKQ-np-aFc"/>
                             <constraint firstItem="Ajb-lq-CKc" firstAttribute="top" secondItem="wYv-PW-Xtu" secondAttribute="bottom" constant="28" id="RmS-PN-2Hi"/>
                             <constraint firstItem="bP9-CC-hB0" firstAttribute="leading" secondItem="9Nj-ca-Jfd" secondAttribute="leading" id="Rvw-bd-DSP"/>
                             <constraint firstItem="pEQ-36-8ac" firstAttribute="centerX" secondItem="9Nj-ca-Jfd" secondAttribute="centerX" id="Zqs-ih-xAW"/>
@@ -106,22 +120,24 @@
                             <constraint firstItem="YNu-C1-eat" firstAttribute="leading" secondItem="WIr-C7-pXe" secondAttribute="leading" id="lio-H9-Eqz"/>
                             <constraint firstItem="bP9-CC-hB0" firstAttribute="bottom" secondItem="9Nj-ca-Jfd" secondAttribute="bottom" constant="34" id="lzl-Mi-qG7"/>
                             <constraint firstItem="rhh-hE-ORQ" firstAttribute="leading" secondItem="9Nj-ca-Jfd" secondAttribute="leading" constant="18" id="nHW-yA-pGL"/>
+                            <constraint firstItem="zoT-M3-8gS" firstAttribute="trailing" secondItem="9Nj-ca-Jfd" secondAttribute="trailing" id="obd-25-9fS"/>
                             <constraint firstItem="WIr-C7-pXe" firstAttribute="leading" secondItem="Ajb-lq-CKc" secondAttribute="leading" id="toR-Ds-GcW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Nj-ca-Jfd"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5Zr-I4-4Fv"/>
                     <connections>
                         <outlet property="backgroundImg" destination="1WA-8I-Vbp" id="wbY-oX-6td"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgI-gu-XgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="-386"/>
+            <point key="canvasLocation" x="751.20000000000005" y="-386.45320197044339"/>
         </scene>
         <!--Magazine DetailVC-->
         <scene sceneID="VpX-42-TUg">
             <objects>
-                <viewController id="ZwV-0j-g1n" customClass="MagazineDetailVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagazineDetailVC" id="ZwV-0j-g1n" customClass="MagazineDetailVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXy-ff-Wnf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +153,11 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellaTheBraveSmall" translatesAutoresizingMaskIntoConstraints="NO" id="Z5T-m9-01f">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="magImg"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoG-3L-8WJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
@@ -164,6 +185,10 @@
                                                     <constraint firstAttribute="bottom" secondItem="Z5T-m9-01f" secondAttribute="bottom" id="uKw-sU-xRL"/>
                                                     <constraint firstItem="NoG-3L-8WJ" firstAttribute="top" secondItem="rK4-Sw-HdE" secondAttribute="top" id="v1C-HV-gDh"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwY-t8-BhQ">
                                                 <rect key="frame" x="16" y="473" width="343" height="303"/>
@@ -274,11 +299,29 @@ GERMAN ARMY TRAINER</string>
                     <connections>
                         <outlet property="item1Name" destination="s2S-ux-uCR" id="RyG-hM-7lY"/>
                         <outlet property="itemView" destination="fSw-9Y-MOe" id="WZY-oK-D3j"/>
+                        <outlet property="topImage" destination="Z5T-m9-01f" id="4db-in-Cb5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9g-yW-k0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.60000000000002" y="-313.30049261083747"/>
+            <point key="canvasLocation" x="1812" y="-313.30049261083747"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z76-aX-a6f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="AWb-lJ-XDo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QjL-pv-vr0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ynp-vd-e0Q" kind="relationship" relationship="rootViewController" id="CIX-F0-f0U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NG5-LF-5Ln" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191.19999999999999" y="-386.45320197044339"/>
         </scene>
     </scenes>
     <resources>

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Hero
 
 class MagazineDetailVC: UIViewController {
 
     @IBOutlet weak var itemView: UIView!
     
-     let dotumPB = UIFont(name: "KoPubWorldDotumPB", size: 16)
+    @IBOutlet weak var topImage: UIImageView!
+    let dotumPB = UIFont(name: "KoPubWorldDotumPB", size: 16)
     @IBOutlet weak var item1Name: UITextView!
     
     var item1AttributedStr = NSMutableAttributedString()
@@ -37,6 +39,10 @@ class MagazineDetailVC: UIViewController {
         itemView.layer.shadowOpacity = 0.16
         itemView.layer.shadowOffset = .zero
         itemView.layer.shadowRadius = 10
+        
+        self.hero.isEnabled = true
+        topImage.hero.id = "magImg"
+        topImage.hero.modifiers = [.translate(y:100)]
 
         // Do any additional setup after loading the view.
     }
