@@ -91,6 +91,8 @@
 		A607C61523BE2C2A00B4D56A /* HowFluvService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61423BE2C2A00B4D56A /* HowFluvService.swift */; };
 		A607C61723BE6DFD00B4D56A /* TodayStockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61623BE6DFD00B4D56A /* TodayStockData.swift */; };
 		A607C61923BE714500B4D56A /* TodayStockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61823BE714500B4D56A /* TodayStockService.swift */; };
+		A607C61B23BE7E0300B4D56A /* RecentStyleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61A23BE7E0300B4D56A /* RecentStyleData.swift */; };
+		A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61C23BE813000B4D56A /* RecentStyleService.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -227,6 +229,8 @@
 		A607C61423BE2C2A00B4D56A /* HowFluvService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowFluvService.swift; sourceTree = "<group>"; };
 		A607C61623BE6DFD00B4D56A /* TodayStockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStockData.swift; sourceTree = "<group>"; };
 		A607C61823BE714500B4D56A /* TodayStockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStockService.swift; sourceTree = "<group>"; };
+		A607C61A23BE7E0300B4D56A /* RecentStyleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStyleData.swift; sourceTree = "<group>"; };
+		A607C61C23BE813000B4D56A /* RecentStyleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStyleService.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -340,6 +344,7 @@
 				9D0E2A7E23BD578F00E73F40 /* CartService.swift */,
 				A607C61423BE2C2A00B4D56A /* HowFluvService.swift */,
 				A607C61823BE714500B4D56A /* TodayStockService.swift */,
+				A607C61C23BE813000B4D56A /* RecentStyleService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -430,12 +435,13 @@
 				9DF0EB6323BADF4E00EEC259 /* SigninData.swift */,
 				9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */,
 				9D0E2A5223BC660700E73F40 /* SignupData.swift */,
-				9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */,
 				9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */,
 				A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */,
+				9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */,
 				A607C60C23BD264B00B4D56A /* MagazineData.swift */,
 				A607C61223BE24A300B4D56A /* HowFluvData.swift */,
 				A607C61623BE6DFD00B4D56A /* TodayStockData.swift */,
+				A607C61A23BE7E0300B4D56A /* RecentStyleData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -785,12 +791,14 @@
 				9D385C9823B53CB100705218 /* AuctionVC.swift in Sources */,
 				9D79381F23B227CF00A0CD3E /* UIButton+Extensions.swift in Sources */,
 				9DFA7FF823B350540036AA50 /* MyPageViewController.swift in Sources */,
+				A607C61B23BE7E0300B4D56A /* RecentStyleData.swift in Sources */,
 				9D70BFD123B463760025D22C /* LikeListTabVC.swift in Sources */,
 				9DF0EB5E23BA6B3100EEC259 /* FluvApplyVC.swift in Sources */,
 				A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */,
 				9D0E2A4F23BC502900E73F40 /* SignupService.swift in Sources */,
 				9D0C626D23B674BF00F31502 /* FilteringVC.swift in Sources */,
 				A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */,
+				A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */,
 				A66F241123B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				9D705A9523B7D30E00097FCF /* DetailCategoryDataSource.swift in Sources */,

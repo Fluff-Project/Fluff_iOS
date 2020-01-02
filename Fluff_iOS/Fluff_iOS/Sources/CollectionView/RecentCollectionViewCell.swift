@@ -13,4 +13,5 @@ class RecentCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var recentImage: UIImageView!
     @IBOutlet weak var recentProductLabel: UILabel!
+    @IBOutlet weak var recentPriceLabel: UILabel!
 }

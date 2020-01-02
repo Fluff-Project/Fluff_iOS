@@ -35,13 +35,7 @@ class HomeVC: UIViewController {
     private var userToken: String?
     private var fluvData: [FluvData] = []
     private var stockData: [StockData] = []
-    
-    let todayImgList: [String] = []
-    let todayProductList: [String] = []
-    let todayPriceList: [String] = []
-    
-    private var howFluvNameList: [String] = []
-    private var howFluvImgList: [String] = []
+    private var styleData: [StyleData] = []
     
     var current_y: CGFloat = 0
     let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
@@ -75,7 +69,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         numberFormatter.numberStyle = .decimal
         
-        whatSeen = "무스탕"
+        whatSeen = "니트"
         dayOfTheWeek = "화요일"
         
                 
@@ -89,7 +83,7 @@ class HomeVC: UIViewController {
         
         todayVintageAttributedStr = NSMutableAttributedString(string: dayOfTheWeek + recommendVintage)
         
-        recentLineAttributedStr = NSMutableAttributedString(string: "최근에 " + whatSeen + "을 많이 보셨군요? 이런 건 어때요?", attributes: attributes2)
+        recentLineAttributedStr = NSMutableAttributedString(string: "최근에 " + whatSeen + "를 많이 보셨군요? 이런 건 어때요?", attributes: attributes2)
         
         
         todayAttributedStr.addAttributes(attributes, range: NSRange(location: 0, length: 2))
@@ -127,6 +121,7 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         initToken()
         requestTodayStock()
+        requestRecentStyle()
         requestHowFluv()
     }
     
@@ -140,6 +135,7 @@ class HomeVC: UIViewController {
         nextVC.whatTheme = "Today"
         nextVC.titleStr = todayAttributedStr
         nextVC.suggestionStr = todayLineAttributedStr
+        nextVC.userToken = userToken
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -148,6 +144,7 @@ class HomeVC: UIViewController {
         nextVC.whatTheme = "Recent"
         nextVC.titleStr = recentAttributedStr
         nextVC.suggestionStr = recentLineAttributedStr
+        nextVC.userToken = userToken
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -156,6 +153,7 @@ class HomeVC: UIViewController {
         nextVC.whatTheme = "TodayVintage"
         nextVC.titleStr = todayVintageAttributedStr
         nextVC.suggestionStr = todayVintageLineAttributedStr
+        nextVC.userToken = userToken
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -177,6 +175,9 @@ extension HomeVC: UICollectionViewDataSource{
             
         case self.todayCollectionView:
             return stockData.count
+            
+        case self.recentCollectionView:
+            return styleData.count
         default:
             return 4
         }
@@ -186,7 +187,6 @@ extension HomeVC: UICollectionViewDataSource{
         
         let bannerImgList: [UIImage] = [#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2")]
         
-        let recentImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716")]
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
         let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
         
@@ -215,8 +215,9 @@ extension HomeVC: UICollectionViewDataSource{
         case self.recentCollectionView:
             let recentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentCollectionViewCell", for: indexPath) as! RecentCollectionViewCell
         
-        recentCollectionViewCell.recentImage.image = recentImgList[indexPath.row]
-            recentCollectionViewCell.recentProductLabel.text = "쫌그런데"
+            recentCollectionViewCell.recentImage.setImage(with: styleData[indexPath.row].img[0])
+            recentCollectionViewCell.recentProductLabel.text = styleData[indexPath.row].goodsName
+            recentCollectionViewCell.recentPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
             return recentCollectionViewCell
             
         case self.howFluvCollectionView:
@@ -385,6 +386,30 @@ extension HomeVC {
                 case .requestErr(let data):
                     guard let todayStockJsonData = data as? TodayStockJsonData else { return }
                     self.presentAlertController(title: todayStockJsonData.message, message: nil)
+                case .pathErr:
+                    self.presentAlertController(title: "path Error", message: nil)
+                case .serverErr:
+                    self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+                case .networkFail:
+                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+                }
+            }
+            
+        }
+    
+        private func requestRecentStyle() {
+        guard let userToken = self.userToken else {return}
+        
+        RecentStyleService.shared.recentStyle(token: userToken) {
+            networkResult in
+                switch networkResult {
+                case .success(let data):
+                    guard let recentStyleJsonData = data as? RecentStyleJsonData else {return}
+                    self.styleData = recentStyleJsonData.data!
+                    self.recentCollectionView.reloadData()
+                case .requestErr(let data):
+                    guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
+                    self.presentAlertController(title: recentStyleJsonData.message, message: nil)
                 case .pathErr:
                     self.presentAlertController(title: "path Error", message: nil)
                 case .serverErr:

@@ -15,9 +15,14 @@ class ThemeIntoVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
     
+    var userToken: String?
     var whatTheme: String?
     var titleStr = NSMutableAttributedString()
     var suggestionStr = NSMutableAttributedString()
+    
+    private var fluvData: [FluvData] = []
+    private var stockData: [StockData] = []
+    private var styleData: [StyleData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,4 +102,5 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
         return 29
     }
 }
+
 
