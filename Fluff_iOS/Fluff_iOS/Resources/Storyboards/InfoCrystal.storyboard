@@ -175,7 +175,6 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="242" id="3Gj-XD-tkD"/>
                                                             <constraint firstAttribute="height" constant="37" id="S1e-f0-lhB"/>
                                                         </constraints>
                                                     </stackView>
@@ -225,19 +224,13 @@
                                                         <rect key="frame" x="0.0" y="49" width="308" height="37"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새 비밀번호 확인" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t34-NG-p0h">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="37"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="94" id="7Hm-2u-mTv"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="37"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qoo-IS-NJn">
-                                                                <rect key="frame" x="111" y="0.0" width="197" height="37"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="197" id="Ehn-Ut-AdQ"/>
-                                                                </constraints>
+                                                                <rect key="frame" x="109.66666666666664" y="0.0" width="198.33333333333337" height="37"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>

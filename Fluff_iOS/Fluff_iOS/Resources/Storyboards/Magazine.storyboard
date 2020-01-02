@@ -15,11 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-
-        <!--MagazineVC-->
+        <!--Magazine BannerVC-->
         <scene sceneID="jYE-J6-CqB">
             <objects>
-                <viewController storyboardIdentifier="MagazineVC" id="Ynp-vd-e0Q" customClass="MagazineVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagazineVC" id="Ynp-vd-e0Q" customClass="MagazineBannerVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wF6-WE-8BG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjT-AG-5V1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellaTheBraveBig" translatesAutoresizingMaskIntoConstraints="NO" id="1WA-8I-Vbp">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1WA-8I-Vbp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     </imageView>
                                 </subviews>
@@ -111,6 +110,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Nj-ca-Jfd"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImg" destination="1WA-8I-Vbp" id="wbY-oX-6td"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgI-gu-XgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,7 +283,6 @@ GERMAN ARMY TRAINER</string>
     </scenes>
     <resources>
         <image name="102" width="298" height="198"/>
-        <image name="bellaTheBraveBig" width="364" height="787"/>
         <image name="bellaTheBraveSmall" width="375" height="423"/>
         <image name="realOngzolIc" width="41.666667938232422" height="10.666666984558105"/>
         <image name="sign" width="204.33332824707031" height="112.33333587646484"/>

@@ -20,19 +20,19 @@ struct MagazineService {
 
         let dataRequest = Alamofire.request(APIConstants.magazine, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
         
-//        dataRequest.responseData { dataResponse in
-//            
-//            switch dataResponse.result {
-//            case .success:
-//                guard let statusCode = dataResponse.response?.statusCode else { return }
-//                guard let value = dataResponse.result.value else { return }
-//                let networkResult = self.judge(by: statusCode, value: value)
-//                completion(networkResult)
-//            case .failure(let err):
-//                print("\(err.localizedDescription)")
-//                completion(.networkFail)
-//            }
-//        }
+        dataRequest.responseData { dataResponse in
+            
+            switch dataResponse.result {
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                guard let value = dataResponse.result.value else { return }
+                let networkResult = self.judge(by: statusCode, value: value)
+                completion(networkResult)
+            case .failure(let err):
+                print("\(err.localizedDescription)")
+                completion(.networkFail)
+            }
+        }
     }
     
     private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
@@ -52,10 +52,10 @@ struct MagazineService {
             return .pathErr
         }
         if magazineData.code == 200 {
-            guard let magazineImage = magazineData.json.data else { return .pathErr }
-            return .success(magazineImage)
+            guard let magazineJson = magazineData.json else { return .pathErr }
+            return .success(magazineJson)
         }
-        else if magazineData.code == 400 { return .requestErr(magazineData.json) }
+        else if magazineData.code == 400 { return .requestErr(magazineData.json!) }
         return .pathErr
     }
 }

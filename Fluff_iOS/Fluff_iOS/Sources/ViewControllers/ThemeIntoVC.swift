@@ -12,12 +12,18 @@ class ThemeIntoVC: UIViewController {
 
     @IBOutlet weak var themeIntoCollectionView: UICollectionView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lineLabel: UILabel!
+    
     var whatTheme: String?
     var titleStr = NSMutableAttributedString()
-    var suggestionStr = String()
+    var suggestionStr = NSMutableAttributedString()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.attributedText = titleStr
+        lineLabel.attributedText = suggestionStr
         
         themeIntoCollectionView.dataSource = self
         themeIntoCollectionView.delegate = self
@@ -29,6 +35,11 @@ class ThemeIntoVC: UIViewController {
         super.viewWillAppear(animated)
         setNavi()
     }
+    
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     private func setNavi() {
         self.navigationController?.navigationBar.isHidden = false
@@ -51,9 +62,6 @@ class ThemeIntoVC: UIViewController {
         self.navigationController?.pushViewController(cartVC, animated: true)
     }
     
-    @IBAction func back(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
 }
 
 extension ThemeIntoVC: UICollectionViewDataSource {
@@ -70,19 +78,6 @@ extension ThemeIntoVC: UICollectionViewDataSource {
         return themeIntoCollectionViewCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ThemeIntoCollectionReusableView", for: indexPath) as! ThemeIntoCollectionReusableView
-            
-            header.titleLabel.attributedText = titleStr
-            header.suggestionLabel.text = suggestionStr
-            return header
-        default:
-            assert(false)
-        }
-            
-        }
 }
 
 
