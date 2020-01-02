@@ -11,24 +11,29 @@ import CHIPageControl
 
 class HomeVC: UIViewController {
 
-    @IBOutlet weak var homeScrollView: UIScrollView!
+    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var bannerPageControl: CHIPageControlJalapeno!
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var todayLabel: UILabel!
+    @IBOutlet weak var todayLineLabel: UILabel!
     @IBOutlet weak var recentCollectionView: UICollectionView!
     @IBOutlet weak var recentLabel: UILabel!
+    @IBOutlet weak var recentLineLabel: UILabel!
     @IBOutlet weak var howFluvLabel: UILabel!
+    @IBOutlet weak var howFluvLineLabel: UILabel!
     @IBOutlet weak var howFluvCollectionView: UICollectionView!
     @IBOutlet weak var nowAuctionCollectionView: UICollectionView!
     @IBOutlet weak var nowAuctionLabel: UILabel!
+    @IBOutlet weak var auctionLineLabel: UILabel!
     @IBOutlet weak var todayVintageLabel: UILabel!
+    @IBOutlet weak var todayVintageLineLabel: UILabel!
     @IBOutlet weak var todayVintageCollectionView: UICollectionView!
-    @IBOutlet weak var keywordLabel: UILabel!
-    @IBOutlet weak var keyWordTableView: UITableView!
+    
     var current_y: CGFloat = 0
     let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
     let sCoreExtraLight = UIFont(name: "S-CoreDream-2ExtraLight", size: 24)
+    let koDotumPL = UIFont(name: "KoPubWorldDotumPL", size: 15)
     let forYou: String = "당신을 위한 "
     var whatSeen = String()
     let recommendVintage: String = "의 추천 빈티지"
@@ -42,15 +47,23 @@ class HomeVC: UIViewController {
     
     var todayVintageAttributedStr = NSMutableAttributedString()
     
-    var keywordAttributedStr = NSMutableAttributedString()
+    var recentLineAttributedStr = NSMutableAttributedString()
+    
+    lazy var attributes: [NSAttributedString.Key: Any] = [.kern: -1.44, .font: sCoreMedium as Any]
+    
+    lazy var attributes2: [NSAttributedString.Key: Any] = [.kern: -0.3, .font: koDotumPL as Any]
+    
+    lazy var todayLineAttributedStr = NSMutableAttributedString(string: "고민하는 순간, 다음은 없어요~", attributes: attributes2)
+    lazy var howFluvLineAttributedStr =  NSMutableAttributedString(string: "회원님이 좋아할 만한 셀러에요", attributes: attributes2)
+    lazy var auctionLineAttributedStr = NSMutableAttributedString(string: "플러프에만 있는 유니크 빈티지", attributes: attributes2)
+    lazy var todayVintageLineAttributedStr = NSMutableAttributedString(string: "오늘은 이런 빈티지 어떨까요?", attributes: attributes2)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         whatSeen = "무스탕"
         dayOfTheWeek = "화요일"
         
-        let attributes: [NSAttributedString.Key: Any] = [.kern: -1.44, .font: sCoreMedium as Any]
-        
+                
         todayAttributedStr = NSMutableAttributedString(string: todayLabel.text!)
         
         recentAttributedStr = NSMutableAttributedString(string: forYou + whatSeen)
@@ -61,30 +74,31 @@ class HomeVC: UIViewController {
         
         todayVintageAttributedStr = NSMutableAttributedString(string: dayOfTheWeek + recommendVintage)
         
-        keywordAttributedStr = NSMutableAttributedString(string: keywordLabel.text!)
+        recentLineAttributedStr = NSMutableAttributedString(string: "최근에 " + whatSeen + "을 많이 보셨군요? 이런 건 어때요?", attributes: attributes2)
+        
         
         todayAttributedStr.addAttributes(attributes, range: NSRange(location: 0, length: 2))
         recentAttributedStr.addAttributes(attributes, range: NSRange(location: 7, length: whatSeen.count))
         howFluvAttributedStr.addAttributes(attributes, range: NSRange(location: 3, length: 2))
         nowAuctionAttributedStr.addAttributes(attributes, range: NSRange(location: 8, length: 2))
         todayVintageAttributedStr.addAttributes(attributes, range: NSRange(location: 0, length: 3))
-        keywordAttributedStr.addAttributes(attributes, range: NSRange(location: 4, length: 2))
         
         todayLabel.attributedText = todayAttributedStr
         recentLabel.attributedText = recentAttributedStr
         howFluvLabel.attributedText = howFluvAttributedStr
         nowAuctionLabel.attributedText = nowAuctionAttributedStr
         todayVintageLabel.attributedText = todayVintageAttributedStr
-        keywordLabel.attributedText = keywordAttributedStr
-        
-        homeScrollView.delegate = self
+        recentLineLabel.attributedText = recentLineAttributedStr
+        todayLineLabel.attributedText = todayLineAttributedStr
+        howFluvLineLabel.attributedText = howFluvLineAttributedStr
+        auctionLineLabel.attributedText = auctionLineAttributedStr
+        todayVintageLineLabel.attributedText = todayVintageLineAttributedStr
         bannerCollectionView.dataSource = self
         todayCollectionView.dataSource = self
         recentCollectionView.dataSource = self
         howFluvCollectionView.dataSource = self
         nowAuctionCollectionView.dataSource = self
         todayVintageCollectionView.dataSource = self
-        self.keyWordTableView.dataSource = self as UITableViewDataSource
         howFluvCollectionView.delegate = self
         bannerCollectionView.delegate = self
         bannerCollectionView.showsHorizontalScrollIndicator = false
@@ -102,7 +116,7 @@ class HomeVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
         nextVC.whatTheme = "Today"
         nextVC.titleStr = todayAttributedStr
-        nextVC.suggestionStr = "회원님이 좋아할 만한 셀러에요"
+        nextVC.suggestionStr = todayLineAttributedStr
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -110,7 +124,7 @@ class HomeVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
         nextVC.whatTheme = "Recent"
         nextVC.titleStr = recentAttributedStr
-        nextVC.suggestionStr = "회원님이 좋아할 만한 셀러에요"
+        nextVC.suggestionStr = recentLineAttributedStr
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -118,7 +132,7 @@ class HomeVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "ThemeIntoVC") as? ThemeIntoVC else { return }
         nextVC.whatTheme = "TodayVintage"
         nextVC.titleStr = todayVintageAttributedStr
-        nextVC.suggestionStr = "오늘은 이런 빈티지 어떨까요?"
+        nextVC.suggestionStr = todayVintageLineAttributedStr
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -130,11 +144,6 @@ class HomeVC: UIViewController {
     }
 }
 
-extension HomeVC: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        current_y = homeScrollView.contentOffset.y
-    }
-}
 
 extension HomeVC: UICollectionViewDataSource{
     
@@ -309,25 +318,3 @@ extension HomeVC: UICollectionViewDelegate {
 }
 
 
-extension HomeVC: UITableViewDataSource {
-    
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let keywordList: [String] = ["# 스카프", "# 데님자켓", "# 중절모"]
-        
-        let keywordTableViewCell = tableView.dequeueReusableCell(withIdentifier: "KeywordTableViewCell", for: indexPath) as! KeywordTableViewCell
-        keywordTableViewCell.keywordButton.setTitle(keywordList[indexPath.row], for: .normal)
-        
-        keywordTableViewCell.keywordImageView.image = #imageLiteral(resourceName: "105")
-        
-        return keywordTableViewCell
-    }
-}

@@ -95,7 +95,6 @@
 		A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */; };
 		A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C507C23B0A34D0069BAFB /* LoginVC.swift */; };
 		A64C4F0723B137590066FE7F /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */; };
-		A66F23FD23B6DCB6004B57FA /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F23FC23B6DCB6004B57FA /* KeywordTableViewCell.swift */; };
 		A66F23FF23B6E796004B57FA /* NewSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */; };
 		A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240023B7532C004B57FA /* NewSignUpViewController.swift */; };
 		A66F240723B8A509004B57FA /* BannerIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240623B8A509004B57FA /* BannerIntoVC.swift */; };
@@ -103,7 +102,6 @@
 		A66F240D23B8BADB004B57FA /* BannerHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */; };
 		A66F240F23B9045B004B57FA /* ThemeIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240E23B9045B004B57FA /* ThemeIntoVC.swift */; };
 		A66F241123B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F241023B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift */; };
-		A66F241323B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F241223B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift */; };
 		A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861E23B0D2CD00E7379B /* SCDream9.otf */; };
 		A6D2862E23B0D2CD00E7379B /* SCDream1.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2861F23B0D2CD00E7379B /* SCDream1.otf */; };
 		A6D2863023B0D2CD00E7379B /* SCDream2.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862123B0D2CD00E7379B /* SCDream2.otf */; };
@@ -231,7 +229,6 @@
 		A63C507023B08BF60069BAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63C507C23B0A34D0069BAFB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
-		A66F23FC23B6DCB6004B57FA /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
 		A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSignUp.storyboard; sourceTree = "<group>"; };
 		A66F240023B7532C004B57FA /* NewSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignUpViewController.swift; sourceTree = "<group>"; };
 		A66F240623B8A509004B57FA /* BannerIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoVC.swift; sourceTree = "<group>"; };
@@ -239,7 +236,6 @@
 		A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerHeaderReusableView.swift; sourceTree = "<group>"; };
 		A66F240E23B9045B004B57FA /* ThemeIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIntoVC.swift; sourceTree = "<group>"; };
 		A66F241023B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIntoCollectionViewCell.swift; sourceTree = "<group>"; };
-		A66F241223B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIntoCollectionReusableView.swift; sourceTree = "<group>"; };
 		A6D2861E23B0D2CD00E7379B /* SCDream9.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream9.otf; sourceTree = "<group>"; };
 		A6D2861F23B0D2CD00E7379B /* SCDream1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream1.otf; sourceTree = "<group>"; };
 		A6D2862123B0D2CD00E7379B /* SCDream2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream2.otf; sourceTree = "<group>"; };
@@ -381,7 +377,6 @@
 				A66F240C23B8BADB004B57FA /* BannerHeaderReusableView.swift */,
 				9D84B12523B9413F0019C7D4 /* CartItemCollectionViewCell.swift */,
 				A66F241023B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift */,
-				A66F241223B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -391,7 +386,6 @@
 			children = (
 				9D7937F223B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift */,
 				9D7937F423B1350C00A0CD3E /* AnalysisTableViewCell.swift */,
-				A66F23FC23B6DCB6004B57FA /* KeywordTableViewCell.swift */,
 				9DFA7FFC23B367BD0036AA50 /* MyPageTableViewCell.swift */,
 				9D385C9523B4DA1800705218 /* FollowingTableViewCell.swift */,
 				9D705A9E23B8AB5200097FCF /* DeliveryListTableViewCell.swift */,
@@ -789,7 +783,6 @@
 				9D5676F123B6AEC500720F06 /* CategoryCollectionViewCell.swift in Sources */,
 				9D79382523B227CF00A0CD3E /* NSNotificationName+Extensions.swift in Sources */,
 				9DD73AF823B7B8B700E1DB97 /* AuctionDetailCollectionViewCell.swift in Sources */,
-				A66F23FD23B6DCB6004B57FA /* KeywordTableViewCell.swift in Sources */,
 				9D0E2A7F23BD578F00E73F40 /* CartService.swift in Sources */,
 				9DF0EB6423BADF4E00EEC259 /* SigninData.swift in Sources */,
 				9DE13BD323B370580040AEB2 /* MenuCategory.swift in Sources */,
@@ -811,7 +804,6 @@
 				9D0E2A5D23BD1B7C00E73F40 /* RecommendedData.swift in Sources */,
 				A6DF861823B6611B006FDE79 /* NowAuctionCollectionViewCell.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
-				A66F241323B91B2B004B57FA /* ThemeIntoCollectionReusableView.swift in Sources */,
 				9DD73AF623B75A2E00E1DB97 /* HomeNavigationVC.swift in Sources */,
 				9DD73AFB23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift in Sources */,
 				9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */,
