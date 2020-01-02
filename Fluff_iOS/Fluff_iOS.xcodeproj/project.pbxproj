@@ -89,6 +89,8 @@
 		A607C61123BD52B400B4D56A /* MagazineBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */; };
 		A607C61323BE24A300B4D56A /* HowFluvData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61223BE24A300B4D56A /* HowFluvData.swift */; };
 		A607C61523BE2C2A00B4D56A /* HowFluvService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61423BE2C2A00B4D56A /* HowFluvService.swift */; };
+		A607C61723BE6DFD00B4D56A /* TodayStockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61623BE6DFD00B4D56A /* TodayStockData.swift */; };
+		A607C61923BE714500B4D56A /* TodayStockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61823BE714500B4D56A /* TodayStockService.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -223,6 +225,8 @@
 		A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineBannerVC.swift; sourceTree = "<group>"; };
 		A607C61223BE24A300B4D56A /* HowFluvData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowFluvData.swift; sourceTree = "<group>"; };
 		A607C61423BE2C2A00B4D56A /* HowFluvService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowFluvService.swift; sourceTree = "<group>"; };
+		A607C61623BE6DFD00B4D56A /* TodayStockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStockData.swift; sourceTree = "<group>"; };
+		A607C61823BE714500B4D56A /* TodayStockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStockService.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 				A607C60E23BD2E9E00B4D56A /* MagazineService.swift */,
 				9D0E2A7E23BD578F00E73F40 /* CartService.swift */,
 				A607C61423BE2C2A00B4D56A /* HowFluvService.swift */,
+				A607C61823BE714500B4D56A /* TodayStockService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */,
 				A607C60C23BD264B00B4D56A /* MagazineData.swift */,
 				A607C61223BE24A300B4D56A /* HowFluvData.swift */,
+				A607C61623BE6DFD00B4D56A /* TodayStockData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -733,6 +739,7 @@
 				9DE5C98623BB40FB00D7359C /* FluvVC.swift in Sources */,
 				9D70BFD323B463D40025D22C /* FollowingListVC.swift in Sources */,
 				A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */,
+				A607C61723BE6DFD00B4D56A /* TodayStockData.swift in Sources */,
 				9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */,
 				A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */,
 				A607C60B23BCB4C000B4D56A /* FetchThumbnailService.swift in Sources */,
@@ -771,6 +778,7 @@
 				A6DF861A23B66FF3006FDE79 /* TodayVintageCollectionViewCell.swift in Sources */,
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
 				9D79382123B227CF00A0CD3E /* UITabBar+Extensions.swift in Sources */,
+				A607C61923BE714500B4D56A /* TodayStockService.swift in Sources */,
 				A6E2ABBE23BB98AD00EC8E66 /* MagazineDetailVC.swift in Sources */,
 				A6DF861623B61748006FDE79 /* HowFluvCollectionViewCell.swift in Sources */,
 				9D7937FD23B1751300A0CD3E /* ShoppingVC.swift in Sources */,

@@ -30,8 +30,15 @@ class HomeVC: UIViewController {
     @IBOutlet weak var todayVintageLineLabel: UILabel!
     @IBOutlet weak var todayVintageCollectionView: UICollectionView!
     
+    let numberFormatter = NumberFormatter()
+    
     private var userToken: String?
     private var fluvData: [FluvData] = []
+    private var stockData: [StockData] = []
+    
+    let todayImgList: [String] = []
+    let todayProductList: [String] = []
+    let todayPriceList: [String] = []
     
     private var howFluvNameList: [String] = []
     private var howFluvImgList: [String] = []
@@ -66,6 +73,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberFormatter.numberStyle = .decimal
         
         whatSeen = "무스탕"
         dayOfTheWeek = "화요일"
@@ -118,6 +126,7 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         initToken()
+        requestTodayStock()
         requestHowFluv()
     }
     
@@ -162,19 +171,25 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("정민아 merge하자")
-        return fluvData.count
+        switch collectionView {
+        case self.howFluvCollectionView:
+            return fluvData.count
+            
+        case self.todayCollectionView:
+            return stockData.count
+        default:
+            return 4
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let bannerImgList: [UIImage] = [#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2")]
-        let todayImgList: [UIImage] = [#imageLiteral(resourceName: "84"), #imageLiteral(resourceName: "416"), #imageLiteral(resourceName: "416"), #imageLiteral(resourceName: "84")]
+        
         let recentImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716")]
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
         let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
         
-        let todayProductList: [String] = ["빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건", "빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건"]
         let nowAuctionItemList: [String] = ["Yves Saint Laurent 원피스", "MaxMara 만다린 자켓", "Yves Saint Laurent 원피스", "MaxMara 만다린 자켓"]
         let nowAuctionTimeList: [String] = ["곧 경매 종료", "종료까지 2시간", "곧 경매 종료", "종료까지 2시간"]
         let todayVintageProductList: [String] = ["오베이 갈매기 패턴 캠프캡", "폴로 스포츠 블루 덕다운 패딩", "오베이 갈매기 패턴 캠프캡", "폴로 스포츠 블루 덕다운 패딩"]
@@ -184,8 +199,10 @@ extension HomeVC: UICollectionViewDataSource{
             
         case self.todayCollectionView:
             let todayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCollectionViewCell", for: indexPath) as! TodayCollectionViewCell
-        todayCollectionViewCell.todayImage.image = todayImgList[indexPath.row]
-        todayCollectionViewCell.todayProductLabel.text = todayProductList[indexPath.row]
+            todayCollectionViewCell.todayImage.setImage(with: stockData[indexPath.row].img[0])
+            todayCollectionViewCell.todayProductLabel.text = stockData[indexPath.row].goodsName
+            todayCollectionViewCell.todayPriceLabel.text =
+                numberFormatter.string(from: NSNumber(value: stockData[indexPath.row].price))! + "원"
             return todayCollectionViewCell
             
         case self.bannerCollectionView:
@@ -199,7 +216,7 @@ extension HomeVC: UICollectionViewDataSource{
             let recentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentCollectionViewCell", for: indexPath) as! RecentCollectionViewCell
         
         recentCollectionViewCell.recentImage.image = recentImgList[indexPath.row]
-        recentCollectionViewCell.recentProductLabel.text = todayProductList[indexPath.row]
+            recentCollectionViewCell.recentProductLabel.text = "쫌그런데"
             return recentCollectionViewCell
             
         case self.howFluvCollectionView:
@@ -354,4 +371,29 @@ extension HomeVC {
             }
         }
     }
-}
+    
+    private func requestTodayStock() {
+        guard let userToken = self.userToken else {return}
+        
+        TodayStockService.shared.todayStock(token: userToken) {
+            networkResult in
+                switch networkResult {
+                case .success(let data):
+                    guard let todayStockJsonData = data as? TodayStockJsonData else {return}
+                    self.stockData = todayStockJsonData.data!
+                    self.todayCollectionView.reloadData()
+                case .requestErr(let data):
+                    guard let todayStockJsonData = data as? TodayStockJsonData else { return }
+                    self.presentAlertController(title: todayStockJsonData.message, message: nil)
+                case .pathErr:
+                    self.presentAlertController(title: "path Error", message: nil)
+                case .serverErr:
+                    self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+                case .networkFail:
+                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+                }
+            }
+            
+        }
+    }
+
