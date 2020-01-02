@@ -22,6 +22,7 @@
 		9D0E2A8923BE1C9300E73F40 /* RecommededFollowerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */; };
 		9D0E2A8B23BE406700E73F40 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8A23BE406700E73F40 /* SocketService.swift */; };
 		9D0E2A8F23BE420F00E73F40 /* SocketawdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8E23BE420F00E73F40 /* SocketawdViewController.swift */; };
+		9D0E2A9123BE733700E73F40 /* RecomendedClotheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A9023BE733700E73F40 /* RecomendedClotheData.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -160,6 +161,7 @@
 		9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommededFollowerData.swift; sourceTree = "<group>"; };
 		9D0E2A8A23BE406700E73F40 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		9D0E2A8E23BE420F00E73F40 /* SocketawdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketawdViewController.swift; sourceTree = "<group>"; };
+		9D0E2A9023BE733700E73F40 /* RecomendedClotheData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedClotheData.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				A607C60C23BD264B00B4D56A /* MagazineData.swift */,
 				9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */,
 				A607C61223BE24A300B4D56A /* HowFluvData.swift */,
+				9D0E2A9023BE733700E73F40 /* RecomendedClotheData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 			files = (
 				9D385C9423B4B81000705218 /* LikeCollectionViewCell.swift in Sources */,
 				9D79380123B1795D00A0CD3E /* ShopCollectionViewCell.swift in Sources */,
+				9D0E2A9123BE733700E73F40 /* RecomendedClotheData.swift in Sources */,
 				9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */,
 				9DE5C98623BB40FB00D7359C /* FluvVC.swift in Sources */,
 				9D70BFD323B463D40025D22C /* FollowingListVC.swift in Sources */,

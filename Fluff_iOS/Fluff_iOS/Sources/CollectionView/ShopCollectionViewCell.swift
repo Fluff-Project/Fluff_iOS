@@ -17,23 +17,22 @@ class ShopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var heartButton: UIButton!
     
     // heart 눌렀는지 User에 대한 모델 들어올거임
-    
-    func setShopImageView(imageName: String) {
-        guard let shoppingImage = UIImage(named: imageName) else { return }
-        shopImageView.image = shoppingImage
+    func setShopImageView(url: String) {
+        shopImageView.setImage(with: url)
     }
     
     func setSellerName(_ name: String) {
-        sellerNameLabel.textColor = UIColor(red: 152/255, green: 152/255, blue: 152/255, alpha: 1)
-        sellerNameLabel.text = name
+        sellerNameLabel.attributedText = NSMutableAttributedString(string: "\(name)", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 12)!, .foregroundColor: UIColor(red: 152/255, green: 152/255, blue: 152/255, alpha: 1.0), NSAttributedString.Key.kern: CGFloat(-0.48)])
     }
     
     func setClotheName(_ name: String) {
         clotheNameLabel.text = name
+        clotheNameLabel.attributedText = NSMutableAttributedString(string: "\(name)", attributes: [.font: UIFont(name: "KoPubWorldDotumPM", size: 14), .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1), NSAttributedString.Key.kern: CGFloat(-0.42)])
     }
     
     func setPriceLabel(_ price: String) {
         priceLabel.text = price
+        priceLabel.attributedText = NSMutableAttributedString(string: "\(price)", attributes: [.font: UIFont(name: "S-CoreDream-5Medium", size: 15), .foregroundColor: UIColor(red: 0, green: 0, blue: 0, alpha: 1.0), NSAttributedString.Key.kern: CGFloat(-0.3)])
     }
     
     @IBAction func clickHeartButton(_ sender: Any) {

@@ -66,7 +66,7 @@ struct RecommendService {
     }
     
     
-    func getRecommendFollowers(token: String ,completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getRecommendFollowers(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
         let dataRequest = Alamofire.request(APIConstants.seller, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
         
@@ -95,5 +95,35 @@ struct RecommendService {
         if followerData.code == 200 { return .success(followerData) }
         else if followerData.code == 400 { return .pathErr }
         else { return .serverErr }
+    }
+    
+    func getRecommendStyleClothe(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
+        let dataRequest = Alamofire.request(APIConstants.styleClothe, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+        
+        dataRequest.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                guard let value = dataResponse.result.value else { return }
+                if statusCode == 200 { completion(self.loadingClotheData(value)) }
+                else if statusCode == 400 { completion(.pathErr) }
+                else { }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(.networkFail)
+            }
+        }
+    }
+    
+    private func loadingClotheData(_ value: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let clotheData = try? decoder.decode(RecommendedClotheData.self, from: value) else {
+            return .pathErr
+        }
+        print("둘러보기 뷰: \(clotheData)")
+        if clotheData.code == 200 { return .success(clotheData.json) }
+        else if clotheData.code == 500 { return .requestErr(clotheData.json) }
+        else { return .pathErr }
     }
 }

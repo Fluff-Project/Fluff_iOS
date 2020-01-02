@@ -11,16 +11,15 @@ import UIKit
 class ShoppingVC: UIViewController {
 
     @IBOutlet weak var shoppingCollectionView: UICollectionView!
-    @IBOutlet weak var backgroundSearchView: UIView!
-    @IBOutlet weak var searchTextField: UITextField!
     
     private var filteringVC: FilteringVC!
     private var transparentView: UIView!
     private var coverBlurView: UIVisualEffectView!
-    
     @IBOutlet weak var filterButton: UIButton!
     
     private var filterCount: Int = 0
+    private var clothesData: [ClotheData] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,7 @@ class ShoppingVC: UIViewController {
         shoppingCollectionView.dataSource = self
         shoppingCollectionView.delegate = self
         self.setNavigationBarClear()
+        loadClotheStyle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +100,29 @@ class ShoppingVC: UIViewController {
             segue.destination.hidesBottomBarWhenPushed = true
         }
     }
+    
+    private func loadClotheStyle() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        RecommendService.shared.getRecommendStyleClothe(token: userToken) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let successClothData = data as? RecommendedClotheJSONData else { return }
+                guard let clothesData = successClothData.data else { return }
+                self.clothesData = clothesData
+                self.shoppingCollectionView.reloadData()
+                print("clothe Data Count: \(clothesData.count)")
+            case .requestErr(let data):
+                guard let requestClothData = data as? RecommendedClotheData else { return }
+                self.presentAlertController(title: requestClothData.json.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 문제", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 문제", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: nil)
+            }
+        }
+    }
 }
 
 extension ShoppingVC {
@@ -122,11 +145,15 @@ extension ShoppingVC {
 
 extension ShoppingVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return clothesData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let shoppingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "shoppingCell", for: indexPath)
+        guard let shoppingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "shoppingCell", for: indexPath) as? ShopCollectionViewCell else { return UICollectionViewCell() }
+        shoppingCell.setClotheName(clothesData[indexPath.row].goodsName)
+        shoppingCell.setPriceLabel("\(clothesData[indexPath.row].price)")
+        shoppingCell.setSellerName(clothesData[indexPath.row].sellerName)
+        shoppingCell.setShopImageView(url: clothesData[indexPath.row].mainImg)
         return shoppingCell
     }
 }
@@ -143,7 +170,7 @@ extension ShoppingVC: UICollectionViewDelegate {
 extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let estimateHeight = (collectionView.frame.height - 100) / 2
-        let estimateWidth = (collectionView.frame.width - collectionView.frame.width / 14.2) / 2
+        let estimateWidth = (collectionView.frame.width - collectionView.frame.width / 14.42) / 2
         return CGSize(width: estimateWidth, height: estimateHeight)
     }
     
@@ -156,7 +183,7 @@ extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
     }
 }
 

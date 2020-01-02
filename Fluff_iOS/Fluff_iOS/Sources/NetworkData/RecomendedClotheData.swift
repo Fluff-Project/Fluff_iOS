@@ -1,22 +1,22 @@
 //
-//  RecommededFollowerData.swift
+//  RecomendedClotheData.swift
 //  Fluff_iOS
 //
-//  Created by 윤동민 on 2020/01/02.
+//  Created by 윤동민 on 2020/01/03.
 //  Copyright © 2020 TaeJin Oh. All rights reserved.
 //
 
 import Foundation
 
-struct RecommededFollowerData: Codable {
+struct RecommendedClotheData: Codable {
     let code: Int
-    let json: RecommendedJSONFollowerData
+    let json: RecommendedClotheJSONData
 }
 
-struct RecommendedJSONFollowerData: Codable {
+struct RecommendedClotheJSONData: Codable {
     let success: Bool
     let message: String
-    let data: [SellerData]?
+    let data: [ClotheData]?
     
     enum CodingKeys: String, CodingKey {
         case success = "success"
@@ -28,13 +28,14 @@ struct RecommendedJSONFollowerData: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode([SellerData].self, forKey: .data)) ?? nil
+        data = (try? values.decode([ClotheData].self, forKey: .data)) ?? nil
     }
 }
 
-struct SellerData: Codable {
-    let sellerId: String
+struct ClotheData: Codable {
+    let goodsName: String
+    let mainImg: String
     let sellerName: String
-    let sellerImg: String
-    let img: [String]
+    let price: Int
+    let _id: String
 }

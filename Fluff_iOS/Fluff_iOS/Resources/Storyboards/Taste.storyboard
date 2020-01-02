@@ -520,7 +520,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iz5-Fc-eEv">
-                                <rect key="frame" x="33" y="125" width="309" height="604"/>
+                                <rect key="frame" x="33" y="88" width="309" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="29" minimumInteritemSpacing="20" id="frJ-d3-vl6">
                                     <size key="itemSize" width="158" height="292"/>
@@ -642,7 +642,7 @@
                             <constraint firstItem="TxJ-Q5-UpD" firstAttribute="width" secondItem="36M-pz-HwX" secondAttribute="width" multiplier="0.282667" id="X0M-0e-4Pf"/>
                             <constraint firstItem="LI8-MR-clq" firstAttribute="trailing" secondItem="iz5-Fc-eEv" secondAttribute="trailing" constant="33" id="jhP-mQ-a93"/>
                             <constraint firstItem="LI8-MR-clq" firstAttribute="bottom" secondItem="TxJ-Q5-UpD" secondAttribute="bottom" constant="22" id="ogo-Yp-tlr"/>
-                            <constraint firstItem="iz5-Fc-eEv" firstAttribute="top" secondItem="LI8-MR-clq" secondAttribute="top" constant="37" id="qjf-Db-b4g"/>
+                            <constraint firstItem="iz5-Fc-eEv" firstAttribute="top" secondItem="LI8-MR-clq" secondAttribute="top" id="qjf-Db-b4g"/>
                             <constraint firstItem="TxJ-Q5-UpD" firstAttribute="centerX" secondItem="LI8-MR-clq" secondAttribute="centerX" id="u4I-6U-hzv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LI8-MR-clq"/>
@@ -1214,7 +1214,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-2l-bry">
-                                                        <rect key="frame" x="348.66666666666669" y="29.666666666666739" width="72" height="32.666666666666657"/>
+                                                        <rect key="frame" x="348.66666666666669" y="29.666666666666739" width="36" height="32.666666666666657"/>
                                                         <state key="normal" backgroundImage="heartEmptyIc-1"/>
                                                         <connections>
                                                             <action selector="clickHeart:" destination="cZc-1p-aQQ" eventType="touchUpInside" id="HRm-nE-YZd"/>
@@ -1232,7 +1232,7 @@
                                                     <constraint firstItem="4a8-2l-bry" firstAttribute="centerY" secondItem="tqk-Sd-Reb" secondAttribute="centerY" id="lHV-3q-SZc"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="190" y="374" width="34" height="8"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -2642,7 +2642,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noh-72-Fd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3993" y="1201"/>
+            <point key="canvasLocation" x="4025" y="1215"/>
         </scene>
         <!--Following ListVC-->
         <scene sceneID="z6B-3O-mxh">

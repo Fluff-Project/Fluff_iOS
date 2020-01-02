@@ -23,5 +23,9 @@ struct APIConstants {
     static let magazine = baseURL + "/magazine"
     // 추천 셀러 받아오는 주소
     static let seller = baseURL + "/recommend/seller?page=1"
+    // 유저 취향 기반 추천 상품 조회
+    static let styleClothe = baseURL + "/recommend/style?page=7"
     static let howFluv = baseURL + "/recommend/seller?page=4"
+    
+    
 }
