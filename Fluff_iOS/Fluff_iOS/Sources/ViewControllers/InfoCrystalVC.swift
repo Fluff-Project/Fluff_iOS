@@ -78,8 +78,16 @@ class InfoCrystalVC: UIViewController {
         findAddressButton.makeCornerRounded(radius: 2)
         completeButtonView.layer.borderColor = UIColor(white: 221 / 255, alpha: 1).cgColor
         completeButtonView.layer.borderWidth = 1
+        pwdTextField.delegate = self
+        pwdConfirmTextField.delegate = self
+        addTapGesture()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     @IBAction func maleSelected(_ sender: UIButton) {
@@ -109,10 +117,35 @@ class InfoCrystalVC: UIViewController {
     @objc func popView() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func complete(_ sender: Any) {
+        // 변경된 정보 반영되는 로직
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension InfoCrystalVC {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    private func addTapGesture() {
+        let tapGesuture = UITapGestureRecognizer(target: self, action: #selector(downKeyboard))
+        contentView.addGestureRecognizer(tapGesuture)
+    }
+    
+    @objc func downKeyboard() {
+        UIView.animate(withDuration: 0.2) {
+            self.view.transform = .identity
+        }
+        self.view.endEditing(true)
+    }
+}
+
+extension InfoCrystalVC: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            self.view.transform = CGAffineTransform(translationX: 0, y: CGFloat(-UtilValue.keyboardHeight))
+        }
     }
 }

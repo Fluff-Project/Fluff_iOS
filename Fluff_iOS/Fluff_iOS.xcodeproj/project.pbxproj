@@ -23,6 +23,9 @@
 		9D0E2A8B23BE406700E73F40 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8A23BE406700E73F40 /* SocketService.swift */; };
 		9D0E2A8F23BE420F00E73F40 /* SocketawdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8E23BE420F00E73F40 /* SocketawdViewController.swift */; };
 		9D0E2A9123BE733700E73F40 /* RecomendedClotheData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A9023BE733700E73F40 /* RecomendedClotheData.swift */; };
+		9D0E2A9323BE911900E73F40 /* UtilValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A9223BE911900E73F40 /* UtilValue.swift */; };
+		9D0E2A9523BE951D00E73F40 /* DetailGoodsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A9423BE951D00E73F40 /* DetailGoodsData.swift */; };
+		9D0E2A9723BE973200E73F40 /* DetailInformRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A9623BE973200E73F40 /* DetailInformRequestService.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -166,6 +169,9 @@
 		9D0E2A8A23BE406700E73F40 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		9D0E2A8E23BE420F00E73F40 /* SocketawdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketawdViewController.swift; sourceTree = "<group>"; };
 		9D0E2A9023BE733700E73F40 /* RecomendedClotheData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedClotheData.swift; sourceTree = "<group>"; };
+		9D0E2A9223BE911900E73F40 /* UtilValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilValue.swift; sourceTree = "<group>"; };
+		9D0E2A9423BE951D00E73F40 /* DetailGoodsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoodsData.swift; sourceTree = "<group>"; };
+		9D0E2A9623BE973200E73F40 /* DetailInformRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInformRequestService.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -357,7 +363,7 @@
 				9D0E2A8A23BE406700E73F40 /* SocketService.swift */,
 				A607C61823BE714500B4D56A /* TodayStockService.swift */,
 				A607C61C23BE813000B4D56A /* RecentStyleService.swift */,
-
+				9D0E2A9623BE973200E73F40 /* DetailInformRequestService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				9D0E2A5623BCBCE300E73F40 /* SurveyResult.swift */,
+				9D0E2A9223BE911900E73F40 /* UtilValue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -455,9 +462,9 @@
 				9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */,
 				A607C61223BE24A300B4D56A /* HowFluvData.swift */,
 				9D0E2A9023BE733700E73F40 /* RecomendedClotheData.swift */,
-
 				A607C61623BE6DFD00B4D56A /* TodayStockData.swift */,
 				A607C61A23BE7E0300B4D56A /* RecentStyleData.swift */,
+				9D0E2A9423BE951D00E73F40 /* DetailGoodsData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -763,6 +770,7 @@
 				9D7937F723B1355B00A0CD3E /* NextTasteAnalysisVC.swift in Sources */,
 				9DE5C98623BB40FB00D7359C /* FluvVC.swift in Sources */,
 				9D70BFD323B463D40025D22C /* FollowingListVC.swift in Sources */,
+				9D0E2A9723BE973200E73F40 /* DetailInformRequestService.swift in Sources */,
 				A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */,
 				A607C61723BE6DFD00B4D56A /* TodayStockData.swift in Sources */,
 				9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */,
@@ -820,6 +828,7 @@
 				9D0C626D23B674BF00F31502 /* FilteringVC.swift in Sources */,
 				A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */,
 				A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */,
+				9D0E2A9323BE911900E73F40 /* UtilValue.swift in Sources */,
 				A66F241123B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				9D705A9523B7D30E00097FCF /* DetailCategoryDataSource.swift in Sources */,
@@ -839,6 +848,7 @@
 				9D79382423B227CF00A0CD3E /* UIViewController+Extensions.swift in Sources */,
 				9D79382223B227CF00A0CD3E /* UIImageView+Extensions.swift in Sources */,
 				9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */,
+				9D0E2A9523BE951D00E73F40 /* DetailGoodsData.swift in Sources */,
 				A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
 				A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */,

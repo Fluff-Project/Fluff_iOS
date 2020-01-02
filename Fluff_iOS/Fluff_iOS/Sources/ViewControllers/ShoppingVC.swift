@@ -29,7 +29,6 @@ class ShoppingVC: UIViewController {
         shoppingCollectionView.dataSource = self
         shoppingCollectionView.delegate = self
         self.setNavigationBarClear()
-        loadClotheStyle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +36,7 @@ class ShoppingVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.tabBarController?.tabBar.isHidden = false
         initFilterfing()
+        loadClotheStyle()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
