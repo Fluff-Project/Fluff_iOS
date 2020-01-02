@@ -24,6 +24,7 @@ class ThemeIntoVC: UIViewController {
     
     private var stockData: [StockData] = []
     private var styleData: [StyleData] = []
+    private var clotheData: [ClotheData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,14 @@ class ThemeIntoVC: UIViewController {
         setNavi()
         switch whatTheme {
         case "Today":
+            print("TD")
             requestTodayTheme()
         case "Recent":
+            print("RE")
             requestRecentTheme()
+        case "TodayVintage":
+            print("Recommend")
+            requestRecommendTheme()
         default :
             requestTodayTheme()
         }
@@ -86,6 +92,8 @@ extension ThemeIntoVC: UICollectionViewDataSource {
             return stockData.count
         case "Recent":
             return styleData.count
+        case "TodayVintage":
+            return clotheData.count
         default:
             return 8
         }
@@ -102,6 +110,10 @@ extension ThemeIntoVC: UICollectionViewDataSource {
             themeIntoCollectionViewCell.themeIntoImage.setImage(with: styleData[indexPath.row].img[0])
             themeIntoCollectionViewCell.themeIntoItemLabel.text = styleData[indexPath.row].goodsName
             themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
+        case "TodayVintage":
+        themeIntoCollectionViewCell.themeIntoImage.setImage(with: clotheData[indexPath.row].mainImg)
+        themeIntoCollectionViewCell.themeIntoItemLabel.text = clotheData[indexPath.row].goodsName
+        themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: clotheData[indexPath.row].price))! + "원"
         default:
             themeIntoCollectionViewCell.themeIntoImage.image = #imageLiteral(resourceName: "731435467565772314707755242100861709482025N")
             themeIntoCollectionViewCell.themeIntoItemLabel.text = "다홍꽃 주렁주렁 가디건"
@@ -180,6 +192,29 @@ private func requestTodayTheme() {
             }
         }
         
+    }
+    
+    private func requestRecommendTheme() {
+    guard let userToken = self.userToken else {return}
+    
+    RecommendTheme.shared.getRecommendStyleClothe(token: userToken) {
+        networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
+                self.clotheData = recommendedClotheJsonData.data!
+                self.themeIntoCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }
+                self.presentAlertController(title: recommendedClotheJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
+        }
     }
 }
 

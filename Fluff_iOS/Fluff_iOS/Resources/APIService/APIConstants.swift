@@ -30,4 +30,5 @@ struct APIConstants {
     static let recentStyle = baseURL + "/goods?category=knit&page=5"
     static let todayTheme = baseURL + "/goods?sort=newest"
     static let recentTheme = baseURL + "/goods?category=knit"
+    static let recommendTheme = baseURL + "/recommend/style"
 }

@@ -106,7 +106,6 @@
 		A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63C506B23B08BF60069BAFB /* Assets.xcassets */; };
 		A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */; };
 		A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C507C23B0A34D0069BAFB /* LoginVC.swift */; };
-		A64C4F0723B137590066FE7F /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */; };
 		A66F23FF23B6E796004B57FA /* NewSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */; };
 		A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240023B7532C004B57FA /* NewSignUpViewController.swift */; };
 		A66F240723B8A509004B57FA /* BannerIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240623B8A509004B57FA /* BannerIntoVC.swift */; };
@@ -129,7 +128,6 @@
 		A6D2863A23B0D2CD00E7379B /* SCDream8.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2862B23B0D2CD00E7379B /* SCDream8.otf */; };
 		A6D2863D23B0DAB500E7379B /* KoPubWorldDotumPM.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863B23B0DAB500E7379B /* KoPubWorldDotumPM.otf */; };
 		A6D2863E23B0DAB500E7379B /* KoPubWorldDotumPL.otf in Resources */ = {isa = PBXBuildFile; fileRef = A6D2863C23B0DAB500E7379B /* KoPubWorldDotumPL.otf */; };
-		A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */; };
 		A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */; };
 		A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860623B28674006FDE79 /* HomeVC.swift */; };
 		A6DF860B23B29567006FDE79 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF860A23B29567006FDE79 /* BannerCell.swift */; };
@@ -143,9 +141,6 @@
 		A6E2ABBA23BA5EB500EC8E66 /* HowToPayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2ABB923BA5EB500EC8E66 /* HowToPayVC.swift */; };
 		A6E2ABBC23BA9F4100EC8E66 /* Magazine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */; };
 		A6E2ABBE23BB98AD00EC8E66 /* MagazineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E2ABBD23BB98AD00EC8E66 /* MagazineDetailVC.swift */; };
-		A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */; };
-		A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */; };
-		A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -252,7 +247,6 @@
 		A63C506E23B08BF60069BAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63C507023B08BF60069BAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63C507C23B0A34D0069BAFB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSignUp.storyboard; sourceTree = "<group>"; };
 		A66F240023B7532C004B57FA /* NewSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignUpViewController.swift; sourceTree = "<group>"; };
 		A66F240623B8A509004B57FA /* BannerIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoVC.swift; sourceTree = "<group>"; };
@@ -275,7 +269,6 @@
 		A6D2862B23B0D2CD00E7379B /* SCDream8.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream8.otf; sourceTree = "<group>"; };
 		A6D2863B23B0DAB500E7379B /* KoPubWorldDotumPM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumPM.otf; sourceTree = "<group>"; };
 		A6D2863C23B0DAB500E7379B /* KoPubWorldDotumPL.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KoPubWorldDotumPL.otf; sourceTree = "<group>"; };
-		A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailVC.swift; sourceTree = "<group>"; };
 		A6DF860423B1EF2F006FDE79 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		A6DF860623B28674006FDE79 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A6DF860A23B29567006FDE79 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -290,9 +283,6 @@
 		A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Magazine.storyboard; sourceTree = "<group>"; };
 		A6E2ABBD23BB98AD00EC8E66 /* MagazineDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailVC.swift; sourceTree = "<group>"; };
 		A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "/Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<absolute>"; };
-		A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordVC.swift; sourceTree = "<group>"; };
-		A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
-		A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpGenderVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,16 +517,11 @@
 			children = (
 				A63C507C23B0A34D0069BAFB /* LoginVC.swift */,
 				A63C506623B08BF40069BAFB /* LaunchVC.swift */,
-				A6F5434023B16AA20006FE9E /* SignUpPasswordVC.swift */,
 				A66F240023B7532C004B57FA /* NewSignUpViewController.swift */,
-				A6F5434423B16AF50006FE9E /* SignUpGenderVC.swift */,
 				A66F240623B8A509004B57FA /* BannerIntoVC.swift */,
-				A6DF860223B1E5EF006FDE79 /* SignUpEmailVC.swift */,
 				A6DF860623B28674006FDE79 /* HomeVC.swift */,
-				A6F5434223B16AC40006FE9E /* SignUpNicknameVC.swift */,
 				9D7937DD23B11F1400A0CD3E /* TasteAnalysisVC.swift */,
 				9D7937F623B1355B00A0CD3E /* NextTasteAnalysisVC.swift */,
-				A64C4F0623B137590066FE7F /* SignUpEmailVC.swift */,
 				9D7937FA23B16E7E00A0CD3E /* MainTabbarController.swift */,
 				9D7937FC23B1751300A0CD3E /* ShoppingVC.swift */,
 				9D79382B23B2871400A0CD3E /* DetailItemVC.swift */,
@@ -767,7 +752,6 @@
 				A6DF860523B1EF2F006FDE79 /* UITextField+Extensions.swift in Sources */,
 				A607C61723BE6DFD00B4D56A /* TodayStockData.swift in Sources */,
 				9D7937E023B11F1D00A0CD3E /* TasteCollectionViewCell.swift in Sources */,
-				A6DF860323B1E5EF006FDE79 /* SignUpEmailVC.swift in Sources */,
 				A607C60B23BCB4C000B4D56A /* FetchThumbnailService.swift in Sources */,
 				9D79382623B227CF00A0CD3E /* UIView+Extensions.swift in Sources */,
 				A6DF861423B55AE8006FDE79 /* RecentCollectionViewCell.swift in Sources */,
@@ -799,7 +783,6 @@
 				9D70BFD523B468D80025D22C /* LikeTabbarController.swift in Sources */,
 				9D70BFCF23B45B320025D22C /* LikeListParentVC.swift in Sources */,
 				A607C61523BE2C2A00B4D56A /* HowFluvService.swift in Sources */,
-				A64C4F0723B137590066FE7F /* SignUpEmailVC.swift in Sources */,
 				9D7B342E23B2B4E500F1A530 /* OtherItemDataSource.swift in Sources */,
 				9D385C9A23B5416F00705218 /* AuctionCollectionViewCell.swift in Sources */,
 				9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */,
@@ -817,10 +800,8 @@
 				A607C61B23BE7E0300B4D56A /* RecentStyleData.swift in Sources */,
 				9D70BFD123B463760025D22C /* LikeListTabVC.swift in Sources */,
 				9DF0EB5E23BA6B3100EEC259 /* FluvApplyVC.swift in Sources */,
-				A6F5434323B16AC40006FE9E /* SignUpNicknameVC.swift in Sources */,
 				9D0E2A4F23BC502900E73F40 /* SignupService.swift in Sources */,
 				9D0C626D23B674BF00F31502 /* FilteringVC.swift in Sources */,
-				A6F5434123B16AA20006FE9E /* SignUpPasswordVC.swift in Sources */,
 				A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */,
 				A66F241123B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
@@ -855,7 +836,6 @@
 				9DD73AF623B75A2E00E1DB97 /* HomeNavigationVC.swift in Sources */,
 				9DD73AFB23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift in Sources */,
 				9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */,
-				A6F5434523B16AF50006FE9E /* SignUpGenderVC.swift in Sources */,
 				A607C60923BCAE4E00B4D56A /* GoodsThumbnailData.swift in Sources */,
 				9DF0EB6223BAD8CC00EEC259 /* SigninService.swift in Sources */,
 				9D7B343023B2B7F200F1A530 /* OtherItemCollectionViewCell.swift in Sources */,
