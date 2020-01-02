@@ -10,7 +10,7 @@ import Foundation
 
 struct MagazineData: Codable {
     let code: Int
-    let json: MagazineJsonData
+    let json: MagazineJsonData?
 }
 
 struct MagazineJsonData: Codable {

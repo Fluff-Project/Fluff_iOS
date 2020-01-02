@@ -12,13 +12,11 @@ class MagazineBannerVC: UIViewController {
     
     private var userToken: String?
     private var magazineImageData: [MagazineImageData] = []
+    @IBOutlet weak var backgroundImg: UIImageView!
     
-    private var fuck: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(String(fuck.count))
- 
         // Do any additional setup after loading the view.
     }
     
@@ -36,18 +34,6 @@ class MagazineBannerVC: UIViewController {
         guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
         self.userToken = userToken
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MagazineBannerVC {
@@ -59,24 +45,24 @@ extension MagazineBannerVC {
             networkResult in
             switch networkResult {
             case .success(let data):
-                print("fuck")
-                guard let magazineData = data as? MagazineJsonData else { return }
-                self.magazineImageData = magazineData.data!
-                for _ in self.magazineImageData {
-                    self.fuck.append("F.U.C.K")
+                print("fuck1")
+                guard let magazineData = data as? MagazineJsonData else {
+                    print("장난치며 먹는 아이스크림")
+                    return
                 }
+                self.magazineImageData = magazineData.data!
+                for m in self.magazineImageData {
+                    self.backgroundImg.setImage(with: m.imgUrl)
+                }
+                self.backgroundImg.setImage(with: self.magazineImageData[0].imgUrl)
             case .requestErr(let data):
-                print("fuck")
                 guard let magazineData = data as? MagazineData else { return }
-                self.presentAlertController(title: magazineData.json.message, message: nil)
+                self.presentAlertController(title: magazineData.json!.message, message: nil)
             case .pathErr:
-                print("fuck")
                 self.presentAlertController(title: "path Error", message: nil)
             case .serverErr:
-                print("fuck")
                 self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
             case .networkFail:
-                print("fuck")
                 self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
             }
         }
