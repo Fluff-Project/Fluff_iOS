@@ -411,6 +411,7 @@
                                                         <size key="customSize" width="182" height="280"/>
                                                         <connections>
                                                             <outlet property="todayVintageImage" destination="abe-n7-oMK" id="cq3-IV-Is3"/>
+                                                            <outlet property="todayVintagePriceLabel" destination="ahR-Ks-FhV" id="lP5-vx-7yQ"/>
                                                             <outlet property="todayVintageProductLabel" destination="hGU-pn-MRb" id="FSg-Vv-6fq"/>
                                                         </connections>
                                                     </collectionViewCell>

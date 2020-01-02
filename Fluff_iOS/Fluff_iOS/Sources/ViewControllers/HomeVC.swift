@@ -43,6 +43,7 @@ class HomeVC: UIViewController {
 
     private var stockData: [StockData] = []
     private var styleData: [StyleData] = []
+    private var clotheData: [ClotheData] = []
 
     
     var current_y: CGFloat = 0
@@ -131,6 +132,7 @@ class HomeVC: UIViewController {
         requestTodayStock()
         requestRecentStyle()
         requestHowFluv()
+        requestTodayRecommendation()
     }
     
     private func initToken() {
@@ -186,6 +188,10 @@ extension HomeVC: UICollectionViewDataSource{
             
         case self.recentCollectionView:
             return styleData.count
+            
+        case self.todayVintageCollectionView:
+            return clotheData.count
+            
         default:
             return 4
         }
@@ -196,11 +202,9 @@ extension HomeVC: UICollectionViewDataSource{
         let bannerImgList: [UIImage] = [#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2")]
         
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
-        let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
         
         let nowAuctionItemList: [String] = ["Yves Saint Laurent 원피스", "MaxMara 만다린 자켓", "Yves Saint Laurent 원피스", "MaxMara 만다린 자켓"]
         let nowAuctionTimeList: [String] = ["곧 경매 종료", "종료까지 2시간", "곧 경매 종료", "종료까지 2시간"]
-        let todayVintageProductList: [String] = ["오베이 갈매기 패턴 캠프캡", "폴로 스포츠 블루 덕다운 패딩", "오베이 갈매기 패턴 캠프캡", "폴로 스포츠 블루 덕다운 패딩"]
         let starNumList: [Int] = [2,4,5,1]
         
         switch collectionView {
@@ -294,8 +298,9 @@ extension HomeVC: UICollectionViewDataSource{
         case self.todayVintageCollectionView:
             let todayVintageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayVintageCollectionViewCell", for: indexPath) as! TodayVintageCollectionViewCell
             
-            todayVintageCollectionViewCell.todayVintageImage.image = todayVintageImgList[indexPath.row]
-            todayVintageCollectionViewCell.todayVintageProductLabel.text = todayVintageProductList[indexPath.row]
+            todayVintageCollectionViewCell.todayVintageImage.setImage(with: clotheData[indexPath.row].mainImg)
+            todayVintageCollectionViewCell.todayVintageProductLabel.text = clotheData[indexPath.row].goodsName
+            todayVintageCollectionViewCell.todayVintagePriceLabel.text = numberFormatter.string(from: NSNumber(value: clotheData[indexPath.row].price))! + "원"
                 return todayVintageCollectionViewCell
             
         default:
@@ -427,6 +432,29 @@ extension HomeVC {
                 }
             }
             
+        }
+    
+        private func requestTodayRecommendation() {
+        guard let userToken = self.userToken else {return}
+        
+        RecommendService.shared.getRecommendStyleClothe(token: userToken) {
+            networkResult in
+                switch networkResult {
+                case .success(let data):
+                    guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
+                    self.clotheData = recommendedClotheJsonData.data!
+                    self.todayVintageCollectionView.reloadData()
+                case .requestErr(let data):
+                    guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }
+                    self.presentAlertController(title: recommendedClotheJsonData.message, message: nil)
+                case .pathErr:
+                    self.presentAlertController(title: "path Error", message: nil)
+                case .serverErr:
+                    self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+                case .networkFail:
+                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+                }
+            }
         }
     }
 

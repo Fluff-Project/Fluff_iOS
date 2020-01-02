@@ -12,4 +12,5 @@ class TodayVintageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var todayVintageImage: UIImageView!
     @IBOutlet weak var todayVintageProductLabel: UILabel!
+    @IBOutlet weak var todayVintagePriceLabel: UILabel!
 }
