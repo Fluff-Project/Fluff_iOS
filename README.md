@@ -365,6 +365,47 @@ struct Person: Codable {
 
 
 
+10. `Dictionary` 타입 Value값으로 Sorting하기
+
+```swift
+// key, value 순으로 Sorting ==> value의 값을 기준으로 큰 값이 왼쪽에 오게 바꾸기
+let sortedParameter = surveyResult.sorted { $0.1 > $1.1 }
+            let sortingKey = [sortedParameter[0].key, sortedParameter[1].key, sortedParameter[2].key]
+```
+
+
+
+11. 키보드가 올라올 때 View 이동시켜 가리지 않게 하기
+
+```swift
+
+```
+
+
+
+12. NavigationBar에 BarButtonItem 코드로 추가하기
+
+```swift
+
+```
+
+
+
+13. `TableView`  선택 후, 다음뷰로 넘어갔다 올 때 선택된 영역 해제하기
+
+```swift
+override func viewDidDisappear(_ animated: Bool) {
+  super.viewDidDisappear(animated)
+	if let index = myPageButtonTableView.indexPathForSelectedRow {
+    myPageButtonTableView.deselectRow(at: index, animated: true)
+  }
+}
+```
+
+
+
+14. 카메라 사용하기 `UIImagePicker`  사용
+
 
 
 ### 참가자
