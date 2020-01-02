@@ -17,6 +17,7 @@
 		9D0E2A5D23BD1B7C00E73F40 /* RecommendedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */; };
 		9D0E2A7F23BD578F00E73F40 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A7E23BD578F00E73F40 /* CartService.swift */; };
 		9D0E2A8123BDB33B00E73F40 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8023BDB33B00E73F40 /* CartTableViewCell.swift */; };
+		9D0E2A8323BDB94800E73F40 /* MagazineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8223BDB94800E73F40 /* MagazineVC.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -151,6 +152,7 @@
 		9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedData.swift; sourceTree = "<group>"; };
 		9D0E2A7E23BD578F00E73F40 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		9D0E2A8023BDB33B00E73F40 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		9D0E2A8223BDB94800E73F40 /* MagazineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineVC.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -530,7 +532,11 @@
 				9DE5C98523BB40FB00D7359C /* FluvVC.swift */,
 				A6E2ABBD23BB98AD00EC8E66 /* MagazineDetailVC.swift */,
 				A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */,
+
 				A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */,
+
+				9D0E2A8223BDB94800E73F40 /* MagazineVC.swift */,
+
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				9D0E2A5723BCBCE300E73F40 /* SurveyResult.swift in Sources */,
 				9DE4AAD623B9677E0095A5B3 /* WelcomeViewController.swift in Sources */,
 				9D7937F323B134F300A0CD3E /* AnalysisHeaderTableViewCell.swift in Sources */,
+				9D0E2A8323BDB94800E73F40 /* MagazineVC.swift in Sources */,
 				A607C60D23BD264B00B4D56A /* MagazineData.swift in Sources */,
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,
