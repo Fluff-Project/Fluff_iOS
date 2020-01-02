@@ -8,7 +8,6 @@
 
 import UIKit
 import CHIPageControl
-import Toaster
 
 class DetailItemVC: UIViewController {
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
