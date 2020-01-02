@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 class MagazineBannerVC: UIViewController {
     
@@ -18,6 +19,7 @@ class MagazineBannerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        backgroundImg.hero.id = "magImg"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +30,12 @@ class MagazineBannerVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         userToken = nil
+    }
+    
+    @IBAction func intoTheContents(_ sender: UIButton) {
+        print("주사위")
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
+        self.navigationController?.pushViewController(nextVC, animated: false)
     }
     
     private func initToken() {
@@ -45,11 +53,7 @@ extension MagazineBannerVC {
             networkResult in
             switch networkResult {
             case .success(let data):
-                print("fuck1")
-                guard let magazineData = data as? MagazineJsonData else {
-                    print("장난치며 먹는 아이스크림")
-                    return
-                }
+                guard let magazineData = data as? MagazineJsonData else { return }
                 self.magazineImageData = magazineData.data!
                 for m in self.magazineImageData {
                     self.backgroundImg.setImage(with: m.imgUrl)

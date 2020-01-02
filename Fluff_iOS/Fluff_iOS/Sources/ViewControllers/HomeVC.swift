@@ -30,6 +30,11 @@ class HomeVC: UIViewController {
     @IBOutlet weak var todayVintageLineLabel: UILabel!
     @IBOutlet weak var todayVintageCollectionView: UICollectionView!
     
+    private var userToken: String?
+    private var fluvData: [FluvData] = []
+    
+    private var howFluvNameList: [String]
+    
     var current_y: CGFloat = 0
     let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
     let sCoreExtraLight = UIFont(name: "S-CoreDream-2ExtraLight", size: 24)
@@ -110,6 +115,11 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func initToken() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        self.userToken = userToken
     }
     
     @IBAction func goTodayTheme(_ sender: UIButton) {
@@ -314,6 +324,31 @@ extension HomeVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "BannerIntoVC") as? BannerIntoVC else { return }
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+
+extension HomeVC {
+    private func requestHowFluv() {
+        guard let userToken = self.userToken else { return }
+        HowFluvService.shared.howFluv(token: userToken) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let howFluvJsonData = data as? HowFluvJsonData else { return }
+                self.fluvData = howFluvJsonData.data
+                for _ in self.fluvData {
+                    self.isSelected.append(false)
+                }
+            case .requestErr(let data):
+                guard let clotheData = data as? TasteAnalysisData else { return }
+                self.presentAlertController(title: clotheData.json.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
+        }
     }
 }
 

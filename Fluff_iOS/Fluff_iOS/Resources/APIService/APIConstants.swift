@@ -21,4 +21,5 @@ struct APIConstants {
     static let recommend = baseURL + "/recommend/keyDB"
     static let cart = baseURL + "/cart"
     static let magazine = baseURL + "/magazine"
+    static let howFluv = baseURL + "/recommend/seller?page=4"
 }
