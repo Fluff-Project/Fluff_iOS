@@ -33,7 +33,8 @@ class HomeVC: UIViewController {
     private var userToken: String?
     private var fluvData: [FluvData] = []
     
-    private var howFluvNameList: [String]
+    private var howFluvNameList: [String] = []
+    private var howFluvImgList: [String] = []
     
     var current_y: CGFloat = 0
     let sCoreMedium = UIFont(name: "S-CoreDream-5Medium", size: 24)
@@ -65,6 +66,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         whatSeen = "무스탕"
         dayOfTheWeek = "화요일"
         
@@ -115,6 +117,8 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        initToken()
+        requestHowFluv()
     }
     
     private func initToken() {
@@ -158,7 +162,8 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 4
+        print("정민아 merge하자")
+        return fluvData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -166,11 +171,9 @@ extension HomeVC: UICollectionViewDataSource{
         let bannerImgList: [UIImage] = [#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2")]
         let todayImgList: [UIImage] = [#imageLiteral(resourceName: "84"), #imageLiteral(resourceName: "416"), #imageLiteral(resourceName: "416"), #imageLiteral(resourceName: "84")]
         let recentImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141717"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141716")]
-        let howFluvImgList: [UIImage] = [#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715"),#imageLiteral(resourceName: "20191217110715")]
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
         let todayVintageImgList: [UIImage] = [#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179"),#imageLiteral(resourceName: "kakaoTalkPhoto2019121905141728"),#imageLiteral(resourceName: "kakaoTalkPhoto201912190514179")]
         
-        let howFluvNameList: [String] = ["화자네 빈티지", "호준호준", "허정마니바니", "한나는하나"]
         let todayProductList: [String] = ["빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건", "빗살무늬 폴로 셔츠", "다홍꽃 주렁주렁 가디건"]
         let nowAuctionItemList: [String] = ["Yves Saint Laurent 원피스", "MaxMara 만다린 자켓", "Yves Saint Laurent 원피스", "MaxMara 만다린 자켓"]
         let nowAuctionTimeList: [String] = ["곧 경매 종료", "종료까지 2시간", "곧 경매 종료", "종료까지 2시간"]
@@ -201,9 +204,9 @@ extension HomeVC: UICollectionViewDataSource{
             
         case self.howFluvCollectionView:
             let howFluvCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HowFluvCollectionViewCell", for: indexPath) as! HowFluvCollectionViewCell
-            
-            howFluvCollectionViewCell.fluvProfileImage.image = howFluvImgList[indexPath.row]
-            howFluvCollectionViewCell.fluvName.text = howFluvNameList[indexPath.row]
+            print(String(fluvData.count))
+            howFluvCollectionViewCell.fluvName.text = fluvData[indexPath.row].sellerName
+            howFluvCollectionViewCell.fluvProfileImage.setImage(with: fluvData[indexPath.row].sellerImg)
             switch starNumList[indexPath.row] {
             
             case 1:
@@ -329,18 +332,19 @@ extension HomeVC: UICollectionViewDelegate {
 
 extension HomeVC {
     private func requestHowFluv() {
-        guard let userToken = self.userToken else { return }
-        HowFluvService.shared.howFluv(token: userToken) { networkResult in
+        guard let userToken = self.userToken else {
+            return
+        }
+        HowFluvService.shared.howFluv(token: userToken) {
+            networkResult in
             switch networkResult {
             case .success(let data):
                 guard let howFluvJsonData = data as? HowFluvJsonData else { return }
-                self.fluvData = howFluvJsonData.data
-                for _ in self.fluvData {
-                    self.isSelected.append(false)
-                }
+                self.fluvData = howFluvJsonData.data!
+                self.howFluvCollectionView.reloadData()
             case .requestErr(let data):
-                guard let clotheData = data as? TasteAnalysisData else { return }
-                self.presentAlertController(title: clotheData.json.message, message: nil)
+                guard let howFluvJsonData = data as? HowFluvJsonData else { return }
+                self.presentAlertController(title: howFluvJsonData.message, message: nil)
             case .pathErr:
                 self.presentAlertController(title: "path Error", message: nil)
             case .serverErr:
@@ -351,5 +355,3 @@ extension HomeVC {
         }
     }
 }
-
-

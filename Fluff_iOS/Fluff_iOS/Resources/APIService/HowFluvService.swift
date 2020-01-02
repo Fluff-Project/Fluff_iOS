@@ -13,6 +13,7 @@ struct HowFluvService {
     static let shared = HowFluvService()
     
     func howFluv(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        print("여기1")
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
         
         let dataRequest = Alamofire.request(APIConstants.howFluv, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -20,6 +21,7 @@ struct HowFluvService {
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
             case .success:
+                print("여기1")
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.result.value else { return }
                 let networkResult = self.judge(by: statusCode, value: value)

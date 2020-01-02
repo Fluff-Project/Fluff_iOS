@@ -13,10 +13,7 @@ struct MagazineService {
     static let shared = MagazineService()
     
     func getMagazine(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        print("HI")
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
-    
-
 
         let dataRequest = Alamofire.request(APIConstants.magazine, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
         

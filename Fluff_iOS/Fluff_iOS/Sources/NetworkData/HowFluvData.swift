@@ -34,5 +34,5 @@ struct HowFluvJsonData: Codable {
 
 struct FluvData: Codable {
     let sellerId, sellerName, sellerImg: String
-    let goodsMainImg: [String]
+    let img: [String]
 }
