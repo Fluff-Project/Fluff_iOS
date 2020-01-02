@@ -26,6 +26,6 @@ struct APIConstants {
     // 유저 취향 기반 추천 상품 조회
     static let styleClothe = baseURL + "/recommend/style?page=7"
     static let howFluv = baseURL + "/recommend/seller?page=4"
-    
-    
+    static let todayStock = baseURL + "/goods?page=7&sort=newest"
+    static let recentStyle = baseURL + "/goods?category=knit&page=5"
 }

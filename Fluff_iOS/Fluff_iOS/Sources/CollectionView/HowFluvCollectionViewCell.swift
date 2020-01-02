@@ -20,4 +20,8 @@ class HowFluvCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var star4: UIImageView!
     @IBOutlet weak var star5: UIImageView!
+    
+    override func awakeFromNib() {
+        self.fluvProfileImage.makeCornerRounded(radius: fluvProfileImage.frame.width / 2)
+    }
 }

@@ -33,7 +33,6 @@ class MagazineBannerVC: UIViewController {
     }
     
     @IBAction func intoTheContents(_ sender: UIButton) {
-        print("주사위")
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
         self.navigationController?.pushViewController(nextVC, animated: false)
     }
@@ -46,9 +45,7 @@ class MagazineBannerVC: UIViewController {
 
 extension MagazineBannerVC {
     private func requestMagazineImage() {
-        print("yo")
         guard let userToken = self.userToken else { return }
-        print("yo1")
         MagazineService.shared.getMagazine(token: userToken) {
             networkResult in
             switch networkResult {

@@ -550,6 +550,10 @@
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wrg-5R-bM0" userLabel="RecentImg">
                                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="216"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="wrg-5R-bM0" secondAttribute="height" multiplier="91:108" id="OzA-cR-6xk"/>
+                                                                        <constraint firstAttribute="width" constant="182" id="dqP-8E-PfZ"/>
+                                                                    </constraints>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -568,6 +572,7 @@
                                                         <size key="customSize" width="182" height="280"/>
                                                         <connections>
                                                             <outlet property="recentImage" destination="wrg-5R-bM0" id="OIE-GA-0Pa"/>
+                                                            <outlet property="recentPriceLabel" destination="L1W-K7-VNY" id="y4C-k5-gw0"/>
                                                             <outlet property="recentProductLabel" destination="obA-tt-A5Y" id="Tqu-nF-hxD"/>
                                                         </connections>
                                                     </collectionViewCell>
