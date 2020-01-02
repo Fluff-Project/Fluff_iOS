@@ -106,14 +106,17 @@ extension ThemeIntoVC: UICollectionViewDataSource {
             themeIntoCollectionViewCell.themeIntoImage.setImage(with: stockData[indexPath.row].img[0])
             themeIntoCollectionViewCell.themeIntoItemLabel.text = stockData[indexPath.row].goodsName
             themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: stockData[indexPath.row].price))! + "원"
+            themeIntoCollectionViewCell.themeIntoSellerLabel.text = stockData[indexPath.row].sellerName
         case "Recent":
             themeIntoCollectionViewCell.themeIntoImage.setImage(with: styleData[indexPath.row].img[0])
             themeIntoCollectionViewCell.themeIntoItemLabel.text = styleData[indexPath.row].goodsName
             themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
+            themeIntoCollectionViewCell.themeIntoSellerLabel.text = styleData[indexPath.row].sellerName
         case "TodayVintage":
         themeIntoCollectionViewCell.themeIntoImage.setImage(with: clotheData[indexPath.row].mainImg)
         themeIntoCollectionViewCell.themeIntoItemLabel.text = clotheData[indexPath.row].goodsName
         themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: clotheData[indexPath.row].price))! + "원"
+            themeIntoCollectionViewCell.themeIntoSellerLabel.text = clotheData[indexPath.row].sellerName
         default:
             themeIntoCollectionViewCell.themeIntoImage.image = #imageLiteral(resourceName: "731435467565772314707755242100861709482025N")
             themeIntoCollectionViewCell.themeIntoItemLabel.text = "다홍꽃 주렁주렁 가디건"
