@@ -15,17 +15,20 @@ class ThemeIntoVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
     
+    let numberFormatter = NumberFormatter()
+    
     var userToken: String?
     var whatTheme: String?
     var titleStr = NSMutableAttributedString()
     var suggestionStr = NSMutableAttributedString()
     
-    private var fluvData: [FluvData] = []
     private var stockData: [StockData] = []
     private var styleData: [StyleData] = []
+    private var clotheData: [ClotheData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberFormatter.numberStyle = .decimal
         
         titleLabel.attributedText = titleStr
         lineLabel.attributedText = suggestionStr
@@ -39,6 +42,19 @@ class ThemeIntoVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavi()
+        switch whatTheme {
+        case "Today":
+            print("TD")
+            requestTodayTheme()
+        case "Recent":
+            print("RE")
+            requestRecentTheme()
+        case "TodayVintage":
+            print("Recommend")
+            requestRecommendTheme()
+        default :
+            requestTodayTheme()
+        }
     }
     
     @IBAction func back(_ sender: Any) {
@@ -71,15 +87,43 @@ class ThemeIntoVC: UIViewController {
 
 extension ThemeIntoVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        switch whatTheme {
+        case "Today":
+            return stockData.count
+        case "Recent":
+            return styleData.count
+        case "TodayVintage":
+            return clotheData.count
+        default:
+            return 8
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let themeIntoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThemeIntoCollectionViewCell", for: indexPath) as! ThemeIntoCollectionViewCell
-        themeIntoCollectionViewCell.themeIntoImage.image = #imageLiteral(resourceName: "731435467565772314707755242100861709482025N")
-        themeIntoCollectionViewCell.themeIntoItemLabel.text = "다홍꽃 주렁주렁 가디건"
+        switch whatTheme {
+        case "Today":
+            themeIntoCollectionViewCell.themeIntoImage.setImage(with: stockData[indexPath.row].img[0])
+            themeIntoCollectionViewCell.themeIntoItemLabel.text = stockData[indexPath.row].goodsName
+            themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: stockData[indexPath.row].price))! + "원"
+            themeIntoCollectionViewCell.themeIntoSellerLabel.text = stockData[indexPath.row].sellerName
+        case "Recent":
+            themeIntoCollectionViewCell.themeIntoImage.setImage(with: styleData[indexPath.row].img[0])
+            themeIntoCollectionViewCell.themeIntoItemLabel.text = styleData[indexPath.row].goodsName
+            themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
+            themeIntoCollectionViewCell.themeIntoSellerLabel.text = styleData[indexPath.row].sellerName
+        case "TodayVintage":
+        themeIntoCollectionViewCell.themeIntoImage.setImage(with: clotheData[indexPath.row].mainImg)
+        themeIntoCollectionViewCell.themeIntoItemLabel.text = clotheData[indexPath.row].goodsName
+        themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: clotheData[indexPath.row].price))! + "원"
+            themeIntoCollectionViewCell.themeIntoSellerLabel.text = clotheData[indexPath.row].sellerName
+        default:
+            themeIntoCollectionViewCell.themeIntoImage.image = #imageLiteral(resourceName: "731435467565772314707755242100861709482025N")
+            themeIntoCollectionViewCell.themeIntoItemLabel.text = "다홍꽃 주렁주렁 가디건"
+            
+            themeIntoCollectionViewCell.themeIntoPriceLabel.text = "98,000원"
+        }
         
-        themeIntoCollectionViewCell.themeIntoPriceLabel.text = "98,000원"
         return themeIntoCollectionViewCell
     }
     
@@ -103,4 +147,77 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
     }
 }
 
+extension ThemeIntoVC {
+    
+private func requestTodayTheme() {
+    guard let userToken = self.userToken else {return}
+    
+    TodayThemeService.shared.todayStock(token: userToken) {
+        networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let todayStockJsonData = data as? TodayStockJsonData else {return}
+                self.stockData = todayStockJsonData.data!
+                self.themeIntoCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let todayStockJsonData = data as? TodayStockJsonData else { return }
+                self.presentAlertController(title: todayStockJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
+        }
+        
+    }
+
+    private func requestRecentTheme() {
+    guard let userToken = self.userToken else {return}
+    
+    RecentThemeService.shared.recentStyle(token: userToken) {
+        networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let recentStyleJsonData = data as? RecentStyleJsonData else {return}
+                self.styleData = recentStyleJsonData.data!
+                self.themeIntoCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
+                self.presentAlertController(title: recentStyleJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
+        }
+        
+    }
+    
+    private func requestRecommendTheme() {
+    guard let userToken = self.userToken else {return}
+    
+    RecommendTheme.shared.getRecommendStyleClothe(token: userToken) {
+        networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
+                self.clotheData = recommendedClotheJsonData.data!
+                self.themeIntoCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }
+                self.presentAlertController(title: recommendedClotheJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
+        }
+    }
+}
 

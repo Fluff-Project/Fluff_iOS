@@ -16,6 +16,7 @@ class ThemeIntoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var themeIntoPriceLabel: UILabel!
     @IBOutlet weak var themeIntoHeartButton: UIButton!
     
+    
     var like: Bool = false
     
     @IBAction func heartClicked(_ sender: UIButton) {
