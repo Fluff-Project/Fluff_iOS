@@ -16,6 +16,6 @@ extension NSNotification.Name {
     static let selectedDetailCategory = NSNotification.Name("selectedDetailCategory")
     static let panFilterView = NSNotification.Name("panFilterView")
     static let clickFollowButton = NSNotification.Name("clickFollowButton")
-    
+    static let clickCartCheckBox = NSNotification.Name("clickCartCheckbox")
     static let autoLoginExcute = NSNotification.Name("autoLoginExcute")
 }

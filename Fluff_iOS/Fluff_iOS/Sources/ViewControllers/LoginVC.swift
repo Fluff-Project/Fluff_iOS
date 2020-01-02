@@ -192,6 +192,7 @@ class LoginVC: UIViewController {
             self.view.addSubview(self.pwdLabel!)
             
             self.pwdTextField = UITextField(frame: CGRect(origin: CGPoint(x: self.loginEstimateX! + 20, y: self.pwdEstimateY!), size: self.estimateSize!))
+            self.pwdTextField?.isSecureTextEntry = true
             self.pwdTextField?.placeholder = "비밀번호"
             self.pwdTextField?.borderStyle = .none
             self.view.addSubview(self.pwdTextField!)

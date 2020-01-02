@@ -18,6 +18,8 @@ class CartVC: UIViewController {
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var buyButton: UIButton!
     
+    private var isSelected: [Bool] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -26,7 +28,12 @@ class CartVC: UIViewController {
         cartTableView.delegate = self
         cartTableView.dataSource = self
         self.navigationItem.title = "장바구니"
+        addObserver()
         setLeftButton()
+        
+        for _ in 0..<10 {
+            isSelected.append(false)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +74,9 @@ extension CartVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.view.layoutSubviews()
         guard let cartCell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell else { return UITableViewCell() }
+        // cart 셀 이름대로 셋팅되게 설정
+        cartCell.setInitialInform(indexPath.row, isSelected[indexPath.row])
+        cartCell.setCheckbox(isSelected[indexPath.row])
         return cartCell
     }
 }
@@ -74,6 +84,18 @@ extension CartVC: UITableViewDataSource {
 extension CartVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 148
+    }
+}
+
+extension CartVC {
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setSelectedCheckbox), name: .clickCartCheckBox, object: nil)
+    }
+    
+    @objc func setSelectedCheckbox(_ notification: NSNotification) {
+        guard let selectedIndexPath = notification.userInfo?["index"] as? Int else { return }
+        guard let isSelectCell = notification.userInfo?["isSelect"] as? Bool else { return }
+        self.isSelected[selectedIndexPath] = !isSelectCell
     }
 }
 
