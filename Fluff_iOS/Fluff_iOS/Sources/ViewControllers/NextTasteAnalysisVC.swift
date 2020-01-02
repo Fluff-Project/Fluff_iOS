@@ -31,6 +31,8 @@ class NextTasteAnalysisVC: UIViewController {
         followTableView.delegate = self
         initialCompleteButton()
         initFont()
+        
+        getRecommendedFollowers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +92,29 @@ class NextTasteAnalysisVC: UIViewController {
             return
         }
     }
+    
+    private func getRecommendedFollowers() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        RecommendService.shared.getRecommendFollowers(token: userToken) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let follwerData = data as? RecommededFollowerData else { return }
+                print(follwerData.json.message)
+                print(follwerData.json.data)
+                
+            case .requestErr(_):
+                self.presentAlertController(title: "조회 실패", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 에러", message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 에러", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+            }
+        }
+        
+    }
+    
 }
 
 extension NextTasteAnalysisVC: UITableViewDataSource {

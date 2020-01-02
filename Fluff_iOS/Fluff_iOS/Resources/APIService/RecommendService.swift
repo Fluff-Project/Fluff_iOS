@@ -12,7 +12,7 @@ import Alamofire
 struct RecommendService {
     static let shared = RecommendService()
     
-    func recommend(surveyResult: SurveyResult, token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func recommendPutData(surveyResult: SurveyResult, token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
         
         let dataRequest = Alamofire.request(APIConstants.recommend, method: .put, parameters: makeSurveyResultParameters(surveyResult), encoding: JSONEncoding.default, headers: header)
@@ -39,8 +39,6 @@ struct RecommendService {
             let sortingKey = [sortedParameter[0].key, sortedParameter[1].key, sortedParameter[2].key]
             returnParameter.updateValue(sortingKey, forKey: "style")
         }
-        print(returnParameter)
-        
         return returnParameter
     }
     
@@ -62,9 +60,40 @@ struct RecommendService {
             print("디코딩 오류")
             return .pathErr
         }
-        print("여기까지 들어옴")
         if recommendedData.code == 200 { return .success(recommendedData.json) }
         else if recommendedData.code == 400 { return .requestErr(recommendedData.json) }
+        else { return .serverErr }
+    }
+    
+    
+    func getRecommendFollowers(token: String ,completion: @escaping (NetworkResult<Any>) -> Void) {
+        let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
+        let dataRequest = Alamofire.request(APIConstants.seller, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+        
+        dataRequest.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                guard let value = dataResponse.result.value else { return }
+                if statusCode == 200 {
+                    let networkResult = self.isGetSeller(value)
+                    completion(networkResult)
+                }
+                else if statusCode == 400 { completion(.pathErr) }
+                else { completion(.serverErr) }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(.networkFail)
+            }
+        }
+    }
+
+    private func isGetSeller(_ value: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let followerData = try? decoder.decode(RecommededFollowerData.self, from: value) else { return .pathErr }
+        
+        if followerData.code == 200 { return .success(followerData) }
+        else if followerData.code == 400 { return .pathErr }
         else { return .serverErr }
     }
 }

@@ -22,13 +22,12 @@ class BannerIntoVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backArrowIc"), style: .done, target: self, action:
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "15"), style: .done, target: self, action:
         #selector(popView))
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        
+        self.navigationController?.navigationBar.tintColor = .white
         self.setNavigationBarClear()
     }
-    
+
     @objc func popView() {
         self.navigationController?.popViewController(animated: true)
     }

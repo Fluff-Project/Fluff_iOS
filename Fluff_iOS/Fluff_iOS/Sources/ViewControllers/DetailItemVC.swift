@@ -73,9 +73,7 @@ class DetailItemVC: UIViewController {
 //        guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
 //        purchaseVC.hidesBottomBarWhenPushed = true
 //        self.navigationController?.pushViewController(purchaseVC, animated: true)
-        print("장바구니에 담겼습니다.")
-        Toast(text: "장바구니에 담겼습니다.").show()
-        
+        self.presentAlertController(title: "장바구니 담기 성공", message: "장바구니에 담겼습니다.")
     }
     
     @IBAction func clickHeart(_ sender: Any) {

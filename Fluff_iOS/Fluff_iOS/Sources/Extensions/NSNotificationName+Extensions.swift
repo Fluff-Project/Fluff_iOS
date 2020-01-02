@@ -18,4 +18,6 @@ extension NSNotification.Name {
     static let clickFollowButton = NSNotification.Name("clickFollowButton")
     static let clickCartCheckBox = NSNotification.Name("clickCartCheckbox")
     static let autoLoginExcute = NSNotification.Name("autoLoginExcute")
+    static let confirmBidding = NSNotification.Name("confirmBidding")
+    static let clickCancelButton = NSNotification.Name("clickCancelButton")
 }

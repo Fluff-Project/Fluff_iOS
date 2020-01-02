@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BidPopupView" customModule="Fluff_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="bidTextField" destination="LtO-aJ-ug0" id="AxH-DK-b9j"/>
+                <outlet property="biddingLabel" destination="vHY-vy-FAW" id="SSZ-0g-wwV"/>
+                <outlet property="confirmButton" destination="pnO-C7-LaX" id="pYN-H1-ahx"/>
+                <outlet property="textBackgroundView" destination="rPF-Op-ig2" id="cov-4S-A1c"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="214"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5K-Rq-4nh">
+                    <rect key="frame" x="283" y="19" width="11" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="l5K-Rq-4nh" secondAttribute="height" multiplier="1:1" id="gga-Wb-don"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="auctionXIc"/>
+                    <connections>
+                        <action selector="clickCancelButton:" destination="-1" eventType="touchUpInside" id="0vS-sy-xBZ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입찰하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHY-vy-FAW">
+                    <rect key="frame" x="129" y="27" width="55.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPF-Op-ig2">
+                    <rect key="frame" x="22" y="62.5" width="269" height="50"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="가격을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LtO-aJ-ug0">
+                            <rect key="frame" x="16" y="15" width="237" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="LtO-aJ-ug0" secondAttribute="trailing" constant="16" id="3SS-M4-EQw"/>
+                        <constraint firstItem="LtO-aJ-ug0" firstAttribute="leading" secondItem="rPF-Op-ig2" secondAttribute="leading" constant="16" id="9SY-cT-7dr"/>
+                        <constraint firstAttribute="width" secondItem="rPF-Op-ig2" secondAttribute="height" multiplier="269:50" id="Ej4-f1-pAZ"/>
+                        <constraint firstItem="LtO-aJ-ug0" firstAttribute="centerY" secondItem="rPF-Op-ig2" secondAttribute="centerY" id="LOj-hS-dFt"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnO-C7-LaX">
+                    <rect key="frame" x="67" y="130.5" width="179" height="44"/>
+                    <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pnO-C7-LaX" secondAttribute="height" multiplier="179:44" id="ShX-97-Goh"/>
+                    </constraints>
+                    <state key="normal" title="확인">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickConfirmButton:" destination="-1" eventType="touchUpInside" id="cAK-nD-NPx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="l5K-Rq-4nh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="0lf-Lb-Mwn"/>
+                <constraint firstItem="rPF-Op-ig2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="22" id="4AJ-03-P6s"/>
+                <constraint firstAttribute="trailing" secondItem="l5K-Rq-4nh" secondAttribute="trailing" constant="19" id="4zG-II-8HU"/>
+                <constraint firstItem="vHY-vy-FAW" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="AVS-kd-Toa"/>
+                <constraint firstItem="pnO-C7-LaX" firstAttribute="top" secondItem="rPF-Op-ig2" secondAttribute="bottom" constant="18" id="CDr-LT-1nD"/>
+                <constraint firstItem="pnO-C7-LaX" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="NlK-Sh-B7k"/>
+                <constraint firstItem="rPF-Op-ig2" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="QA3-gi-DwZ"/>
+                <constraint firstItem="l5K-Rq-4nh" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.0514019" id="Qb7-wS-Daa"/>
+                <constraint firstItem="rPF-Op-ig2" firstAttribute="top" secondItem="vHY-vy-FAW" secondAttribute="bottom" constant="16" id="SFi-Oa-yJ9"/>
+                <constraint firstItem="vHY-vy-FAW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="bWK-La-2ud"/>
+                <constraint firstItem="pnO-C7-LaX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.571885" id="dbR-0m-RZO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rPF-Op-ig2" secondAttribute="trailing" constant="22" id="oeJ-Yi-B6w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-155.79710144927537" y="254.46428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="auctionXIc" width="11" height="11"/>
+    </resources>
+</document>

@@ -1403,16 +1403,6 @@
                                         <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSM-H8-b6R">
-                                        <rect key="frame" x="18" y="60" width="18" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="gSM-H8-b6R" secondAttribute="height" multiplier="1:1" id="t8J-ZT-6UY"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="backArrowIc"/>
-                                        <connections>
-                                            <action selector="back:" destination="jju-Sg-p3a" eventType="touchUpInside" id="UH4-dr-sGz"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -1420,9 +1410,7 @@
                                     <constraint firstAttribute="width" secondItem="bYS-80-kOM" secondAttribute="height" multiplier="125:63" id="Cu8-K4-uy8"/>
                                     <constraint firstItem="oIT-7A-6sl" firstAttribute="top" secondItem="iAI-5u-Ecg" secondAttribute="bottom" constant="4" id="M7L-0Y-piC"/>
                                     <constraint firstAttribute="bottom" secondItem="oIT-7A-6sl" secondAttribute="bottom" constant="28" id="bBg-SL-628"/>
-                                    <constraint firstItem="gSM-H8-b6R" firstAttribute="top" secondItem="bYS-80-kOM" secondAttribute="top" constant="60" id="ckk-oF-y0L"/>
                                     <constraint firstItem="iAI-5u-Ecg" firstAttribute="centerX" secondItem="bYS-80-kOM" secondAttribute="centerX" id="leX-vj-Xmh"/>
-                                    <constraint firstItem="gSM-H8-b6R" firstAttribute="leading" secondItem="bYS-80-kOM" secondAttribute="leading" constant="18" id="qFh-4T-0cT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1453,7 +1441,6 @@
         <image name="10" width="16" height="16"/>
         <image name="14" width="8" height="16"/>
         <image name="478" width="180" height="216"/>
-        <image name="backArrowIc" width="16" height="16"/>
         <image name="beccaMchaffieFzde6ITjkwUnsplash2" width="516" height="516"/>
         <image name="femaleSelected" width="157" height="158"/>
         <image name="femaleUnselected" width="157" height="158"/>

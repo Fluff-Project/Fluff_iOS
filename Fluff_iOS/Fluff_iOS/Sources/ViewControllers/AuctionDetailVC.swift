@@ -23,6 +23,8 @@ class AuctionDetailVC: UIViewController {
     @IBOutlet weak var biddingButton: UIButton!
     @IBOutlet weak var buttonView: UIView!
     
+    private var biddingWindow: BidPopupView?
+    
     var timer: Timer?
     
     let registrationTime = Date()
@@ -39,6 +41,8 @@ class AuctionDetailVC: UIViewController {
         auctionImageCollectionView.dataSource = self
         setNavi()
         initButton()
+        initBiddingPopupView()
+        addObserver()
     }
     
     @objc func onTimerFires()
@@ -69,6 +73,25 @@ class AuctionDetailVC: UIViewController {
         biddingButton.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1.0)
         buttonView.layer.borderWidth = 0.5
         buttonView.layer.borderColor = UIColor(red: 178/255, green: 178/255, blue: 178/255, alpha: 1).cgColor
+    }
+    
+    private func initBiddingPopupView() {
+        self.biddingWindow = BidPopupView()
+        biddingWindow?.center = self.view.center
+        let width = self.view.frame.width / 1.1916
+        let height = width / 1.46
+        biddingWindow?.frame.size = CGSize(width: width, height: height)
+        self.view.addSubview(biddingWindow!)
+        biddingWindow?.isHidden = true
+    }
+    
+    @IBAction func showBiddingWindow(_ sender: Any) {
+        biddingWindow?.center = self.view.center
+        biddingWindow?.isHidden = false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
@@ -102,6 +125,23 @@ extension AuctionDetailVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension AuctionDetailVC {
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(confirmBiddingPrice(_:)), name: .confirmBidding, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hiddenBiddingWindow), name: .clickCancelButton, object: nil)
+    }
+    
+    @objc func confirmBiddingPrice(_ notification: NSNotification) {
+        guard let biddingPrice = notification.userInfo?["price"] else { return }
+        biddingWindow?.isHidden = true
+        print(biddingPrice)
+    }
+    
+    @objc func hiddenBiddingWindow() {
+        biddingWindow?.isHidden = true
     }
 }
 

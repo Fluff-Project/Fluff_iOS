@@ -84,13 +84,13 @@ class TasteAnalysisVC: UIViewController {
             print("초기 설정")
             if selectedCount >= 3 {
                 // 서버 열리면 추가하기
-                RecommendService.shared.recommend(surveyResult: self.surveyResult, token: userToken) { networkResult in
+                RecommendService.shared.recommendPutData(surveyResult: self.surveyResult, token: userToken) { networkResult in
                     switch networkResult {
                     case .success(let data):
                         guard let recomendedData = data as? RecommendedJSONData else { return }
                         // 로그 찍어보기
                         print(recomendedData.message)
-                        
+                        print("Hi")
                         guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
                         nextAnalysisVC.modalPresentationStyle = .fullScreen
                         nextAnalysisVC.setAnalysisStatus(analysisStatus)
@@ -111,9 +111,11 @@ class TasteAnalysisVC: UIViewController {
             print("재설정 실행")
             if selectedCount >= 3 {
                 // 서버 열리면 추가하기
-                RecommendService.shared.recommend(surveyResult: self.surveyResult, token: userToken) { networkResult in
+                RecommendService.shared.recommendPutData(surveyResult: self.surveyResult, token: userToken) { networkResult in
                     switch networkResult {
-                    case .success(_):
+                    case .success(let data):
+                        guard let recomendedData = data as? RecommendedJSONData else { return }
+                        print(recomendedData.message)
                         guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
                         nextAnalysisVC.setAnalysisStatus(analysisStatus)
                         self.navigationController?.pushViewController(nextAnalysisVC, animated: true)

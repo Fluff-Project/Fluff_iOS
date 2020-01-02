@@ -12,7 +12,7 @@ import Alamofire
 struct CartService {
     static let shared = CartService()
     
-    func addCart(cardID: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func addCart(cartID: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": userToken]
         

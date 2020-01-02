@@ -17,6 +17,9 @@
 		9D0E2A5D23BD1B7C00E73F40 /* RecommendedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */; };
 		9D0E2A7F23BD578F00E73F40 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A7E23BD578F00E73F40 /* CartService.swift */; };
 		9D0E2A8123BDB33B00E73F40 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8023BDB33B00E73F40 /* CartTableViewCell.swift */; };
+		9D0E2A8523BE0D9800E73F40 /* BidPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8423BE0D9800E73F40 /* BidPopupView.swift */; };
+		9D0E2A8723BE0DAC00E73F40 /* BidPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8623BE0DAC00E73F40 /* BidPopupView.xib */; };
+		9D0E2A8923BE1C9300E73F40 /* RecommededFollowerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -149,6 +152,9 @@
 		9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedData.swift; sourceTree = "<group>"; };
 		9D0E2A7E23BD578F00E73F40 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
 		9D0E2A8023BDB33B00E73F40 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		9D0E2A8423BE0D9800E73F40 /* BidPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidPopupView.swift; sourceTree = "<group>"; };
+		9D0E2A8623BE0DAC00E73F40 /* BidPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BidPopupView.xib; sourceTree = "<group>"; };
+		9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommededFollowerData.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -306,6 +312,7 @@
 				9D1FCC4123B68B4C0089571B /* FilteringVC.xib */,
 				9D5676F023B6AEC500720F06 /* CategoryCollectionViewCell.xib */,
 				9DD73AFA23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.xib */,
+				9D0E2A8623BE0DAC00E73F40 /* BidPopupView.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -345,6 +352,7 @@
 		9D79379223B0C18000A0CD3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D0E2A8423BE0D9800E73F40 /* BidPopupView.swift */,
 			);
 			name = Views;
 			path = Models/Views;
@@ -424,6 +432,7 @@
 				9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */,
 				A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */,
 				A607C60C23BD264B00B4D56A /* MagazineData.swift */,
+				9D0E2A8823BE1C9300E73F40 /* RecommededFollowerData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -649,6 +658,7 @@
 				A6D2862D23B0D2CD00E7379B /* SCDream9.otf in Resources */,
 				A6D2863423B0D2CD00E7379B /* SCDream5.otf in Resources */,
 				A6D2863723B0D2CD00E7379B /* KoPubWorldBatangPL.otf in Resources */,
+				9D0E2A8723BE0DAC00E73F40 /* BidPopupView.xib in Resources */,
 				A6D2863823B0D2CD00E7379B /* SCDream3.otf in Resources */,
 				A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */,
 				A6D2863623B0D2CD00E7379B /* SCDream7.otf in Resources */,
@@ -760,6 +770,7 @@
 				9D7B342E23B2B4E500F1A530 /* OtherItemDataSource.swift in Sources */,
 				9D385C9A23B5416F00705218 /* AuctionCollectionViewCell.swift in Sources */,
 				9D7937DE23B11F1400A0CD3E /* TasteAnalysisVC.swift in Sources */,
+				9D0E2A8923BE1C9300E73F40 /* RecommededFollowerData.swift in Sources */,
 				A6DF861A23B66FF3006FDE79 /* TodayVintageCollectionViewCell.swift in Sources */,
 				A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */,
 				9D79382123B227CF00A0CD3E /* UITabBar+Extensions.swift in Sources */,
@@ -804,6 +815,7 @@
 				9D0E2A5D23BD1B7C00E73F40 /* RecommendedData.swift in Sources */,
 				A6DF861823B6611B006FDE79 /* NowAuctionCollectionViewCell.swift in Sources */,
 				A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */,
+				9D0E2A8523BE0D9800E73F40 /* BidPopupView.swift in Sources */,
 				9DD73AF623B75A2E00E1DB97 /* HomeNavigationVC.swift in Sources */,
 				9DD73AFB23B7D0FC00E1DB97 /* DetailCategoryCollectionViewCell.swift in Sources */,
 				9DFA7FFA23B363A00036AA50 /* CurrentProductCollectionViewCell.swift in Sources */,

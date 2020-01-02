@@ -104,9 +104,16 @@ class InfoCrystalVC: UIViewController {
         #selector(popView))
         self.navigationItem.title = "내 정보 수정"
         self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     @objc func popView() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension InfoCrystalVC {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
