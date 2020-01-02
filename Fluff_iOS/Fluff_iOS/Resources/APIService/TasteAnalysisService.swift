@@ -13,7 +13,7 @@ struct TasteAnalysisService {
     static let shared = TasteAnalysisService()
     
     func tasteAnalysis(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        let header: HTTPHeaders = ["Content-Type": "application/jsoin", "x-access-token": token]
+        let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
         
         let dataRequest = Alamofire.request(APIConstants.tatsteAnalysis, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
         

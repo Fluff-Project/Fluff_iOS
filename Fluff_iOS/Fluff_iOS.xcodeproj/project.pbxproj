@@ -86,6 +86,7 @@
 		A607C60B23BCB4C000B4D56A /* FetchThumbnailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60A23BCB4C000B4D56A /* FetchThumbnailService.swift */; };
 		A607C60D23BD264B00B4D56A /* MagazineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60C23BD264B00B4D56A /* MagazineData.swift */; };
 		A607C60F23BD2E9E00B4D56A /* MagazineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C60E23BD2E9E00B4D56A /* MagazineService.swift */; };
+		A607C61123BD52B400B4D56A /* MagazineBannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -219,6 +220,7 @@
 		A607C60A23BCB4C000B4D56A /* FetchThumbnailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchThumbnailService.swift; sourceTree = "<group>"; };
 		A607C60C23BD264B00B4D56A /* MagazineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineData.swift; sourceTree = "<group>"; };
 		A607C60E23BD2E9E00B4D56A /* MagazineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineService.swift; sourceTree = "<group>"; };
+		A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineBannerVC.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -328,7 +330,6 @@
 				9DF0EB6123BAD8CC00EEC259 /* SigninService.swift */,
 				9D0E2A4E23BC502900E73F40 /* SignupService.swift */,
 				9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */,
-
 				9D0E2A5823BCCA9100E73F40 /* RecommendService.swift */,
 				A607C60A23BCB4C000B4D56A /* FetchThumbnailService.swift */,
 				A607C60E23BD2E9E00B4D56A /* MagazineService.swift */,
@@ -425,9 +426,7 @@
 				9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */,
 				9D0E2A5223BC660700E73F40 /* SignupData.swift */,
 				9D0E2A5423BC727B00E73F40 /* DuplicatedEmailData.swift */,
-
 				9D0E2A5C23BD1B7C00E73F40 /* RecommendedData.swift */,
-
 				A607C60823BCAE4E00B4D56A /* GoodsThumbnailData.swift */,
 				A607C60C23BD264B00B4D56A /* MagazineData.swift */,
 			);
@@ -531,6 +530,7 @@
 				9DE5C98523BB40FB00D7359C /* FluvVC.swift */,
 				A6E2ABBD23BB98AD00EC8E66 /* MagazineDetailVC.swift */,
 				A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */,
+				A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -753,6 +753,7 @@
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,
 				9D79382C23B2871400A0CD3E /* DetailItemVC.swift in Sources */,
 				A66F240B23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift in Sources */,
+				A607C61123BD52B400B4D56A /* MagazineBannerVC.swift in Sources */,
 				9D5676F423B6B64D00720F06 /* FilteringCategory.swift in Sources */,
 				9D705A9F23B8AB5200097FCF /* DeliveryListTableViewCell.swift in Sources */,
 				A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */,

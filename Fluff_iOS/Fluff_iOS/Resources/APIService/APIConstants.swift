@@ -17,4 +17,5 @@ struct APIConstants {
     static let signup = baseURL + "/auth/directSignUp"
     static let tatsteAnalysis = baseURL + "/survey"
     static let recommend = baseURL + "/recommend/keyDB"
+    static let magazine = baseURL + "/magazine"
 }

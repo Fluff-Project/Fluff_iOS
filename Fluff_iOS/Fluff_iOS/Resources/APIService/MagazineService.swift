@@ -12,10 +12,11 @@ import Alamofire
 struct MagazineService {
     static let shared = MagazineService()
     
-    func getMagazine(completion: @escaping (NetworkResult<Any>) -> Void) {
-        let header: HTTPHeaders = ["Content-Type": "application/json"]
+    func getMagazine(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        print("HI")
+        let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
     
-        let dataRequest = Alamofire.request(APIConstants.signin, method: .get, parameters: makeParameter(email, pwd), encoding: JSONEncoding.default, headers: header)
+        let dataRequest = Alamofire.request(APIConstants.magazine, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
         
         dataRequest.responseData { dataResponse in
             
@@ -32,13 +33,9 @@ struct MagazineService {
         }
     }
     
-    private func makeParameter(_ id: String, _ pwd: String) -> Parameters {
-        return ["email": id, "pwd": pwd]
-    }
-    
     private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
         switch statusCode {
-        case 200: return isUser(value)
+        case 200: return isLoadingImage(value)
         case 400:
             print("400번대 오류")
             return .pathErr
@@ -46,11 +43,17 @@ struct MagazineService {
         }
     }
     
-    private func isUser(_ value: Data) -> NetworkResult<Any> {
+    private func isLoadingImage(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let signinData = try? decoder.decode(SigninData.self, from: value) else { return .pathErr }
-        if signinData.code == 200 { return .success(signinData.json) }
-        else if signinData.code == 400 { return .requestErr(signinData.json) }
+        guard let magazineData = try? decoder.decode(MagazineData.self, from: value) else {
+            print("디코딩 실패")
+            return .pathErr
+        }
+        if magazineData.code == 200 {
+            guard let magazineImage = magazineData.json.data else { return .pathErr }
+            return .success(magazineImage)
+        }
+        else if magazineData.code == 400 { return .requestErr(magazineData.json) }
         return .pathErr
     }
 }
