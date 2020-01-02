@@ -81,56 +81,53 @@ class TasteAnalysisVC: UIViewController {
         guard let analysisStatus = self.analysisStatus else { return }
         switch analysisStatus {
         case .signup:
+            print("초기 설정")
             if selectedCount >= 3 {
-                
                 // 서버 열리면 추가하기
-//                RecommendService.shared.recommend(surveyResult: self.surveyResult, token: userToken) { networkResult in
-//                    switch networkResult {
-//                    case .success(_):
-//                        guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysiVC") as? NextTasteAnalysisVC else { return }
-//                        nextAnalysisVC.modalPresentationStyle = .fullScreen
-//                        nextAnalysisVC.setAnalysisStatus(analysisStatus)
-//                        self.present(nextAnalysisVC, animated: true, completion: nil)
-//                    case .requestErr(let data):
-//                        guard let recommendedData = data as? RecommendedJSONData else { return }
-//                        self.presentAlertController(title: recommendedData.message, message: nil)
-//                    case .pathErr:
-//                        self.presentAlertController(title: "경로 에러", message: "경로가 잘못되었습니다.")
-//                    case .serverErr:
-//                        self.presentAlertController(title: "서버 내부 오류", message: "서버내부에 오류가 발생하였습니다.")
-//                    case .networkFail:
-//                        self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
-//                    }
-//                }
-                guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
-                nextAnalysisVC.modalPresentationStyle = .fullScreen
-                nextAnalysisVC.setAnalysisStatus(analysisStatus)
-                self.present(nextAnalysisVC, animated: true, completion: nil)
+                RecommendService.shared.recommend(surveyResult: self.surveyResult, token: userToken) { networkResult in
+                    switch networkResult {
+                    case .success(let data):
+                        guard let recomendedData = data as? RecommendedJSONData else { return }
+                        // 로그 찍어보기
+                        print(recomendedData.message)
+                        
+                        guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
+                        nextAnalysisVC.modalPresentationStyle = .fullScreen
+                        nextAnalysisVC.setAnalysisStatus(analysisStatus)
+                        self.present(nextAnalysisVC, animated: true, completion: nil)
+                    case .requestErr(let data):
+                        guard let recommendedData = data as? RecommendedJSONData else { return }
+                        self.presentAlertController(title: recommendedData.message, message: nil)
+                    case .pathErr:
+                        self.presentAlertController(title: "경로 에러", message: "경로가 잘못되었습니다.")
+                    case .serverErr:
+                        self.presentAlertController(title: "서버 내부 오류", message: "서버내부에 오류가 발생하였습니다.")
+                    case .networkFail:
+                        self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+                    }
+                }
             }
         default:
+            print("재설정 실행")
             if selectedCount >= 3 {
                 // 서버 열리면 추가하기
-//                RecommendService.shared.recommend(surveyResult: self.surveyResult, token: userToken) { networkResult in
-//                    switch networkResult {
-//                    case .success(_):
-//                        guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
-//                        nextAnalysisVC.setAnalysisStatus(analysisStatus)
-//                        self.navigationController?.pushViewController(nextAnalysisVC, animated: true)
-//                    case .requestErr(let data):
-//                        guard let recommendedData = data as? RecommendedJSONData else { return }
-//                        self.presentAlertController(title: recommendedData.message, message: nil)
-//                    case .pathErr:
-//                        self.presentAlertController(title: "경로 에러", message: "경로가 잘못되었습니다.")
-//                    case .serverErr:
-//                        self.presentAlertController(title: "서버 내부 오류", message: "서버내부에 오류가 발생하였습니다.")
-//                    case .networkFail:
-//                        self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
-//                    }
-//                }
-                
-                guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
-                nextAnalysisVC.setAnalysisStatus(analysisStatus)
-                self.navigationController?.pushViewController(nextAnalysisVC, animated: true)
+                RecommendService.shared.recommend(surveyResult: self.surveyResult, token: userToken) { networkResult in
+                    switch networkResult {
+                    case .success(_):
+                        guard let nextAnalysisVC = self.storyboard?.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
+                        nextAnalysisVC.setAnalysisStatus(analysisStatus)
+                        self.navigationController?.pushViewController(nextAnalysisVC, animated: true)
+                    case .requestErr(let data):
+                        guard let recommendedData = data as? RecommendedJSONData else { return }
+                        self.presentAlertController(title: recommendedData.message, message: nil)
+                    case .pathErr:
+                        self.presentAlertController(title: "경로 에러", message: "경로가 잘못되었습니다.")
+                    case .serverErr:
+                        self.presentAlertController(title: "서버 내부 오류", message: "서버내부에 오류가 발생하였습니다.")
+                    case .networkFail:
+                        self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+                    }
+                }
             }
         }
     }

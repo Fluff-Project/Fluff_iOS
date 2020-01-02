@@ -92,10 +92,11 @@ class PurchaseViewController: UIViewController {
     }
     
     @IBAction func clickPay(_ sender: Any) {
-        let paymentStoryboard = UIStoryboard(name: "EndPayment", bundle: nil)
-        guard let howToPayVC = paymentStoryboard.instantiateViewController(identifier: "HowToPayVC") as? HowToPayVC else { return }
-        howToPayVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(howToPayVC, animated: true)
+//        let paymentStoryboard = UIStoryboard(name: "EndPayment", bundle: nil)
+//        guard let howToPayVC = paymentStoryboard.instantiateViewController(identifier: "HowToPayVC") as? HowToPayVC else { return }
+//        howToPayVC.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(howToPayVC, animated: true)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

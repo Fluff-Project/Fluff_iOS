@@ -8,6 +8,7 @@
 
 import UIKit
 import CHIPageControl
+import Toaster
 
 class DetailItemVC: UIViewController {
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
@@ -70,9 +71,12 @@ class DetailItemVC: UIViewController {
     }
     
     @IBAction func clickPurchase(_ sender: Any) {
-        guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
-        purchaseVC.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(purchaseVC, animated: true)
+//        guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
+//        purchaseVC.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(purchaseVC, animated: true)
+        print("장바구니에 담겼습니다.")
+        Toast(text: "장바구니에 담겼습니다.").show()
+        
     }
     
     @IBAction func clickHeart(_ sender: Any) {

@@ -110,26 +110,26 @@ class LoginVC: UIViewController {
                 if jsonData.success {
                     guard let userToken = jsonData.data else { return }
                     let token = userToken.token
+                    // token 값 UserDefault 내부 DB에 저장
                     UserDefaults.standard.set(token, forKey: "token")
+                    print("userToken: \(token)")
+                    print(userToken.style)
                     
-                    // style 값이 있는 경우 취향 조사를 하지 않음
-//                    if let isStyle = userToken.style, isStyle == false {
-                    // 취향조사 페이지로 분기
-//
-//                    } else {
+                    // Style 값이 있는 경우 취향조사 페이지로 분기
+                    if let isStyle = userToken.style, isStyle == false {
+                        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
+                        tasteAnalysisVC.setAnalysisStatus(.signup)
+                        self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
+                    } else {
                     // 메인 홈탭으로 분기
-//
-//                    }
-                    guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? TasteAnalysisVC else { return }
-                    tasteAnalysisVC.setAnalysisStatus(.signup)
-                    self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
-//                    guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
-//                    mainTabbarController.modalPresentationStyle = .fullScreen
-//                    mainTabbarController.setToken(token)
-//                    self.present(mainTabbarController, animated: true, completion: nil)
+                        guard let mainTabbarController = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
+                        mainTabbarController.modalPresentationStyle = .fullScreen
+                        self.present(mainTabbarController, animated: true, completion: nil)
+                    }
                 }
-            case .requestErr(let data):
+            case .requestErr(_):
                 self.presentAlertController(title: "회원가입이 필요합니다", message: "")
+                return
             case .pathErr:
                 print("pathErr")
                 return
@@ -254,7 +254,8 @@ extension LoginVC {
         guard let userData = self.userData else { return }
         print(userData)
         // 여기에 login로직 추가
-        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "MainTabbarController") as? MainTabbarController else { return }
+        // 로그인 로직에 따라 로그인 되게 추가!!!!!
+        guard let tasteAnalysisVC = self.storyboard?.instantiateViewController(identifier: "TasteAnalysisVC") as? MainTabbarController else { return }
         self.navigationController?.pushViewController(tasteAnalysisVC, animated: true)
 //        SigninService.shared.signin(email: userData.email, pwd: userData.pwd) { networkResult in
 //

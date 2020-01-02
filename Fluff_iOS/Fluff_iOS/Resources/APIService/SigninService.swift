@@ -16,7 +16,7 @@ struct SigninService {
         let header: HTTPHeaders = ["Content-Type": "application/json"]
     
         let dataRequest = Alamofire.request(APIConstants.signin, method: .post, parameters: makeParameter(email, pwd), encoding: JSONEncoding.default, headers: header)
-        
+    
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
             case .success:
@@ -48,6 +48,7 @@ struct SigninService {
     private func isUser(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let signinData = try? decoder.decode(SigninData.self, from: value) else { return .pathErr }
+        print("취향분석 : \(signinData.json.data?.style)")
         if signinData.code == 200 { return .success(signinData.json) }
         else if signinData.code == 400 { return .requestErr(signinData.json) }
         return .pathErr

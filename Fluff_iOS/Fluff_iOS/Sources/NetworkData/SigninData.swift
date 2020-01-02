@@ -40,7 +40,7 @@ struct SigninToken: Codable {
     enum CodingKeys: String, CodingKey {
         case token = "token"
         case refreshToken = "refreshToken"
-        case style = "false"
+        case style = "style"
     }
     
     init(from decoder: Decoder) throws {

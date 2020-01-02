@@ -15,14 +15,15 @@ struct RecommendService {
     func recommend(surveyResult: SurveyResult, token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
         
-        let dataRequest = Alamofire.request(APIConstants.recommend, method: .post, parameters: makeSurveyResultParameters(surveyResult), encoding: JSONEncoding.default, headers: header)
-        
+        let dataRequest = Alamofire.request(APIConstants.recommend, method: .put, parameters: makeSurveyResultParameters(surveyResult), encoding: JSONEncoding.default, headers: header)
+
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
             case .success:
                 guard let statuscCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.result.value else { return }
                 let networkResult = self.judge(by: statuscCode, value: value)
+                print("statusCode: \(statuscCode)")
                 completion(networkResult)
             case .failure(let err):
                 print(err.localizedDescription)
@@ -32,15 +33,15 @@ struct RecommendService {
     }
     
     private func makeSurveyResultParameters(_ surveyResult: SurveyResult) -> Parameters {
-        var parameter: Parameters = Parameters()
+        var returnParameter: Parameters = Parameters()
         surveyResult.getSurveyResult { surveyResult in
-            for (key, value) in surveyResult {
-                parameter.updateValue(value, forKey: key)
-            }
+            let sortedParameter = surveyResult.sorted { $0.1 > $1.1 }
+            let sortingKey = [sortedParameter[0].key, sortedParameter[1].key, sortedParameter[2].key]
+            returnParameter.updateValue(sortingKey, forKey: "style")
         }
+        print(returnParameter)
         
-        print(parameter)
-        return parameter
+        return returnParameter
     }
     
     private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
@@ -57,7 +58,11 @@ struct RecommendService {
     
     private func isRecommended(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let recommendedData = try? decoder.decode(RecommendedData.self, from: value) else { return .pathErr }
+        guard let recommendedData = try? decoder.decode(RecommendedData.self, from: value) else {
+            print("디코딩 오류")
+            return .pathErr
+        }
+        print("여기까지 들어옴")
         if recommendedData.code == 200 { return .success(recommendedData.json) }
         else if recommendedData.code == 400 { return .requestErr(recommendedData.json) }
         else { return .serverErr }
