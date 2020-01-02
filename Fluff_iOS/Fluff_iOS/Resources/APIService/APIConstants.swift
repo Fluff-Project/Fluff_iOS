@@ -19,6 +19,6 @@ struct APIConstants {
     static let tatsteAnalysis = baseURL + "/survey"
     // 선택한 사진 바탕으로 추천 알고리즘 요청
     static let recommend = baseURL + "/recommend/keyDB"
-    // Cart 요청
     static let cart = baseURL + "/cart"
+    static let magazine = baseURL + "/magazine"
 }

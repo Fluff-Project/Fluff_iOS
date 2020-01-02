@@ -25,6 +25,7 @@ PODS:
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
+  - Toaster (2.2.0)
   - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - Hero
   - Kingfisher (~> 5.0)
   - Socket.IO-Client-Swift (~> 15.2.0)
+  - Toaster
   - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
@@ -45,6 +47,7 @@ SPEC REPOS:
     - Kingfisher
     - Socket.IO-Client-Swift
     - Starscream
+    - Toaster
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -55,8 +58,9 @@ SPEC CHECKSUMS:
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 3391134e181650d12018fd1d8c25a7803bdca541
+PODFILE CHECKSUM: 5b17ec169cfcb4f44a9505ae16b1d2e59df296d7
 
 COCOAPODS: 1.8.4
