@@ -1,3 +1,5 @@
+
+
 # Fluff_iOS
 
 
@@ -102,7 +104,9 @@ extension ViewController: UITableViewDataSource {}
 
 > **취향 분석 2**
 
-<img src="./images/tasteAnalysis3.png" height="350px"/>
+<img src="./images/tasteAnalysis3.png" height="350px"/><img src="./images/fluv.png" height="350px"/>
+
+
 
 
 
@@ -114,17 +118,21 @@ extension ViewController: UITableViewDataSource {}
 
 > **메인 화면**
 
-<img src="./images/main1.png" height="350px"/><img src="./images/main2.png" height="350px"/><img src="./images/main5.png" height="350px"/>
+<img src="./images/main1.png" height="350px"/><img src="./images/main2.png" height="350px"/>
 
 
 
-<img src="./images/main3.png" height="350px"/><img src="./images/main4.png" height="350px"/>
+
+
+<img src="./images/main3.png" height="350px"/>
 
 
 
 > **둘러보기**
 
-<img src="./images/filterView.png" height="350px"/><img src="./images/filterView2.png" height="350px"/><img src="./images/filterView3.png" height="350px"/><img src="./images/filterView4.png" height="350px"/>
+<img src="./images/filterView.png" height="350px"/>
+
+<img src="./images/filterView3.png" height="350px"/><img src="./images/filterView4.png" height="350px"/>
 
 
 
@@ -134,9 +142,13 @@ extension ViewController: UITableViewDataSource {}
 
 
 
+
+
 > **상세 정보**
 
-<img src="./images/shopping.png" height="350px"/><img src="./images/shopping1.png" height="350px"/>
+<img src="./images/detailView.png" height="350px"/><img src="./images/detailView2.png" height="350px"/><img src="./images/detailView3.png" height="350px"/>
+
+
 
 
 
@@ -146,9 +158,25 @@ extension ViewController: UITableViewDataSource {}
 
 
 
+
+
 > **장바구니**
 
-<img src="./images/cart.png" height="350px"/>
+<img src="./images/cart.png" height="350px"/><img src="./images/cart2.png" height="350px"/>
+
+
+
+> **구매하기**
+
+<img src="./images/buy1.png" height="350px"/><img src="./images/buy2.png" height="350px"/><img src="./images/buy3.png" height="350px"/>
+
+
+
+> **구매하기 애니메이션**
+
+<img src="./images/buyanimation.gif" height="350px"/>
+
+
 
 
 
@@ -158,9 +186,27 @@ extension ViewController: UITableViewDataSource {}
 
 
 
+
+
 > **경매 애니메이션**
 
 <img src="./images/auctionAnimation.gif" height="350px"/>
+
+
+
+
+
+> **매거진**
+
+<img src="./images/magazine1.png" height="350px"/><img src="./images/magazine2.png" height="350px"/><img src="./images/magazine3.png" height="350px"/>
+
+
+
+> **매거진 애니메이션**
+
+<img src="./images/magazineanimation.gif" height="350px"/>
+
+
 
 
 
@@ -170,9 +216,11 @@ extension ViewController: UITableViewDataSource {}
 
 
 
+
+
 > **찜 목록**
 
-<img src="./images/likelist.png" height="350px"/><img src="./images/followlist.png" height="350px"/>
+<img src="./images/likelist.png" height="350px"/><img src="./images/fluvlist.png" height="350px"/>
 
 
 
@@ -180,33 +228,36 @@ extension ViewController: UITableViewDataSource {}
 
 ### 기능 소개
 
-* **회원 가입 입력창**
-
-1️⃣ 정규식 이용하여 이메일 형식, 비밀번호 형식으로 입력 검사
 
 
+**홈탭**
 
-* **로그인 애니메이션** 
-
-1️⃣ X, Y 상대 값 계산하여 애니메이션 되게 설정
-
-2️⃣ `.identity` 기능 활용 원상태로 복귀
-
-
-
-* **필터 기능**
-
-1️⃣ 색상 1가지, 카테고리 1가지, 세부 카테고리 복수개, 사이즈 복수개 선택가능
-
-2️⃣ Clear 누를 시, 모든 선택 된 필터들 해제
-
-3️⃣ 적용 클릭 시, 서버로 해당 필터 내용 전달 후 데이터 통신
+|      기능       | 개발여부 | 담당 |
+| :-------------: | :------: | :--: |
+| 로그인/회원가입 |    O     | 동민 |
+|      홈탭       |    O     | 태진 |
+|    둘러보기     |    O     | 동민 |
+|      경매       |    △     | 동민 |
+|     매거진      |    O     | 태진 |
+|   마이페이지    |    △     | 동민 |
+|     찜목록      |    X     |  😞   |
+|     팔로우      |    X     |  😞   |
 
 
 
-* **경매 기능**
+**세부기능**
 
-1️⃣ 서버와 클라이언트 Socket을 통해 구현예정
+|       기능        | 개발여부 | 담당 |
+| :---------------: | :------: | :--: |
+|     SNS로그인     |    X     |  🧐   |
+|   홈탭 세부정보   |    O     | 태진 |
+|   둘러보기 필터   |    △     | 동민 |
+|   장바구니 담기   |    O     | 동민 |
+| 장바구니 구매하기 |    O     | 동민 |
+|   경매 소켓통신   |    △     | 동민 |
+| 매거진 애니메이션 |    O     | 태진 |
+|     취향 추천     |    O     | 👨‍👨‍👧‍👧 |
+|     플럽 추천     |    O     | 👨‍👨‍👧‍👧 |
 
 
 
@@ -375,10 +426,10 @@ let sortedParameter = surveyResult.sorted { $0.1 > $1.1 }
 
 
 
-11. 키보드가 올라올 때 View 이동시켜 가리지 않게 하기
+11. 키보드가 View 터치 Keyboard Down Event 발생
 
 ```swift
-
+self.view.endEditting(true)
 ```
 
 
@@ -386,7 +437,14 @@ let sortedParameter = surveyResult.sorted { $0.1 > $1.1 }
 12. NavigationBar에 BarButtonItem 코드로 추가하기
 
 ```swift
+private func setNaviBackButton() {
+  self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action: #selector(popView))
+  self.navigationController?.navigationBar.topItem?.title = ""
+}
 
+@objc func popView() {
+  self.navigationController?.popViewController(animated: true)
+}
 ```
 
 
@@ -418,6 +476,35 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 15. 카메라 사용하기 `UIImagePicker`  사용
 
+✅ Info.plist Camera, Galary 접근 권한 설정 필수, UIImagePickeroControllerDelegate 설정 필수
+
+```swift
+extension FluvApplyVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func openLibrary() {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: false, completion: nil)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+        } else {
+        }
+        present(imagePicker, animated: false, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            profileImage = image
+            profileButton.setBackgroundImage(profileImage, for: .normal)
+            dismiss(animated: true, completion: nil)
+        }
+    }
+}
+```
+
+
+
 
 
 16. `NumberFormatter` 사용 숫자 구분
@@ -435,5 +522,6 @@ let text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row]
 
 ### 참가자
 
-* 오태진 - iOS
-* 윤동민 - iOS
+* [오태진 - iOS]: https://github.com/ORANZINO
+
+* [윤동민 - iOS]: https://github.com/dongminyoon
