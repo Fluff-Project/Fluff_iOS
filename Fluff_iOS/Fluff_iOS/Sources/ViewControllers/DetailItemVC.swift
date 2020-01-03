@@ -36,8 +36,8 @@ class DetailItemVC: UIViewController {
     private var otherItemCollectionViewDataSource: OtherItemDataSource = OtherItemDataSource()
     private var otherItemDelegate: OtherItemDelegate = OtherItemDelegate()
     
-    private var goodsId: String?
-    private var sellerId: String?
+    private var goodsId: String? = "5e0cea05e055d50011a1d653"
+    private var sellerId: String? = "5e0a4b4f217f2200119b604d"
     private var price: Int?
     private var detailItemInform: DetailGoodsData?
     private var otherItemDataOfSeller: [OtherItemData] = []
@@ -75,8 +75,11 @@ class DetailItemVC: UIViewController {
     }
     
     private func setNavi() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
         #selector(popView))
+        self.navigationItem.title = ""
+        self.navigationController?.navigationItem.title = ""
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shoppingbagIc"), style: .done, target: self, action: #selector(goCartView))
     }
     
@@ -143,6 +146,7 @@ extension DetailItemVC {
                 guard let price = self.price else { return }
                 let numberFormatter = NumberFormatter()
                 numberFormatter.numberStyle = .decimal
+                print("here4")
                 let formattingNumber = (numberFormatter.string(from: NSNumber(value: price)) ?? "0")
                 self.priceLabel.text = formattingNumber
                 self.detailItemCollectionView.reloadData()
