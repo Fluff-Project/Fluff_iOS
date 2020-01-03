@@ -31,6 +31,12 @@ struct APIConstants {
     static let otherItemLookup = baseURL + "/goods/seller/"
     // 최종 주문 리스트 넘기기
     static let sendOrder = baseURL + "/order/goodsList"
+    // HTTP 통신 경매 입찰하기
+    static let auctionBidding = "http://f3c61e12.ngrok.io/auction/5e0e260d3c493169d01b9bfb/bid"
+    // 소켓 주소
+    static let auctionSocket = "http://f3c61e12.ngrok.io?auctionId=5e0e260d3c493169d01b9bfb"
+    
+    
     static let howFluv = baseURL + "/recommend/seller?page=4"
     static let todayStock = baseURL + "/goods?page=7&sort=newest"
     static let recentStyle = baseURL + "/goods?category=knit&page=5"
