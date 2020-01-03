@@ -12,7 +12,7 @@ import SocketIO
 class SocketService {
     static let shared = SocketService()
     
-    let manager = SocketManager(socketURL: URL(string: "http://1efb696d.ngrok.io")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "http://3.212.182.137:3000")!, config: [.log(true), .compress])
     lazy var socket = self.manager.defaultSocket
     
     //socket.join("auctionid", {})

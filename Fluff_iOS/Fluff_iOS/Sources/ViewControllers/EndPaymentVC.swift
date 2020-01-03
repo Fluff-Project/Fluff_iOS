@@ -99,7 +99,7 @@ class EndPaymentVC: UIViewController {
             goodsIds.append(purchase.goodsId)
         }
         
-        OrderListService.shared.getOrderList(token: userToken, orderList: goodsIds) { networkResult in
+        OrderListService.shared.sendOrderList(token: userToken, orderList: goodsIds) { networkResult in
             switch networkResult {
             case .success(let data):
                 guard let orderListData = data as? OrderListData else { return }

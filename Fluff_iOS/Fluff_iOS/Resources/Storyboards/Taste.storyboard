@@ -3297,7 +3297,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ust-u9-Uvw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6817" y="188"/>
+            <point key="canvasLocation" x="7338" y="188"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="ett-eE-hJG">

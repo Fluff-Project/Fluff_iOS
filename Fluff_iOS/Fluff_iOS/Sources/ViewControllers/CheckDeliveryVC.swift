@@ -19,12 +19,35 @@ class CheckDeliveryVC: UIViewController {
         // Do any additional setup after loading the view.
         deliveryListTableView.delegate = self
         deliveryListTableView.dataSource = self
+        getOrderListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "주문 / 배송 확인"
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func getOrderListData() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        OrderListService.shared.getOrderList(token: userToken) { netWorkResult in
+            switch netWorkResult {
+            case .success(let data):
+                guard let requestData = data as? GetOrderListData else { return }
+                guard let orderData = requestData.json.data else { return }
+                print(orderData)
+            case .requestErr(let data):
+                guard let requestData = data as? GetOrderListData else { return }
+                self.presentAlertController(title: requestData.json.message!, message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 에러", message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 실패", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+            }
+        }
+        
     }
 }
 
