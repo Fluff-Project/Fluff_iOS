@@ -14,8 +14,12 @@ class MagazineBannerVC: UIViewController {
     private var userToken: String?
     private var magazineImageData: [MagazineImageData] = []
     @IBOutlet weak var backgroundImg: UIImageView!
-    @IBOutlet var wholeView: UIView!
+    @IBOutlet weak var title1Label: UILabel!
+    @IBOutlet weak var title2Label: UILabel!
+    
     var now: Int = 0
+    let title1List: [String] = ["2019년 12월,","광장시장 구제상가에서", "가치를 담은", "옷은 아니지만", "나만 알고 싶은"]
+    let title2List: [String] = ["이 달의 베스트 빈티지 룩", "가을 옷 득템하기", "빈티지를 파는, Flapper", "빈티지", "SNS 빈티지 숍"]
     
     
 
@@ -30,6 +34,7 @@ class MagazineBannerVC: UIViewController {
         
         self.view.addGestureRecognizer(rightSwipe)
         self.view.addGestureRecognizer(leftSwipe)
+        
         
     }
 
@@ -70,10 +75,12 @@ class MagazineBannerVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
-//    @IBAction func intoTheContents(_ sender: UIButton) {
-//        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
-//        self.navigationController?.pushViewController(nextVC, animated: false)
-//    }
+    @IBAction func intoTheContents(_ sender: UIButton) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
+        nextVC.whatMagazine = now
+        nextVC.magazineImageData = magazineImageData
+        self.navigationController?.pushViewController(nextVC, animated: false)
+    }
     
     private func initToken() {
         guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
@@ -91,6 +98,9 @@ extension MagazineBannerVC {
                 guard let magazineData = data as? MagazineJsonData else { return }
                 self.magazineImageData = magazineData.data!
                 self.backgroundImg.setImage(with: self.magazineImageData[self.now].imgUrl)
+                self.title1Label.text = self.title1List[self.now]
+                self.title2Label.text = self.title2List[self.now]
+                self.backgroundImg.hero.id = self.magazineImageData[self.now]._id
             case .requestErr(let data):
                 guard let magazineData = data as? MagazineData else { return }
                 self.presentAlertController(title: magazineData.json!.message, message: nil)

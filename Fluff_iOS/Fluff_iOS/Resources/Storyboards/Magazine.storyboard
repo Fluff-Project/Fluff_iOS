@@ -91,6 +91,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-M3-8gS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <connections>
+                                    <action selector="intoTheContents:" destination="Ynp-vd-e0Q" eventType="touchUpInside" id="DCM-vJ-gqo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -123,9 +126,13 @@
                         <viewLayoutGuide key="safeArea" id="9Nj-ca-Jfd"/>
                     </view>
                     <navigationItem key="navigationItem" id="5Zr-I4-4Fv"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="backgroundImg" destination="1WA-8I-Vbp" id="wbY-oX-6td"/>
-                        <outlet property="wholeView" destination="wF6-WE-8BG" id="rOb-YD-Pnj"/>
+                        <outlet property="title1Label" destination="Ajb-lq-CKc" id="tHk-cw-ZV6"/>
+                        <outlet property="title2Label" destination="WIr-C7-pXe" id="95W-eb-Ui6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgI-gu-XgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -294,6 +301,9 @@ GERMAN ARMY TRAINER</string>
                         <viewLayoutGuide key="safeArea" id="GJ7-GW-MTw"/>
                     </view>
                     <size key="freeformSize" width="375" height="1400"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="item1Name" destination="s2S-ux-uCR" id="RyG-hM-7lY"/>
                         <outlet property="itemView" destination="fSw-9Y-MOe" id="WZY-oK-D3j"/>
@@ -302,7 +312,7 @@ GERMAN ARMY TRAINER</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9g-yW-k0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-313.30049261083747"/>
+            <point key="canvasLocation" x="2754.4000000000001" y="-313.30049261083747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z76-aX-a6f">
@@ -321,9 +331,96 @@ GERMAN ARMY TRAINER</string>
             </objects>
             <point key="canvasLocation" x="-191.19999999999999" y="-386.45320197044339"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="BIO-JZ-uDB">
+            <objects>
+                <viewController id="ZPO-9m-oNp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="flJ-Cw-CCc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-CN-alL">
+                                <rect key="frame" x="38" y="127" width="218" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bts"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSA-xb-Ody">
+                                <rect key="frame" x="164" y="678" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="bcY-cP-Y0p" kind="show" id="dZL-B9-jcR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iga-hT-bfu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pIA-5r-j48"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Luj-nJ-Ogp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698.39999999999998" y="426.35467980295567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="N9n-Cz-KQq">
+            <objects>
+                <viewController id="bcY-cP-Y0p" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V0A-zN-Syp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="IA9-AP-0Xf">
+                                <rect key="frame" x="39" y="271" width="320" height="352"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bts"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lAe-Lq-70B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="klM-o5-Ux9"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmt-FL-ues" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575.2" y="425.61576354679806"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JtE-Q5-pK6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2v3-3J-6Nu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CT5-Mx-glh">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZPO-9m-oNp" kind="relationship" relationship="rootViewController" id="gWN-18-Xxo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9WK-GS-rqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="426.35467980295567"/>
+        </scene>
     </scenes>
     <resources>
         <image name="102" width="298" height="198"/>
+        <image name="beccaMchaffieFzde6ITjkwUnsplash2" width="516" height="516"/>
         <image name="bellaTheBraveSmall" width="375" height="423"/>
         <image name="realOngzolIc" width="41.666667938232422" height="10.666666984558105"/>
         <image name="sign" width="204.33332824707031" height="112.33333587646484"/>

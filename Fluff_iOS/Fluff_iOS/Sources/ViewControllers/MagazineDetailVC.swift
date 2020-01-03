@@ -17,11 +17,17 @@ class MagazineDetailVC: UIViewController {
     let dotumPB = UIFont(name: "KoPubWorldDotumPB", size: 16)
     @IBOutlet weak var item1Name: UITextView!
     
+    var whatMagazine = Int()
+    var magazineImageData: [MagazineImageData] = []
+    
     var item1AttributedStr = NSMutableAttributedString()
     let paragraphStyle = NSMutableParagraphStyle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topImage.hero.id = magazineImageData[whatMagazine]._id
+        
+        topImage.setImage(with: magazineImageData[whatMagazine].imgUrl)
         
         paragraphStyle.alignment = .center
         
@@ -33,16 +39,12 @@ class MagazineDetailVC: UIViewController {
         
         item1Name.attributedText = item1AttributedStr
         
-        
-        
         itemView.layer.shadowColor = UIColor.black.cgColor
         itemView.layer.shadowOpacity = 0.16
         itemView.layer.shadowOffset = .zero
         itemView.layer.shadowRadius = 10
         
-        self.hero.isEnabled = true
-        topImage.hero.id = "magImg"
-        topImage.hero.modifiers = [.translate(y:100)]
+        
 
         // Do any additional setup after loading the view.
     }
