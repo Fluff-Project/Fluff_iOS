@@ -522,6 +522,7 @@ let text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row]
 
 ### 참가자
 
-* [오태진 - iOS]: https://github.com/ORANZINO
+* [iOS - 오태진](https://github.com/ORANZINO) 
 
-* [윤동민 - iOS]: https://github.com/dongminyoon
+* [iOS - 윤동민](https://github.com/dongminyoon )
+
