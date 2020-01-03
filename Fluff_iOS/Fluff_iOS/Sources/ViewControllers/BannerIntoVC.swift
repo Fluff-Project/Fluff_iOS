@@ -122,11 +122,7 @@ extension BannerIntoVC {
             switch networkResult {
             case .success(let data):
                 
-                guard let recentStyleJsonData = data as? RecentStyleJsonData else {
-                    print("요")
-                    return
-                    
-                }
+                guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
                 self.styleData = recentStyleJsonData.data!
                 self.bannerIntoCollectionView.reloadData()
             case .requestErr(let data):

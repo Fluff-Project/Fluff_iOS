@@ -91,9 +91,6 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-M3-8gS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <connections>
-                                    <action selector="intoTheContents:" destination="Ynp-vd-e0Q" eventType="touchUpInside" id="3dI-1N-uoA"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -128,6 +125,7 @@
                     <navigationItem key="navigationItem" id="5Zr-I4-4Fv"/>
                     <connections>
                         <outlet property="backgroundImg" destination="1WA-8I-Vbp" id="wbY-oX-6td"/>
+                        <outlet property="wholeView" destination="wF6-WE-8BG" id="rOb-YD-Pnj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KgI-gu-XgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
