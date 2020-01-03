@@ -103,12 +103,12 @@ extension ThemeIntoVC: UICollectionViewDataSource {
         let themeIntoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThemeIntoCollectionViewCell", for: indexPath) as! ThemeIntoCollectionViewCell
         switch whatTheme {
         case "Today":
-            themeIntoCollectionViewCell.themeIntoImage.setImage(with: stockData[indexPath.row].img[0])
+            themeIntoCollectionViewCell.themeIntoImage.setImage(with: stockData[indexPath.row].mainImg)
             themeIntoCollectionViewCell.themeIntoItemLabel.text = stockData[indexPath.row].goodsName
             themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: stockData[indexPath.row].price))! + "원"
             themeIntoCollectionViewCell.themeIntoSellerLabel.text = stockData[indexPath.row].sellerName
         case "Recent":
-            themeIntoCollectionViewCell.themeIntoImage.setImage(with: styleData[indexPath.row].img[0])
+            themeIntoCollectionViewCell.themeIntoImage.setImage(with: styleData[indexPath.row].mainImg)
             themeIntoCollectionViewCell.themeIntoItemLabel.text = styleData[indexPath.row].goodsName
             themeIntoCollectionViewCell.themeIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
             themeIntoCollectionViewCell.themeIntoSellerLabel.text = styleData[indexPath.row].sellerName
@@ -157,6 +157,7 @@ private func requestTodayTheme() {
             switch networkResult {
             case .success(let data):
                 guard let todayStockJsonData = data as? TodayStockJsonData else {return}
+                print("흔들어주세요")
                 self.stockData = todayStockJsonData.data!
                 self.themeIntoCollectionView.reloadData()
             case .requestErr(let data):

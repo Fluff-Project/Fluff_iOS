@@ -215,7 +215,7 @@ extension HomeVC: UICollectionViewDataSource{
             
         case self.todayCollectionView:
             let todayCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCollectionViewCell", for: indexPath) as! TodayCollectionViewCell
-            todayCollectionViewCell.todayImage.setImage(with: stockData[indexPath.row].img[0])
+            todayCollectionViewCell.todayImage.setImage(with: stockData[indexPath.row].mainImg)
             todayCollectionViewCell.todayProductLabel.text = stockData[indexPath.row].goodsName
             todayCollectionViewCell.todayPriceLabel.text =
                 numberFormatter.string(from: NSNumber(value: stockData[indexPath.row].price))! + "원"
@@ -235,7 +235,7 @@ extension HomeVC: UICollectionViewDataSource{
         case self.recentCollectionView:
             let recentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentCollectionViewCell", for: indexPath) as! RecentCollectionViewCell
         
-            recentCollectionViewCell.recentImage.setImage(with: styleData[indexPath.row].img[0])
+            recentCollectionViewCell.recentImage.setImage(with: styleData[indexPath.row].mainImg)
             recentCollectionViewCell.recentProductLabel.text = styleData[indexPath.row].goodsName
             recentCollectionViewCell.recentPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
             return recentCollectionViewCell
@@ -399,8 +399,8 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let todayStockJsonData = data as? TodayStockJsonData else {return}
-//                print(todayStockJsonData)
-//                self.stockData = todayStockJsonData.data
+                print(todayStockJsonData)
+                self.stockData = todayStockJsonData.data!
                 self.todayCollectionView.reloadData()
             case .requestErr(let data):
                 guard let todayStockJsonData = data as? TodayStockJsonData else { return }
@@ -424,8 +424,8 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else {return}
-//                self.styleData = recentStyleJsonData.data!
-//                self.recentCollectionView.reloadData()
+                self.styleData = recentStyleJsonData.data!
+                self.recentCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
                 self.presentAlertController(title: recentStyleJsonData.message, message: nil)
@@ -448,7 +448,7 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
-//                self.clotheData = recommendedClotheJsonData.data!
+                self.clotheData = recommendedClotheJsonData.data!
                 self.todayVintageCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }
