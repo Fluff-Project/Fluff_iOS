@@ -2349,7 +2349,7 @@
             </objects>
             <point key="canvasLocation" x="2047.2" y="1200.7389162561576"/>
         </scene>
-        <!--매거진-->
+        <!--View Controller-->
         <scene sceneID="NtI-Km-pXU">
             <objects>
                 <viewController id="AYa-Pe-i7h" sceneMemberID="viewController">
@@ -2373,11 +2373,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ihV-He-QyV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="매거진" image="icons8Magazine100" id="crV-lx-UUy"/>
+                    <navigationItem key="navigationItem" id="DL7-1D-JTt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95N-E7-Q4y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="1215"/>
+            <point key="canvasLocation" x="3796" y="1214.7783251231529"/>
         </scene>
         <!--My Page View Controller-->
         <scene sceneID="fwA-zk-l4y">
@@ -2592,7 +2592,7 @@
                         <segue destination="E9r-pG-3JZ" kind="relationship" relationship="viewControllers" id="J6K-pf-RU2"/>
                         <segue destination="Zba-BI-XHw" kind="relationship" relationship="viewControllers" id="wT1-WL-SIb"/>
                         <segue destination="9y8-bM-KII" kind="relationship" relationship="viewControllers" id="qET-gw-rl1"/>
-                        <segue destination="AYa-Pe-i7h" kind="relationship" relationship="viewControllers" id="pml-oI-gNJ"/>
+                        <segue destination="g6t-x0-c4m" kind="relationship" relationship="viewControllers" id="pml-oI-gNJ"/>
                         <segue destination="xRc-9q-2jX" kind="relationship" relationship="viewControllers" id="q3p-jp-AEJ"/>
                     </connections>
                 </tabBarController>
@@ -2617,7 +2617,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHY-k8-xQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5544.8000000000002" y="1200"/>
+            <point key="canvasLocation" x="6487.1999999999998" y="1200"/>
         </scene>
         <!--MagazineBannerVC-->
         <scene sceneID="yIJ-hH-894">
@@ -2625,7 +2625,7 @@
                 <viewControllerPlaceholder storyboardName="Magazine" referencedIdentifier="MagazineBannerVC" id="kw3-ef-eLz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIl-LF-6Sa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3524" y="1215"/>
+            <point key="canvasLocation" x="4465.6000000000004" y="1214.7783251231529"/>
         </scene>
         <!--MY-->
         <scene sceneID="3YH-XF-YFy">
@@ -2644,7 +2644,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noh-72-Fd1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4025" y="1215"/>
+            <point key="canvasLocation" x="4967.1999999999998" y="1214.7783251231529"/>
         </scene>
         <!--Following ListVC-->
         <scene sceneID="z6B-3O-mxh">
@@ -3434,6 +3434,27 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-Vb-fX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="317.60000000000002" y="511.33004926108379"/>
+        </scene>
+        <!--매거진-->
+        <scene sceneID="in1-xD-Scd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="g6t-x0-c4m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="매거진" image="icons8Magazine100" id="crV-lx-UUy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="htW-tA-cAt">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="AYa-Pe-i7h" kind="relationship" relationship="rootViewController" id="crZ-AU-nZq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OlZ-5U-m3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2853.5999999999999" y="1214.7783251231529"/>
         </scene>
     </scenes>
     <resources>
