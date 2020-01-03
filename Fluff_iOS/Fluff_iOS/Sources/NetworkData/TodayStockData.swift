@@ -33,8 +33,8 @@ struct TodayStockJsonData: Codable {
 }
 
 struct StockData: Codable {
-    let img: [String]
+    let mainImg: String
     let price: Int
-    let _id, goodsName, sellerName: String
+    let _id, goodsName, sellerName, sellerId: String
     let like: Bool
 }

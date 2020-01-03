@@ -33,7 +33,7 @@ struct RecentStyleJsonData: Codable {
 }
 
 struct StyleData: Codable {
-    let img: [String]
+    let mainImg: String
     let price: Int
     let _id, goodsName, sellerName, sellerId: String
     let like: Bool

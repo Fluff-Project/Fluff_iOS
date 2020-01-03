@@ -18,7 +18,7 @@
         <!--Magazine BannerVC-->
         <scene sceneID="jYE-J6-CqB">
             <objects>
-                <viewController storyboardIdentifier="MagazineVC" id="Ynp-vd-e0Q" customClass="MagazineBannerVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagazineBannerVC" id="Ynp-vd-e0Q" customClass="MagazineBannerVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wF6-WE-8BG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

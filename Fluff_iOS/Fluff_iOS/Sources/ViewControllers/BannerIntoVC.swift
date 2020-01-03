@@ -70,7 +70,7 @@ extension BannerIntoVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let bannerIntoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerIntoCollectionViewCell", for: indexPath) as! BannerIntoCollectionViewCell
-        bannerIntoCollectionViewCell.bannerIntoImage.setImage(with: styleData[indexPath.row].img[0])
+        bannerIntoCollectionViewCell.bannerIntoImage.setImage(with: styleData[indexPath.row].mainImg)
         bannerIntoCollectionViewCell.bannerIntoItemLabel.text = styleData[indexPath.row].goodsName
         bannerIntoCollectionViewCell.bannerIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
         bannerIntoCollectionViewCell.bannerIntoSellerLabel.text = styleData[indexPath.row].sellerName
