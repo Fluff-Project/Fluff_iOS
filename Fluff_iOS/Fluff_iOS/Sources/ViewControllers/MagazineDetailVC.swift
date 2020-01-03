@@ -29,6 +29,8 @@ class MagazineDetailVC: UIViewController {
         
         topImage.setImage(with: magazineImageData[whatMagazine].imgUrl)
         
+        topImage.hero.modifiers = [.fade, .translate(x:0, y:-250), .rotate(x:-1.6), .scale(1.5)]
+        
         paragraphStyle.alignment = .center
         
         let attributes: [NSAttributedString.Key: Any] = [.kern: -1.44, .font: dotumPB as Any, .paragraphStyle: paragraphStyle]

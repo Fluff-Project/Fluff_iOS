@@ -323,6 +323,9 @@ GERMAN ARMY TRAINER</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Ynp-vd-e0Q" kind="relationship" relationship="rootViewController" id="CIX-F0-f0U"/>
                     </connections>
@@ -331,23 +334,14 @@ GERMAN ARMY TRAINER</string>
             </objects>
             <point key="canvasLocation" x="-191.19999999999999" y="-386.45320197044339"/>
         </scene>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="BIO-JZ-uDB">
             <objects>
-                <viewController id="ZPO-9m-oNp" sceneMemberID="viewController">
+                <viewController id="ZPO-9m-oNp" customClass="FirstViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="flJ-Cw-CCc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-CN-alL">
-                                <rect key="frame" x="38" y="127" width="218" height="236"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bts"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSA-xb-Ody">
                                 <rect key="frame" x="164" y="678" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -356,6 +350,15 @@ GERMAN ARMY TRAINER</string>
                                     <segue destination="bcY-cP-Y0p" kind="show" id="dZL-B9-jcR"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-CN-alL">
+                                <rect key="frame" x="59" y="68" width="218" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bts"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="iga-hT-bfu"/>
@@ -364,15 +367,18 @@ GERMAN ARMY TRAINER</string>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="firstImage" destination="LzD-CN-alL" id="Vl4-Ih-XjK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Luj-nJ-Ogp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="698.39999999999998" y="426.35467980295567"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="N9n-Cz-KQq">
             <objects>
-                <viewController id="bcY-cP-Y0p" sceneMemberID="viewController">
+                <viewController id="bcY-cP-Y0p" customClass="SecondViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V0A-zN-Syp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,6 +400,9 @@ GERMAN ARMY TRAINER</string>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="secondImage" destination="IA9-AP-0Xf" id="jeU-VT-cJQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmt-FL-ues" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,13 +411,15 @@ GERMAN ARMY TRAINER</string>
         <!--Navigation Controller-->
         <scene sceneID="JtE-Q5-pK6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2v3-3J-6Nu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2v3-3J-6Nu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CT5-Mx-glh">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="ZPO-9m-oNp" kind="relationship" relationship="rootViewController" id="gWN-18-Xxo"/>
                     </connections>

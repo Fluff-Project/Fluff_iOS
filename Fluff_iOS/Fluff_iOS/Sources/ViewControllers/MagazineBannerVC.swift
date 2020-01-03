@@ -79,7 +79,7 @@ class MagazineBannerVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
         nextVC.whatMagazine = now
         nextVC.magazineImageData = magazineImageData
-        self.navigationController?.pushViewController(nextVC, animated: false)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     private func initToken() {
