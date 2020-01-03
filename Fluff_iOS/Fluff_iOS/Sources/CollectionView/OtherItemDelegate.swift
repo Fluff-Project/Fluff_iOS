@@ -11,7 +11,7 @@ import UIKit
 class OtherItemDelegate: NSObject, UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout {
     private var otherItems: [OtherItemData] = []
     
-    func setOtherItems(_ otherItme: [OtherItemData]) {
+    func setOtherItems(_ otherItem: [OtherItemData]) {
         self.otherItems = otherItem
     }
     
