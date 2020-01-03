@@ -416,9 +416,20 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 
 
-
-
 15. 카메라 사용하기 `UIImagePicker`  사용
+
+
+
+16. `NumberFormatter` 사용 숫자 구분
+
+```swift
+// 3자리부터 단위 사용하게 구분
+let numberFormatter = NumberFormatter()
+numberFormatter.style = .decimal
+
+let text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
+
+```
 
 
 
