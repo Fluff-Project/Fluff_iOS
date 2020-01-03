@@ -14,13 +14,17 @@ class MagazineBannerVC: UIViewController {
     private var userToken: String?
     private var magazineImageData: [MagazineImageData] = []
     @IBOutlet weak var backgroundImg: UIImageView!
+    var now: Int = 0
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        backgroundImg.hero.id = "magImg"
-    }
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(pushView))
+            rightSwipe.direction = .right
+        }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,7 +35,19 @@ class MagazineBannerVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         userToken = nil
     }
-    
+
+    @objc func pushView() {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineBannerVC") as? MagazineBannerVC else { return }
+        if now == 4 {
+            return
+        } else {
+            nextVC.backgroundImg.setImage(with: magazineImageData[now + 1].imgUrl)
+            now += 1
+        }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+
     @IBAction func intoTheContents(_ sender: UIButton) {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
         self.navigationController?.pushViewController(nextVC, animated: false)
@@ -52,9 +68,6 @@ extension MagazineBannerVC {
             case .success(let data):
                 guard let magazineData = data as? MagazineJsonData else { return }
                 self.magazineImageData = magazineData.data!
-                for m in self.magazineImageData {
-                    self.backgroundImg.setImage(with: m.imgUrl)
-                }
                 self.backgroundImg.setImage(with: self.magazineImageData[0].imgUrl)
             case .requestErr(let data):
                 guard let magazineData = data as? MagazineData else { return }

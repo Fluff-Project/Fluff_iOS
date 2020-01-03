@@ -1188,7 +1188,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VHM-yR-VCX" customClass="CHIPageControlJalapeno" customModule="CHIPageControl">
                                                 <rect key="frame" x="190" y="374" width="34" height="8"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -2610,10 +2610,10 @@
             </objects>
             <point key="canvasLocation" x="5544.8000000000002" y="1200"/>
         </scene>
-        <!--MagazineVC-->
+        <!--MagazineBannerVC-->
         <scene sceneID="yIJ-hH-894">
             <objects>
-                <viewControllerPlaceholder storyboardName="Magazine" referencedIdentifier="MagazineVC" id="kw3-ef-eLz" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Magazine" referencedIdentifier="MagazineBannerVC" id="kw3-ef-eLz" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIl-LF-6Sa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3524" y="1215"/>
