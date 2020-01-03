@@ -18,7 +18,7 @@
         <!--Magazine BannerVC-->
         <scene sceneID="jYE-J6-CqB">
             <objects>
-                <viewController storyboardIdentifier="MagazineBannerVC" id="Ynp-vd-e0Q" customClass="MagazineBannerVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagazineBannerVC" id="Ynp-vd-e0Q" customClass="MagazineBannerVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wF6-WE-8BG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,26 +67,26 @@
                                     <constraint firstAttribute="width" secondItem="pEQ-36-8ac" secondAttribute="height" multiplier="35:19" id="hNe-bF-Wc6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옷만큼 개성있는" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajb-lq-CKc">
-                                <rect key="frame" x="18" y="343" width="268" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajb-lq-CKc">
+                                <rect key="frame" x="18" y="343" width="268" height="0.0"/>
                                 <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오프라인 빈티지 매장들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIr-C7-pXe">
-                                <rect key="frame" x="18" y="374.33333333333331" width="265" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIr-C7-pXe">
+                                <rect key="frame" x="18" y="344.33333333333331" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.12.31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-C1-eat">
-                                <rect key="frame" x="18" y="424" width="64" height="15.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNu-C1-eat">
+                                <rect key="frame" x="18" y="364" width="68.333333333333329" height="15.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="realOngzolIc" translatesAutoresizingMaskIntoConstraints="NO" id="rhh-hE-ORQ">
-                                <rect key="frame" x="17.999999999999996" y="458.33333333333331" width="41.666666666666657" height="10.666666666666686"/>
+                                <rect key="frame" x="17.999999999999996" y="398.33333333333331" width="41.666666666666657" height="10.666666666666686"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoT-M3-8gS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -141,7 +141,7 @@
         <!--Magazine DetailVC-->
         <scene sceneID="VpX-42-TUg">
             <objects>
-                <viewController storyboardIdentifier="MagazineDetailVC" id="ZwV-0j-g1n" customClass="MagazineDetailVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MagazineDetailVC" id="ZwV-0j-g1n" customClass="MagazineDetailVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXy-ff-Wnf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
