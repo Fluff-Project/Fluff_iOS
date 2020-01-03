@@ -20,4 +20,5 @@ extension NSNotification.Name {
     static let autoLoginExcute = NSNotification.Name("autoLoginExcute")
     static let confirmBidding = NSNotification.Name("confirmBidding")
     static let clickCancelButton = NSNotification.Name("clickCancelButton")
+    static let clickIntoBannerButton = NSNotification.Name("clickIntoBannerButton")
 }

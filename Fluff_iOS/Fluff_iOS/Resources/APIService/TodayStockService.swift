@@ -51,6 +51,8 @@ struct TodayStockService {
             print("디코딩 오류")
             return .pathErr
         }
+        
+        print(todayStockData.json)
         print("여기까지 들어옴")
         if todayStockData.code == 200 { return .success(todayStockData.json) }
         else if todayStockData.code == 400 { return .requestErr(todayStockData.json) }

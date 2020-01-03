@@ -104,6 +104,7 @@
 		A607C61B23BE7E0300B4D56A /* RecentStyleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61A23BE7E0300B4D56A /* RecentStyleData.swift */; };
 		A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61C23BE813000B4D56A /* RecentStyleService.swift */; };
 		A607C61F23BE8F6700B4D56A /* ThemeIntoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61E23BE8F6700B4D56A /* ThemeIntoService.swift */; };
+		A607C62123BEC40200B4D56A /* BannerIntoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C62023BEC40200B4D56A /* BannerIntoService.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -248,6 +249,7 @@
 		A607C61A23BE7E0300B4D56A /* RecentStyleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStyleData.swift; sourceTree = "<group>"; };
 		A607C61C23BE813000B4D56A /* RecentStyleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStyleService.swift; sourceTree = "<group>"; };
 		A607C61E23BE8F6700B4D56A /* ThemeIntoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIntoService.swift; sourceTree = "<group>"; };
+		A607C62023BEC40200B4D56A /* BannerIntoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoService.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -361,7 +363,10 @@
 				A607C61C23BE813000B4D56A /* RecentStyleService.swift */,
 				9D0E2A9623BE973200E73F40 /* DetailInformRequestService.swift */,
 				A607C61E23BE8F6700B4D56A /* ThemeIntoService.swift */,
+
 				9D0E2A9823BEB91900E73F40 /* SellerItemLookupService.swift */,
+
+				A607C62023BEC40200B4D56A /* BannerIntoService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -771,6 +776,7 @@
 				A607C60B23BCB4C000B4D56A /* FetchThumbnailService.swift in Sources */,
 				9D79382623B227CF00A0CD3E /* UIView+Extensions.swift in Sources */,
 				A6DF861423B55AE8006FDE79 /* RecentCollectionViewCell.swift in Sources */,
+				A607C62123BEC40200B4D56A /* BannerIntoService.swift in Sources */,
 				9D705A9923B8935900097FCF /* AuctionDetailVC.swift in Sources */,
 				9D0E2A8F23BE420F00E73F40 /* SocketawdViewController.swift in Sources */,
 				A607C60F23BD2E9E00B4D56A /* MagazineService.swift in Sources */,
