@@ -14,6 +14,7 @@ class MagazineBannerVC: UIViewController {
     private var userToken: String?
     private var magazineImageData: [MagazineImageData] = []
     @IBOutlet weak var backgroundImg: UIImageView!
+    @IBOutlet var wholeView: UIView!
     var now: Int = 0
     
     
@@ -22,8 +23,15 @@ class MagazineBannerVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(pushView))
-            rightSwipe.direction = .right
-        }
+        rightSwipe.direction = .right
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(popView))
+        rightSwipe.direction = .left
+        
+        self.view.addGestureRecognizer(rightSwipe)
+        self.view.addGestureRecognizer(leftSwipe)
+        
+    }
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,22 +44,36 @@ class MagazineBannerVC: UIViewController {
         userToken = nil
     }
 
-    @objc func pushView() {
+    @objc func pushView(recognizer: UIGestureRecognizer) {
+        print("푸시푸시")
+        
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineBannerVC") as? MagazineBannerVC else { return }
         if now == 4 {
             return
         } else {
-            nextVC.backgroundImg.setImage(with: magazineImageData[now + 1].imgUrl)
-            now += 1
+            nextVC.now = now + 1
         }
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
-
-    @IBAction func intoTheContents(_ sender: UIButton) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
-        self.navigationController?.pushViewController(nextVC, animated: false)
+    
+    @objc func popView(recognizer: UIGestureRecognizer) {
+        print("팝팝")
+        
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineBannerVC") as? MagazineBannerVC else { return }
+        if now == 0 {
+            return
+        } else {
+            nextVC.now = now - 1
+        }
+        
+        self.navigationController?.popViewController(animated: true)
     }
+
+//    @IBAction func intoTheContents(_ sender: UIButton) {
+//        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
+//        self.navigationController?.pushViewController(nextVC, animated: false)
+//    }
     
     private func initToken() {
         guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
@@ -68,7 +90,7 @@ extension MagazineBannerVC {
             case .success(let data):
                 guard let magazineData = data as? MagazineJsonData else { return }
                 self.magazineImageData = magazineData.data!
-                self.backgroundImg.setImage(with: self.magazineImageData[0].imgUrl)
+                self.backgroundImg.setImage(with: self.magazineImageData[self.now].imgUrl)
             case .requestErr(let data):
                 guard let magazineData = data as? MagazineData else { return }
                 self.presentAlertController(title: magazineData.json!.message, message: nil)
