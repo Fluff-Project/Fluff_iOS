@@ -75,8 +75,11 @@ class DetailItemVC: UIViewController {
     }
     
     private func setNavi() {
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
         #selector(popView))
+        self.navigationItem.title = ""
+        self.navigationController?.navigationItem.title = ""
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "shoppingbagIc"), style: .done, target: self, action: #selector(goCartView))
     }
     

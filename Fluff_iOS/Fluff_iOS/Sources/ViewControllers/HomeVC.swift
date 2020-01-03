@@ -374,6 +374,7 @@ extension HomeVC: UICollectionViewDelegate {
             guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(stockData[indexPath.row]._id, stockData[indexPath.row].sellerId)
             detailVC.setPrice(stockData[indexPath.row].price)
+            detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
             
         case recentCollectionView:
@@ -381,6 +382,7 @@ extension HomeVC: UICollectionViewDelegate {
             guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(styleData[indexPath.row]._id, styleData[indexPath.row].sellerId)
             detailVC.setPrice(styleData[indexPath.row].price)
+            detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
             
         case todayVintageCollectionView:
@@ -388,6 +390,7 @@ extension HomeVC: UICollectionViewDelegate {
             guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(clotheData[indexPath.row]._id, clotheData[indexPath.row].sellerId)
             detailVC.setPrice(clotheData[indexPath.row].price)
+            detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
             
         default:
