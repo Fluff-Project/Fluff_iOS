@@ -70,6 +70,20 @@ class CartVC: UIViewController {
         buyButton.makeCornerRounded(radius: buyButton.frame.width / 14.333)
         buyButton.clipsToBounds = true
     }
+    
+    @IBAction func selectedAll(_ sender: Any) {
+        if allSelectCheckBox.on {
+            for index in 0..<isSelected.count {
+                isSelected[index] = true
+                
+            }
+        } else {
+            for index in 0..<isSelected.count {
+                isSelected[index] = false
+            }
+        }
+        cartTableView.reloadData()
+    }
 }
 
 extension CartVC {
@@ -124,7 +138,7 @@ extension CartVC: UITableViewDataSource {
         cartCell.setClotheImage(by: cartDatas[indexPath.row].Img[0])
         cartCell.setSellerName(cartDatas[indexPath.row].userName)
         cartCell.setClotheNameLabel(cartDatas[indexPath.row].goodsName)
-        cartCell.setPriceLabel("\(cartDatas[indexPath.row].price)")
+        cartCell.setPriceLabel(cartDatas[indexPath.row].price)
         // cart 셀 이름대로 셋팅되게 설정
         cartCell.setInitialInform(indexPath.row, isSelected[indexPath.row])
         cartCell.setCheckbox(isSelected[indexPath.row])

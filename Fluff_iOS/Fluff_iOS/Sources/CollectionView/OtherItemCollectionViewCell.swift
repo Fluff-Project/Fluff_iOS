@@ -22,7 +22,10 @@ class OtherItemCollectionViewCell: UICollectionViewCell {
         clotheNameLabel.text = name
     }
     
-    func setPrice(_ price: String) {
-        priceLabel.text = price
+    func setPrice(_ price: Int) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattingNumber = (numberFormatter.string(from: NSNumber(value: price)) ?? "0")
+        priceLabel.text = formattingNumber
     }
 }

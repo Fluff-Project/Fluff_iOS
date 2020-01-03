@@ -10,6 +10,8 @@ import UIKit
 import CHIPageControl
 
 class DetailItemVC: UIViewController {
+    let numberFormatter = NumberFormatter()
+
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
     
     @IBOutlet weak var sellerTextView: UITextView!
@@ -53,7 +55,7 @@ class DetailItemVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
         pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 70
-        
+        numberFormatter.numberStyle = .decimal
         loadDatilItemData()
         loadOtherItemOfSeller()
     }
@@ -139,7 +141,10 @@ extension DetailItemVC {
                 self.detailItemInform = detailGoods
                 self.setDetailView()
                 guard let price = self.price else { return }
-                self.priceLabel.text = "\(price)"
+                let numberFormatter = NumberFormatter()
+                numberFormatter.numberStyle = .decimal
+                let formattingNumber = (numberFormatter.string(from: NSNumber(value: price)) ?? "0")
+                self.priceLabel.text = formattingNumber
                 self.detailItemCollectionView.reloadData()
                 self.otherItemCollectionView.reloadData()
             case .requestErr(let data):

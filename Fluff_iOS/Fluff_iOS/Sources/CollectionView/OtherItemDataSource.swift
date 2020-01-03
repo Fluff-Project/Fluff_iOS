@@ -24,14 +24,9 @@ class OtherItemDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "otherItemCell", for: indexPath) as? OtherItemCollectionViewCell else { return UICollectionViewCell() }
-//        otherItems[indexPath.row]._id
-//        otherItems[indexPath.row].goodsName
-//        otherItems[indexPath.row].mainImg
-//        otherItems[indexPath.row].price
-        
         detailCell.setClotheImage(otherItems[indexPath.row].mainImg)
         detailCell.setName("\(otherItems[indexPath.row].goodsName)")
-        detailCell.setPrice("\(otherItems[indexPath.row].price)")
+        detailCell.setPrice(otherItems[indexPath.row].price)
         return detailCell
     }
 }

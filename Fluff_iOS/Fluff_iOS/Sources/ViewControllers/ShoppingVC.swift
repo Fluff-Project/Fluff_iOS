@@ -151,7 +151,7 @@ extension ShoppingVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let shoppingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "shoppingCell", for: indexPath) as? ShopCollectionViewCell else { return UICollectionViewCell() }
         shoppingCell.setClotheName(clothesData[indexPath.row].goodsName)
-        shoppingCell.setPriceLabel("\(clothesData[indexPath.row].price)")
+        shoppingCell.setPriceLabel(clothesData[indexPath.row].price)
         shoppingCell.setSellerName(clothesData[indexPath.row].sellerName)
         shoppingCell.setShopImageView(url: clothesData[indexPath.row].mainImg)
         return shoppingCell

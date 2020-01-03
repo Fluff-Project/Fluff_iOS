@@ -43,8 +43,11 @@ class CartTableViewCell: UITableViewCell {
         self.clothNameLabel.text = name
     }
     
-    func setPriceLabel(_ price: String) {
-        self.priceLabel.text = price
+    func setPriceLabel(_ price: Int) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattingNumber = (numberFormatter.string(from: NSNumber(value: price)) ?? "0")
+        self.priceLabel.text = formattingNumber
     }
     
     func setInitialInform(_ index: Int, _ isSelect: Bool) {
