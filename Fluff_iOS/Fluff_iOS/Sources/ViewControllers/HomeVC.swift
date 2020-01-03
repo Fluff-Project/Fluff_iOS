@@ -370,18 +370,24 @@ extension HomeVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case todayCollectionView:
-            guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+            guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(stockData[indexPath.row]._id, stockData[indexPath.row].sellerId)
+            detailVC.setPrice(stockData[indexPath.row].price)
             self.navigationController?.pushViewController(detailVC, animated: true)
             
         case recentCollectionView:
-            guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+            guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(styleData[indexPath.row]._id, styleData[indexPath.row].sellerId)
+            detailVC.setPrice(styleData[indexPath.row].price)
             self.navigationController?.pushViewController(detailVC, animated: true)
             
         case todayVintageCollectionView:
-            guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+            guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(clotheData[indexPath.row]._id, clotheData[indexPath.row].sellerId)
+            detailVC.setPrice(clotheData[indexPath.row].price)
             self.navigationController?.pushViewController(detailVC, animated: true)
             
         default:
