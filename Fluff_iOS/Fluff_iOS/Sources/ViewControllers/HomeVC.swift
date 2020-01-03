@@ -413,8 +413,8 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let howFluvJsonData = data as? HowFluvJsonData else { return }
-                
-                self.fluvData = howFluvJsonData.data!
+                guard let fluvData = howFluvJsonData.data else { return }
+                self.fluvData = fluvData
                 self.howFluvCollectionView.reloadData()
             case .requestErr(let data):
                 guard let howFluvJsonData = data as? HowFluvJsonData else { return }
@@ -438,7 +438,8 @@ extension HomeVC {
             case .success(let data):
                 guard let todayStockJsonData = data as? TodayStockJsonData else {return}
                 print(todayStockJsonData)
-                self.stockData = todayStockJsonData.data!
+                guard let stockData = todayStockJsonData.data else { return }
+                self.stockData = stockData
                 self.todayCollectionView.reloadData()
             case .requestErr(let data):
                 guard let todayStockJsonData = data as? TodayStockJsonData else { return }
@@ -462,7 +463,8 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else {return}
-                self.styleData = recentStyleJsonData.data!
+                guard let styleData = recentStyleJsonData.data else { return }
+                self.styleData = styleData
                 self.recentCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
@@ -486,9 +488,8 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
-                guard let clotheData = recommendedClotheJsonData.data else { return  }
+                guard let clotheData = recommendedClotheJsonData.data else { return }
                 self.clotheData = clotheData
-//                self.clotheData = recommendedClotheJsonData.data!
                 self.todayVintageCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }

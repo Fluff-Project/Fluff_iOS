@@ -50,6 +50,11 @@ class ShoppingVC: UIViewController {
         shoppingCollectionView.reloadData()
     }
     
+    @IBAction func refreshPage(_ sender: UIBarButtonItem) {
+        loadClotheStyle()
+    }
+    
+    
     private func initButton() {
         filterButton.backgroundColor = UIColor(red: 23/255, green: 23/255, blue: 23/255, alpha: 1)
         filterButton.setTitle("필터", for: .normal)
@@ -180,24 +185,21 @@ extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let estimateHeight = (collectionView.frame.height - 100) / 2
-        let estimateWidth = (collectionView.frame.width - collectionView.frame.width / 14.42 - 33 * 2) / 2
-        print(self.view.frame.width)
-        print(estimateWidth * 2 + collectionView.frame.width / 14.42 + 33 * 2)
+        let estimateWidth = (collectionView.frame.width - collectionView.frame.width / 14.43 - (collectionView.frame.width / 5.86)) / 2
         return CGSize(width: estimateWidth, height: estimateHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        print(collectionView.frame.width / 14.42)
-        return collectionView.frame.width / 14.42
+        return collectionView.frame.width / 14.43
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 25
+        return (self.view.frame.height / 13)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 //        let estimateSpacing
-        return UIEdgeInsets(top: 0, left: 33, bottom: 70, right: 33)
+        return UIEdgeInsets(top: 0, left: (collectionView.frame.width / 11.72), bottom: 70, right: (collectionView.frame.width / 11.72))
     }
 }
 

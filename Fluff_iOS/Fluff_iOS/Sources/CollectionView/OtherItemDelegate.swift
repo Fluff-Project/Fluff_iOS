@@ -10,12 +10,29 @@ import UIKit
 
 class OtherItemDelegate: NSObject, UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout {
     private var otherItems: [OtherItemData] = []
+    private var sellerID: String = ""
+    private var navigationController = UINavigationController()
     
-    func setOtherItems(_ otherItme: [OtherItemData]) {
+    func setOtherItems(_ otherItem: [OtherItemData]) {
         self.otherItems = otherItem
     }
     
+    func setSellerID(_ id: String) {
+        self.sellerID = id
+    }
+    
+    func setNavigationController (_ nav: UINavigationController) {
+        self.navigationController = nav
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+        guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+        detailVC.setGoodsId(self.otherItems[indexPath.row]._id, self.sellerID)
+        detailVC.setPrice(self.otherItems[indexPath.row].price)
+        detailVC.setGoodsName(self.otherItems[indexPath.row].goodsName)
+        detailVC.hidesBottomBarWhenPushed = true
+         navigationController.pushViewController(detailVC, animated: true)
         
     }
     

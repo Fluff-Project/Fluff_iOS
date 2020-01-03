@@ -183,8 +183,11 @@ extension DetailItemVC {
                 guard let sellerOtherJSONData = data as? SellerOtherData else { return }
                 guard let otherItems = sellerOtherJSONData.json.data else { return }
                 self.otherItemDataOfSeller = otherItems
-                self.otherItemCollectionViewDataSource.setOtherItems(self.otherItemDataOfSeller)
-                self.otherItemDelegate.setOtherItems(otherItemDataOfSeller)
+            self.otherItemCollectionViewDataSource.setOtherItems(self.otherItemDataOfSeller)
+                self.otherItemDelegate.setSellerID(sellerId)
+                guard let nav = self.navigationController else { return }
+                self.otherItemDelegate.setNavigationController(nav)
+                self.otherItemDelegate.setOtherItems(self.otherItemDataOfSeller)
                 self.otherItemCollectionView.reloadData()
             case .requestErr(let data):
                 guard let sellerOtherJSONData = data as? SellerOtherJSONData else { return }

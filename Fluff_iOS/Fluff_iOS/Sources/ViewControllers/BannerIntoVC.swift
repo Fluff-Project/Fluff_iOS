@@ -137,7 +137,8 @@ extension BannerIntoVC {
             case .success(let data):
                 
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
-                self.styleData = recentStyleJsonData.data!
+                guard let styleData = recentStyleJsonData.data else { return }
+                self.styleData = styleData
                 self.bannerIntoCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
