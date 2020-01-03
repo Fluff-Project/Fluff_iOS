@@ -12,13 +12,18 @@ import Hero
 class MagazineDetailVC: UIViewController {
 
     @IBOutlet weak var itemView: UIView!
-    
+    @IBOutlet weak var title1Label: UILabel!
+    @IBOutlet weak var title2Label: UILabel!
     @IBOutlet weak var topImage: UIImageView!
-    let dotumPB = UIFont(name: "KoPubWorldDotumPB", size: 16)
     @IBOutlet weak var item1Name: UITextView!
+    
+    let dotumPB = UIFont(name: "KoPubWorldDotumPB", size: 16)
     
     var whatMagazine = Int()
     var magazineImageData: [MagazineImageData] = []
+    
+    var title1Str = "옷만큼 개성있는"
+    var title2Str = "오프라인 빈티지 매장들"
     
     var item1AttributedStr = NSMutableAttributedString()
     let paragraphStyle = NSMutableParagraphStyle()
@@ -30,6 +35,9 @@ class MagazineDetailVC: UIViewController {
         topImage.setImage(with: magazineImageData[whatMagazine].imgUrl)
         
         topImage.hero.modifiers = [.fade, .translate(x:0, y:-250), .rotate(x:-1.6), .scale(1.5)]
+        
+        title1Label.text = title1Str
+        title2Label.text = title2Str
         
         paragraphStyle.alignment = .center
         
@@ -45,21 +53,19 @@ class MagazineDetailVC: UIViewController {
         itemView.layer.shadowOpacity = 0.16
         itemView.layer.shadowOffset = .zero
         itemView.layer.shadowRadius = 10
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func handlePan(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            hero.dismissViewController()
+        case .changed:
+            let translation = sender.translation(in: nil)
+            let progress = translation.y / 2 / view.bounds.height
+            Hero.shared.update(progress)
+        default:
+            Hero.shared.finish()
+            
+        }
     }
-    */
-
 }

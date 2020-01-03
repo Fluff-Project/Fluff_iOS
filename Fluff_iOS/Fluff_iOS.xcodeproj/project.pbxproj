@@ -114,8 +114,6 @@
 		A63C506C23B08BF60069BAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63C506B23B08BF60069BAFB /* Assets.xcassets */; };
 		A63C506F23B08BF60069BAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63C506D23B08BF60069BAFB /* LaunchScreen.storyboard */; };
 		A63C507D23B0A34D0069BAFB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C507C23B0A34D0069BAFB /* LoginVC.swift */; };
-		A669669723BF5492000E7439 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669669623BF5492000E7439 /* FirstViewController.swift */; };
-		A669669923BF549E000E7439 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669669823BF549E000E7439 /* SecondViewController.swift */; };
 		A66F23FF23B6E796004B57FA /* NewSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */; };
 		A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240023B7532C004B57FA /* NewSignUpViewController.swift */; };
 		A66F240723B8A509004B57FA /* BannerIntoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F240623B8A509004B57FA /* BannerIntoVC.swift */; };
@@ -265,8 +263,6 @@
 		A63C506E23B08BF60069BAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63C507023B08BF60069BAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63C507C23B0A34D0069BAFB /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		A669669623BF5492000E7439 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		A669669823BF549E000E7439 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A66F23FE23B6E796004B57FA /* NewSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSignUp.storyboard; sourceTree = "<group>"; };
 		A66F240023B7532C004B57FA /* NewSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignUpViewController.swift; sourceTree = "<group>"; };
 		A66F240623B8A509004B57FA /* BannerIntoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoVC.swift; sourceTree = "<group>"; };
@@ -574,8 +570,6 @@
 				A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */,
 				A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */,
 				9D0E2A8E23BE420F00E73F40 /* SocketawdViewController.swift */,
-				A669669623BF5492000E7439 /* FirstViewController.swift */,
-				A669669823BF549E000E7439 /* SecondViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -806,7 +800,6 @@
 				9D79382C23B2871400A0CD3E /* DetailItemVC.swift in Sources */,
 				A66F240B23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift in Sources */,
 				A607C61123BD52B400B4D56A /* MagazineBannerVC.swift in Sources */,
-				A669669923BF549E000E7439 /* SecondViewController.swift in Sources */,
 				9D5676F423B6B64D00720F06 /* FilteringCategory.swift in Sources */,
 				9D0E2A8B23BE406700E73F40 /* SocketService.swift in Sources */,
 				9D705A9F23B8AB5200097FCF /* DeliveryListTableViewCell.swift in Sources */,
@@ -861,7 +854,6 @@
 				9D0E2A9523BE951D00E73F40 /* DetailGoodsData.swift in Sources */,
 				A6DF860723B28674006FDE79 /* HomeVC.swift in Sources */,
 				9D79377E23B0C0D400A0CD3E /* NetworkResult.swift in Sources */,
-				A669669723BF5492000E7439 /* FirstViewController.swift in Sources */,
 				A6DF861023B33DC9006FDE79 /* TodayCollectionViewCell.swift in Sources */,
 				A6E2ABB823BA280800EC8E66 /* EndPaymentVC.swift in Sources */,
 				A607C60723BCA65D00B4D56A /* UILabel+Extensions.swift in Sources */,

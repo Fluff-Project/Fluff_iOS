@@ -29,7 +29,6 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1WA-8I-Vbp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="magImg"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                         </userDefinedRuntimeAttributes>
@@ -156,18 +155,54 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rK4-Sw-HdE">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellaTheBraveSmall" translatesAutoresizingMaskIntoConstraints="NO" id="Z5T-m9-01f">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bellaTheBraveBig" translatesAutoresizingMaskIntoConstraints="NO" id="Z5T-m9-01f">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="magImg"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NoG-3L-8WJ">
+                                                    <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NoG-3L-8WJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="423"/>
                                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="Tmv-op-c4y" appends="YES" id="nwV-JM-bRh"/>
+                                                        </connections>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQa-Dp-Qis">
+                                                        <rect key="frame" x="21" y="197" width="86" height="24"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="MQa-Dp-Qis" secondAttribute="height" multiplier="43:12" id="KQS-Bg-9us"/>
+                                                            <constraint firstAttribute="width" constant="86" id="xS9-Bj-Mkg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="옷만큼 개성있는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHZ-4V-l3R">
+                                                        <rect key="frame" x="21" y="263" width="169" height="28"/>
+                                                        <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="24"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오프라인 빈티지 매장들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8X-5p-M28">
+                                                        <rect key="frame" x="21" y="298" width="245" height="28"/>
+                                                        <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="24"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.12.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATS-fa-l6T">
+                                                        <rect key="frame" x="21" y="376" width="70" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="0d1-dZ-1kt"/>
+                                                            <constraint firstAttribute="width" secondItem="ATS-fa-l6T" secondAttribute="height" multiplier="7:2" id="oca-GR-PIA"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign" translatesAutoresizingMaskIntoConstraints="NO" id="ziO-iI-9Su">
                                                         <rect key="frame" x="152.66666666666666" y="52" width="70" height="38"/>
                                                         <constraints>
@@ -179,13 +214,21 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="NoG-3L-8WJ" firstAttribute="leading" secondItem="rK4-Sw-HdE" secondAttribute="leading" id="4kh-Qy-Vb1"/>
+                                                    <constraint firstItem="MQa-Dp-Qis" firstAttribute="leading" secondItem="rK4-Sw-HdE" secondAttribute="leading" constant="21" id="4tF-KZ-Bbg"/>
+                                                    <constraint firstItem="fHZ-4V-l3R" firstAttribute="leading" secondItem="MQa-Dp-Qis" secondAttribute="leading" id="6j0-X3-b0n"/>
                                                     <constraint firstItem="Z5T-m9-01f" firstAttribute="top" secondItem="rK4-Sw-HdE" secondAttribute="top" id="7Aa-Je-nMm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="MQa-Dp-Qis" secondAttribute="bottom" constant="202" id="AAp-Qi-jDT"/>
                                                     <constraint firstItem="Z5T-m9-01f" firstAttribute="leading" secondItem="rK4-Sw-HdE" secondAttribute="leading" id="BS7-As-XT0"/>
+                                                    <constraint firstItem="fHZ-4V-l3R" firstAttribute="top" secondItem="MQa-Dp-Qis" secondAttribute="bottom" constant="42" id="DPD-VG-SIa"/>
                                                     <constraint firstAttribute="height" constant="423" id="I2H-Ra-EMv"/>
+                                                    <constraint firstItem="W8X-5p-M28" firstAttribute="top" secondItem="fHZ-4V-l3R" secondAttribute="bottom" constant="7" id="Kxq-c1-JEX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ATS-fa-l6T" secondAttribute="bottom" constant="27" id="QQB-qe-OQa"/>
                                                     <constraint firstAttribute="trailing" secondItem="Z5T-m9-01f" secondAttribute="trailing" id="VvZ-W7-Xta"/>
+                                                    <constraint firstItem="ATS-fa-l6T" firstAttribute="leading" secondItem="rK4-Sw-HdE" secondAttribute="leading" constant="21" id="ccp-L2-ZqC"/>
                                                     <constraint firstAttribute="bottom" secondItem="NoG-3L-8WJ" secondAttribute="bottom" id="e9C-s3-Xmh"/>
                                                     <constraint firstItem="ziO-iI-9Su" firstAttribute="centerX" secondItem="rK4-Sw-HdE" secondAttribute="centerX" id="o6K-7k-3gE"/>
                                                     <constraint firstItem="ziO-iI-9Su" firstAttribute="top" secondItem="rK4-Sw-HdE" secondAttribute="top" constant="52" id="oCT-Ji-mgg"/>
+                                                    <constraint firstItem="W8X-5p-M28" firstAttribute="leading" secondItem="MQa-Dp-Qis" secondAttribute="leading" id="p1e-9C-9kZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="NoG-3L-8WJ" secondAttribute="trailing" id="rH8-xu-1l1"/>
                                                     <constraint firstAttribute="bottom" secondItem="Z5T-m9-01f" secondAttribute="bottom" id="uKw-sU-xRL"/>
                                                     <constraint firstItem="NoG-3L-8WJ" firstAttribute="top" secondItem="rK4-Sw-HdE" secondAttribute="top" id="v1C-HV-gDh"/>
@@ -307,12 +350,19 @@ GERMAN ARMY TRAINER</string>
                     <connections>
                         <outlet property="item1Name" destination="s2S-ux-uCR" id="RyG-hM-7lY"/>
                         <outlet property="itemView" destination="fSw-9Y-MOe" id="WZY-oK-D3j"/>
+                        <outlet property="title1Label" destination="fHZ-4V-l3R" id="qgu-VA-hZV"/>
+                        <outlet property="title2Label" destination="W8X-5p-M28" id="p2B-2L-fmD"/>
                         <outlet property="topImage" destination="Z5T-m9-01f" id="4db-in-Cb5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9g-yW-k0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Tmv-op-c4y">
+                    <connections>
+                        <action selector="handlePan:" destination="ZwV-0j-g1n" id="p1d-Mw-IGh"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2754.4000000000001" y="-313.30049261083747"/>
+            <point key="canvasLocation" x="1678" y="-344"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z76-aX-a6f">
@@ -334,105 +384,10 @@ GERMAN ARMY TRAINER</string>
             </objects>
             <point key="canvasLocation" x="-191.19999999999999" y="-386.45320197044339"/>
         </scene>
-        <!--First View Controller-->
-        <scene sceneID="BIO-JZ-uDB">
-            <objects>
-                <viewController id="ZPO-9m-oNp" customClass="FirstViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="flJ-Cw-CCc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSA-xb-Ody">
-                                <rect key="frame" x="164" y="678" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="bcY-cP-Y0p" kind="show" id="dZL-B9-jcR"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="LzD-CN-alL">
-                                <rect key="frame" x="59" y="68" width="218" height="236"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bts"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="iga-hT-bfu"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="pIA-5r-j48"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="firstImage" destination="LzD-CN-alL" id="Vl4-Ih-XjK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Luj-nJ-Ogp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="698.39999999999998" y="426.35467980295567"/>
-        </scene>
-        <!--Second View Controller-->
-        <scene sceneID="N9n-Cz-KQq">
-            <objects>
-                <viewController id="bcY-cP-Y0p" customClass="SecondViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V0A-zN-Syp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="IA9-AP-0Xf">
-                                <rect key="frame" x="39" y="271" width="320" height="352"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="bts"/>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="lAe-Lq-70B"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="klM-o5-Ux9"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="secondImage" destination="IA9-AP-0Xf" id="jeU-VT-cJQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kmt-FL-ues" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1575.2" y="425.61576354679806"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JtE-Q5-pK6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2v3-3J-6Nu" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CT5-Mx-glh">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <segue destination="ZPO-9m-oNp" kind="relationship" relationship="rootViewController" id="gWN-18-Xxo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9WK-GS-rqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-244" y="426.35467980295567"/>
-        </scene>
     </scenes>
     <resources>
         <image name="102" width="298" height="198"/>
-        <image name="beccaMchaffieFzde6ITjkwUnsplash2" width="516" height="516"/>
-        <image name="bellaTheBraveSmall" width="375" height="423"/>
+        <image name="bellaTheBraveBig" width="364" height="787"/>
         <image name="realOngzolIc" width="41.666667938232422" height="10.666666984558105"/>
         <image name="sign" width="204.33332824707031" height="112.33333587646484"/>
     </resources>

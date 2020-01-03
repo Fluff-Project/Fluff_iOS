@@ -50,8 +50,6 @@ class MagazineBannerVC: UIViewController {
     }
 
     @objc func pushView(recognizer: UIGestureRecognizer) {
-        print("푸시푸시")
-        
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineBannerVC") as? MagazineBannerVC else { return }
         if now == 4 {
             return
@@ -63,8 +61,6 @@ class MagazineBannerVC: UIViewController {
     }
     
     @objc func popView(recognizer: UIGestureRecognizer) {
-        print("팝팝")
-        
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineBannerVC") as? MagazineBannerVC else { return }
         if now == 0 {
             return
@@ -79,6 +75,8 @@ class MagazineBannerVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "MagazineDetailVC") as? MagazineDetailVC else { return }
         nextVC.whatMagazine = now
         nextVC.magazineImageData = magazineImageData
+        nextVC.title1Str = title1List[now]
+        nextVC.title2Str = title2List[now]
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
