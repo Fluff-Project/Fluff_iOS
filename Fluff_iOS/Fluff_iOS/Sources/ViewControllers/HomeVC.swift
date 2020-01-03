@@ -119,6 +119,9 @@ class HomeVC: UIViewController {
         howFluvCollectionView.dataSource = self
         nowAuctionCollectionView.dataSource = self
         todayVintageCollectionView.dataSource = self
+        todayCollectionView.delegate = self
+        recentCollectionView.delegate = self
+        todayVintageCollectionView.delegate = self
         howFluvCollectionView.delegate = self
         bannerCollectionView.delegate = self
         bannerCollectionView.showsHorizontalScrollIndicator = false
@@ -328,10 +331,8 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case self.bannerCollectionView:
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        case self.howFluvCollectionView:
-            return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         default:
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
         }
         
     }
@@ -340,8 +341,10 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         switch collectionView {
         case self.howFluvCollectionView:
             return 12
-        default:
+        case self.bannerCollectionView:
             return 0
+        default:
+            return 15
         }
     }
     
@@ -358,8 +361,32 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
 extension HomeVC: UICollectionViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let page = Int(targetContentOffset.pointee.x / self.bannerCollectionView.frame.width)
-        self.bannerPageControl.set(progress: page, animated: true)
+        if scrollView == bannerCollectionView {
+            let page = Int(targetContentOffset.pointee.x / self.bannerCollectionView.frame.width)
+            self.bannerPageControl.set(progress: page, animated: true)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case todayCollectionView:
+            guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            detailVC.setGoodsId(stockData[indexPath.row]._id, stockData[indexPath.row].sellerId)
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        case recentCollectionView:
+            guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            detailVC.setGoodsId(styleData[indexPath.row]._id, styleData[indexPath.row].sellerId)
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        case todayVintageCollectionView:
+            guard let detailVC = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            detailVC.setGoodsId(clotheData[indexPath.row]._id, clotheData[indexPath.row].sellerId)
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        default:
+            return
+        }
     }
     
     
