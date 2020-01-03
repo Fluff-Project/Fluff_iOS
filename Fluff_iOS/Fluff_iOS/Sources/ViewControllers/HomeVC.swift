@@ -31,6 +31,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var todayVintageCollectionView: UICollectionView!
     
     let numberFormatter = NumberFormatter()
+    var whatBanner = Int()
     
     private var userToken: String?
     private var fluvData: [FluvData] = []
@@ -76,6 +77,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObserver()
         numberFormatter.numberStyle = .decimal
         
         whatSeen = "니트"
@@ -167,7 +169,7 @@ class HomeVC: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    @IBAction func goFluvRecomend(_ sender: Any) {
+    @IBAction func goFluvRecommend(_ sender: Any) {
         let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
         guard let fluvRecommendVC = tasteStoryboard.instantiateViewController(identifier: "ThreeTasteAnalysisVC") as? NextTasteAnalysisVC else { return }
         fluvRecommendVC.setAnalysisStatus(.recommend)
@@ -199,7 +201,9 @@ extension HomeVC: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let bannerImgList: [UIImage] = [#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2"),#imageLiteral(resourceName: "beccaMchaffieFzde6ITjkwUnsplash2")]
+        let bannerImgList: [UIImage] = [#imageLiteral(resourceName: "photo1554229897C01Accf784Db"),#imageLiteral(resourceName: "photo15609636176F009D09E772"),#imageLiteral(resourceName: "photo15445869473E09D1A036F1"),#imageLiteral(resourceName: "photo15200122183643Dbe62C99Bee")]
+        let bannerTitleList: [String] = ["빈티지 가디건", "겨울 스커트", "빈티지 원피스", "겨울 빈티지 코트"]
+        let bannerLineList: [String] = ["러블리함을 원한다면?", "따뜻하고 포인트가 되는", "영화 한 장면처럼", "지금이 딱!"]
         
         let nowAuctionImgList: [UIImage] = [#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110"),#imageLiteral(resourceName: "111"),#imageLiteral(resourceName: "110")]
         
@@ -215,13 +219,17 @@ extension HomeVC: UICollectionViewDataSource{
             todayCollectionViewCell.todayProductLabel.text = stockData[indexPath.row].goodsName
             todayCollectionViewCell.todayPriceLabel.text =
                 numberFormatter.string(from: NSNumber(value: stockData[indexPath.row].price))! + "원"
+            print(String(indexPath.row * 103))
             return todayCollectionViewCell
             
         case self.bannerCollectionView:
             
             let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell", for: indexPath) as! BannerCell
             
+            bannerCell.setIndex(indexPath.row)
             bannerCell.bannerImg.image = bannerImgList[indexPath.row]
+            bannerCell.bannerTitleLabel.text = bannerTitleList[indexPath.row]
+            bannerCell.bannerLineLabel.text = bannerLineList[indexPath.row]
             return bannerCell
         
         case self.recentCollectionView:
@@ -348,16 +356,13 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeVC: UICollectionViewDelegate {
-
+    
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / self.bannerCollectionView.frame.width)
-      self.bannerPageControl.set(progress: page, animated: true)
+        self.bannerPageControl.set(progress: page, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "BannerIntoVC") as? BannerIntoVC else { return }
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
+    
 }
 
 extension HomeVC {
@@ -370,7 +375,7 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let howFluvJsonData = data as? HowFluvJsonData else { return }
-               
+                
                 self.fluvData = howFluvJsonData.data!
                 self.howFluvCollectionView.reloadData()
             case .requestErr(let data):
@@ -391,70 +396,112 @@ extension HomeVC {
         
         TodayStockService.shared.todayStock(token: userToken) {
             networkResult in
-                switch networkResult {
-                case .success(let data):
-                    guard let todayStockJsonData = data as? TodayStockJsonData else {return}
-                    self.stockData = todayStockJsonData.data!
-                    self.todayCollectionView.reloadData()
-                case .requestErr(let data):
-                    guard let todayStockJsonData = data as? TodayStockJsonData else { return }
-                    self.presentAlertController(title: todayStockJsonData.message, message: nil)
-                case .pathErr:
-                    self.presentAlertController(title: "path Error", message: nil)
-                case .serverErr:
-                    self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
-                case .networkFail:
-                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
-                }
+            switch networkResult {
+            case .success(let data):
+                guard let todayStockJsonData = data as? TodayStockJsonData else {return}
+                self.stockData = todayStockJsonData.data!
+                self.todayCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let todayStockJsonData = data as? TodayStockJsonData else { return }
+                self.presentAlertController(title: todayStockJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
             }
-            
         }
+        
+    }
     
-        private func requestRecentStyle() {
+    private func requestRecentStyle() {
         guard let userToken = self.userToken else {return}
         
         RecentStyleService.shared.recentStyle(token: userToken) {
             networkResult in
-                switch networkResult {
-                case .success(let data):
-                    guard let recentStyleJsonData = data as? RecentStyleJsonData else {return}
-                    self.styleData = recentStyleJsonData.data!
-                    self.recentCollectionView.reloadData()
-                case .requestErr(let data):
-                    guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
-                    self.presentAlertController(title: recentStyleJsonData.message, message: nil)
-                case .pathErr:
-                    self.presentAlertController(title: "path Error", message: nil)
-                case .serverErr:
-                    self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
-                case .networkFail:
-                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
-                }
+            switch networkResult {
+            case .success(let data):
+                guard let recentStyleJsonData = data as? RecentStyleJsonData else {return}
+                self.styleData = recentStyleJsonData.data!
+                self.recentCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
+                self.presentAlertController(title: recentStyleJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
             }
-            
         }
+        
+    }
     
-        private func requestTodayRecommendation() {
+    private func requestTodayRecommendation() {
         guard let userToken = self.userToken else {return}
         
         RecommendService.shared.getRecommendStyleClothe(token: userToken) {
             networkResult in
-                switch networkResult {
-                case .success(let data):
-                    guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
-                    self.clotheData = recommendedClotheJsonData.data!
-                    self.todayVintageCollectionView.reloadData()
-                case .requestErr(let data):
-                    guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }
-                    self.presentAlertController(title: recommendedClotheJsonData.message, message: nil)
-                case .pathErr:
-                    self.presentAlertController(title: "path Error", message: nil)
-                case .serverErr:
-                    self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
-                case .networkFail:
-                    self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
-                }
+            switch networkResult {
+            case .success(let data):
+                guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
+                self.clotheData = recommendedClotheJsonData.data!
+                self.todayVintageCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }
+                self.presentAlertController(title: recommendedClotheJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
             }
         }
     }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(intoBanner), name: .clickIntoBannerButton, object: nil)
+    }
+    
+    @objc func intoBanner(_ notification: NSNotification) {
+        
+        
+        guard let selectedIndex = notification.userInfo?["clickedIndex"] as? Int else { return }
+//        print(selectedIndex)
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "BannerIntoVC") as? BannerIntoVC else { return }
+        nextVC.whatBanner = selectedIndex
+        
+        switch selectedIndex {
+        case 0:
+            nextVC.bannerTitleStr = "빈티지 가디건"
+            nextVC.bannerLineStr = "러블리함을 원한다면?"
+            nextVC.bannerImg = #imageLiteral(resourceName: "photo1554229897C01Accf784Db")
+            nextVC.userToken = self.userToken
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 1:
+            nextVC.bannerTitleStr = "겨울 스커트"
+            nextVC.bannerLineStr = "따뜻하고 포인트가 되는"
+            nextVC.bannerImg = #imageLiteral(resourceName: "photo15609636176F009D09E772")
+            nextVC.userToken = self.userToken
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 2:
+            nextVC.bannerTitleStr = "빈티지 원피스"
+            nextVC.bannerLineStr = "영화 한 장면처럼"
+            nextVC.bannerImg = #imageLiteral(resourceName: "photo15445869473E09D1A036F1")
+            nextVC.userToken = self.userToken
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        case 3:
+            nextVC.bannerTitleStr = "겨울 빈티지 코트"
+            nextVC.bannerLineStr = "지금이 딱!"
+            nextVC.bannerImg = #imageLiteral(resourceName: "photo15200122183643Dbe62C99Bee")
+            nextVC.userToken = self.userToken
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        default:
+            return
+        }
+    }
+}
 

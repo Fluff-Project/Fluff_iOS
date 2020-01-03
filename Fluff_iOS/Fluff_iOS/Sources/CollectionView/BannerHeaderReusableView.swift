@@ -11,5 +11,7 @@ import UIKit
 class BannerHeaderReusableView: UICollectionReusableView {
         
     @IBOutlet weak var headerImage: UIImageView!
+    @IBOutlet weak var headerTitleLabel: UILabel!
+    @IBOutlet weak var headerLineLabel: UILabel!
     
 }

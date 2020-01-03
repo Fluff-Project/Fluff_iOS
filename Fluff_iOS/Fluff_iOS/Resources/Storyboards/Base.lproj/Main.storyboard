@@ -14,6 +14,12 @@
         <array key="SCDream2.otf">
             <string>S-CoreDream-2ExtraLight</string>
         </array>
+        <array key="SCDream3.otf">
+            <string>S-CoreDream-3Light</string>
+        </array>
+        <array key="SCDream4.otf">
+            <string>S-CoreDream-4Regular</string>
+        </array>
         <array key="SCDream5.otf">
             <string>S-CoreDream-5Medium</string>
         </array>
@@ -119,20 +125,70 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="WVr-Iv-a8h">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="photo1554229897C01Accf784Db" translatesAutoresizingMaskIntoConstraints="NO" id="WVr-Iv-a8h">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                                                                 </imageView>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGB-Hk-A3X">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.23999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러블리함을 원한다면?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Be-ne-lta">
+                                                                    <rect key="frame" x="16" y="353" width="142.66666666666666" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="18" id="5LR-1g-Iby"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="S-CoreDream-3Light" family="S-Core Dream" pointSize="15"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈티지 가디건" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sw-gk-O7R">
+                                                                    <rect key="frame" x="16" y="377" width="212" height="41"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="41" id="v5r-vi-68a"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="35"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-PZ-clq">
+                                                                    <rect key="frame" x="16" y="432" width="108" height="24"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="24" id="HMt-hl-HSB"/>
+                                                                        <constraint firstAttribute="width" secondItem="0wx-PZ-clq" secondAttribute="height" multiplier="9:2" id="kS6-zi-Th5"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="S-CoreDream-3Light" family="S-Core Dream" pointSize="15"/>
+                                                                    <state key="normal" title="자세히 보기 &gt;">
+                                                                        <color key="titleColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="intoBanner:" destination="bXJ-b7-8PQ" eventType="touchUpInside" id="hyS-Pj-TxW"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="3Be-ne-lta" firstAttribute="top" secondItem="nay-7P-Ed5" secondAttribute="top" constant="353" id="5pQ-9L-r9k"/>
+                                                                <constraint firstAttribute="trailing" secondItem="qGB-Hk-A3X" secondAttribute="trailing" id="94K-NR-vUo"/>
                                                                 <constraint firstAttribute="bottom" secondItem="WVr-Iv-a8h" secondAttribute="bottom" id="B5z-et-vqI"/>
+                                                                <constraint firstAttribute="bottom" secondItem="qGB-Hk-A3X" secondAttribute="bottom" id="Eav-2K-Gig"/>
+                                                                <constraint firstItem="1sw-gk-O7R" firstAttribute="leading" secondItem="3Be-ne-lta" secondAttribute="leading" id="H4H-el-xim"/>
+                                                                <constraint firstItem="1sw-gk-O7R" firstAttribute="top" secondItem="3Be-ne-lta" secondAttribute="bottom" constant="6" id="USH-Lp-Nct"/>
                                                                 <constraint firstAttribute="trailing" secondItem="WVr-Iv-a8h" secondAttribute="trailing" id="X0l-gY-CAo"/>
+                                                                <constraint firstItem="qGB-Hk-A3X" firstAttribute="top" secondItem="nay-7P-Ed5" secondAttribute="top" id="aJi-xp-GT6"/>
                                                                 <constraint firstItem="WVr-Iv-a8h" firstAttribute="leading" secondItem="nay-7P-Ed5" secondAttribute="leading" id="aP3-Rq-fmk"/>
+                                                                <constraint firstItem="0wx-PZ-clq" firstAttribute="top" secondItem="1sw-gk-O7R" secondAttribute="bottom" constant="14" id="cjz-Xe-Kej"/>
+                                                                <constraint firstItem="3Be-ne-lta" firstAttribute="leading" secondItem="nay-7P-Ed5" secondAttribute="leading" constant="16" id="gM8-Fr-9Nj"/>
                                                                 <constraint firstItem="WVr-Iv-a8h" firstAttribute="top" secondItem="nay-7P-Ed5" secondAttribute="top" id="hsq-1x-Lkj"/>
+                                                                <constraint firstItem="0wx-PZ-clq" firstAttribute="leading" secondItem="1sw-gk-O7R" secondAttribute="leading" id="kb2-i3-B9M"/>
+                                                                <constraint firstItem="qGB-Hk-A3X" firstAttribute="leading" secondItem="nay-7P-Ed5" secondAttribute="leading" id="vKb-uJ-EC1"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="375" height="502"/>
                                                         <connections>
+                                                            <outlet property="bannerButton" destination="0wx-PZ-clq" id="ZTQ-RP-uwO"/>
                                                             <outlet property="bannerImg" destination="WVr-Iv-a8h" id="Sum-yb-YQ0"/>
+                                                            <outlet property="bannerLineLabel" destination="3Be-ne-lta" id="OPf-EK-iCJ"/>
+                                                            <outlet property="bannerTitleLabel" destination="1sw-gk-O7R" id="GR5-2X-OgJ"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -361,9 +417,6 @@
                                                             <constraint firstAttribute="width" constant="50" id="pPT-hf-mPt"/>
                                                             <constraint firstAttribute="width" secondItem="aVn-Hk-Qfs" secondAttribute="height" multiplier="1:1" id="xU4-Im-0Ao"/>
                                                         </constraints>
-                                                        <connections>
-                                                            <action selector="goFluvRecomend:" destination="1V2-Mk-LMF" eventType="touchUpInside" id="SMg-yu-fYc"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
@@ -886,7 +939,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beccaMchaffieFzde6ITjkwUnsplash2" translatesAutoresizingMaskIntoConstraints="NO" id="fzT-w4-tdz">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo15200122183643Dbe62C99Bee" translatesAutoresizingMaskIntoConstraints="NO" id="fzT-w4-tdz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.45000000000000001" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -897,21 +950,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="겨울 빈티지의 정수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piq-fN-X2B">
-                                            <rect key="frame" x="118" y="143" width="139" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="러블리함을 원한다면?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piq-fN-X2B">
+                                            <rect key="frame" x="116.33333333333333" y="143" width="142.66666666666669" height="18.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="piq-fN-X2B" secondAttribute="height" multiplier="116:15" id="ahS-VM-Uzj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="S-CoreDream-3Light" family="S-Core Dream" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="벨벳 Velvet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62H-JH-CzK">
-                                            <rect key="frame" x="123" y="166" width="129" height="34"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="빈티지 가디건" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62H-JH-CzK">
+                                            <rect key="frame" x="81.666666666666686" y="166.33333333333334" width="212" height="56"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="62H-JH-CzK" secondAttribute="height" multiplier="129:34" id="WN9-0l-bKn"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <fontDescription key="fontDescription" name="S-CoreDream-4Regular" family="S-Core Dream" pointSize="35"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -933,6 +986,8 @@
                                     </constraints>
                                     <connections>
                                         <outlet property="headerImage" destination="fzT-w4-tdz" id="haC-Sb-s0E"/>
+                                        <outlet property="headerLineLabel" destination="piq-fN-X2B" id="mrE-3j-YEN"/>
+                                        <outlet property="headerTitleLabel" destination="62H-JH-CzK" id="nxS-nw-RG3"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
@@ -1110,10 +1165,11 @@
     <resources>
         <image name="14" width="8" height="16"/>
         <image name="478" width="180" height="216"/>
-        <image name="beccaMchaffieFzde6ITjkwUnsplash2" width="516" height="516"/>
         <image name="heartEmptyIc" width="26.333333969116211" height="24"/>
         <image name="heartFilledIc" width="26.333333969116211" height="24"/>
         <image name="homeFollowbutton" width="92" height="30"/>
+        <image name="photo15200122183643Dbe62C99Bee" width="375" height="502"/>
+        <image name="photo1554229897C01Accf784Db" width="375" height="502"/>
         <image name="sign" width="204.33332824707031" height="112.33333587646484"/>
     </resources>
 </document>
