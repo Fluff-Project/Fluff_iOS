@@ -99,9 +99,20 @@ class HowToPayVC: UIViewController {
 
     @IBAction func paymentComplete(_ sender: UIButton) {
         whatName = customerNameTextField.text!
+        guard let inputBankText = selectBankTextField.text else { return }
+        guard let inputNameText = customerNameTextField.text else { return }
+        if inputBankText == "" {
+            self.presentAlertController(title: "입금할 은행을 선택해주세요.", message: nil)
+            return
+        }
+        if inputNameText == "" {
+            self.presentAlertController(title: "입금자명을 입력해주세요.", message: nil)
+            return
+        }
         
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "EndPaymentVC") as? EndPaymentVC else { return }
         nextVC.hidesBottomBarWhenPushed = true
+        nextVC.setPurchaseList(purchaseList)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

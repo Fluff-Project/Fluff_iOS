@@ -29,6 +29,8 @@ struct APIConstants {
     static let detailInform = baseURL + "/goods/"
     // 셀러 다른 아이템 조회 ==> 뒤에 sellerID 붙여서 요청
     static let otherItemLookup = baseURL + "/goods/seller/"
+    // 최종 주문 리스트 넘기기
+    static let sendOrder = baseURL + "/order/goodsList"
     static let howFluv = baseURL + "/recommend/seller?page=4"
     static let todayStock = baseURL + "/goods?page=7&sort=newest"
     static let recentStyle = baseURL + "/goods?category=knit&page=5"

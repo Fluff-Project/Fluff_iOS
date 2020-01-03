@@ -36,6 +36,7 @@ class EndPaymentVC: UIViewController {
         // Do any additional setup after loading the view.
        
         sum = price + deliveryFee
+        deliveryFee = 2500
         
         numberFormatter.numberStyle = .decimal
         
