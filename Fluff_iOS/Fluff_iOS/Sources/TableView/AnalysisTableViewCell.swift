@@ -14,6 +14,7 @@ class AnalysisTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageButton: UIButton!
     @IBOutlet weak var fluvShopLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var followButtonBackgroundImageView: UIImageView!
     @IBOutlet weak var clothtagLabel: UILabel!
     @IBOutlet weak var twoClothtagLabel: UILabel!
     
@@ -37,9 +38,9 @@ class AnalysisTableViewCell: UITableViewCell {
     }
     
     func setFluvProfileImage(url: String) {
-        let fluvImageProfile = UIImageView(frame: profileImageButton.frame)
-        fluvImageProfile.setImage(with: url)
-        profileImageButton.setBackgroundImage(fluvImageProfile.image, for: .normal)
+        followButtonBackgroundImageView.makeCornerRounded(radius: followButtonBackgroundImageView.frame.width / 2)
+        followButtonBackgroundImageView.clipsToBounds = true
+        followButtonBackgroundImageView.setImage(with: url)
     }
     
     func setFluvShop(_ name: String) {

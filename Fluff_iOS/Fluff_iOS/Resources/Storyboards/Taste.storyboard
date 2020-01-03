@@ -232,6 +232,9 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vxf-3i-AYb">
+                                                            <rect key="frame" x="22.000000000000004" y="0.0" width="49.333333333333343" height="49.333333333333336"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
@@ -243,6 +246,7 @@
                                                         <constraint firstItem="QIJ-xT-GFZ" firstAttribute="width" secondItem="lce-up-DhS" secondAttribute="width" id="HYj-wf-k1P"/>
                                                         <constraint firstItem="QIJ-xT-GFZ" firstAttribute="centerY" secondItem="lce-up-DhS" secondAttribute="centerY" id="PwO-4B-Tiv"/>
                                                         <constraint firstAttribute="trailing" secondItem="8fi-Ma-tLO" secondAttribute="trailing" constant="22" id="QgX-cM-wfl"/>
+                                                        <constraint firstItem="Vxf-3i-AYb" firstAttribute="width" secondItem="raF-cG-nr0" secondAttribute="width" id="TRy-9S-6Hg"/>
                                                         <constraint firstItem="raF-cG-nr0" firstAttribute="top" secondItem="dk3-MR-i8o" secondAttribute="top" id="biu-3Y-ZoZ"/>
                                                         <constraint firstItem="8fi-Ma-tLO" firstAttribute="width" secondItem="dk3-MR-i8o" secondAttribute="width" multiplier="0.1813" id="ec3-OO-bRN"/>
                                                         <constraint firstAttribute="bottom" secondItem="raF-cG-nr0" secondAttribute="bottom" id="f4R-ay-HQG"/>
@@ -250,6 +254,9 @@
                                                         <constraint firstItem="lce-up-DhS" firstAttribute="width" secondItem="dk3-MR-i8o" secondAttribute="width" multiplier="0.12" id="lNM-2X-Aod"/>
                                                         <constraint firstItem="EMy-Lf-sZ6" firstAttribute="top" secondItem="raF-cG-nr0" secondAttribute="top" id="poR-HT-kmc"/>
                                                         <constraint firstItem="lce-up-DhS" firstAttribute="leading" secondItem="EMy-Lf-sZ6" secondAttribute="leading" id="rhZ-Ha-WuH"/>
+                                                        <constraint firstItem="Vxf-3i-AYb" firstAttribute="centerY" secondItem="dk3-MR-i8o" secondAttribute="centerY" id="unD-xn-ptj"/>
+                                                        <constraint firstItem="Vxf-3i-AYb" firstAttribute="height" secondItem="raF-cG-nr0" secondAttribute="height" id="vA2-5L-sN1"/>
+                                                        <constraint firstItem="Vxf-3i-AYb" firstAttribute="leading" secondItem="dk3-MR-i8o" secondAttribute="leading" constant="22" id="wKj-fa-8id"/>
                                                     </constraints>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sFx-h1-RkK">
@@ -304,6 +311,7 @@
                                             <outlet property="clothtagLabel" destination="lce-up-DhS" id="33u-2u-Rdj"/>
                                             <outlet property="fluvShopLabel" destination="EMy-Lf-sZ6" id="HuL-le-IYV"/>
                                             <outlet property="followButton" destination="8fi-Ma-tLO" id="WKb-KN-JKb"/>
+                                            <outlet property="followButtonBackgroundImageView" destination="Vxf-3i-AYb" id="dts-YL-xJx"/>
                                             <outlet property="profileImageButton" destination="raF-cG-nr0" id="KcL-di-8iM"/>
                                             <outlet property="twoClothtagLabel" destination="QIJ-xT-GFZ" id="zEJ-EV-VWT"/>
                                         </connections>
@@ -353,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6G-Q2-D5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105.7971014492755" y="-206.25"/>
+            <point key="canvasLocation" x="1104.8" y="-206.89655172413794"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="fIT-Ab-YYR">
@@ -724,6 +732,9 @@
                                         <state key="normal" title="구매하기">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickPurchase:" destination="DOU-eN-gQx" eventType="touchUpInside" id="sNn-MN-Q8o"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1410,7 +1421,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxY-IA-gzo">
                                                 <rect key="frame" x="95" y="242" width="289" height="36"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTM-hU-47f">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="윤동민" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTM-hU-47f">
                                                         <rect key="frame" x="10" y="9.6666666666666856" width="269" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1426,7 +1437,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7V-Wj-BYI">
                                                 <rect key="frame" x="95" y="291" width="289" height="38"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQy-2e-Oad">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="010-2016-1782" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQy-2e-Oad">
                                                         <rect key="frame" x="10" y="10.666666666666686" width="269" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1441,7 +1452,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-at-gEB">
                                                 <rect key="frame" x="95" y="341" width="208" height="38"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-4H-92g">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="경기도 수원시" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-4H-92g">
                                                         <rect key="frame" x="10" y="10.666666666666686" width="188" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1456,7 +1467,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgF-JS-d1g">
                                                 <rect key="frame" x="95" y="389" width="289" height="38"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMM-lV-GDP">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="팔달구 중부대로 223번길 102" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QMM-lV-GDP">
                                                         <rect key="frame" x="10" y="10.666666666666686" width="269" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1478,7 +1489,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gI8-FS-pQJ">
                                                 <rect key="frame" x="95" y="437" width="289" height="38"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pq-J0-CFd">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(우만주공아파트1단지) 104동 506호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pq-J0-CFd">
                                                         <rect key="frame" x="10" y="10.666666666666686" width="269" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1635,7 +1646,7 @@
                                                     <constraint firstAttribute="width" secondItem="PJf-xJ-8EE" secondAttribute="height" multiplier="1:0.139" id="BJx-dw-ECc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <state key="normal" title="장바구니 담기">
+                                                <state key="normal" title="구매하기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -1783,7 +1794,6 @@
                         <outlet property="clotheNameLabel" destination="TAg-WG-ZVg" id="sTz-Ht-sdD"/>
                         <outlet property="contactTextField" destination="ZQy-2e-Oad" id="miv-oc-XAx"/>
                         <outlet property="contactTextMarginView" destination="t7V-Wj-BYI" id="eml-ES-yxJ"/>
-                        <outlet property="deliveryFeeLabel" destination="PL1-z7-F9G" id="DRI-BS-hK5"/>
                         <outlet property="destinationTextField" destination="0pq-J0-CFd" id="0vq-6R-gpv"/>
                         <outlet property="destinationTextMarginView" destination="OBD-at-gEB" id="gQX-DJ-sae"/>
                         <outlet property="destinationThreeMarginView" destination="gI8-FS-pQJ" id="fwP-zN-FDH"/>
@@ -1801,6 +1811,7 @@
                         <outlet property="requestTextField" destination="HYv-ai-DU1" id="fzM-3m-0zq"/>
                         <outlet property="searchAddressButton" destination="Yqz-wg-lag" id="dr6-BH-oty"/>
                         <outlet property="totalPaymentLabel" destination="rxj-rx-XtC" id="MfM-xN-Yaj"/>
+                        <outlet property="totalProductPrice" destination="3PR-KM-ej4" id="bi5-Px-whW"/>
                         <outlet property="totalProductPriceLabel" destination="R3U-8c-k6c" id="Kmg-Fc-1Kg"/>
                     </connections>
                 </viewController>

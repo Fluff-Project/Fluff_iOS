@@ -75,7 +75,6 @@ class CartVC: UIViewController {
         if allSelectCheckBox.on {
             for index in 0..<isSelected.count {
                 isSelected[index] = true
-                
             }
         } else {
             for index in 0..<isSelected.count {
@@ -83,6 +82,26 @@ class CartVC: UIViewController {
             }
         }
         cartTableView.reloadData()
+    }
+    
+    @IBAction func clickPurchase(_ sender: Any) {
+        var countSelected: Int = 0
+        
+        guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
+        var selectedItem: [EachCartData] = []
+        for index in 0..<isSelected.count {
+            if isSelected[index] {
+                countSelected += 1
+                selectedItem.append(cartDatas[index])
+            }
+        }
+        
+        if countSelected != 0 {
+            purchaseVC.setPurchaseList(selectedItem)
+            self.navigationController?.pushViewController(purchaseVC, animated: true)
+        } else {
+            self.presentAlertController(title: "구매할 물품을 선택해주세요.", message: nil)
+        }
     }
 }
 
@@ -98,7 +117,6 @@ extension CartVC {
     }
     
     private func getCartList() {
-        print("awd")
         guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
         CartService.shared.getCart(token: userToken) { networkResult in
             switch networkResult {

@@ -23,6 +23,7 @@ class EndPaymentVC: UIViewController {
     @IBOutlet weak var secondDashedLine: UIView!
     @IBOutlet weak var thirdDashedLine: UIView!
     
+    private var purchaseList: [EachCartData] = []
     let numberFormatter = NumberFormatter()
     var customerName = String()
     var customerAddress = String()
@@ -34,8 +35,6 @@ class EndPaymentVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
        
-        price = 5700
-        deliveryFee = 2300
         sum = price + deliveryFee
         
         numberFormatter.numberStyle = .decimal
@@ -49,6 +48,7 @@ class EndPaymentVC: UIViewController {
         sumLabel.text = numberFormatter.string(from: NSNumber(value: sum))! + "원"
         checkbox.isUserInteractionEnabled = false
         initialAnimate()
+        setInitPrice()
     }
     
     private func initialAnimate() {
@@ -65,6 +65,25 @@ class EndPaymentVC: UIViewController {
         UIView.animate(withDuration: 1, delay: 0.4, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
             self.confirmButton.transform = .identity
         }, completion: nil)
+    }
+    
+    func setPurchaseList(_ purchaseList: [EachCartData]) {
+        self.purchaseList = purchaseList
+    }
+    
+    private func setInitPrice() {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        var totalPrice: Int = 0
+        for eachData in self.purchaseList {
+            totalPrice += eachData.price
+        }
+        
+        let formattingTotalNumber = numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0"
+        totalPrice += 2500
+        let formattingTotalNumberWithDeliveryFee = numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0"
+        self.priceLabel.text = formattingTotalNumber
+        sumLabel.text = formattingTotalNumberWithDeliveryFee
     }
     
     override func viewWillAppear(_ animated: Bool) {

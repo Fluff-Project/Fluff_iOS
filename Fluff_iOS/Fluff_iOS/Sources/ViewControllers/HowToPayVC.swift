@@ -26,6 +26,8 @@ class HowToPayVC: UIViewController {
     
     let bankImgList: [UIImage] = [#imageLiteral(resourceName: "kakaobankBar"), #imageLiteral(resourceName: "kbbankBar"), #imageLiteral(resourceName: "shbankBar"), #imageLiteral(resourceName: "wooribankBar"), #imageLiteral(resourceName: "hanabankBar")]
     
+    private var purchaseList: [EachCartData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         whatBank = bankList[0]
@@ -82,7 +84,6 @@ class HowToPayVC: UIViewController {
         doneSelectToolbar.isHidden = false
     }
     
-    
     @IBAction func transferOrNot(_ sender: UIButton) {
         if buttonClicked == true {
             buttonClicked = false
@@ -102,6 +103,10 @@ class HowToPayVC: UIViewController {
         guard let nextVC = self.storyboard?.instantiateViewController(identifier: "EndPaymentVC") as? EndPaymentVC else { return }
         nextVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func setPurchaseList(_ purchaseList: [EachCartData]) {
+        self.purchaseList = purchaseList
     }
 }
 

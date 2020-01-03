@@ -35,24 +35,41 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var normalAddressCheckBox: BEMCheckBox!
     
     @IBOutlet weak var totalProductPriceLabel: UILabel!
-    @IBOutlet weak var deliveryFeeLabel: UILabel!
+    @IBOutlet weak var totalProductPrice: UILabel!
     @IBOutlet weak var totalPaymentLabel: UILabel!
     
     @IBOutlet weak var paymentButton: UIButton!
+    
+    private var purchaseList: [EachCartData] = []
+    private var productPrice: Int?
+    private var feePrice: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationController?.navigationBar.topItem?.title = ""
         setConstraint()
         setMarginView()
         setButton()
-        setNaviBackButton()
         self.view.endEditing(true)
+        setInitPrice()
+        setInitImageView()
+        setInitNameLabel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNaviBackButton()
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func setPurchaseList(_ purchaseList: [EachCartData]) {
+        self.purchaseList = purchaseList
     }
     
     private func setNaviBackButton() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "10"), style: .done, target: self, action:
             #selector(popView))
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     @objc func popView() {
@@ -88,17 +105,46 @@ class PurchaseViewController: UIViewController {
         destinationThreeMarginView.layer.borderWidth = 1
         requestMarginView.layer.borderColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0).cgColor
         requestMarginView.layer.borderWidth = 1
+    }
+    
+    private func setInitPrice() {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        var totalPrice: Int = 0
+        for eachData in self.purchaseList {
+            totalPrice += eachData.price
+        }
         
+        let formattingTotalNumber = numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0"
+        totalPrice += 2500
+        let formattingTotalNumberWithDeliveryFee = numberFormatter.string(from: NSNumber(value: totalPrice)) ?? "0"
+        self.priceLabel.text = formattingTotalNumber
+        self.totalProductPrice.text = formattingTotalNumber
+        self.totalPaymentLabel.text = formattingTotalNumberWithDeliveryFee
+    }
+    
+    private func setInitImageView() {
+        clotheImageView.setImage(with: purchaseList[0].Img[0])
+    }
+    
+    private func setInitNameLabel() {
+        var count = -1
+        for _ in purchaseList { count += 1 }
+        
+        if count == 0 { clotheNameLabel.text = purchaseList[0].goodsName }
+        else { clotheNameLabel.text = purchaseList[0].goodsName + "외 \(count)개" }
     }
     
     @IBAction func clickPay(_ sender: Any) {
-//        let paymentStoryboard = UIStoryboard(name: "EndPayment", bundle: nil)
-//        guard let howToPayVC = paymentStoryboard.instantiateViewController(identifier: "HowToPayVC") as? HowToPayVC else { return }
-//        howToPayVC.hidesBottomBarWhenPushed = true
-//        self.navigationController?.pushViewController(howToPayVC, animated: true)
-        
+        let paymentStoryboard = UIStoryboard(name: "EndPayment", bundle: nil)
+        guard let howToPayVC = paymentStoryboard.instantiateViewController(identifier: "HowToPayVC") as? HowToPayVC else { return }
+        howToPayVC.hidesBottomBarWhenPushed = true
+        howToPayVC.setPurchaseList(self.purchaseList)
+        self.navigationController?.pushViewController(howToPayVC, animated: true)
     }
-    
+}
+
+extension PurchaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
