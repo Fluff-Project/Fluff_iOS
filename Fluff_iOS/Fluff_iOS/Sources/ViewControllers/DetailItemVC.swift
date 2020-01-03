@@ -36,6 +36,7 @@ class DetailItemVC: UIViewController {
     
     private var goodsId: String?
     private var sellerId: String?
+    private var price: Int?
     private var detailItemInform: DetailGoodsData?
     private var otherItemDataOfSeller: [OtherItemData] = []
     
@@ -62,6 +63,10 @@ class DetailItemVC: UIViewController {
         self.sellerId = sellerId
     }
     
+    func setPrice(_ price: Int) {
+        self.price = price
+    }
+    
     private func initialButton() {
         followButton.makeCornerRounded(radius: followButton.frame.width / 7)
         purchaseButton.makeCornerRounded(radius: purchaseButton.frame.width / 13)
@@ -85,21 +90,24 @@ class DetailItemVC: UIViewController {
     @IBAction func clickPurchase(_ sender: Any) {
         guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
         guard let goodsId = self.goodsId else { return }
-//        CartService.shared.addCart(token: userToken, goodsItem: goodsId) { networkResult in
-//            switch networkResult {
-//            case .success(let data):
-//            case .requestErr(let data):
-//            case .pathErr:
-//            case .serverErr:
-//                self.presentAlertController(title: "", message: <#T##String?#>)
-//            case .networkFail:
-//                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
-//            }
-//        }
-        
-        
-        self.presentAlertController(title: "장바구니 담기 성공", message: "장바구니에 담겼습니다.")
-        
+        CartService.shared.addCart(token: userToken, goodsItem: goodsId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let cartStatusData = data as? CartStatusData else { return }
+                guard let cartData = cartStatusData.json.data else { return }
+                self.presentAlertController(title: "장바구니 추가", message: "장바구니에 담겼습니다.")
+            case .requestErr(let data):
+                guard let cartStatusData = data as? CartStatusData else { return }
+                print("message: \(cartStatusData.json.message)")
+                self.presentAlertController(title: cartStatusData.json.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 에러", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 에러", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+            }
+        }
     }
 
     @IBAction func clickHeart(_ sender: Any) {
@@ -130,6 +138,8 @@ extension DetailItemVC {
                 guard let detailGoods = detailGoodsData.json.data else { return }
                 self.detailItemInform = detailGoods
                 self.setDetailView()
+                guard let price = self.price else { return }
+                self.priceLabel.text = "\(price)"
                 self.detailItemCollectionView.reloadData()
                 self.otherItemCollectionView.reloadData()
             case .requestErr(let data):
@@ -156,7 +166,6 @@ extension DetailItemVC {
             switch networkResult {
             case .success(let data):
                 guard let sellerOtherJSONData = data as? SellerOtherData else { return }
-//                print(sellerOtherJSONData)
                 guard let otherItems = sellerOtherJSONData.json.data else { return }
                 self.otherItemDataOfSeller = otherItems
                 self.otherItemCollectionViewDataSource.setOtherItems(self.otherItemDataOfSeller)

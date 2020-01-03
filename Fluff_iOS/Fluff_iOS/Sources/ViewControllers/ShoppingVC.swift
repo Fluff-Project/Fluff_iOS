@@ -163,6 +163,7 @@ extension ShoppingVC: UICollectionViewDelegate {
         // 선택된 Index Model 다음 뷰에 전달
         guard let detailViewController = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
         detailViewController.setGoodsId(self.clothesData[indexPath.row]._id, self.clothesData[indexPath.row].sellerId)
+        detailViewController.setPrice(clothesData[indexPath.row].price)
         detailViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }

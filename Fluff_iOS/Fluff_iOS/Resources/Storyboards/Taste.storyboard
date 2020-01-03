@@ -1161,7 +1161,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xon-UU-bwW">
-                                                <rect key="frame" x="107.66666666666667" y="511" width="20" height="17"/>
+                                                <rect key="frame" x="109.66666666666667" y="511" width="20.000000000000014" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.48627450980392156" green="0.48627450980392156" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1217,7 +1217,7 @@
                                             <constraint firstItem="3hQ-zd-AQ9" firstAttribute="leading" secondItem="3ez-ga-Nc4" secondAttribute="leading" constant="20" id="24J-oQ-tJs"/>
                                             <constraint firstItem="dEK-G5-3OU" firstAttribute="leading" secondItem="l0K-RS-yKc" secondAttribute="leading" id="4ls-JR-qwE"/>
                                             <constraint firstAttribute="trailing" secondItem="2Qx-3Z-3QH" secondAttribute="trailing" id="5Ii-dt-AE5"/>
-                                            <constraint firstItem="xon-UU-bwW" firstAttribute="leading" secondItem="DUY-FE-Lz0" secondAttribute="trailing" constant="-2" id="78k-8k-cgP"/>
+                                            <constraint firstItem="xon-UU-bwW" firstAttribute="leading" secondItem="DUY-FE-Lz0" secondAttribute="trailing" id="78k-8k-cgP"/>
                                             <constraint firstItem="2Qx-3Z-3QH" firstAttribute="width" secondItem="3ez-ga-Nc4" secondAttribute="width" id="8LI-VX-zSL"/>
                                             <constraint firstAttribute="trailing" secondItem="b8X-d8-UKO" secondAttribute="trailing" id="Cja-ud-DSW"/>
                                             <constraint firstItem="2Qx-3Z-3QH" firstAttribute="leading" secondItem="3ez-ga-Nc4" secondAttribute="leading" id="Cpw-rA-kZP"/>

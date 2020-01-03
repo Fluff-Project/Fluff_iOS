@@ -42,4 +42,31 @@ struct CartService {
         if cartStatusData.code == 200 { return .success(cartStatusData) }
         else { return .requestErr(cartStatusData) }
     }
+    
+    func getCart(token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
+        
+        let dataRequest = Alamofire.request(APIConstants.cart, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+        
+        dataRequest.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                guard let value = dataResponse.result.value else { return }
+                if statusCode == 200 { completion(self.isGetCart(value)) }
+                else if statusCode == 400 { completion(.pathErr) }
+                else { completion(.serverErr) }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(.networkFail)
+            }
+        }
+    }
+    
+    private func isGetCart(_ value: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+        guard let cartLookupStatus = try? decoder.decode(CartLookupStatus.self, from: value) else { return .pathErr }
+        if cartLookupStatus.code == 200 { return .success(cartLookupStatus.json) }
+        else { return .requestErr(cartLookupStatus.json) }
+    }
 }

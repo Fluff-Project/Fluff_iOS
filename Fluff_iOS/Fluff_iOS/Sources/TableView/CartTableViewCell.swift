@@ -31,23 +31,12 @@ class CartTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setInitialInform(_ index: Int, _ isSelect: Bool) {
-        self.index = index
-        self.isSelectedItem = isSelect
-    }
-    
-    func setCheckbox(_ isSelect: Bool) {
-        if isSelect { checkBox.setOn(true, animated: false) }
-        else { checkBox.setOn(false, animated: false) }
-    }
-
-    func setImage(clothImage: UIImage) {
-        self.clotheImageView.image = clothImage
+    func setClotheImage(by url: String) {
+        clotheImageView.setImage(with: url)
     }
     
     func setSellerName(_ name: String) {
         sellerNameLabel.text = name
-        
     }
     
     func setClotheNameLabel(_ name: String) {
@@ -58,6 +47,15 @@ class CartTableViewCell: UITableViewCell {
         self.priceLabel.text = price
     }
     
+    func setInitialInform(_ index: Int, _ isSelect: Bool) {
+           self.index = index
+           self.isSelectedItem = isSelect
+    }
+    
+    func setCheckbox(_ isSelect: Bool) {
+        if isSelect { checkBox.setOn(true, animated: false) }
+        else { checkBox.setOn(false, animated: false) }
+    }
     
     @IBAction func clickCheckbox(_ sender: Any) {
         NotificationCenter.default.post(name: .clickCartCheckBox, object: nil, userInfo: ["index": self.index, "isSelect": isSelectedItem])
