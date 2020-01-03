@@ -1,5 +1,5 @@
 //
-//  DetailGoodsData.swift
+//  SellerOtherData.swift
 //  Fluff_iOS
 //
 //  Created by 윤동민 on 2020/01/03.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct DetailGoodsDataStatus: Codable {
+struct SellerOtherData: Codable {
     let code: Int
-    let json: DetailGoodsJSONData
+    let json: SellerOtherJSONData
 }
 
-struct DetailGoodsJSONData: Codable {
+struct SellerOtherJSONData: Codable {
     let success: Bool
     let message: String
-    let data: DetailGoodsData?
+    let data: [OtherItemData]?
     
     enum CodingKeys: String, CodingKey {
         case success = "success"
@@ -28,15 +28,13 @@ struct DetailGoodsJSONData: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode(DetailGoodsData.self, forKey: .data)) ?? nil
+        data = (try? values.decode([OtherItemData].self, forKey: .data)) ?? nil
     }
 }
 
-struct DetailGoodsData: Codable {
-    let comment: String
-    let img: [String]
-    let grade: Int
-    let condition: Int
+struct OtherItemData: Codable {
     let _id: String
-    let size: String
+    let goodsName: String
+    let mainImg: String
+    let price: Int
 }

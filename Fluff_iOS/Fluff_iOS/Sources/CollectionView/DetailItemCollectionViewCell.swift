@@ -15,4 +15,8 @@ class DetailItemCollectionViewCell: UICollectionViewCell {
         guard let clotheImage = UIImage(named: imageName) else { return }
         clotheImageView.image = clotheImage
     }
+    
+    func setClotheImageBy(url: String) {
+        clotheImageView.setImage(with: url)
+    }
 }

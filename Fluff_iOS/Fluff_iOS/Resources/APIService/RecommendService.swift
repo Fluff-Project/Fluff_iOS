@@ -108,7 +108,7 @@ struct RecommendService {
                 guard let value = dataResponse.result.value else { return }
                 if statusCode == 200 { completion(self.loadingClotheData(value)) }
                 else if statusCode == 400 { completion(.pathErr) }
-                else { }
+                else { completion(.serverErr) }
             case .failure(let err):
                 print(err.localizedDescription)
                 completion(.networkFail)
@@ -121,7 +121,6 @@ struct RecommendService {
         guard let clotheData = try? decoder.decode(RecommendedClotheData.self, from: value) else {
             return .pathErr
         }
-        print("둘러보기 뷰: \(clotheData)")
         if clotheData.code == 200 { return .success(clotheData.json) }
         else if clotheData.code == 500 { return .requestErr(clotheData.json) }
         else { return .pathErr }

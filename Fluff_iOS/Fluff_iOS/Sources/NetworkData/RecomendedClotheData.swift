@@ -38,4 +38,6 @@ struct ClotheData: Codable {
     let sellerName: String
     let price: Int
     let _id: String
+    let sellerId: String
+    let like: Bool
 }

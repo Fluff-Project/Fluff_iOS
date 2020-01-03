@@ -110,7 +110,6 @@ class ShoppingVC: UIViewController {
                 guard let clothesData = successClothData.data else { return }
                 self.clothesData = clothesData
                 self.shoppingCollectionView.reloadData()
-                print("clothe Data Count: \(clothesData.count)")
             case .requestErr(let data):
                 guard let requestClothData = data as? RecommendedClotheData else { return }
                 self.presentAlertController(title: requestClothData.json.message, message: nil)
@@ -160,9 +159,10 @@ extension ShoppingVC: UICollectionViewDataSource {
 
 extension ShoppingVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let detailViewController = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
-        detailViewController.hidesBottomBarWhenPushed = true
         // 선택된 Index Model 다음 뷰에 전달
+        guard let detailViewController = self.storyboard?.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+        detailViewController.setGoodsId(self.clothesData[indexPath.row]._id, self.clothesData[indexPath.row].sellerId)
+        detailViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

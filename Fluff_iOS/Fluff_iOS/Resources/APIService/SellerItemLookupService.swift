@@ -1,5 +1,5 @@
 //
-//  DetailInformRequestService.swift
+//  SellerItemLookupService.swift
 //  Fluff_iOS
 //
 //  Created by 윤동민 on 2020/01/03.
@@ -9,14 +9,13 @@
 import Foundation
 import Alamofire
 
-struct DetailInformRequestService {
-    static let shared = DetailInformRequestService()
+struct SellerItemLookupService {
+    static let shared = SellerItemLookupService()
     
-    func requestDetailInform(token: String, goodsId: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func lookupOtherItem(sellerId: String, token: String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let header: HTTPHeaders = ["Content-Type": "application/json", "x-access-token": token]
         
-        let dataRequest = Alamofire.request(APIConstants.detailInform + goodsId, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-        
+        let dataRequest = Alamofire.request(APIConstants.otherItemLookup + sellerId, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
         
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
@@ -34,7 +33,7 @@ struct DetailInformRequestService {
     
     private func judge(by statusCode: Int, value: Data) -> NetworkResult<Any> {
         switch statusCode {
-        case 200: return isGetDetailInform(value)
+        case 200: return isGetOtherItem(value)
         case 400:
             print("경로에러")
             return .pathErr
@@ -44,11 +43,16 @@ struct DetailInformRequestService {
         }
     }
     
-    private func isGetDetailInform(_ value: Data) -> NetworkResult<Any> {
+    private func isGetOtherItem(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let detailGoodsData = try? decoder.decode(DetailGoodsDataStatus.self, from: value) else { return .pathErr }
-        if detailGoodsData.code == 200 { return .success(detailGoodsData) }
-        else if detailGoodsData.code == 400 { return .requestErr(detailGoodsData) }
-        else { return .pathErr }
+        guard let sellerOtherData = try? decoder.decode(SellerOtherData.self, from: value) else {
+            print("path 에러")
+            return .pathErr
+        }
+        
+        print(sellerOtherData.json.message)
+        if sellerOtherData.code == 200 { return .success(sellerOtherData) }
+        else if sellerOtherData.code == 400 { return .requestErr(sellerOtherData) }
+        else { return .serverErr }
     }
 }

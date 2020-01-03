@@ -12,6 +12,8 @@ import CHIPageControl
 class DetailItemVC: UIViewController {
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
     
+    @IBOutlet weak var contentScrollView: UIScrollView!
+    
     @IBOutlet weak var sellerTextView: UITextView!
     @IBOutlet weak var clotheNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -31,8 +33,13 @@ class DetailItemVC: UIViewController {
     @IBOutlet weak var pageControlConstraint: NSLayoutConstraint!
     private var isClicked: Bool = false
     
-    private var otherItemCollectionViewDataSource: OtherItemDataSource = OtherItemDataSource(otherItems: ["20191217115522", "20191218120524", "20191218120650"])
+    private var otherItemCollectionViewDataSource: OtherItemDataSource = OtherItemDataSource()
     private var otherItemDelegate: OtherItemDelegate = OtherItemDelegate()
+    
+    private var goodsId: String?
+    private var sellerId: String?
+    private var detailItemInform: DetailGoodsData?
+    private var otherItemDataOfSeller: [OtherItemData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +53,15 @@ class DetailItemVC: UIViewController {
         self.setNavigationBarClear()
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
-        pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 65
+        pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 100
+        
+        loadDatilItemData()
+        loadOtherItemOfSeller()
+    }
+    
+    func setGoodsId(_ goodsId: String, _ sellerId: String) {
+        self.goodsId = goodsId
+        self.sellerId = sellerId
     }
     
     private func initialButton() {
@@ -70,13 +85,9 @@ class DetailItemVC: UIViewController {
     }
     
     @IBAction func clickPurchase(_ sender: Any) {
-//        guard let purchaseVC = self.storyboard?.instantiateViewController(identifier: "PurchaseViewController") as? PurchaseViewController else { return }
-//        purchaseVC.hidesBottomBarWhenPushed = true
-//        self.navigationController?.pushViewController(purchaseVC, animated: true)
         self.presentAlertController(title: "장바구니 담기 성공", message: "장바구니에 담겼습니다.")
     }
 
-    
     @IBAction func clickHeart(_ sender: Any) {
         if isClicked {
             guard let heartImage = UIImage(named: "heartEmptyIc-1") else { return }
@@ -94,13 +105,79 @@ class DetailItemVC: UIViewController {
     }
 }
 
+extension DetailItemVC {
+    private func loadDatilItemData() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        guard let clotheId = self.goodsId else { return }
+        DetailInformRequestService.shared.requestDetailInform(token: userToken, goodsId: clotheId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let detailGoodsData = data as? DetailGoodsDataStatus else { return }
+                guard let detailGoods = detailGoodsData.json.data else { return }
+                self.detailItemInform = detailGoods
+                self.setDetailView()
+                self.detailItemCollectionView.reloadData()
+                self.otherItemCollectionView.reloadData()
+            case .requestErr(let data):
+                // 팝업창 띄우고 확인 누를 시 이전 화면으로 처리
+                guard let detailGoodsData = data as? DetailGoodsDataStatus else { return }
+                self.presentAlertController(title: detailGoodsData.json.message, message: nil)
+            case .pathErr:
+                // 팝업창 띄우고 확인 누를 시 이전 화면으로 처리
+                self.presentAlertController(title: "잘못된 경로입니다.", message: nil)
+            case .serverErr:
+                // 팝업창 띄우고 확인 누를 시 이전화면으로 처리
+                self.presentAlertController(title: "서버 오류", message: "서버에서 데이터를 받아오지 못했습니다.")
+            case .networkFail:
+                // 팝업창 띄으고 확인 누를 시 이전화면으로 처리
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+            }
+        }
+    }
+    
+    private func loadOtherItemOfSeller() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        guard let sellerId = self.sellerId else { return }
+        SellerItemLookupService.shared.lookupOtherItem(sellerId: sellerId, token: userToken) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let sellerOtherJSONData = data as? SellerOtherData else { return }
+//                print(sellerOtherJSONData)
+                guard let otherItems = sellerOtherJSONData.json.data else { return }
+                self.otherItemDataOfSeller = otherItems
+                self.otherItemCollectionViewDataSource.setOtherItems(self.otherItemDataOfSeller)
+                self.otherItemCollectionView.reloadData()
+            case .requestErr(let data):
+                guard let sellerOtherJSONData = data as? SellerOtherJSONData else { return }
+                self.presentAlertController(title: sellerOtherJSONData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 오류", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결에 실패하였습니다.")
+            }
+        }
+    }
+    
+    private func setDetailView() {
+        guard let detailItemInform = self.detailItemInform else { return }
+        statusLabel.text = "\(detailItemInform.condition)"
+        sizeLabel.text = detailItemInform.size
+        sellerTextView.text = detailItemInform.comment
+    }
+}
+
 extension DetailItemVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        guard let detailInform = self.detailItemInform else { return 0 }
+        return detailInform.img.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailCell", for: indexPath) as? DetailItemCollectionViewCell else { return UICollectionViewCell() }
+        guard let detailItemInform = self.detailItemInform else { return UICollectionViewCell() }
+        detailCell.setClotheImageBy(url: detailItemInform.img[indexPath.row])
         return detailCell
     }
 }
@@ -131,4 +208,3 @@ extension DetailItemVC: UICollectionViewDelegateFlowLayout {
         return 0
     }
 }
-

@@ -13,8 +13,9 @@ class OtherItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var clotheNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    func setClotheImage(_ imageName: UIImage) {
-        self.clotheImageView.image = imageName
+    func setClotheImage(_ url: String) {
+        print(url)
+        self.clotheImageView.setImage(with: url)
     }
     
     func setName(_ name: String) {
