@@ -111,6 +111,20 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
     }
 }
 
+extension BannerIntoVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+            guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+            detailVC.setGoodsId(styleData[indexPath.row]._id, styleData[indexPath.row].sellerId)
+            detailVC.setPrice(styleData[indexPath.row].price)
+        detailVC.setGoodsName(styleData[indexPath.row].goodsName)
+            detailVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+    }
+}
+
 extension BannerIntoVC {
     private func requestCardigan() {
         guard let userToken = self.userToken else {

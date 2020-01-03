@@ -353,7 +353,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
         case self.howFluvCollectionView:
             return 12
         default:
-            return 0
+            return 12
         }
     }
 }
@@ -365,6 +365,7 @@ extension HomeVC: UICollectionViewDelegate {
             let page = Int(targetContentOffset.pointee.x / self.bannerCollectionView.frame.width)
             self.bannerPageControl.set(progress: page, animated: true)
         }
+        else { return }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -374,6 +375,7 @@ extension HomeVC: UICollectionViewDelegate {
             guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(stockData[indexPath.row]._id, stockData[indexPath.row].sellerId)
             detailVC.setPrice(stockData[indexPath.row].price)
+            detailVC.setGoodsName(stockData[indexPath.row].goodsName)
             detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
             
@@ -382,6 +384,7 @@ extension HomeVC: UICollectionViewDelegate {
             guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(styleData[indexPath.row]._id, styleData[indexPath.row].sellerId)
             detailVC.setPrice(styleData[indexPath.row].price)
+            detailVC.setGoodsName(styleData[indexPath.row].goodsName)
             detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
             
@@ -390,6 +393,7 @@ extension HomeVC: UICollectionViewDelegate {
             guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
             detailVC.setGoodsId(clotheData[indexPath.row]._id, clotheData[indexPath.row].sellerId)
             detailVC.setPrice(clotheData[indexPath.row].price)
+            detailVC.setGoodsName(clotheData[indexPath.row].goodsName)
             detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
             
@@ -397,8 +401,6 @@ extension HomeVC: UICollectionViewDelegate {
             return
         }
     }
-    
-    
 }
 
 extension HomeVC {
@@ -484,7 +486,9 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
-                self.clotheData = recommendedClotheJsonData.data!
+                guard let clotheData = recommendedClotheJsonData.data else { return  }
+                self.clotheData = clotheData
+//                self.clotheData = recommendedClotheJsonData.data!
                 self.todayVintageCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }

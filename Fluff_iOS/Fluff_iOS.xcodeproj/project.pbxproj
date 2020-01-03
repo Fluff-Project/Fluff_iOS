@@ -110,6 +110,7 @@
 		A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61C23BE813000B4D56A /* RecentStyleService.swift */; };
 		A607C61F23BE8F6700B4D56A /* ThemeIntoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C61E23BE8F6700B4D56A /* ThemeIntoService.swift */; };
 		A607C62123BEC40200B4D56A /* BannerIntoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A607C62023BEC40200B4D56A /* BannerIntoService.swift */; };
+		A6210E9223BFC26E00B8EE6F /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6210E9123BFC26E00B8EE6F /* DetailVC.swift */; };
 		A63C506323B08BF40069BAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506223B08BF40069BAFB /* AppDelegate.swift */; };
 		A63C506523B08BF40069BAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506423B08BF40069BAFB /* SceneDelegate.swift */; };
 		A63C506723B08BF40069BAFB /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C506623B08BF40069BAFB /* LaunchVC.swift */; };
@@ -260,6 +261,7 @@
 		A607C61C23BE813000B4D56A /* RecentStyleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStyleService.swift; sourceTree = "<group>"; };
 		A607C61E23BE8F6700B4D56A /* ThemeIntoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeIntoService.swift; sourceTree = "<group>"; };
 		A607C62023BEC40200B4D56A /* BannerIntoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerIntoService.swift; sourceTree = "<group>"; };
+		A6210E9123BFC26E00B8EE6F /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		A63C505F23B08BF40069BAFB /* Fluff_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fluff_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A63C506223B08BF40069BAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A63C506423B08BF40069BAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 				A607C60423BC7D6A00B4D56A /* InfoCrystalVC.swift */,
 				A607C61023BD52B400B4D56A /* MagazineBannerVC.swift */,
 				9D0E2A8E23BE420F00E73F40 /* SocketawdViewController.swift */,
+				A6210E9123BFC26E00B8EE6F /* DetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				A66F240123B7532C004B57FA /* NewSignUpViewController.swift in Sources */,
 				9DF0EB6023BAA1B200EEC259 /* HashTagCategory.swift in Sources */,
 				9D705A9D23B8AA9A00097FCF /* CheckDeliveryVC.swift in Sources */,
+				A6210E9223BFC26E00B8EE6F /* DetailVC.swift in Sources */,
 				A66F240F23B9045B004B57FA /* ThemeIntoVC.swift in Sources */,
 				9D70BFD523B468D80025D22C /* LikeTabbarController.swift in Sources */,
 				9D70BFCF23B45B320025D22C /* LikeListParentVC.swift in Sources */,

@@ -36,8 +36,9 @@ class DetailItemVC: UIViewController {
     private var otherItemCollectionViewDataSource: OtherItemDataSource = OtherItemDataSource()
     private var otherItemDelegate: OtherItemDelegate = OtherItemDelegate()
     
-    private var goodsId: String? = "5e0cea05e055d50011a1d653"
-    private var sellerId: String? = "5e0a4b4f217f2200119b604d"
+    private var goodsId: String?
+    private var goodsName: String?
+    private var sellerId: String?
     private var price: Int?
     private var detailItemInform: DetailGoodsData?
     private var otherItemDataOfSeller: [OtherItemData] = []
@@ -67,6 +68,10 @@ class DetailItemVC: UIViewController {
     
     func setPrice(_ price: Int) {
         self.price = price
+    }
+    
+    func setGoodsName(_ goodsName: String) {
+        self.goodsName = goodsName
     }
     
     private func initialButton() {
@@ -148,6 +153,7 @@ extension DetailItemVC {
                 numberFormatter.numberStyle = .decimal
                 print("here4")
                 let formattingNumber = (numberFormatter.string(from: NSNumber(value: price)) ?? "0")
+                self.clotheNameLabel.text = self.goodsName
                 self.priceLabel.text = formattingNumber
                 self.detailItemCollectionView.reloadData()
                 self.otherItemCollectionView.reloadData()

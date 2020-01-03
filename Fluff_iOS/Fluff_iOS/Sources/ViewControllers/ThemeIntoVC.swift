@@ -147,6 +147,39 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
     }
 }
 
+
+extension ThemeIntoVC: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let tasteStoryboard = UIStoryboard(name: "Taste", bundle: nil)
+            guard let detailVC = tasteStoryboard.instantiateViewController(identifier: "DetailViewController") as? DetailItemVC else { return }
+        
+        switch whatTheme {
+        case "Today":
+            detailVC.setGoodsId(stockData[indexPath.row]._id, stockData[indexPath.row].sellerId)
+            detailVC.setPrice(stockData[indexPath.row].price)
+            detailVC.setGoodsName(stockData[indexPath.row].goodsName)
+            detailVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        case "Recent":
+            detailVC.setGoodsId(styleData[indexPath.row]._id, styleData[indexPath.row].sellerId)
+            detailVC.setPrice(styleData[indexPath.row].price)
+            detailVC.setGoodsName(styleData[indexPath.row].goodsName)
+            detailVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        case "TodayVintage":
+            detailVC.setGoodsId(clotheData[indexPath.row]._id, clotheData[indexPath.row].sellerId)
+            detailVC.setPrice(clotheData[indexPath.row].price)
+            detailVC.setGoodsName(clotheData[indexPath.row].goodsName)
+            detailVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        default:
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+            
+    }
+}
+
 extension ThemeIntoVC {
     
 private func requestTodayTheme() {

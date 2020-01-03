@@ -122,6 +122,7 @@ struct RecommendService {
             print("awdawd")
             return .pathErr
         }
+        print(clotheData.json.data)
         if clotheData.code == 200 { return .success(clotheData.json) }
         else if clotheData.code == 500 { return .requestErr(clotheData.json) }
         else { return .pathErr }
