@@ -56,7 +56,7 @@ class FluvApplyVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarClear()
-
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     private func setTextFieldDelegate() {

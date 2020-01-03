@@ -93,6 +93,30 @@ class EndPaymentVC: UIViewController {
     }
     
     @IBAction func check(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        var goodsIds: [String] = []
+        for purchase in purchaseList {
+            goodsIds.append(purchase.goodsId)
+        }
+        
+        OrderListService.shared.getOrderList(token: userToken, orderList: goodsIds) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let orderListData = data as? OrderListData else { return }
+                print(orderListData)
+                self.navigationController?.popToRootViewController(animated: true)
+            case .requestErr(let data):
+                self.presentAlertController(title: "배송 주문 조회 실패", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 에러", message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 에러", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+            }
+        }
+        
+//        self.navigationController?.popToRootViewController(animated: true)
+        
     }
 }
