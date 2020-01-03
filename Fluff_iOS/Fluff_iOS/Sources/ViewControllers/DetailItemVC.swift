@@ -174,6 +174,7 @@ extension DetailItemVC {
                 guard let otherItems = sellerOtherJSONData.json.data else { return }
                 self.otherItemDataOfSeller = otherItems
                 self.otherItemCollectionViewDataSource.setOtherItems(self.otherItemDataOfSeller)
+                self.otherItemDelegate.setOtherItems(otherItemDataOfSeller)
                 self.otherItemCollectionView.reloadData()
             case .requestErr(let data):
                 guard let sellerOtherJSONData = data as? SellerOtherJSONData else { return }
