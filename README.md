@@ -404,7 +404,21 @@ override func viewDidDisappear(_ animated: Bool) {
 
 
 
-14. 카메라 사용하기 `UIImagePicker`  사용
+14. `TableView` 밑줄 라인이 비는 현상 해결 ➡️ 비는 공간 없게
+
+```swift
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  guard let cartCell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell else { return UITableViewCell() }
+  // zero로 주면 문제 해결 좌공간 Inset이 0으로 설정된다.
+  cartCell.separatorInset = UIEdgeInsets.zero
+}
+```
+
+
+
+
+
+15. 카메라 사용하기 `UIImagePicker`  사용
 
 
 
