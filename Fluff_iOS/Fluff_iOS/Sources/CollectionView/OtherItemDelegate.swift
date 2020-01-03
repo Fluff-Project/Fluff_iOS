@@ -8,7 +8,17 @@
 
 import UIKit
 
-class OtherItemDelegate: NSObject, UICollectionViewDelegateFlowLayout {
+class OtherItemDelegate: NSObject, UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout {
+    private var otherItems: [OtherItemData] = []
+    
+    func setOtherItems(_ otherItme: [OtherItemData]) {
+        self.otherItems = otherItem
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 2.3, height: collectionView.frame.height)
     }
