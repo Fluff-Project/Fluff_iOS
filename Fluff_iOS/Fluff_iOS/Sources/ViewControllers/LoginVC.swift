@@ -92,6 +92,12 @@ class LoginVC: UIViewController {
         self.userData = userData
     }
     
+    @IBAction func doSignup(_ sender: Any) {
+        let SignupStroyboard = UIStoryboard(name: "NewSignUp", bundle: nil)
+        guard let signupVC = SignupStroyboard.instantiateViewController(identifier: "NewSignUp") as? NewSignUpViewController else { return }
+        self.navigationController?.pushViewController(signupVC, animated: true)
+    }
+    
     @IBAction func doLogin(_ sender: Any) {
         // Login 실행
         guard let inputEmail = emailTextField?.text, inputEmail != "" else {
@@ -252,7 +258,6 @@ extension LoginVC {
     
     @objc func doAutoLogin() {
         guard let userData = self.userData else { return }
-        print(userData)
         // 여기에 login로직 추가
         // 로그인 로직에 따라 로그인 되게 추가!!!!!
         SigninService.shared.signin(email: userData.email, pwd: userData.pwd) { networkResult in

@@ -448,7 +448,7 @@ extension HomeVC {
             switch networkResult {
             case .success(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else {return}
-                self.clotheData = recommendedClotheJsonData.data!
+//                self.clotheData = recommendedClotheJsonData.data!
                 self.todayVintageCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recommendedClotheJsonData = data as? RecommendedClotheJSONData else { return }

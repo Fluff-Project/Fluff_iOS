@@ -12,8 +12,6 @@ import CHIPageControl
 class DetailItemVC: UIViewController {
     @IBOutlet weak var detailItemCollectionView: UICollectionView!
     
-    @IBOutlet weak var contentScrollView: UIScrollView!
-    
     @IBOutlet weak var sellerTextView: UITextView!
     @IBOutlet weak var clotheNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -53,7 +51,7 @@ class DetailItemVC: UIViewController {
         self.setNavigationBarClear()
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.topItem?.title = ""
-        pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 100
+        pageControlConstraint.constant = detailItemCollectionView.frame.origin.y + detailItemCollectionView.frame.height - 70
         
         loadDatilItemData()
         loadOtherItemOfSeller()
@@ -85,7 +83,23 @@ class DetailItemVC: UIViewController {
     }
     
     @IBAction func clickPurchase(_ sender: Any) {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        guard let goodsId = self.goodsId else { return }
+//        CartService.shared.addCart(token: userToken, goodsItem: goodsId) { networkResult in
+//            switch networkResult {
+//            case .success(let data):
+//            case .requestErr(let data):
+//            case .pathErr:
+//            case .serverErr:
+//                self.presentAlertController(title: "", message: <#T##String?#>)
+//            case .networkFail:
+//                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+//            }
+//        }
+        
+        
         self.presentAlertController(title: "장바구니 담기 성공", message: "장바구니에 담겼습니다.")
+        
     }
 
     @IBAction func clickHeart(_ sender: Any) {

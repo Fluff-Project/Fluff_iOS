@@ -51,9 +51,6 @@ struct RecentStyleService {
             print("디코딩 오류")
             return .pathErr
         }
-        
-        print("recentStyleData: \(recentStyleData)")
-        print("여기까지 들어옴")
         if recentStyleData.code == 200 { return .success(recentStyleData.json) }
         else if recentStyleData.code == 400 { return .requestErr(recentStyleData.json) }
         else { return .serverErr }

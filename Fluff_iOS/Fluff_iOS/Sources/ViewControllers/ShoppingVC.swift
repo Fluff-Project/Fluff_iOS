@@ -109,6 +109,7 @@ class ShoppingVC: UIViewController {
                 guard let successClothData = data as? RecommendedClotheJSONData else { return }
                 guard let clothesData = successClothData.data else { return }
                 self.clothesData = clothesData
+                print(clothesData.count)
                 self.shoppingCollectionView.reloadData()
             case .requestErr(let data):
                 guard let requestClothData = data as? RecommendedClotheData else { return }

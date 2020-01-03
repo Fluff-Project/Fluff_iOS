@@ -119,6 +119,7 @@ struct RecommendService {
     private func loadingClotheData(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let clotheData = try? decoder.decode(RecommendedClotheData.self, from: value) else {
+            print("awdawd")
             return .pathErr
         }
         if clotheData.code == 200 { return .success(clotheData.json) }
