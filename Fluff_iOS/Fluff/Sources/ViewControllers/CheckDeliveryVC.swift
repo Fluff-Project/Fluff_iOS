@@ -14,6 +14,8 @@ class CheckDeliveryVC: UIViewController {
     
     private var productImageName: [String] = ["20191218120650", "2019121870904", "20191218120650", "2019121870904", "20191218120650", "2019121870904", "20191218120650", "2019121870904", "20191218120650", "2019121870904"]
     
+    private var orderDatas: [GetOrderList] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,7 +37,8 @@ class CheckDeliveryVC: UIViewController {
             case .success(let data):
                 guard let requestData = data as? GetOrderListData else { return }
                 guard let orderData = requestData.json.data else { return }
-                print(orderData)
+                self.orderDatas = orderData
+                self.deliveryListTableView.reloadData()
             case .requestErr(let data):
                 guard let requestData = data as? GetOrderListData else { return }
                 self.presentAlertController(title: requestData.json.message!, message: nil)
@@ -53,14 +56,19 @@ class CheckDeliveryVC: UIViewController {
 
 extension CheckDeliveryVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return orderDatas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let deliveryListCell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell") as? DeliveryListTableViewCell else { return UITableViewCell() }
-        guard let clotheImage = UIImage(named: productImageName[indexPath.row]) else { return UITableViewCell() }
+//        guard let clotheImage = UIImage(named: productImageName[indexPath.row]) else { return UITableViewCell() }
         deliveryListCell.separatorInset = UIEdgeInsets.zero
-        deliveryListCell.deliveryProductImage.image = clotheImage
+        
+        deliveryListCell.setProductNameLabel(orderDatas[indexPath.row].goodsName)
+        deliveryListCell.setSellerName(orderDatas[indexPath.row].sellerName)
+        deliveryListCell.setImage(orderDatas[indexPath.row].img[0])
+        deliveryListCell.setPrice(orderDatas[indexPath.row].price)
+        
         return deliveryListCell
     }
 }

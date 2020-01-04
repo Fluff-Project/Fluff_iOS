@@ -33,6 +33,8 @@
 		9D0E2AA123BF5B6D00E73F40 /* OrderListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA023BF5B6D00E73F40 /* OrderListService.swift */; };
 		9D0E2AA323BF5E4800E73F40 /* OrderListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA223BF5E4800E73F40 /* OrderListData.swift */; };
 		9D0E2AA523BF692B00E73F40 /* GetOrderListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA423BF692B00E73F40 /* GetOrderListData.swift */; };
+		9D0E2AA723BFFF5700E73F40 /* AuctionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA623BFFF5700E73F40 /* AuctionService.swift */; };
+		9D0E2AA923C0018B00E73F40 /* AuctionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA823C0018B00E73F40 /* AuctionData.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -184,6 +186,8 @@
 		9D0E2AA023BF5B6D00E73F40 /* OrderListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListService.swift; sourceTree = "<group>"; };
 		9D0E2AA223BF5E4800E73F40 /* OrderListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListData.swift; sourceTree = "<group>"; };
 		9D0E2AA423BF692B00E73F40 /* GetOrderListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderListData.swift; sourceTree = "<group>"; };
+		9D0E2AA623BFFF5700E73F40 /* AuctionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionService.swift; sourceTree = "<group>"; };
+		9D0E2AA823C0018B00E73F40 /* AuctionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionData.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -378,6 +382,7 @@
 				9D0E2A9823BEB91900E73F40 /* SellerItemLookupService.swift */,
 				A607C62023BEC40200B4D56A /* BannerIntoService.swift */,
 				9D0E2AA023BF5B6D00E73F40 /* OrderListService.swift */,
+				9D0E2AA623BFFF5700E73F40 /* AuctionService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				9D0E2A9E23BF1E4200E73F40 /* CartLookupStatus.swift */,
 				9D0E2AA223BF5E4800E73F40 /* OrderListData.swift */,
 				9D0E2AA423BF692B00E73F40 /* GetOrderListData.swift */,
+				9D0E2AA823C0018B00E73F40 /* AuctionData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -797,6 +803,7 @@
 				9D705A9923B8935900097FCF /* AuctionDetailVC.swift in Sources */,
 				9D0E2A8F23BE420F00E73F40 /* SocketawdViewController.swift in Sources */,
 				A607C60F23BD2E9E00B4D56A /* MagazineService.swift in Sources */,
+				9D0E2AA923C0018B00E73F40 /* AuctionData.swift in Sources */,
 				A607C61323BE24A300B4D56A /* HowFluvData.swift in Sources */,
 				9D79382323B227CF00A0CD3E /* UIColor+Extensions.swift in Sources */,
 				A607C60523BC7D6A00B4D56A /* InfoCrystalVC.swift in Sources */,
@@ -811,6 +818,7 @@
 				9D0E2A9F23BF1E4200E73F40 /* CartLookupStatus.swift in Sources */,
 				9D7937FB23B16E7E00A0CD3E /* MainTabbarController.swift in Sources */,
 				9D468AD223B2D89800E98500 /* PurchaseViewController.swift in Sources */,
+				9D0E2AA723BFFF5700E73F40 /* AuctionService.swift in Sources */,
 				9D0E2AA123BF5B6D00E73F40 /* OrderListService.swift in Sources */,
 				9D79382C23B2871400A0CD3E /* DetailItemVC.swift in Sources */,
 				A66F240B23B8B3C4004B57FA /* BannerIntoCollectionViewCell.swift in Sources */,

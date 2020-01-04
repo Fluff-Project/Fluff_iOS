@@ -26,4 +26,23 @@ class DeliveryListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setImage(_ url: String) {
+        deliveryProductImage.setImage(with: url)
+    }
+    
+    func setSellerName(_ sellerName: String) {
+        sellerNameLabel.text = sellerName
+    }
+    
+    func setProductNameLabel(_ productName: String) {
+        productNameLabel.text = productName
+    }
+    
+    func setPrice(_ price: Int) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattingString = (numberFormatter.string(from: NSNumber(value: price)) ?? "0")
+        productPriceLabel.text = formattingString
+    }
 }

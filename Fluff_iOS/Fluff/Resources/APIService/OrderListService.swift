@@ -67,6 +67,7 @@ struct OrderListService {
     private func isGetOrderData(_ value: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let getorderListData = try? decoder.decode(GetOrderListData.self, from: value) else { return .pathErr }
+        print("getorderListData: \(getorderListData)")
         if getorderListData.code == 200 { return .success(getorderListData) }
         else { return .requestErr(getorderListData) }
     }
