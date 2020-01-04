@@ -11,7 +11,7 @@
         <!--Taste AnalysisVC-->
         <scene sceneID="RgU-yS-ZWt">
             <objects>
-                <viewController storyboardIdentifier="TasteAnalysisVC" id="JYm-GN-UCH" customClass="TasteAnalysisVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TasteAnalysisVC" id="JYm-GN-UCH" customClass="TasteAnalysisVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PyN-Z6-MKB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tasteCell" id="hB5-45-5Ro" customClass="TasteCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tasteCell" id="hB5-45-5Ro" customClass="TasteCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="81.666666666666671" y="0.0" width="164" height="164"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hM9-TG-Et6">
@@ -159,7 +159,7 @@
         <!--Next Taste AnalysisVC-->
         <scene sceneID="dBE-JU-3nf">
             <objects>
-                <viewController storyboardIdentifier="ThreeTasteAnalysisVC" id="36h-ob-9ef" customClass="NextTasteAnalysisVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThreeTasteAnalysisVC" id="36h-ob-9ef" customClass="NextTasteAnalysisVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BHF-Ob-x8i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="179" width="375" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="analysisCell" rowHeight="260" id="Sks-KQ-wqg" customClass="AnalysisTableViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="analysisCell" rowHeight="260" id="Sks-KQ-wqg" customClass="AnalysisTableViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sks-KQ-wqg" id="m0b-ah-b14">
@@ -269,7 +269,7 @@
                                                         <inset key="sectionInset" minX="28" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fluvCell" id="ews-hR-3lB" customClass="FluvCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fluvCell" id="ews-hR-3lB" customClass="FluvCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                                             <rect key="frame" x="28" y="9" width="133" height="162.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SHr-tz-bdj">
@@ -366,7 +366,7 @@
         <!--LoginVC-->
         <scene sceneID="fIT-Ab-YYR">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="MWN-jh-Ivm" customClass="LoginVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="MWN-jh-Ivm" customClass="LoginVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7cL-iA-jMZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,7 +512,7 @@
         <!--ShoppingVC-->
         <scene sceneID="dAd-xC-2r4">
             <objects>
-                <viewController id="rAO-gr-XpM" customClass="ShoppingVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rAO-gr-XpM" customClass="ShoppingVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="36M-pz-HwX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -527,7 +527,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shoppingCell" id="zXq-Ik-L0z" customClass="ShopCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shoppingCell" id="zXq-Ik-L0z" customClass="ShopCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="292"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vmb-gd-hGk">
@@ -665,7 +665,7 @@
         <!--CartVC-->
         <scene sceneID="HRP-z5-GWU">
             <objects>
-                <viewController storyboardIdentifier="CartVC" modalPresentationStyle="fullScreen" id="DOU-eN-gQx" customClass="CartVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartVC" modalPresentationStyle="fullScreen" id="DOU-eN-gQx" customClass="CartVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i7p-gu-pfs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -757,7 +757,7 @@
                                 <rect key="frame" x="0.0" y="187" width="375" height="452"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="148" id="I4Y-pZ-fHo" customClass="CartTableViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="148" id="I4Y-pZ-fHo" customClass="CartTableViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="148"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I4Y-pZ-fHo" id="RaN-eq-sWB">
@@ -892,7 +892,7 @@
         <!--Like List ParentVC-->
         <scene sceneID="Mdg-hU-R94">
             <objects>
-                <viewController storyboardIdentifier="LikeListParentVC" id="drZ-2y-jUp" customClass="LikeListParentVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LikeListParentVC" id="drZ-2y-jUp" customClass="LikeListParentVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b9v-Ye-MqR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -922,7 +922,7 @@
         <!--DetailViewController-->
         <scene sceneID="wyU-fv-nUQ">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" id="cZc-1p-aQQ" customClass="DetailItemVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" id="cZc-1p-aQQ" customClass="DetailItemVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QjD-eh-Hk5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -946,7 +946,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailCell" id="0hi-Xj-AX4" customClass="DetailItemCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailCell" id="0hi-Xj-AX4" customClass="DetailItemCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="-23.333333333333332" width="414" height="492.5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TZD-7R-f8C">
@@ -1075,7 +1075,7 @@
                                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="otherItemCell" id="G9A-es-1VG" customClass="OtherItemCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="otherItemCell" id="G9A-es-1VG" customClass="OtherItemCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="47" width="141" height="206"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NQQ-Zy-idw">
@@ -1361,7 +1361,7 @@
         <!--DetailVC-->
         <scene sceneID="aIz-i9-T57">
             <objects>
-                <viewController id="nMK-pN-y12" customClass="DetailVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nMK-pN-y12" customClass="DetailVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93y-ra-0T1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1453,7 +1453,7 @@
         <!--Purchase View Controller-->
         <scene sceneID="ZTV-cZ-eCM">
             <objects>
-                <viewController storyboardIdentifier="PurchaseViewController" id="7aV-qQ-uLj" customClass="PurchaseViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PurchaseViewController" id="7aV-qQ-uLj" customClass="PurchaseViewController" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ke6-uH-5hZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1922,7 +1922,7 @@
         <!--Fluv ApplyVC-->
         <scene sceneID="3C2-5E-lFk">
             <objects>
-                <viewController storyboardIdentifier="FluvApplyVC" id="AcV-IB-x6a" customClass="FluvApplyVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FluvApplyVC" id="AcV-IB-x6a" customClass="FluvApplyVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fJz-bV-7JB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2313,7 +2313,7 @@
         <!--FluvVC-->
         <scene sceneID="ebY-XO-lBa">
             <objects>
-                <viewController id="5gY-aW-IJK" customClass="FluvVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5gY-aW-IJK" customClass="FluvVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crH-7q-jvz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2328,7 +2328,7 @@
         <!--AuctionVC-->
         <scene sceneID="gIM-Nj-KjE">
             <objects>
-                <viewController id="7EV-JF-nTh" customClass="AuctionVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7EV-JF-nTh" customClass="AuctionVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ADp-fX-neb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2343,7 +2343,7 @@
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="auctionCell" id="dHG-h4-Exy" customClass="AuctionCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="auctionCell" id="dHG-h4-Exy" customClass="AuctionCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="16" y="0.0" width="343" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vCh-Gc-eso">
@@ -2482,7 +2482,7 @@
         <!--My Page View Controller-->
         <scene sceneID="fwA-zk-l4y">
             <objects>
-                <viewController id="zc9-aU-s2p" customClass="MyPageViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zc9-aU-s2p" customClass="MyPageViewController" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dug-Uu-SWT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2534,7 +2534,7 @@
                                             <inset key="sectionInset" minX="18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="currentProductCell" id="Hxe-2o-cAg" customClass="CurrentProductCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="currentProductCell" id="Hxe-2o-cAg" customClass="CurrentProductCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                                 <rect key="frame" x="18" y="-0.66666666666666663" width="75" height="84"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EYD-KZ-Taq">
@@ -2577,7 +2577,7 @@
                                     <constraint firstAttribute="width" secondItem="wXP-PN-lhE" secondAttribute="height" multiplier="1:0.576" id="lJD-Cj-dZK"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPageButtonCell" rowHeight="50" id="pit-Pq-J9Y" customClass="MyPageTableViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPageButtonCell" rowHeight="50" id="pit-Pq-J9Y" customClass="MyPageTableViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pit-Pq-J9Y" id="b6c-hq-zBz">
@@ -2680,7 +2680,7 @@
         <!--Main Tabbar Controller-->
         <scene sceneID="Yt8-4K-ab2">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabbarController" automaticallyAdjustsScrollViewInsets="NO" id="sP6-lB-fsB" customClass="MainTabbarController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabbarController" automaticallyAdjustsScrollViewInsets="NO" id="sP6-lB-fsB" customClass="MainTabbarController" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Vhg-w9-87l">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -2749,7 +2749,7 @@
         <!--Following ListVC-->
         <scene sceneID="z6B-3O-mxh">
             <objects>
-                <viewController storyboardIdentifier="FollowingListVC" id="OdJ-mI-sP7" customClass="FollowingListVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowingListVC" id="OdJ-mI-sP7" customClass="FollowingListVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hq9-hv-wae">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2758,7 +2758,7 @@
                                 <rect key="frame" x="0.0" y="79" width="375" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowingCell" rowHeight="93" id="aNH-ov-pON" customClass="FollowingTableViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowingCell" rowHeight="93" id="aNH-ov-pON" customClass="FollowingTableViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aNH-ov-pON" id="jOU-EL-hhf">
@@ -2876,7 +2876,7 @@
         <!--Like Tabbar Controller-->
         <scene sceneID="88F-c9-ZUe">
             <objects>
-                <viewController id="qLk-ks-uUT" customClass="LikeTabbarController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qLk-ks-uUT" customClass="LikeTabbarController" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ZJ-YP-Kzz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2891,7 +2891,7 @@
         <!--Like List TabVC-->
         <scene sceneID="7TW-Pi-6Ir">
             <objects>
-                <viewController storyboardIdentifier="LikeListTabVC" id="vBC-Td-uwQ" customClass="LikeListTabVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LikeListTabVC" id="vBC-Td-uwQ" customClass="LikeListTabVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jfq-4B-iUH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2906,7 +2906,7 @@
                                     <inset key="sectionInset" minX="33" minY="0.0" maxX="33" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="likeCell" id="p9y-eJ-JTd" customClass="LikeCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="likeCell" id="p9y-eJ-JTd" customClass="LikeCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="116.66666666666667" y="0.0" width="142" height="251"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7RE-mz-PQ0">
@@ -2961,6 +2961,7 @@
                                         <size key="customSize" width="142" height="251"/>
                                         <connections>
                                             <outlet property="clotheNameLabel" destination="emu-FS-PaL" id="Xs1-sx-d84"/>
+                                            <outlet property="likeImage" destination="5ce-Dp-d4c" id="neE-uS-k2p"/>
                                             <outlet property="priceLabel" destination="Emz-8a-UGs" id="m0c-vX-1KG"/>
                                             <outlet property="sellerNameLabel" destination="Adr-Nf-Fsk" id="Enz-ty-fs4"/>
                                         </connections>
@@ -2997,7 +2998,7 @@
         <!--Auction DetailVC-->
         <scene sceneID="Dv7-65-V8W">
             <objects>
-                <viewController storyboardIdentifier="auctionDetailVC" id="t6X-GR-PN6" customClass="AuctionDetailVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auctionDetailVC" id="t6X-GR-PN6" customClass="AuctionDetailVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q7i-uJ-kmr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3065,7 +3066,7 @@
                                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 </collectionViewFlowLayout>
                                                                 <cells>
-                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="auctionDetailCell" id="8BV-hG-q4Q" customClass="AuctionDetailCollectionViewCell" customModule="Fluff_iOS" customModuleProvider="target">
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="auctionDetailCell" id="8BV-hG-q4Q" customClass="AuctionDetailCollectionViewCell" customModule="Fluff" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="25.666666666666668" width="374" height="543"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JIP-m1-FW0">
@@ -3358,7 +3359,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         <!--홈-->
         <scene sceneID="B5c-1b-bE7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9r-pG-3JZ" customClass="HomeNavigationVC" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9r-pG-3JZ" customClass="HomeNavigationVC" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="icons8Home1002" id="g3w-aR-pne"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GNv-Lw-nk0">
@@ -3377,7 +3378,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         <!--Socketawd View Controller-->
         <scene sceneID="acp-S9-aG8">
             <objects>
-                <viewController id="UGn-tG-qSY" customClass="SocketawdViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UGn-tG-qSY" customClass="SocketawdViewController" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="luu-cI-Xet">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3412,7 +3413,7 @@ V-넥, 앞 버튼으로 잠그는 형식, 앞 포켓, 버튼 장식, 긴소매.
         <!--Welcome View Controller-->
         <scene sceneID="a4R-2d-Vbe">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="EZw-Jb-rWd" customClass="WelcomeViewController" customModule="Fluff_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="EZw-Jb-rWd" customClass="WelcomeViewController" customModule="Fluff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IwB-tm-QiZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

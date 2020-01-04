@@ -12,5 +12,5 @@ class LikeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var sellerNameLabel: UILabel!
     @IBOutlet weak var clotheNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
+    @IBOutlet weak var likeImage: UIImageView!
 }
