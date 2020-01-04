@@ -9,6 +9,7 @@
 import UIKit
 
 class FollowingTableViewCell: UITableViewCell {
+    @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var fluvNameLabel: UILabel!
     @IBOutlet weak var followerCountLabel: UILabel!
     @IBOutlet weak var oneTagLabel: UILabel!
@@ -42,6 +43,10 @@ class FollowingTableViewCell: UITableViewCell {
     
     func setFluvName(_ name: String) {
         fluvNameLabel.text = name
+    }
+    
+    func setProfileButton (_ img: String) {
+        profileButton.setImage(with: img)
     }
     
     func setFollowerCountLabel(_ count: String) {
