@@ -33,9 +33,9 @@ struct GetOrderListJSONData: Codable {
 }
 
 struct GetOrderList: Codable {
-    let createdAt: String
-    let sellerName: String
-    let Img: String
+    let img: [String]
+    let price: Int
+    let _id: String
     let goodsName: String
-    let price: String
+    let sellerName: String
 }

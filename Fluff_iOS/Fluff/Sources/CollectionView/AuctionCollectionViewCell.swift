@@ -26,11 +26,19 @@ class AuctionCollectionViewCell: UICollectionViewCell {
         lestDescriptionLabel.font = UIFont(name: "KoPubWorldDotumPM", size: 12)
     }
     
-    
-    func setInit(auctionImage: UIImage, timer: String, currentPrice: String, auctionItemName: String) {
-        self.auctionItemImageView.image = auctionImage
-        timerLabel.text = timer
-        currentPriceLabel.text = currentPrice
-        auctionItemLabel.text = auctionItemName
+    func setImage(_ url: String) {
+        self.auctionItemImageView.setImage(with: url)
     }
+    
+    func setPrice(_ price: Int) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattingNumber = (numberFormatter.string(from: NSNumber(value: price)) ?? "0") + "원"
+        self.currentPriceLabel.text = formattingNumber
+    }
+    
+    func setNameLabel(_ name: String) {
+        self.auctionItemLabel.text = name
+    }
+    
 }

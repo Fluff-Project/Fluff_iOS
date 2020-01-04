@@ -20,6 +20,7 @@ class AuctionVC: UIViewController {
     var secondTimeLeft = 49275
     var thirdTimeLeft = 300
     var timeCounter: Timer?
+    private var auctionRealDatas: [AuctionRealData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class AuctionVC: UIViewController {
         
         auctionCollectionView.delegate = self
         auctionCollectionView.dataSource = self
+        loadAcutionData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,21 +57,42 @@ class AuctionVC: UIViewController {
         
         return String(hour) + ":" + String(minute) + ":" + String(second)
     }
+    
+    private func loadAcutionData() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        AcutionService.shared.getAuctionList(token: userToken) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let auctionData = data as? AuctionData else { return }
+                guard let auctionRealData = auctionData.json.data else { return }
+                self.auctionRealDatas = auctionRealData
+                self.auctionCollectionView.reloadData()
+            case .requestErr(let message):
+                guard let message = message as? String else { return }
+                self.presentAlertController(title: message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "경로 에러", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 에러", message: nil)
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다.")
+            }
+        }
+    }
 
 }
 
 extension AuctionVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return auctionRealDatas.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let auctionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "auctionCell", for: indexPath) as? AuctionCollectionViewCell else { return UICollectionViewCell() }
-        guard let auctionImage = UIImage(named: auctionImage[indexPath.row]) else { return UICollectionViewCell() }
-        
-        auctionCell.setInit(auctionImage: auctionImage, timer: timer[indexPath.row], currentPrice: auctionPrice[indexPath.row], auctionItemName: "샤넬 1990's 트위드 자켓")
-        
-        
+        auctionCell.setImage(auctionRealDatas[indexPath.row].mainImg)
+        auctionCell.setPrice(auctionRealDatas[indexPath.row].bid)
+        auctionCell.setNameLabel(auctionRealDatas[indexPath.row].auctionName)
+
         return auctionCell
     }
 }
