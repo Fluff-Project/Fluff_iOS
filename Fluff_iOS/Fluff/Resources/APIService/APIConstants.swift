@@ -37,6 +37,8 @@ struct APIConstants {
     static let auctionBidding = "http://f3c61e12.ngrok.io/auction/5e0e260d3c493169d01b9bfb/bid"
     // 소켓 주소
     static let auctionSocket = "http://f3c61e12.ngrok.io?auctionId=5e0e260d3c493169d01b9bfb"
+    // 필러링
+    static let filering = baseURL + "/goods/filter"
     
     
     static let howFluv = baseURL + "/recommend/seller?page=4"

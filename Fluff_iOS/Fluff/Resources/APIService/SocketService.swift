@@ -18,7 +18,7 @@ struct BIDData: Codable {
 class SocketService {
     static let shared = SocketService()
     
-    let manager = SocketManager(socketURL: URL(string: "http://f3c61e12.ngrok.io?auctionId=5e0e260d3c493169d01b9bfb")!, config: [.log(true), .compress])
+    let manager = SocketManager(socketURL: URL(string: "http://2a71fa50.ngrok.io")!, config: [.log(true), .compress])
     lazy var socket = self.manager.defaultSocket
     
     func connect() {

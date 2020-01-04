@@ -139,6 +139,8 @@ class FilteringVC: UIViewController {
     @IBAction func clickColorButtons(_ sender: Any) {
         guard let button = sender as? UIButton else { return }
         
+        
+        
         for index in 0..<colorButtons.count {
             if button === colorButtons[index] {
                 changeColorButton(selectedColorButton: button, selectedIndex: index)
@@ -228,7 +230,10 @@ class FilteringVC: UIViewController {
         isSelectedSize.forEach {
             if $0 { filterCount += 1 }
         }
-        NotificationCenter.default.post(name: .clickApplyButton, object: nil, userInfo: ["count": filterCount])
+        let paramter = ["color": "brown", "category": ["jacket", "coat"], "size": ["lg"]] as [String : Any]
+        
+        
+        NotificationCenter.default.post(name: .clickApplyButton, object: nil, userInfo: ["count": filterCount, "filterData": paramter])
     }
 }
 

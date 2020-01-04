@@ -44,11 +44,14 @@ class AuctionDetailVC: UIViewController {
         initBiddingPopupView()
         addObserver()
         
-    SocketService.shared.socket.on("?auctionId=5e0e260d3c493169d01b9bfb&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTBhNDE2ZjIxN2YyMjAwMTE5YjYwMzciLCJ1c2VybmFtZSI6IuyekOydvOuPmeyDneyLoOydvCIsImVtYWlsIjoicGxhbkBzb3B0Lm9yZyIsImlhdCI6MTU3ODA1NzE4NCwiZXhwIjoxNTc4MjAxMTg0LCJpc3MiOiJvb2V1bnoifQ.nvPg08tdbiG726RN-J0TNRQaVVJNZEXztKETCtG-8wQ") { dataArray, ack in
-                print(dataArray)
-        }
-            
-        SocketService.shared.connect()
+        
+        // 소켓 여는 함수
+//        SocketService.shared.socket.on("") { dataArray, ack in
+//            let awd = dataArray[0] as! Int
+//            print(awd)
+//        }
+//
+//        SocketService.shared.connect()
 
     }
     

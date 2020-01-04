@@ -35,6 +35,8 @@
 		9D0E2AA523BF692B00E73F40 /* GetOrderListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA423BF692B00E73F40 /* GetOrderListData.swift */; };
 		9D0E2AA723BFFF5700E73F40 /* AuctionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA623BFFF5700E73F40 /* AuctionService.swift */; };
 		9D0E2AA923C0018B00E73F40 /* AuctionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AA823C0018B00E73F40 /* AuctionData.swift */; };
+		9D0E2AAB23C029E000E73F40 /* FilteringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AAA23C029E000E73F40 /* FilteringService.swift */; };
+		9D0E2AAD23C02CA700E73F40 /* FilteringData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2AAC23C02CA700E73F40 /* FilteringData.swift */; };
 		9D1FCC4223B68B4C0089571B /* FilteringVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FCC4123B68B4C0089571B /* FilteringVC.xib */; };
 		9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */; };
 		9D30E29523BB97C7006521D1 /* TasteAnalysisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */; };
@@ -189,6 +191,8 @@
 		9D0E2AA423BF692B00E73F40 /* GetOrderListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOrderListData.swift; sourceTree = "<group>"; };
 		9D0E2AA623BFFF5700E73F40 /* AuctionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionService.swift; sourceTree = "<group>"; };
 		9D0E2AA823C0018B00E73F40 /* AuctionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionData.swift; sourceTree = "<group>"; };
+		9D0E2AAA23C029E000E73F40 /* FilteringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringService.swift; sourceTree = "<group>"; };
+		9D0E2AAC23C02CA700E73F40 /* FilteringData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringData.swift; sourceTree = "<group>"; };
 		9D1FCC4123B68B4C0089571B /* FilteringVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilteringVC.xib; sourceTree = "<group>"; };
 		9D30E29223BB9708006521D1 /* TasteAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisService.swift; sourceTree = "<group>"; };
 		9D30E29423BB97C7006521D1 /* TasteAnalysisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteAnalysisData.swift; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 				A607C62023BEC40200B4D56A /* BannerIntoService.swift */,
 				9D0E2AA023BF5B6D00E73F40 /* OrderListService.swift */,
 				9D0E2AA623BFFF5700E73F40 /* AuctionService.swift */,
+				9D0E2AAA23C029E000E73F40 /* FilteringService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -494,6 +499,7 @@
 				9D0E2AA223BF5E4800E73F40 /* OrderListData.swift */,
 				9D0E2AA423BF692B00E73F40 /* GetOrderListData.swift */,
 				9D0E2AA823C0018B00E73F40 /* AuctionData.swift */,
+				9D0E2AAC23C02CA700E73F40 /* FilteringData.swift */,
 			);
 			path = NetworkData;
 			sourceTree = "<group>";
@@ -813,6 +819,7 @@
 				A607C60523BC7D6A00B4D56A /* InfoCrystalVC.swift in Sources */,
 				9DFA7FFD23B367BD0036AA50 /* MyPageTableViewCell.swift in Sources */,
 				9D0E2A5323BC660700E73F40 /* SignupData.swift in Sources */,
+				9D0E2AAD23C02CA700E73F40 /* FilteringData.swift in Sources */,
 				9D0E2AA323BF5E4800E73F40 /* OrderListData.swift in Sources */,
 				A607C61F23BE8F6700B4D56A /* ThemeIntoService.swift in Sources */,
 				9D84B12623B9413F0019C7D4 /* CartItemCollectionViewCell.swift in Sources */,
@@ -860,6 +867,7 @@
 				A607C61D23BE813000B4D56A /* RecentStyleService.swift in Sources */,
 				9D0E2A9323BE911900E73F40 /* UtilValue.swift in Sources */,
 				A66F241123B90FA2004B57FA /* ThemeIntoCollectionViewCell.swift in Sources */,
+				9D0E2AAB23C029E000E73F40 /* FilteringService.swift in Sources */,
 				9D79377C23B0C0AF00A0CD3E /* APIConstants.swift in Sources */,
 				9D705A9523B7D30E00097FCF /* DetailCategoryDataSource.swift in Sources */,
 				9D30E29323BB9708006521D1 /* TasteAnalysisService.swift in Sources */,

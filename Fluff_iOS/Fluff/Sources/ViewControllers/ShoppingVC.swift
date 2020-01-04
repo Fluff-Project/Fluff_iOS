@@ -19,8 +19,7 @@ class ShoppingVC: UIViewController {
     
     private var filterCount: Int = 0
     private var clothesData: [ClotheData] = []
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -149,6 +148,35 @@ extension ShoppingVC {
             self.filteringVC.view.transform = .identity
             self.transparentView.alpha = 0
         }, completion: nil)
+        loadClotheStyle()
+        
+        // 데이터 이상함
+//        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+//        guard let filterdInform = notification.userInfo?["filterData"] as? [String: Any] else { return }
+//
+//        guard let filterColor = filterdInform["color"] as? String else { return }
+//        guard let filterCategory = filterdInform["category"] as? [String] else { return }
+//        guard let filterSize = filterdInform["size"] as? [String] else { return }
+//
+//        FilteringService.shared.filterData(token: userToken, color: filterColor, category: filterCategory, size: filterSize) { networkResult in
+//            switch networkResult {
+//            case .success(let data):
+//                guard let filteringData = data as? FilteringData else { return }
+//                guard let filteringDatas = filteringData.json.data as? [FilteredData] else { return }
+//                self.filtering = filteringDatas
+//
+//            case .requestErr(let data):
+//                guard let message = data as? String else { return }
+//                self.presentAlertController(title: message, message: nil)
+//            case .serverErr:
+//                self.presentAlertController(title: "서버 에러", message: nil)
+//            case .pathErr:
+//                self.presentAlertController(title: "경로 실패", message: nil)
+//            case .networkFail:
+//                self.presentAlertController(title: "네트워크 연결 실패", message: nil)
+//
+//            }
+//        }
     }
 }
 
@@ -198,7 +226,6 @@ extension ShoppingVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let estimateSpacing
         return UIEdgeInsets(top: 0, left: (collectionView.frame.width / 11.72), bottom: 70, right: (collectionView.frame.width / 11.72))
     }
 }

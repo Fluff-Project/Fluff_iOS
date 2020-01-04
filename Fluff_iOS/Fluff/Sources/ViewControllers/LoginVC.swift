@@ -70,6 +70,8 @@ class LoginVC: UIViewController {
         
         estimateSize = loginButton.frame.size
         addObserver()
+        self.navigationController?.navigationBar.isHidden = false
+        self.setNavigationBarClear()
     }
     
     override func viewWillAppear(_ animated: Bool) {

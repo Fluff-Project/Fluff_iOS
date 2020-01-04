@@ -3006,14 +3006,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-qV-5HN">
                                 <rect key="frame" x="0.0" y="1383" width="375" height="117"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:32:52" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEm-xs-jW2">
-                                        <rect key="frame" x="145" y="11" width="85" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEm-xs-jW2">
+                                        <rect key="frame" x="187.66666666666666" y="11" width="0.0" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b58-XN-Gnz">
-                                        <rect key="frame" x="234" y="14.666666666666741" width="29.666666666666686" height="20.333333333333329"/>
+                                        <rect key="frame" x="191.66666666666666" y="14.666666666666741" width="29.666666666666657" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3035,12 +3035,13 @@
                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="nyU-U5-5Ya" firstAttribute="width" secondItem="xxH-qV-5HN" secondAttribute="width" multiplier="0.816" id="7jX-dG-PSk"/>
+                                    <constraint firstItem="b58-XN-Gnz" firstAttribute="leading" secondItem="SEm-xs-jW2" secondAttribute="trailing" constant="4" id="9dO-I3-vgN"/>
                                     <constraint firstAttribute="bottom" secondItem="nyU-U5-5Ya" secondAttribute="bottom" constant="27" id="FPx-vO-y74"/>
-                                    <constraint firstItem="b58-XN-Gnz" firstAttribute="leading" secondItem="SEm-xs-jW2" secondAttribute="trailing" constant="4" id="GyA-ic-D2f"/>
                                     <constraint firstItem="nyU-U5-5Ya" firstAttribute="centerX" secondItem="xxH-qV-5HN" secondAttribute="centerX" id="K0L-7E-mqe"/>
                                     <constraint firstItem="SEm-xs-jW2" firstAttribute="centerX" secondItem="xxH-qV-5HN" secondAttribute="centerX" id="N5y-JO-IYz"/>
                                     <constraint firstAttribute="width" secondItem="xxH-qV-5HN" secondAttribute="height" multiplier="125:39" id="Q6b-XJ-PVd"/>
                                     <constraint firstItem="SEm-xs-jW2" firstAttribute="top" secondItem="xxH-qV-5HN" secondAttribute="top" constant="11" id="iuH-UD-LkE"/>
+                                    <constraint firstItem="b58-XN-Gnz" firstAttribute="top" secondItem="xxH-qV-5HN" secondAttribute="top" constant="14.67" id="xEI-tb-Jxr"/>
                                     <constraint firstItem="b58-XN-Gnz" firstAttribute="bottom" secondItem="SEm-xs-jW2" secondAttribute="bottom" id="zke-fW-H0S"/>
                                 </constraints>
                             </view>
