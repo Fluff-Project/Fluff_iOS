@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9220E422FA1EA1290E06A7A1 /* Pods_Fluff_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */; };
+		18FFA52D483F02FC71A4B9AE /* Pods_Fluff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D145EB61F4292F79DFAC303A /* Pods_Fluff.framework */; };
 		9D0C626D23B674BF00F31502 /* FilteringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C626C23B674BF00F31502 /* FilteringVC.swift */; };
 		9D0E2A4F23BC502900E73F40 /* SignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A4E23BC502900E73F40 /* SignupService.swift */; };
 		9D0E2A5323BC660700E73F40 /* SignupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0E2A5223BC660700E73F40 /* SignupData.swift */; };
@@ -156,9 +156,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D7E23A99E8A71ADFFCC7D3D /* Pods-Fluff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff.release.xcconfig"; path = "Target Support Files/Pods-Fluff/Pods-Fluff.release.xcconfig"; sourceTree = "<group>"; };
 		10DBC2AAADF3EADBBB9EF552 /* Pods-Fluff_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff_iOS.release.xcconfig"; path = "Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5EE6AEDF89FB3A9A89FFCD46 /* Pods-Fluff_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff_iOS.debug.xcconfig"; path = "Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93B8212E37AD3471120CF3B7 /* Pods-Fluff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fluff.debug.xcconfig"; path = "Target Support Files/Pods-Fluff/Pods-Fluff.debug.xcconfig"; sourceTree = "<group>"; };
 		9D0C626C23B674BF00F31502 /* FilteringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringVC.swift; sourceTree = "<group>"; };
 		9D0E2A4E23BC502900E73F40 /* SignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupService.swift; sourceTree = "<group>"; };
 		9D0E2A5223BC660700E73F40 /* SignupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupData.swift; sourceTree = "<group>"; };
@@ -307,6 +308,7 @@
 		A6E2ABBB23BA9F4100EC8E66 /* Magazine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Magazine.storyboard; sourceTree = "<group>"; };
 		A6E2ABBD23BB98AD00EC8E66 /* MagazineDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailVC.swift; sourceTree = "<group>"; };
 		A6F5433723B15DA50006FE9E /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "/Downloads/아카이브/UINavigationBar+Extensions.swift"; sourceTree = "<absolute>"; };
+		D145EB61F4292F79DFAC303A /* Pods_Fluff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fluff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9220E422FA1EA1290E06A7A1 /* Pods_Fluff_iOS.framework in Frameworks */,
+				18FFA52D483F02FC71A4B9AE /* Pods_Fluff.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +326,7 @@
 		212E0C894F17578854A222CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9BF02802D950D16EF5D771EC /* Pods_Fluff_iOS.framework */,
+				D145EB61F4292F79DFAC303A /* Pods_Fluff.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -334,6 +336,8 @@
 			children = (
 				5EE6AEDF89FB3A9A89FFCD46 /* Pods-Fluff_iOS.debug.xcconfig */,
 				10DBC2AAADF3EADBBB9EF552 /* Pods-Fluff_iOS.release.xcconfig */,
+				93B8212E37AD3471120CF3B7 /* Pods-Fluff.debug.xcconfig */,
+				0D7E23A99E8A71ADFFCC7D3D /* Pods-Fluff.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -740,15 +744,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Fluff/Pods-Fluff-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Fluff/Pods-Fluff-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fluff_iOS/Pods-Fluff_iOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fluff/Pods-Fluff-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		955DA209D9999672A3D1F225 /* [CP] Check Pods Manifest.lock */ = {
@@ -766,7 +770,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Fluff_iOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Fluff-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1038,7 +1042,7 @@
 		};
 		A63C507423B08BF60069BAFB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EE6AEDF89FB3A9A89FFCD46 /* Pods-Fluff_iOS.debug.xcconfig */;
+			baseConfigurationReference = 93B8212E37AD3471120CF3B7 /* Pods-Fluff.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1058,7 +1062,7 @@
 		};
 		A63C507523B08BF60069BAFB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10DBC2AAADF3EADBBB9EF552 /* Pods-Fluff_iOS.release.xcconfig */;
+			baseConfigurationReference = 0D7E23A99E8A71ADFFCC7D3D /* Pods-Fluff.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
