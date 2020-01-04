@@ -13,6 +13,8 @@ class FollowingListVC: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var searchResultLabel: UILabel!
     @IBOutlet weak var followingTableView: UITableView!
     private var isFollow: [Bool] = []
+    var userToken: String?
+    var fluvData: [FluvData] = []
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         guard let followingImage = UIImage(named: "favoriteMarketlcSelected1") else { return IndicatorInfo(title: "") }
@@ -36,6 +38,18 @@ class FollowingListVC: UIViewController, IndicatorInfoProvider {
         addObserver()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        initToken()
+        requestHowFluv()
+    }
+    
+    private func initToken() {
+        guard let userToken = UserDefaults.standard.value(forKey: "token") as? String else { return }
+        self.userToken = userToken
+    }
+    
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(setFollowButton(_:)), name: .clickFollowButton, object: nil)
     }
@@ -51,7 +65,7 @@ class FollowingListVC: UIViewController, IndicatorInfoProvider {
 
 extension FollowingListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return fluvData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,6 +75,8 @@ extension FollowingListVC: UITableViewDataSource {
         followingCell.setNeedsLayout()
         followingCell.setRow(indexPath.row)
         followingCell.setFollowButton(isFollow: isFollow[indexPath.row])
+        followingCell.setProfileButton(fluvData[indexPath.row].sellerImg)
+        followingCell.setFluvName(fluvData[indexPath.row].sellerName)
         return followingCell
     }
 }
@@ -68,5 +84,32 @@ extension FollowingListVC: UITableViewDataSource {
 extension FollowingListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height / 7
+    }
+}
+
+extension FollowingListVC {
+    private func requestHowFluv() {
+        guard let userToken = self.userToken else {
+            return
+        }
+        HowFluvService.shared.howFluv(token: userToken) {
+            networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let howFluvJsonData = data as? HowFluvJsonData else { return }
+                guard let fluvData = howFluvJsonData.data else { return }
+                self.fluvData = fluvData
+                self.followingTableView.reloadData()
+            case .requestErr(let data):
+                guard let howFluvJsonData = data as? HowFluvJsonData else { return }
+                self.presentAlertController(title: howFluvJsonData.message, message: nil)
+            case .pathErr:
+                self.presentAlertController(title: "path Error", message: nil)
+            case .serverErr:
+                self.presentAlertController(title: "서버 오류", message: "서버 내부 오류가 있습니다.")
+            case .networkFail:
+                self.presentAlertController(title: "네트워크 연결 실패", message: "네트워크 연결이 필요합니다")
+            }
+        }
     }
 }

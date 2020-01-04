@@ -2841,6 +2841,7 @@
                                             <outlet property="followButtonWidthConstraint" destination="1FI-OR-vdR" id="aOS-dq-eUx"/>
                                             <outlet property="followerCountLabel" destination="Fiw-j6-hmS" id="6bO-pP-rso"/>
                                             <outlet property="oneTagLabel" destination="w4n-fM-H6d" id="a1A-8C-vr2"/>
+                                            <outlet property="profileButton" destination="TZf-Vr-2CX" id="2hz-pk-tV4"/>
                                             <outlet property="twoTagLabel" destination="NWi-Hx-fpt" id="OBg-1p-1K3"/>
                                         </connections>
                                     </tableViewCell>
