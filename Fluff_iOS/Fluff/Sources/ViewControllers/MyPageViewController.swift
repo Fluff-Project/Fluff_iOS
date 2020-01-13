@@ -158,9 +158,16 @@ extension MyPageViewController: UITableViewDelegate {
             self.navigationController?.pushViewController(tasteAnalysis, animated: true)
         case .logout:
             guard let loginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginVC else { return }
-            loginVC.modalPresentationStyle = .fullScreen
-            self.present(loginVC, animated: true, completion: nil)
+            
+            let navigation = UINavigationController(rootViewController: loginVC)
+            navigation.modalPresentationStyle = .fullScreen
             UserDefaults.standard.set(nil, forKey: "token")
+            self.present(navigation, animated: true, completion: nil)
+            
+            
+//            loginVC.modalPresentationStyle = .fullScreen
+//            self.present(loginVC, animated: true, completion: nil)
+//            UserDefaults.standard.set(nil, forKey: "token")
         
         }
     }

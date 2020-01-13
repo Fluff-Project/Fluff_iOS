@@ -16,16 +16,45 @@ class BannerIntoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bannerIntoPriceLabel: UILabel!
     @IBOutlet weak var bannerIntoHeartButton: UIButton!
     
-    var like: Bool = false
+//    var like: Bool = false
+    private var index: Int?
+    private var isClicked: Bool?
     
-    @IBAction func heartClicked(_ sender: UIButton) {
-        if like == false {
-            like = true
+    func setIndex(_ index: Int) {
+        self.index = index
+    }
+    
+    func setIsClicked(_ isClicked: Bool) {
+        self.isClicked = isClicked
+    }
+    
+    func setHeart(_ isClicked: Bool) {
+        if isClicked {
             bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartFilledIc"), for: .normal)
         } else {
-            like = false
             bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartEmptyIc"), for: .normal)
         }
+    }
+    
+    @IBAction func heartClicked(_ sender: UIButton) {
+//        if like == false {
+//            like = true
+//            bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartFilledIc"), for: .normal)
+//        } else {
+//            like = false
+//            bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartEmptyIc"), for: .normal)
+//        }
+//
         
+        
+        guard let isClicked = self.isClicked else { return }
+        
+        if isClicked {
+            bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartEmptyIc"), for: .normal)
+        } else {
+            bannerIntoHeartButton.setBackgroundImage(#imageLiteral(resourceName: "heartFilledIc"), for: .normal)
+        }
+        guard let index = self.index else { return }
+        NotificationCenter.default.post(name: .clickIntoBannerHeartButton, object: nil, userInfo: ["index": index, "isSelected": isClicked])
     }
 }

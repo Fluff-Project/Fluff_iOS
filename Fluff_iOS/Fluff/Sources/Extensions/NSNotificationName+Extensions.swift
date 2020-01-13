@@ -21,4 +21,6 @@ extension NSNotification.Name {
     static let confirmBidding = NSNotification.Name("confirmBidding")
     static let clickCancelButton = NSNotification.Name("clickCancelButton")
     static let clickIntoBannerButton = NSNotification.Name("clickIntoBannerButton")
+    
+    static let clickIntoBannerHeartButton = NSNotification.Name("clickIntoBannerHeartButton")
 }

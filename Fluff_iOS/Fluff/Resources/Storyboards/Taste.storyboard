@@ -186,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="179" width="375" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="analysisCell" rowHeight="260" id="Sks-KQ-wqg" customClass="AnalysisTableViewCell" customModule="Fluff" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="analysisCell" rowHeight="260" id="Sks-KQ-wqg" customClass="AnalysisTableViewCell" customModule="Fluff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sks-KQ-wqg" id="m0b-ah-b14">

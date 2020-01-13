@@ -21,6 +21,8 @@ class BannerIntoVC: UIViewController {
     var bannerTitleStr = String()
     var bannerImg = UIImage()
     
+    private var isClickHeart: [Bool] = []
+    
     var whatBanner = Int()
     
     override func viewDidLoad() {
@@ -38,6 +40,7 @@ class BannerIntoVC: UIViewController {
         #selector(popView))
         self.navigationController?.navigationBar.tintColor = .white
         self.setNavigationBarClear()
+        addObserver()
         
         switch whatBanner {
         case 0:
@@ -61,6 +64,16 @@ class BannerIntoVC: UIViewController {
     @objc func popView() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setHeartButton(_:)), name: .clickIntoBannerHeartButton, object: nil)
+    }
+    
+    @objc func setHeartButton(_ notification: NSNotification) {
+        guard let selectedIndex = notification.userInfo?["index"] as? Int else { return }
+        guard let isClicked = notification.userInfo?["isSelected"] as? Bool else { return }
+        self.isClickHeart[selectedIndex] = !isClicked
+    }
 }
 
 extension BannerIntoVC: UICollectionViewDataSource {
@@ -74,6 +87,10 @@ extension BannerIntoVC: UICollectionViewDataSource {
         bannerIntoCollectionViewCell.bannerIntoItemLabel.text = styleData[indexPath.row].goodsName
         bannerIntoCollectionViewCell.bannerIntoPriceLabel.text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row].price))! + "원"
         bannerIntoCollectionViewCell.bannerIntoSellerLabel.text = styleData[indexPath.row].sellerName
+        
+        bannerIntoCollectionViewCell.setIndex(indexPath.row)
+        bannerIntoCollectionViewCell.setIsClicked(isClickHeart[indexPath.row])
+        bannerIntoCollectionViewCell.setHeart(isClickHeart[indexPath.row])
         return bannerIntoCollectionViewCell
     }
     
@@ -139,6 +156,7 @@ extension BannerIntoVC {
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
                 guard let styleData = recentStyleJsonData.data else { return }
                 self.styleData = styleData
+                for _ in self.styleData { self.isClickHeart.append(false) }
                 self.bannerIntoCollectionView.reloadData()
             case .requestErr(let data):
                 guard let recentStyleJsonData = data as? RecentStyleJsonData else { return }
