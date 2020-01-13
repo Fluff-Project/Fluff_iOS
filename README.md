@@ -2,13 +2,13 @@
 
 # Fluff_iOS
 
-
+<br>
 
 ## Work Flow
 
 <img src="./images/workFlow.png" height="400px"/>
 
-
+<br>
 
 ## Commit Message
 
@@ -16,7 +16,7 @@
 
 🔵 한글로 변경된 폴더명, 기능 구현 순 ➡️ **커밋 메세지 통일**
 
-
+<br>
 
 ## Code Convention
 
@@ -36,7 +36,7 @@ extension ViewController: UITableViewDataSource {}
 
 🔵 Optional 변수 `guard let` 으로 바인딩하기
 
-
+<br>
 
 ### 개발 환경
 
@@ -44,7 +44,7 @@ extension ViewController: UITableViewDataSource {}
 
 🔵 Swift 5
 
-
+<br>
 
 ### 라이브러리
 
@@ -60,7 +60,7 @@ extension ViewController: UITableViewDataSource {}
 
 ✅ Hero
 
-
+<br>
 
 ### 실행화면
 
@@ -70,71 +70,61 @@ extension ViewController: UITableViewDataSource {}
 
 
 
-
+<br>
 
 > **시작화면 애니메이션**
 
 <img src="./images/loginAnimation.gif" height="400px"/>
 
-
+<br>
 
 > **회원가입**
 
 <img src="./images/signup1.png" width="" height="350px"/><img src="./images/signup2.png" height="350px"/><img src="./images/signup3.png" height="350px"/><img src="./images/signup4.png" height="350px"/><img src="./images/signup5.png" height="350px"/>
 
-
+<br>
 
 > **회원가입 Progress Bar**
 
 <img src="./images/signupAnimation.gif" height="350px"/>
 
-
+<br>
 
 > **취향 분석**
 
 <img src="./images/tasteAnalysis1.png" height="350px"/><img src="./images/tasteAnalysis2.png" height="350px"/>
 
-
+<br>
 
 > **취향 분석 애니메이션**
 
 <img src="./images/tasteAnalysisAnimation.gif" height="350px"/>
 
-
+<br>
 
 > **취향 분석 2**
 
 <img src="./images/tasteAnalysis3.png" height="350px"/><img src="./images/fluv.png" height="350px"/>
 
-
-
-
+<br>
 
 > **환영 화면**
 
 <img src="./images/welcomeSceen.png" height="350px"/>
 
-
+<br>
 
 > **메인 화면**
 
-<img src="./images/main1.png" height="350px"/><img src="./images/main2.png" height="350px"/>
+<img src="./images/main1.png" height="350px"/><img src="./images/main2.png" height="350px"/><img src="./images/main3.png" height="350px"/>
 
-
-
-
-
-<img src="./images/main3.png" height="350px"/>
-
-
+<br>
 
 > **둘러보기**
 
-<img src="./images/filterView.png" height="350px"/>
+<img src="./images/filterView.png" height="350px"/><img src="./images/filterView3.png" height="350px"/><img src="./images/filterView4.png" height="350px"/>
 
-<img src="./images/filterView3.png" height="350px"/><img src="./images/filterView4.png" height="350px"/>
-
-
+<br>
 
 > **필터 애니메이션**
 
@@ -142,89 +132,75 @@ extension ViewController: UITableViewDataSource {}
 
 
 
-
+<br>
 
 > **상세 정보**
 
 <img src="./images/detailView.png" height="350px"/><img src="./images/detailView2.png" height="350px"/><img src="./images/detailView3.png" height="350px"/>
 
-
-
-
+<br>
 
 > **주문하기**
 
 <img src="./images/order.png" height="350px"/><img src="./images/order1.png" height="350px"/>
 
-
-
-
+<br>
 
 > **장바구니**
 
 <img src="./images/cart.png" height="350px"/><img src="./images/cart2.png" height="350px"/>
 
-
+<br>
 
 > **구매하기**
 
 <img src="./images/buy1.png" height="350px"/><img src="./images/buy2.png" height="350px"/><img src="./images/buy3.png" height="350px"/>
 
-
+<br>
 
 > **구매하기 애니메이션**
 
 <img src="./images/buyanimation.gif" height="350px"/>
 
-
-
-
+<br>
 
 > **경매**
 
 <img src="./images/auction1.png" height="350px"/><img src="./images/auction2.png" height="350px"/>
 
-
-
-
+<br>
 
 > **경매 애니메이션**
 
 <img src="./images/auctionAnimation.gif" height="350px"/>
 
-
-
-
+<br>
 
 > **매거진**
 
 <img src="./images/magazine1.png" height="350px"/><img src="./images/magazine2.png" height="350px"/><img src="./images/magazine3.png" height="350px"/>
 
-
+<br>
 
 > **매거진 애니메이션**
 
 <img src="./images/magazineanimation.gif" height="350px"/>
 
-
-
-
+<br>
 
 > **마이페이지**
 
 <img src="./images/mypageview.png" height="350px"/><img src="./images/mypageview1.png" height="350px"/>
 
-
-
-
+<br>
 
 > **찜 목록**
 
 <img src="./images/likelist.png" height="350px"/><img src="./images/fluvlist.png" height="350px"/>
 
+<br>
 
-
-
+<br>
 
 ### 기능 소개
 
@@ -243,7 +219,7 @@ extension ViewController: UITableViewDataSource {}
 |     찜목록      |    X     |  😞   |
 |     팔로우      |    X     |  😞   |
 
-
+<br>
 
 **세부기능**
 
@@ -259,7 +235,9 @@ extension ViewController: UITableViewDataSource {}
 |     취향 추천     |    O     | 👨‍👨‍👧‍👧 |
 |     플럽 추천     |    O     | 👨‍👨‍👧‍👧 |
 
+<br>
 
+<br>
 
 ### 어려운 것 해결한 것
 
@@ -288,7 +266,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 }
 ```
 
-
+<br>
 
 2. Animationable Property가 존재
 
@@ -306,7 +284,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 7️⃣ contentStretch
 
-
+<br>
 
 3. ScrollView Delegate활용 PageControl ( ✅ `CHIPageControl` 사용 )
 
@@ -321,7 +299,7 @@ func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity
 }
 ```
 
-
+<br>
 
 4. UIView Blur 처리
 
@@ -334,7 +312,7 @@ func setBlurView() {
 }
 ```
 
-
+<br>
 
 5. 전체 레이아웃이 제대로 적용 안되는 문제 iPhone 11 Pro Max 에서 작업 후 ==> iPhone 11 Pro에 적용할 경우 레이아웃이 Pro Max로 적용되어 Button의 Radius가 적용이 안됨
 
@@ -349,7 +327,7 @@ override func viewDidLayoutSubviews() {
 }
 ```
 
-
+<br>
 
 6. StackView 이용 Animation 적용 AutoLayout 잡아주기
 
@@ -366,7 +344,7 @@ UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.8, initialSp
                 }, completion: nil)
 ```
 
-
+<br>
 
 7. 가장 상위 View로 띄우기 (Navigation Bar, Tab Bar 위로 View가 올라옴)
 
@@ -375,7 +353,7 @@ guard let window = UIApplication.shared.keyWindow else { return }
 window.addSubView(UIView())
 ```
 
-
+<br>
 
 8. Tabbar `isHidden` 을 Bottom에 Spacing이 생기는 문제
 
@@ -386,7 +364,7 @@ private func setTabbar() {
 }
 ```
 
-
+<br>
 
 9. 서버 데이터를 처리할 때, 서버에서 Key값 처리하는 경우
 
@@ -414,7 +392,7 @@ struct Person: Codable {
 }
 ```
 
-
+<br>
 
 10. `Dictionary` 타입 Value값으로 Sorting하기
 
@@ -424,7 +402,7 @@ let sortedParameter = surveyResult.sorted { $0.1 > $1.1 }
             let sortingKey = [sortedParameter[0].key, sortedParameter[1].key, sortedParameter[2].key]
 ```
 
-
+<br>
 
 11. 키보드가 View 터치 Keyboard Down Event 발생
 
@@ -432,7 +410,7 @@ let sortedParameter = surveyResult.sorted { $0.1 > $1.1 }
 self.view.endEditting(true)
 ```
 
-
+<br>
 
 12. NavigationBar에 BarButtonItem 코드로 추가하기
 
@@ -447,7 +425,7 @@ private func setNaviBackButton() {
 }
 ```
 
-
+<br>
 
 13. `TableView`  선택 후, 다음뷰로 넘어갔다 올 때 선택된 영역 해제하기
 
@@ -460,7 +438,7 @@ override func viewDidDisappear(_ animated: Bool) {
 }
 ```
 
-
+<br>
 
 14. `TableView` 밑줄 라인이 비는 현상 해결 ➡️ 비는 공간 없게
 
@@ -472,7 +450,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 
-
+<br>
 
 15. 카메라 사용하기 `UIImagePicker`  사용
 
@@ -503,9 +481,7 @@ extension FluvApplyVC: UIImagePickerControllerDelegate, UINavigationControllerDe
 }
 ```
 
-
-
-
+<br>
 
 16. `NumberFormatter` 사용 숫자 구분
 
@@ -518,7 +494,7 @@ let text = numberFormatter.string(from: NSNumber(value: styleData[indexPath.row]
 
 ```
 
-
+<br>
 
 ### 참가자
 
