@@ -1302,7 +1302,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a8-2l-bry">
-                                        <rect key="frame" x="348.66666666666669" y="29.666666666666739" width="36" height="32.666666666666657"/>
+                                        <rect key="frame" x="348.66666666666669" y="29.666666666666739" width="72" height="32.666666666666657"/>
                                         <state key="normal" backgroundImage="heartEmptyIc-1"/>
                                         <connections>
                                             <action selector="clickHeart:" destination="cZc-1p-aQQ" eventType="touchUpInside" id="HRm-nE-YZd"/>
